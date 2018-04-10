@@ -2,7 +2,8 @@
   "pages":[
     "pages/index/index",
     "pages/logs/logs",
-    "pages/me/me"
+    "pages/me/me",
+    "pages/error/error"
   ],
   "window":{
     "backgroundTextStyle":"white",
@@ -16,21 +17,30 @@
 
   },
   "tabBar": {
-   "list": [{
-    "pagePath": "pages/index/index",
-    "text": "首页"
-  }, {
-    "pagePath": "pages/logs/logs",
-    "text": "前端"
+    "position": "bottom",
+    "color": "#fff",
+    "selectedColor": "green",
+    "borderStyle": "black",
+    "backgroundColor": "#234",
+    "list": [{
+      "pagePath": "pages/index/index",
+      "text": "首页"
+
+
+    }, {
+      "pagePath": "pages/logs/logs",
+      "text": "前端脚印"
+
+    },
+    {
+      "pagePath": "pages/me/me",
+      "text": "我"
+
+    }]
   },
-  {
-    "pagePath": "pages/me/me",
-    "text": "关于我"
-  }]
- },
- "networkTimeout": {
-  "request": 10000,
-  "downloadFile": 10000
-},
-"debug": false
+  "networkTimeout": {
+    "request": 10000,
+    "downloadFile": 10000
+  },
+  "debug": false
 }

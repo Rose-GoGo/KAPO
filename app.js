@@ -1,6 +1,19 @@
 //app.js
 App({
-  onLaunch: function () {
+  onShow: function(option){ //当小程序启动，或从后台进入前台显示，会触发 onShow
+    console.log(option.path)
+    console.log(option.query)
+    console.log(option.scene)
+
+  },
+  onPageNotFound: function(res){
+    wx.redirectTo({
+      url: "pages/error/error"
+    })
+
+  },
+
+  onLaunch: function () { //生命周期函数--监听小程序初始化
     // 展示本地存储能力
     var logs = wx.getStorageSync('logs') || []
     logs.unshift(Date.now())
