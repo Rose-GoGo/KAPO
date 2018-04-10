@@ -1,0 +1,36 @@
+{
+  "pages":[
+    "pages/index/index",
+    "pages/logs/logs",
+    "pages/me/me"
+  ],
+  "window":{
+    "backgroundTextStyle":"white",
+    "navigationBarBackgroundColor": "#234",
+    "navigationBarTitleText": "SmileRose",
+    "navigationBarTextStyle":"#fff",
+    "backgroundColor":"red",
+    "backgroundColorTop": "#fff",
+    "enablePullDownRefresh": true,
+    "onReachBottomDistance": 50
+
+  },
+  "tabBar": {
+   "list": [{
+    "pagePath": "pages/index/index",
+    "text": "首页"
+  }, {
+    "pagePath": "pages/logs/logs",
+    "text": "前端"
+  },
+  {
+    "pagePath": "pages/me/me",
+    "text": "关于我"
+  }]
+ },
+ "networkTimeout": {
+  "request": 10000,
+  "downloadFile": 10000
+},
+"debug": false
+}
