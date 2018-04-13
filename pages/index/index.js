@@ -9,6 +9,12 @@ Page({
     hasUserInfo: false,
     canIUse: wx.canIUse('button.open-type.getUserInfo')
   },
+   onShareAppMessage: function () {
+    return {
+      title: '我就是我，不一样',
+      path: '/page/user?id=123'
+    }
+  },
   //事件处理函数
   bindViewTap: function() {
     wx.navigateTo({
