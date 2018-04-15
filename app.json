@@ -1,41 +1,41 @@
 {
-  "pages":[
+  "pages": [
+    "pages/start/start",
     "pages/index/index",
     "pages/logs/logs",
     "pages/me/me",
     "pages/error/error"
   ],
-  "window":{
-    "backgroundTextStyle":"white",
+  "window": {
+    "backgroundTextStyle": "white",
     "navigationBarBackgroundColor": "#234",
     "navigationBarTitleText": "SmileRose",
-    "navigationBarTextStyle":"#fff",
-    "backgroundColor":"red",
+    "navigationBarTextStyle": "#fff",
+    "backgroundColor": "red",
     "backgroundColorTop": "#fff",
     "enablePullDownRefresh": true,
     "onReachBottomDistance": 50
-
   },
   "tabBar": {
     "position": "bottom",
-    "color": "#fff",
-    "selectedColor": "green",
+    "color": "#aaa",
+    "selectedColor": "#1296db",
     "borderStyle": "black",
-    "backgroundColor": "#234",
     "list": [{
       "pagePath": "pages/index/index",
-      "text": "首页"
-
-
+      "iconPath": "images/nav1/base_off.png",
+      "selectedIconPath": "images/nav1/base_on.png",
+      "text": "基本介绍"
     }, {
       "pagePath": "pages/logs/logs",
-      "text": "前端脚印"
-
-    },
-    {
+      "iconPath": "images/nav1/project_off.png",
+      "selectedIconPath": "images/nav1/project_on.png",
+      "text": "项目经验"
+    }, {
       "pagePath": "pages/me/me",
-      "text": "我"
-
+      "iconPath": "images/nav1/experence_off.png",
+      "selectedIconPath": "images/nav1/experence_on.png",
+      "text": "工作经历"
     }]
   },
   "networkTimeout": {

@@ -7,9 +7,9 @@ App({
 
   },
   onPageNotFound: function(res){
-    wx.redirectTo({
-      url: "pages/error/error"
-    })
+   //  wx.redirectTo({
+   // //   url: "pages/error/error"
+   //  })
 
   },
 
