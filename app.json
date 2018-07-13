@@ -8,7 +8,7 @@
   ],
   "window": {
     "backgroundTextStyle": "white",
-    "navigationBarBackgroundColor": "#234",
+    "navigationBarBackgroundColor": "#000",
     "navigationBarTitleText": "SmileRose",
     "navigationBarTextStyle": "#fff",
     "backgroundColor": "red",
@@ -18,7 +18,8 @@
   },
   "tabBar": {
     "position": "bottom",
-    "color": "#aaa",
+    "backgroundColor": "#4bb777",
+    "color": "#fff",
     "selectedColor": "#1296db",
     "borderStyle": "black",
     "list": [{
