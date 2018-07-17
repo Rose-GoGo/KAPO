@@ -1,19 +1,6 @@
-/**index.wxss**/
-view{
-  font-size: 24rpx
+page{
+    background: #e5e5e5;
 }
-.Rose-flex{
-  padding: 80rpx 0;
-  display: flex
-}
-.Rose-flex1{
-  flex:1;
-}
-.Rose-title{
-font-size: 36rpx;
-font-weight: bold
-}
-
 .Rose-bar{
   height: 100rpx;
   background: #4bb777;
@@ -22,7 +9,7 @@ font-weight: bold
   padding: 0 10rpx
 }
 .Rose-floor1{
-  padding: 20rpx;
+  padding: 40rpx;
   background: rgba(8,134,74,0.90);
    color: #fff;
    font-size: 24rpx;
@@ -33,16 +20,51 @@ font-weight: bold
   font-size: 32rpx
 }
 
-.Rose-part-item{
- margin: 0 20rpx;
+.Rose-news{
+    overflow: hidden;
+    border-radius: 8rpx;
+    margin: 20rpx;
+    background: #fff;
+    box-shadow: 0 5px 5px rgba(65, 101, 165, 0.08);
+  /*  display: flex*/
 }
-.Rose-about-us{
-  margin: 20rpx;
-
+.Rose-image{
+    flex: none;
+    width: 20%;
 }
+.Rose-imgitem{
+    width: 240rpx;
+    height: 240rpx;
+    width: 100%;
+}
+.Rose-content{
+    padding: 0 30rpx 20rpx;
+    flex: 1
+}
+.Rose-title{
+    width: 100%;
+    padding: 10rpx 0;
+    white-space: nowrap;
+    overflow: hidden;
+    font-size: 32rpx;
+    color: #333;
+    text-overflow: ellipsis;
+}
+.Rose-time{
+     margin: 0 0 20rpx ;
+    font-size: 24rpx;
+    color: #999
+}
+.Rose-detail{
 
-.Rose-quote{
-  padding:40rpx 20rpx;
-  background: rgba(8,134,74,0.90);
-   color: #fff;
+    display: -webkit-box;
+    overflow: hidden;
+
+    line-height: 1.4;
+    text-align: left;
+    text-overflow: ellipsis;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+     font-size: 28rpx;
+    color: #666;
 }
