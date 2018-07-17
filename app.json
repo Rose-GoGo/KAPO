@@ -1,10 +1,11 @@
 {
   "pages": [
-    "pages/start/start",
-    "pages/index/index",
+    "pages/index/index",    
+    "pages/detail/detail",
+    "pages/start/start",    
     "pages/logs/logs",
     "pages/me/me",
-    "pages/error/error"
+    "pages/error/error"    
   ],
   "window": {
     "backgroundTextStyle": "white",
@@ -22,22 +23,26 @@
     "color": "#fff",
     "selectedColor": "#1296db",
     "borderStyle": "black",
-    "list": [{
-      "pagePath": "pages/index/index",
-      "iconPath": "images/nav1/base_off.png",
-      "selectedIconPath": "images/nav1/base_on.png",
-      "text": "基本介绍"
-    }, {
-      "pagePath": "pages/logs/logs",
-      "iconPath": "images/nav1/project_off.png",
-      "selectedIconPath": "images/nav1/project_on.png",
-      "text": "项目经验"
-    }, {
-      "pagePath": "pages/me/me",
-      "iconPath": "images/nav1/experence_off.png",
-      "selectedIconPath": "images/nav1/experence_on.png",
-      "text": "工作经历"
-    }]
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "iconPath": "images/nav1/base_off.png",
+        "selectedIconPath": "images/nav1/base_on.png",
+        "text": "基本介绍"
+      },
+      {
+        "pagePath": "pages/logs/logs",
+        "iconPath": "images/nav1/project_off.png",
+        "selectedIconPath": "images/nav1/project_on.png",
+        "text": "项目经验"
+      },
+      {
+        "pagePath": "pages/me/me",
+        "iconPath": "images/nav1/experence_off.png",
+        "selectedIconPath": "images/nav1/experence_on.png",
+        "text": "工作经历"
+      }
+    ]
   },
   "networkTimeout": {
     "request": 10000,

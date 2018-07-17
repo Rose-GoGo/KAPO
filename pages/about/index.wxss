@@ -1,0 +1,48 @@
+/**index.wxss**/
+view{
+  font-size: 24rpx
+}
+.Rose-flex{
+  padding: 80rpx 0;
+  display: flex
+}
+.Rose-flex1{
+  flex:1;
+}
+.Rose-title{
+font-size: 36rpx;
+font-weight: bold
+}
+
+.Rose-bar{
+  height: 100rpx;
+  background: #4bb777;
+  color: #fff;
+  line-height: 100rpx;
+  padding: 0 10rpx
+}
+.Rose-floor1{
+  padding: 20rpx;
+  background: rgba(8,134,74,0.90);
+   color: #fff;
+   font-size: 24rpx;
+   text-align: center
+}
+.Rose-top-quote{
+  margin: 60rpx 20rpx;
+  font-size: 32rpx
+}
+
+.Rose-part-item{
+ margin: 0 20rpx;
+}
+.Rose-about-us{
+  margin: 20rpx;
+
+}
+
+.Rose-quote{
+  padding:40rpx 20rpx;
+  background: rgba(8,134,74,0.90);
+   color: #fff;
+}
