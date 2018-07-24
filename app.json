@@ -3,44 +3,42 @@
     "pages/index/index",
     "pages/detail/detail",
     "pages/start/start",
-    "pages/logs/logs",
-    "pages/me/me",
-    "pages/error/error"
+    "pages/about/about",
+    "pages/error/error",
+    "pages/project/project"
   ],
   "window": {
-    "backgroundTextStyle": "white",
+    "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#1a1a1a",
-    "navigationBarTitleText": "SmileRose",
+    "navigationBarTitleText": "CAPO博客",
     "navigationBarTextStyle": "#fff",
-    "backgroundColor": "red",
-    "backgroundColorTop": "#fff",
     "enablePullDownRefresh": true,
     "onReachBottomDistance": 50
   },
   "tabBar": {
+    "color": "#fff",
     "position": "bottom",
     "backgroundColor": "#4bb777",
-    "color": "#fff",
-    "selectedColor": "#1296db",
+    "selectedColor": "#fff",
     "borderStyle": "black",
     "list": [
       {
         "pagePath": "pages/index/index",
-        "iconPath": "images/nav1/base_off.png",
-        "selectedIconPath": "images/nav1/base_on.png",
-        "text": "基本介绍"
+        "iconPath": "assets/nav/article.png",
+        "selectedIconPath": "assets/nav/article_fill.png",
+        "text": "文章"
       },
       {
-        "pagePath": "pages/logs/logs",
-        "iconPath": "images/nav1/project_off.png",
-        "selectedIconPath": "images/nav1/project_on.png",
-        "text": "项目经验"
+        "pagePath": "pages/project/project",
+        "iconPath": "assets/nav/project.png",
+        "selectedIconPath": "assets/nav/project_fill.png",
+        "text": "项目"
       },
       {
-        "pagePath": "pages/me/me",
-        "iconPath": "images/nav1/experence_off.png",
-        "selectedIconPath": "images/nav1/experence_on.png",
-        "text": "工作经历"
+        "pagePath": "pages/about/about",
+        "iconPath": "assets/nav/user.png",
+        "selectedIconPath": "assets/nav/user_fill.png",
+        "text": "我"
       }
     ]
   },

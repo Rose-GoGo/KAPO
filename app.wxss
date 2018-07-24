@@ -1,4 +1,5 @@
 /**app.wxss**/
+@import "assets/icon/iconfont";
 .container {
   height: 100%;
   display: flex;
@@ -7,4 +8,12 @@
   justify-content: space-between;
   padding: 200rpx 0;
   box-sizing: border-box;
-} 
+}
+
+.green-color{
+    font-size: 14px;
+    color: rgba(8,134,74,0.90)
+}
+.iconfont{
+    margin: -18rpx 0 0;
+}
