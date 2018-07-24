@@ -1,5 +1,4 @@
 /**index.wxss**/
-
 .Rose-flex{
   padding: 80rpx 0;
   display: flex
@@ -8,33 +7,36 @@
   flex:1;
 }
 .Rose-title{
-font-size: 36rpx;
-font-weight: bold
+  font-size: 36rpx;
+  font-weight: bold
 }
-
-
 .Rose-floor1{
   padding: 20rpx;
   background: rgba(8,134,74,0.90);
-   color: #fff;
-   font-size: 24rpx;
-   text-align: center
+  color: #fff;
+  font-size: 24rpx;
+  text-align: center
 }
 .Rose-top-quote{
   margin: 60rpx 20rpx;
   font-size: 32rpx
 }
-
 .Rose-part-item{
  margin: 0 20rpx;
 }
 .Rose-about-us{
   margin: 20rpx;
-
 }
-
 .Rose-quote{
   padding:40rpx 20rpx;
   background: rgba(8,134,74,0.90);
-   color: #fff;
+  color: #fff;
+}
+.Rose-kinds{
+  text-align: center;
+  font-size: 16px;
+}
+.Rose-kinds .iconfont{
+  font-size: 30px;
+  display: block;
 }
