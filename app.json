@@ -1,15 +1,15 @@
 {
   "pages": [
-    "pages/index/index",    
+    "pages/index/index",
     "pages/detail/detail",
-    "pages/start/start",    
+    "pages/start/start",
     "pages/logs/logs",
     "pages/me/me",
-    "pages/error/error"    
+    "pages/error/error"
   ],
   "window": {
     "backgroundTextStyle": "white",
-    "navigationBarBackgroundColor": "#000",
+    "navigationBarBackgroundColor": "#1a1a1a",
     "navigationBarTitleText": "SmileRose",
     "navigationBarTextStyle": "#fff",
     "backgroundColor": "red",
