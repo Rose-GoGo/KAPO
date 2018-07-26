@@ -1,1 +1,51 @@
-/* pages/project/project.wxss */
+.idx-content {
+  overflow: hidden;
+  padding: 0 40rpx;
+}
+.idx-content .idx-swiper {
+  position: relative;
+  margin: 40rpx 0;
+  padding-bottom: 100%;
+}
+.idx-content .idx-swiper .idx-cswp {
+  width: 70%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  border-radius: 6px;
+}
+.idx-content .idx-swiper .idx-cswp image {
+  width: 100%;
+  max-height: 600rpx;
+}
+.idx-content .idx-swiper .idx-cswp .swp-title .swp-btime {
+  text-align: center;
+  font-size: 28rpx;
+}
+.idx-content .idx-swiper .idx-cswp .swp-title .swp-bname {
+  text-align: center;
+  font-size: 24rpx;
+}
+.swp-left {/*左边样式*/
+  transition: all .3s ease;
+  transform: scale(0.8);
+  left: -55%;
+}
+.swp-center {/*中间样式*/
+  left: 15%;
+  transition: all .3s ease;
+  transform: scale(1);
+}
+.swp-right {/*右边样式*/
+  transition: all .3s ease;
+  transform: scale(0.8);
+  left: 85%;
+}
+.swp-rightNo {/*最右边样式*/
+  transition: all .3s ease;
+  left: 150%;
+}
+.swp-leftNo {/*最左边样式*/
+  transition: all .3s ease;
+  left: -150%;
+}

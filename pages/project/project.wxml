@@ -1,2 +1,17 @@
 <!--pages/project/project.wxml-->
-<text>pages/project/project.wxml</text>
+
+<view class='idx-content'>
+    <view class='idx-swiper'>
+        <view class='idx-cswp {{item.swpClass}}'
+        wx:for="{{swiperList}}" wx:key=""
+        bindtap="swpBtn"
+        data-index="{{index}}"
+        >
+        <image src='{{item.imgsrc}}' mode='widthFix'></image>
+        <view class='swp-title' hidden="{{item.swpClass!=='swp-center'}}">
+            <view class='swp-btime'>{{item.time}}</view>
+            <view class='swp-bname'>{{item.bname}}</view>
+        </view>
+    </view>
+</view>
+</view>

@@ -3,14 +3,23 @@
   积土成山，风雨兴焉；积水成渊，蛟龙生焉；积善成德，而神明自得，圣心备焉。故不积跬步，无以至千里；不积小流，无以成江海。骐骥一跃，不能十步；驽马十驾，功在不舍。锲而舍之，朽木不折；锲而不舍，金石可镂。蚓无爪牙之利，筋骨之强，上食埃土，下饮黄泉，用心一也。蟹六跪而二螯，非蛇鳝之穴无可寄托者，用心躁也。
 </view>
 <!-- 菜单 -->
-
 <view class="Rose-menu Rose-flex">
-  <view class="Rose-kinds Rose-flex1"> <icon class="iconfont icon-quanju_qianduanjiemian"></icon>前端</view>
-  <view class="Rose-kinds Rose-flex1"> <icon class="iconfont icon-anquan"></icon>安全</view>
-  <view class="Rose-kinds Rose-flex1"> <icon class="iconfont icon-xiazai47"></icon>生活</view>
-
+  <view class="Rose-kinds Rose-flex1">
+    <view class="view-circle">
+      <icon class="iconfont icon-quanju_qianduanjiemian"></icon>
+    </view>前端
+  </view>
+  <view class="Rose-kinds Rose-flex1">
+    <view class="view-circle">
+      <icon class="iconfont icon-anquan"></icon>
+    </view>安全
+  </view>
+  <view class="Rose-kinds Rose-flex1">
+    <view class="view-circle">
+      <icon class="iconfont icon-xiazai47"></icon>
+    </view>生活
+  </view>
 </view>
-
 <!-- 博客模块 -->
 <view class="Rose-floor2">
   博客模块
@@ -54,7 +63,6 @@
   生活得最有意义的人，并不就是年岁活得最大的人，而是对生活最有感受的人。
   做技术最有趣的事，并不就是写了多少行代码，而是在代码中获得了成就感。
 </view>
-
 <view class="Rose-floor4 Rose-flex">
   <view>
     <view>River Zheng</view>

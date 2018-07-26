@@ -8,7 +8,8 @@
 }
 .Rose-title{
   font-size: 36rpx;
-  font-weight: bold
+
+  color: #333
 }
 .Rose-floor1{
   padding: 20rpx;
@@ -22,7 +23,9 @@
   font-size: 32rpx
 }
 .Rose-part-item{
+  font-size: 28rpx;
  margin: 0 20rpx;
+ color: #666
 }
 .Rose-about-us{
   margin: 20rpx;
@@ -39,4 +42,13 @@
 .Rose-kinds .iconfont{
   font-size: 30px;
   display: block;
+}
+.view-circle{
+  background: red;
+  border-radius: 100%;
+  color: #fff;
+  width: 100rpx;
+  height: 100rpx;
+  line-height: 100rpx;
+  margin: 0 atuo
 }
