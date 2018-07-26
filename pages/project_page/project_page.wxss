@@ -1,6 +1,10 @@
 /* pages/peoject_page/project_page.wxss */
 /* pages/detail/detail.wxss */
+page{
+    background: #fff
+}
 .Rose-detail{
+    background: #fff;
     margin: 20rpx;
     font-size: 28rpx;
     line-height: 1.6;

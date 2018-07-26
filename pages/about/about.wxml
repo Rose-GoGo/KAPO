@@ -1,61 +1,67 @@
-<view class="Rose-floor1">
-  <view class="Rose-top-quote">虽然脚步很慢，但一直在努力，从未放弃！</view>
-  积土成山，风雨兴焉；积水成渊，蛟龙生焉；积善成德，而神明自得，圣心备焉。故不积跬步，无以至千里；不积小流，无以成江海。骐骥一跃，不能十步；驽马十驾，功在不舍。锲而舍之，朽木不折；锲而不舍，金石可镂。蚓无爪牙之利，筋骨之强，上食埃土，下饮黄泉，用心一也。蟹六跪而二螯，非蛇鳝之穴无可寄托者，用心躁也。
-</view>
-<!-- 菜单 -->
-<view class="Rose-menu Rose-flex">
-  <view class="Rose-kinds Rose-flex1">
-    <view class="view-circle">
-      <icon class="iconfont icon-quanju_qianduanjiemian"></icon>
-    </view>前端
+<view class="Rose-floor">
+  <view class="Rose-bg pd10">
+    <view class="Rose-top-quote">虽然脚步很慢，但一直在努力，从未放弃！</view>
+    积土成山，风雨兴焉；积水成渊，蛟龙生焉；积善成德，而神明自得，圣心备焉。故不积跬步，无以至千里；不积小流，无以成江海。骐骥一跃，不能十步；驽马十驾，功在不舍。锲而舍之，朽木不折；锲而不舍，金石可镂。蚓无爪牙之利，筋骨之强，上食埃土，下饮黄泉，用心一也。蟹六跪而二螯，非蛇鳝之穴无可寄托者，用心躁也。
   </view>
-  <view class="Rose-kinds Rose-flex1">
-    <view class="view-circle">
-      <icon class="iconfont icon-anquan"></icon>
-    </view>安全
-  </view>
-  <view class="Rose-kinds Rose-flex1">
-    <view class="view-circle">
-      <icon class="iconfont icon-xiazai47"></icon>
-    </view>生活
-  </view>
+  <!-- 菜单 -->
+
 </view>
-<!-- 博客模块 -->
-<view class="Rose-floor2">
-  博客模块
-</view>
-<view class="Rose-flex">
-  <view class="Rose-part-item Rose-flex1">
-    <view class="Rose-title"><icon></icon>前端技术</view>
-    <view>
-      Web 发展了几十个春秋,风起云涌,千变万化。Web 技术发展的速度让人感觉那几乎不是继承式的迭代，而是一次又一次的变革，一次又一次的创造。这几年的前端，更为之甚！
+<view class="Rose-floor">
+  <view class="pd10">
+  <view class="Rose-floor-title">打卡</view>
+  <view class="Rose-menu Rose-flex">
+    <view class="Rose-kinds Rose-flex1">
+      <view class="view-circle color1">
+        <icon class="iconfont icon-quanju_qianduanjiemian"></icon>
+      </view>健身
+    </view>
+    <view class="Rose-kinds Rose-flex1">
+      <view class="view-circle color3">
+        <icon class="iconfont icon-anquan"></icon>
+      </view>外语
+    </view>
+    <view class="Rose-kinds Rose-flex1">
+      <view class="view-circle color2">
+        <icon class="iconfont icon-xiazai47"></icon>
+      </view>读书
+    </view>
+    <view class="Rose-kinds Rose-flex1">
+      <view class="view-circle color4">
+        <icon class="iconfont icon-xiazai47"></icon>
+      </view>音乐
     </view>
   </view>
-  <view class="Rose-part-item Rose-flex1">
-    <view class="Rose-title"><icon></icon>安全技术</view>
-    <view>
-      Web 发展了几十个春秋,风起云涌,千变万化。Web 技术发展的速度让人感觉那几乎不是继承式的迭代，而是一次又一次的变革，一次又一次的创造。这几年的前端，更为之甚！
+</view>
+  <!-- 博客模块 -->
+  <view class="pd10">
+    <view class="Rose-floor-title">文章类型</view>
+    <view class="Rose-flex">
+      <view class="Rose-title"><icon class="iconfont icon-quanju_qianduanjiemian"></icon>外语</view>
+      <view class="Rose-title"><icon class="iconfont icon-anquan"></icon>健身</view>
+      <view class="Rose-title"> <icon class="iconfont icon-xiazai47"></icon>读书</view>
     </view>
   </view>
 </view>
 <!-- 模块划分 -->
-<view class="Rose-floor3">
-  <view class="Rose-about-us">
-    <view class='title'>关于我们</view>
-    <view class="descriptyion">
-      这是我们共同建立的一个记录生活和记录的博客。主要是记载her的前端生活和his的web安全技术。我们热爱生活， 一点一滴，点点滴滴，共同进步。
+<view class="Rose-floor">
+  <view class="Rose-floor3">
+    <view class="Rose-about-us">
+      <view class='title'>关于我们</view>
+      <view class="descriptyion">
+        这是我们共同建立的一个记录生活和记录的博客。主要是记载her的前端生活和his的web安全技术。我们热爱生活， 一点一滴，点点滴滴，共同进步。
+      </view>
     </view>
-  </view>
-  <view class="Rose-about-us">
-    <view class='title'>生活记录</view>
-    <view class="descriptyion">
-      记录生活中一些乱七八糟的事情和在事情中自己的所思所想，博主很懒，还没做完，就知道一般不会来更新这个版块。
+    <view class="Rose-about-us">
+      <view class='title'>生活记录</view>
+      <view class="descriptyion">
+        记录生活中一些乱七八糟的事情和在事情中自己的所思所想，博主很懒，还没做完，就知道一般不会来更新这个版块。
+      </view>
     </view>
-  </view>
-  <view class="Rose-about-us">
-    <view class='title'>共同讨论</view>
-    <view class="descriptyion">
-      倘若你和我一样热爱前端技术， 研究前端工具， 加入我的QQ前端技术群吧， 一起分享和进步。
+    <view class="Rose-about-us">
+      <view class='title'>共同讨论</view>
+      <view class="descriptyion">
+        倘若你和我一样热爱前端技术， 研究前端工具， 加入我的QQ前端技术群吧， 一起分享和进步。
+      </view>
     </view>
   </view>
 </view>

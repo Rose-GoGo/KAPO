@@ -1,5 +1,8 @@
 /**app.wxss**/
 @import "assets/icon/iconfont";
+page{
+  background: #e5e5e5
+}
 .container {
   height: 100%;
   display: flex;

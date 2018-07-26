@@ -1,4 +1,7 @@
 /* pages/project/project.wxss */
+page{
+    background: #fff
+}
 .banner-swiper {
     width: 100%;
     height: 600rpx;

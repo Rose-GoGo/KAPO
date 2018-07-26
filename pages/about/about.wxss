@@ -1,6 +1,13 @@
 /**index.wxss**/
+.Rose-floor{
+  background: #fff;
+  margin-bottom: 20rpx;
+}
+.pd10{
+  padding: 20rpx;
+}
 .Rose-flex{
-  padding: 80rpx 0;
+  padding: 40rpx 0 20rpx;
   display: flex
 }
 .Rose-flex1{
@@ -8,11 +15,9 @@
 }
 .Rose-title{
   font-size: 36rpx;
-
   color: #333
 }
-.Rose-floor1{
-  padding: 20rpx;
+.Rose-bg{
   background: rgba(8,134,74,0.90);
   color: #fff;
   font-size: 24rpx;
@@ -37,10 +42,11 @@
 }
 .Rose-kinds{
   text-align: center;
-  font-size: 16px;
+  font-size: 28rpx;
+  color: #666
 }
 .Rose-kinds .iconfont{
-  font-size: 30px;
+  font-size: 24px;
   display: block;
 }
 .view-circle{
@@ -50,5 +56,23 @@
   width: 100rpx;
   height: 100rpx;
   line-height: 100rpx;
-  margin: 0 atuo
+  margin: 0 auto;
+}
+.color1{
+  background-color: #4dc6ee
+}
+.color2{
+  background-color: #fed030
+}
+.color3{
+  background-color: #8a90fa
+}
+.color4{
+  background-color: #fd9d21
+}
+
+
+.Rose-floor-title{
+  font-size: 28rpx;
+  color: #333
 }
