@@ -1,17 +1,15 @@
-<!--pages/project/project.wxml-->
-
-<view class='idx-content'>
-    <view class='idx-swiper'>
-        <view class='idx-cswp {{item.swpClass}}'
-        wx:for="{{swiperList}}" wx:key=""
-        bindtap="swpBtn"
-        data-index="{{index}}"
-        >
-        <image src='{{item.imgsrc}}' mode='widthFix'></image>
-        <view class='swp-title' hidden="{{item.swpClass!=='swp-center'}}">
-            <view class='swp-btime'>{{item.time}}</view>
-            <view class='swp-bname'>{{item.bname}}</view>
-        </view>
-    </view>
-</view>
+<view class="banner-swiper"  style="height:{{swipter_height}}px">
+    <swiper current='{{swiperCurrent}}'
+    indicator-color="{{beforeColor}}" indicator-active-color="{{afterColor}}" circular='{{circular}}'
+    previous-margin="{{previousmargin}}" next-margin="{{nextmargin}}" bindchange="swiperChange" style="height:{{swipter_height-100}}px">
+    <block wx:for="{{arr}}" wx:key="key">
+        <swiper-item>
+            <navigator url="../project_page/project_page"  >
+            <image src="{{item.images}}" class="slide-image{{index == swiperCurrent ? ' active' : ''}}"
+            bindchange="chuangEvent" id="{{index}}"></image>
+        </navigator>
+        </swiper-item>
+    </block>
+</swiper>
+<view class="text-center">项目名称</view>
 </view>

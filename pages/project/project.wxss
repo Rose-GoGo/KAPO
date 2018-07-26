@@ -1,51 +1,29 @@
-.idx-content {
-  overflow: hidden;
-  padding: 0 40rpx;
+/* pages/project/project.wxss */
+.banner-swiper {
+    width: 100%;
+    height: 600rpx;
+    overflow: hidden;
+    margin: 50rpx 0;
 }
-.idx-content .idx-swiper {
-  position: relative;
-  margin: 40rpx 0;
-  padding-bottom: 100%;
+swiper {
+    display: block;
+    position: relative;
 }
-.idx-content .idx-swiper .idx-cswp {
-  width: 70%;
-  height: 100%;
-  position: absolute;
-  top: 0;
-  border-radius: 6px;
+.slide-image {
+    width: 96%;
+    display: block;
+    margin: 0 auto;
+    height: 700rpx;
+    margin-top:25rpx;
+    transition: all 0.15s linear;
+    border-radius: 8rpx;
+     box-shadow: 0 0 20px rgba(0,0,0,0.6)
 }
-.idx-content .idx-swiper .idx-cswp image {
-  width: 100%;
-  max-height: 600rpx;
+.active{
+    margin-top:0rpx;
+    height: 800rpx;
 }
-.idx-content .idx-swiper .idx-cswp .swp-title .swp-btime {
-  text-align: center;
-  font-size: 28rpx;
-}
-.idx-content .idx-swiper .idx-cswp .swp-title .swp-bname {
-  text-align: center;
-  font-size: 24rpx;
-}
-.swp-left {/*左边样式*/
-  transition: all .3s ease;
-  transform: scale(0.8);
-  left: -55%;
-}
-.swp-center {/*中间样式*/
-  left: 15%;
-  transition: all .3s ease;
-  transform: scale(1);
-}
-.swp-right {/*右边样式*/
-  transition: all .3s ease;
-  transform: scale(0.8);
-  left: 85%;
-}
-.swp-rightNo {/*最右边样式*/
-  transition: all .3s ease;
-  left: 150%;
-}
-.swp-leftNo {/*最左边样式*/
-  transition: all .3s ease;
-  left: -150%;
+.text-center{
+    text-align: center;
+    font-size: 32rpx;
 }

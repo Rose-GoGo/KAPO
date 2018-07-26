@@ -5,7 +5,8 @@
     "pages/start/start",
     "pages/about/about",
     "pages/error/error",
-    "pages/project/project"
+    "pages/project/project",
+    "pages/project_page/project_page"
   ],
   "window": {
     "backgroundTextStyle": "light",

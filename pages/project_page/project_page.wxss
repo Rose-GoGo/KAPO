@@ -1,0 +1,26 @@
+/* pages/peoject_page/project_page.wxss */
+/* pages/detail/detail.wxss */
+.Rose-detail{
+    margin: 20rpx;
+    font-size: 28rpx;
+    line-height: 1.6;
+    padding: 0 0 80rpx;
+    color: #666
+}
+.Rose-title{
+    color: #333;
+    font-size: 40rpx;
+    line-height: 1.2
+}
+.Rose-addtime{
+  margin: 20rpx 0;
+  color: #999
+
+}
+.Rose-imgitem{
+    width: 100%;
+    height: 330rpx;
+}
+image{
+    width: 100%;
+}
