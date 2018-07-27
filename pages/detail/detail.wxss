@@ -1,4 +1,7 @@
 /* pages/detail/detail.wxss */
+page{
+  background: #fff
+}
 .Rose-detail{
     margin: 20rpx;
     font-size: 28rpx;

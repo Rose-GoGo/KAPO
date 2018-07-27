@@ -3,59 +3,41 @@
   background: #fff;
   margin-bottom: 20rpx;
 }
-.pd10{
-  padding: 20rpx;
-}
-.Rose-flex{
-  padding: 40rpx 0 20rpx;
-  display: flex
+.Rose-menu{
+  padding: 40rpx 20rpx 20rpx;
+  display: flex;
+  flex-flow:row;
+  justify-content: space-between ;
 }
 .Rose-flex1{
   flex:1;
 }
-.Rose-title{
-  font-size: 36rpx;
-  color: #333
-}
-.Rose-bg{
-  background: rgba(8,134,74,0.90);
-  color: #fff;
-  font-size: 24rpx;
+.Rose-about-title{
   text-align: center
 }
-.Rose-top-quote{
-  margin: 60rpx 20rpx;
-  font-size: 32rpx
-}
-.Rose-part-item{
-  font-size: 28rpx;
- margin: 0 20rpx;
- color: #666
-}
-.Rose-about-us{
-  margin: 20rpx;
-}
-.Rose-quote{
-  padding:40rpx 20rpx;
-  background: rgba(8,134,74,0.90);
+.Rose-about{
+  padding:20rpx;
+  background: #20925c;
   color: #fff;
+  font-size: 32rpx
 }
 .Rose-kinds{
   text-align: center;
   font-size: 28rpx;
-  color: #666
+  color: #666;
+  width: 80rpx;
 }
 .Rose-kinds .iconfont{
-  font-size: 24px;
+  font-size: 36rpx;
   display: block;
 }
 .view-circle{
   background: red;
   border-radius: 100%;
   color: #fff;
-  width: 100rpx;
-  height: 100rpx;
-  line-height: 100rpx;
+  width: 80rpx;
+  height: 80rpx;
+  line-height: 80rpx;
   margin: 0 auto;
 }
 .color1{
@@ -70,9 +52,51 @@
 .color4{
   background-color: #fd9d21
 }
-
-
 .Rose-floor-title{
+  padding: 20rpx 20rpx;
+  font-size: 30rpx;
+  color: #333;
+  border-bottom: 1px solid #f2f2f2;
+}
+.Rose-floor-title .iconfont{
+  color: #555;
+  font-size: 15px;
+}
+
+.Rose-content{
+  font-size: 26rpx;
+  margin: 10rpx 0 30rpx;
+  line-height: 1.4
+}
+.Rose-article{
+  padding: 50rpx 20rpx 40rpx;
+  display: flex;
+}
+.Rose-title{
+  flex: 1;
+  text-align: center;
   font-size: 28rpx;
-  color: #333
+  color: #666
+}
+.Rose-title .iconfont{
+  font-size: 20px;
+  display: block;
+  color: #599eec
+}
+.Rose-Line .iconfont{
+  color: #599eec;
+  font-size: 36rpx;
+  padding-right: 10rpx;
+}
+.Rose-Line .iconfont.fr{
+  float: right;
+  color: #999;
+  padding-right: 0
+}
+.Rose-Line{
+  padding: 30rpx 20rpx;
+  border-bottom: 1px solid #f2f2f2;
+  background: #fff;
+  font-size: 32rpx;
+  color: #666
 }

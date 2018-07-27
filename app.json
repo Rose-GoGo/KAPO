@@ -10,7 +10,7 @@
   ],
   "window": {
     "backgroundTextStyle": "light",
-    "navigationBarBackgroundColor": "#1a1a1a",
+    "navigationBarBackgroundColor": "#20925c",
     "navigationBarTitleText": "CAPO博客-记录学习和生活",
     "navigationBarTextStyle": "#fff",
     "enablePullDownRefresh": true,

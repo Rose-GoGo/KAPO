@@ -1,9 +1,3 @@
-<!-- 文章列表页 -->
-<!-- <view class='Rose-bar'>
-  <view class="Rose-logo">
-    CAPO
-</view>
-</view> -->
 <view class="Rose-floor1">
   <view class="Rose-top-quote">脚步很慢，但一直在努力，从未放弃！</view>
   故不积跬步，无以至千里；不积小流，无以成江海。骐骥一跃，不能十步；驽马十驾，功在不舍。锲而舍之，朽木不折；锲而不舍，金石可镂。
@@ -12,21 +6,21 @@
     <view class="Rose-floor-title">精选</view>
 
     <scroll-view class="Rose-best" scroll-x="true">
-        <view class="Rose-best-item">
-           <image class="Rose-imgbest" src="/assets/images/wx_04.jpg"></image>
-            <view class="Rose-title">
-                古之学者必有师。师者，所以传道受业解惑也
-            </view>
-            <view class="Rose-time text-left">2018-12-12 12:12:35</view>
+        <view class="Rose-best-item" ontap="articleDetail">
+         <image class="Rose-imgbest" src="/assets/images/wx_04.jpg"></image>
+         <view class="Rose-title">
+            古之学者必有师。师者，所以传道受业解惑也
         </view>
-        <view class="Rose-best-item">
-           <image class="Rose-imgbest" src="/assets/images/wx_04.jpg"></image>
-            <view class="Rose-title">
-                古之学者必有师。师者，所以传道受业解惑也
-            </view>
-            <view class="Rose-time text-left">2018-12-12 12:12:35</view>
-        </view>
-    </scroll-view>
+        <view class="Rose-time text-left">2018-12-12 12:12:35</view>
+    </view>
+    <view class="Rose-best-item" ontap="articleDetail">
+     <image class="Rose-imgbest" src="/assets/images/wx_04.jpg"></image>
+     <view class="Rose-title">
+        古之学者必有师。师者，所以传道受业解惑也
+    </view>
+    <view class="Rose-time text-left">2018-12-12 12:12:35</view>
+</view>
+</scroll-view>
 
 </view>
 <!-- 菜单 -->
