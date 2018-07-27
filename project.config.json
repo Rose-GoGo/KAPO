@@ -29,7 +29,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 4,
+			"current": 5,
 			"list": [
 				{
 					"id": -1,
@@ -58,7 +58,13 @@
 				{
 					"id": -1,
 					"name": "打卡",
-					"pathName": "pages/more/more"
+					"pathName": "pages/more/more",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "反馈",
+					"pathName": "pages/feedback/feedback"
 				}
 			]
 		}

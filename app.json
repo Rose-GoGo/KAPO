@@ -7,7 +7,8 @@
     "pages/error/error",
     "pages/project/project",
     "pages/project_page/project_page",
-    "pages/more/more"
+    "pages/more/more",
+    "pages/feedback/feedback"
   ],
   "window": {
     "backgroundTextStyle": "light",
