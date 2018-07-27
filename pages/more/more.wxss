@@ -1,0 +1,195 @@
+/* pages/more/more.wxss */
+.Rose-form{
+  padding: 10px;
+  background: #fff;
+  margin: 0 0 10px;
+}
+.Rose-input{
+  flex: 1;
+  line-height: 1;
+  padding: 10rpx 20rpx;
+  border: 1rpx solid #D9D9D9;
+  border-radius: 4rpx;
+  font-size: 30rpx;
+}
+.Rose-section_title{
+ display:block;
+ width:3em;
+
+ font-size:30rpx;
+ line-height:1;
+ padding:24rpx 0 0;
+}
+.Rose-section{
+  display:flex;
+  width:100%;
+  text-align:left;
+  clear:both;
+  margin:20rpx 0;
+  overflow:hidden;
+  justify-content:space-between;
+}
+.sure-btn {
+  width: 100%;
+  height: 100%;
+  margin-top: 30px;
+  background: #4bb777;
+  font-size: 17px;
+  border: none;
+  color: #fff;
+  border-radius: 10px
+}
+.sure-btn.disable {
+  background: #ddd;
+}
+
+
+
+/*下面*/
+.day-title {
+  margin: 0;
+}
+.year-line {
+  background: #fff;
+}
+.circle {
+  position: absolute;
+  width: 11px;
+  height: 11px;
+  border-radius: 100%;
+  border: 1px solid #5b89ff;
+  display: block;
+  left: -16px;
+  top: 3px;
+  background: #fff;
+}
+.circle:before {
+  position: absolute;
+  width: 5px;
+  height: 5px;
+  background: #5b89ff;
+  content: "";
+  border-radius: 100%;
+  top: 3px;
+  left: 3px;
+}
+.icon-jingbao {
+  font-size: 30px;
+  color: #f44e4e;
+}
+.icon-xiufu {
+  font-size: 30px;
+  color: #9a96ff;
+}
+.icon-gengxinbanben {
+  font-size: 30px;
+  color: #f2892b;
+}
+.icon-shijianjilu {
+  font-size: 30px;
+  color: #5b89ff;
+}
+.table-cont {
+  padding: 20px 0 0;
+  font-size: 24px;
+}
+.icon-md-shijian {
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+  font-size: 30px;
+  margin-left: -24px;
+  background: #fff;
+}
+.icon-xiangshang {
+  display: inline-block;
+  vertical-align: sub;
+  font-size: 24px;
+  color: #5a88fe;
+  margin-left: -22px;
+  background: #fff;
+  font-weight: 500;
+}
+.month {
+  position: relative;
+  padding: 0 0 15px;
+  font-size: 16px;
+  color: #666;
+}
+.year {
+  padding: 0 10px 20px;
+  color: #333;
+  font-size: 16px;
+  font-weight: 500;
+}
+.month-list {
+  position: relative;
+  padding-left: 10px;
+}
+.day-list {
+  position: relative;
+  padding: 0 0 5px;
+}
+.day {
+  font-size: 14px;
+  color: #333;
+}
+.title {
+  font-size: 32rpx;
+  color: #333;
+}
+.add-time {
+  display: block;
+  font-size: 20rpx;
+  margin: 0 0 10rpx;
+  color: #999;
+}
+.content {
+  max-height: 21em;
+  margin: 5px 0 0;
+  font-size: 28rpx;
+  color: #666;
+  line-height: 1.4em;
+  display: -webkit-box;
+  -webkit-line-clamp: 15;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.year-line {
+  position: relative;
+  margin: 0 10px 0 20px;
+}
+.year-line:before {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 1px;
+  height: 100%;
+  background: #ccc;
+  content: '';
+}
+.event-icon {
+  width: 40px;
+  margin: 0 5px 0 0;
+  flex: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.event {
+  border: 1px solid #f2f2f2;
+  padding: 5px;
+  border-radius: 4px;
+  display: flex;
+  margin: 0 0 10px;
+}
+.circle-img {
+  display: block;
+  width: 40px;
+  height: 40px;
+  border-radius: 100%;
+}
+.table-box {
+  background: #fff;
+  margin-bottom: 60rpx
+}
