@@ -1,3 +1,4 @@
 {
-  "enablePullDownRefresh": false
+  "enablePullDownRefresh": false,
+  "navigationBarTitleText": "打卡"
 }

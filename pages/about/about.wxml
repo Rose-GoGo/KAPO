@@ -19,19 +19,25 @@
        </navigator>
     </view>
     <view class="Rose-kinds">
+     <navigator url="../more/more">
       <view class="view-circle color3">
         <icon class="iconfont icon-yingyu"></icon>
       </view>外语
+       </navigator>
     </view>
     <view class="Rose-kinds">
+     <navigator url="../more/more">
       <view class="view-circle color2">
         <icon class="iconfont icon-book"></icon>
       </view>读书
+       </navigator>
     </view>
     <view class="Rose-kinds">
+     <navigator url="../more/more">
       <view class="view-circle color4">
         <icon class="iconfont icon-yinyue"></icon>
       </view>音乐
+       </navigator>
     </view>
   </view>
   <!-- 博客模块 -->
@@ -46,8 +52,11 @@
     <icon class="fr iconfont icon-tiaozhuanqianwangyoujiantouxiangyouxiayibuxianxing"></icon>
   </view>
   <view class="Rose-Line">
+  <navigator url="../feedback/feedback">
+
     <icon class="iconfont icon-yijianfankui"></icon>意见反馈
     <icon class="fr iconfont icon-tiaozhuanqianwangyoujiantouxiangyouxiayibuxianxing"></icon>
+     </navigator>
   </view>
 </view>
 <view class="Rose-floor">

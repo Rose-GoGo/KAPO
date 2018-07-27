@@ -57,7 +57,7 @@
   width: 11px;
   height: 11px;
   border-radius: 100%;
-  border: 1px solid #5b89ff;
+  border: 1px solid #4bb777;
   display: block;
   left: -16px;
   top: 3px;
@@ -67,7 +67,7 @@
   position: absolute;
   width: 5px;
   height: 5px;
-  background: #5b89ff;
+  background: #4bb777;
   content: "";
   border-radius: 100%;
   top: 3px;
@@ -105,7 +105,7 @@
   display: inline-block;
   vertical-align: sub;
   font-size: 24px;
-  color: #5a88fe;
+  color: #4bb777;
   margin-left: -22px;
   background: #fff;
   font-weight: 500;
@@ -189,7 +189,6 @@
   height: 40px;
   border-radius: 100%;
 }
-.table-box {
-  background: #fff;
-  margin-bottom: 60rpx
+.icon-zan4{
+  color: #4bb777
 }
