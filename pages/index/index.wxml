@@ -4,7 +4,6 @@
 </view>
 <view class="Rose-news">
     <view class="Rose-floor-title">精选</view>
-
     <scroll-view class="Rose-best" scroll-x="true">
         <view class="Rose-best-item" ontap="articleDetail">
          <image class="Rose-imgbest" src="/assets/images/wx_04.jpg"></image>
@@ -21,7 +20,6 @@
     <view class="Rose-time text-left">2018-12-12 12:12:35</view>
 </view>
 </scroll-view>
-
 </view>
 <!-- 菜单 -->
 <view class="Rose-news" ontap="articleDetail">
