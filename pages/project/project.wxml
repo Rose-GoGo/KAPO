@@ -1,15 +1,23 @@
-<view class="banner-swiper"  style="height:{{swipter_height}}px">
+<view class="banner-swiper" style="height:{{swipter_height-20}}px">
     <swiper current='{{swiperCurrent}}'
+    indicator-dots="{{true}}"
     indicator-color="{{beforeColor}}" indicator-active-color="{{afterColor}}" circular='{{circular}}'
-    previous-margin="{{previousmargin}}" next-margin="{{nextmargin}}" bindchange="swiperChange" style="height:{{swipter_height-100}}px">
+    previous-margin="{{previousmargin}}" next-margin="{{nextmargin}}" bindchange="swiperChange" style="height:{{swipter_height-20}}px">
     <block wx:for="{{arr}}" wx:key="key">
         <swiper-item>
             <navigator url="../project_page/project_page"  >
-            <image src="{{item.images}}" class="slide-image{{index == swiperCurrent ? ' active' : ''}}"
-            bindchange="chuangEvent" id="{{index}}"></image>
-        </navigator>
+                <view class="slide-block">
+                    <view class="img-box">
+                        <image src="{{item.images}}" class="slide-image {{index == swiperCurrent ? ' active' : ''}}"
+                        bindchange="chuangEvent" id="{{index}}"></image>
+                    </view>
+                    <view class="project-info">
+                        <view class="project-name">项目名称</view>
+                        <view class="text-center">项目简介</view>
+                    </view>
+                </view>
+            </navigator>
         </swiper-item>
     </block>
 </swiper>
-<view class="text-center">项目名称</view>
 </view>

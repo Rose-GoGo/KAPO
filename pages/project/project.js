@@ -22,8 +22,8 @@ Page({
     interval: 2000,
     duration: 500,
     circular: true,
-    beforeColor: "white",//指示点颜色
-    afterColor: "coral",//当前选中的指示点颜色
+    beforeColor: "#ccc",//指示点颜色
+    afterColor: "#1d8f59",//当前选中的指示点颜色
     previousmargin: '30px',//前边距
     nextmargin: '30px',//后边距
   },

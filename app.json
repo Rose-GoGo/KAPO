@@ -6,11 +6,12 @@
     "pages/about/about",
     "pages/error/error",
     "pages/project/project",
-    "pages/project_page/project_page"
+    "pages/project_page/project_page",
+    "pages/more/more"
   ],
   "window": {
     "backgroundTextStyle": "light",
-    "navigationBarBackgroundColor": "#20925c",
+    "navigationBarBackgroundColor": "#1d8f59",
     "navigationBarTitleText": "CAPO博客-记录学习和生活",
     "navigationBarTextStyle": "#fff",
     "enablePullDownRefresh": true,

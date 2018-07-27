@@ -1,26 +1,20 @@
 /* pages/project/project.wxss */
-page{
-    background: #fff
-}
 .banner-swiper {
     width: 100%;
     height: 600rpx;
     overflow: hidden;
-    margin: 50rpx 0;
+    margin: 20rpx 0 0;
 }
 swiper {
     display: block;
     position: relative;
 }
 .slide-image {
-    width: 96%;
+    width: 100%;
     display: block;
     margin: 0 auto;
-    height: 700rpx;
-    margin-top:25rpx;
+    height: 750rpx;
     transition: all 0.15s linear;
-    border-radius: 8rpx;
-     box-shadow: 0 0 20px rgba(0,0,0,0.6)
 }
 .active{
     margin-top:0rpx;
@@ -28,5 +22,22 @@ swiper {
 }
 .text-center{
     text-align: center;
-    font-size: 32rpx;
+    font-size: 24rpx;
+    color: #999;
+    padding-top: 10rpx;
+}
+.slide-block{
+   width: 96%;
+   background: #fff;
+   border-radius: 12rpx;
+   overflow: hidden;
+}
+.project-name{
+    font-size: 36rpx;
+    color: #666
+}
+.project-info{
+ position: relative;
+ text-align: center;
+ padding: 30px 0;
 }

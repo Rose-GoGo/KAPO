@@ -6,17 +6,17 @@
     </view>
   </view>
 </view>
-
-
 <view class="Rose-floor">
   <view class="Rose-floor-title">打卡
     <icon class="iconfont icon-icon03"></icon>
   </view>
   <view class="Rose-menu">
     <view class="Rose-kinds">
+    <navigator url="../more/more">
       <view class="view-circle color1">
         <icon class="iconfont icon-jianshen"></icon>
       </view>健身
+       </navigator>
     </view>
     <view class="Rose-kinds">
       <view class="view-circle color3">
@@ -35,7 +35,6 @@
     </view>
   </view>
   <!-- 博客模块 -->
-
 </view>
 <view class="Rose-floor">
   <view class="Rose-Line">
@@ -51,20 +50,16 @@
     <icon class="fr iconfont icon-tiaozhuanqianwangyoujiantouxiangyouxiayibuxianxing"></icon>
   </view>
 </view>
-
 <view class="Rose-floor">
   <view class="pd10">
     <view class="Rose-floor-title">文章类型
       <icon class="iconfont icon-icon03"></icon>
     </view>
-
     <view class="Rose-article">
       <view class="Rose-title">
         <icon class="iconfont icon-quanju_qianduanjiemian"></icon>前端</view>
-
       <view class="Rose-title">
         <icon class="iconfont icon-anquan"></icon>安全</view>
-
       <view class="Rose-title">
         <icon class="iconfont icon-xiazai47"></icon>运维</view>
     </view>

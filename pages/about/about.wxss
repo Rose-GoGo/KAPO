@@ -17,7 +17,7 @@
 }
 .Rose-about{
   padding:20rpx;
-  background: #20925c;
+  background: #1d8f59;
   color: #fff;
   font-size: 32rpx
 }

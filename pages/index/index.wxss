@@ -13,7 +13,7 @@ page{
 }
 .Rose-floor1{
   padding: 40rpx;
-  background: rgba(8,134,74,0.90);
+  background: #1d8f59;
   color: #fff;
   font-size: 24rpx;
   text-align: center
@@ -67,7 +67,7 @@ page{
   text-align: left;
   font-size: 26rpx;
   font-weight: bold;
-  color: rgba(8,134,74,0.90)
+  color: #1d8f59
 }
 .Rose-flex1{
   flex: 1
