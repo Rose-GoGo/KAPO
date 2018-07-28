@@ -6,7 +6,7 @@
     <block wx:for="{{arr}}" wx:key="key">
         <swiper-item>
             <navigator url="../project_page/project_page"  >
-                <view class="slide-block">
+                <view class="slide-block {{index == swiperCurrent ? ' active' : ''}}">
                     <view class="img-box">
                         <image src="{{item.images}}" class="slide-image {{index == swiperCurrent ? ' active' : ''}}"
                         bindchange="chuangEvent" id="{{index}}"></image>

@@ -12,11 +12,12 @@ swiper {
 .slide-image {
     width: 100%;
     display: block;
-    margin: 0 auto;
+    margin: 0 auto ;
     height: 750rpx;
     transition: all 0.15s linear;
 }
-.active{
+
+.slide-image.active{
     margin-top:0rpx;
     height: 800rpx;
 }
@@ -31,6 +32,10 @@ swiper {
    background: #fff;
    border-radius: 12rpx;
    overflow: hidden;
+   margin-top: 20rpx;
+}
+.slide-block.active{
+    margin-top: 0
 }
 .project-name{
     font-size: 36rpx;

@@ -3,62 +3,50 @@
   故不积跬步，无以至千里；不积小流，无以成江海。骐骥一跃，不能十步；驽马十驾，功在不舍。锲而舍之，朽木不折；锲而不舍，金石可镂。
 </view>
 <view class="Rose-news">
-    <view class="Rose-floor-title">精选</view>
-    <scroll-view class="Rose-best" scroll-x="true">
-        <view class="Rose-best-item" ontap="articleDetail">
-         <image class="Rose-imgbest" src="/assets/images/wx_04.jpg"></image>
-         <view class="Rose-title">
-            古之学者必有师。师者，所以传道受业解惑也
-        </view>
-        <view class="Rose-time text-left">2018-12-12 12:12:35</view>
+  <view class="Rose-floor-title">精选</view>
+  <scroll-view class="Rose-best" scroll-x="true">
+    <view class="Rose-best-item" ontap="articleDetail">
+      <image class="Rose-imgbest" src="/assets/images/wx_04.jpg"></image>
+      <view class="Rose-title">小程序开发中遇到的问题(11)-小程序scroll-view中文字不换行问题</view>
+      <view class="Rose-time text-left">2018-12-12 12:12:35</view>
     </view>
     <view class="Rose-best-item" ontap="articleDetail">
-     <image class="Rose-imgbest" src="/assets/images/wx_04.jpg"></image>
-     <view class="Rose-title">
-        古之学者必有师。师者，所以传道受业解惑也
+      <image class="Rose-imgbest" src="/assets/images/wx_04.jpg"></image>
+      <view class="Rose-title">古之学者必有师。师者，所以传道受业解惑也</view>
+      <view class="Rose-time text-left">2018-12-12 12:12:35</view>
     </view>
-    <view class="Rose-time text-left">2018-12-12 12:12:35</view>
-</view>
-</scroll-view>
+  </scroll-view>
 </view>
 <!-- 菜单 -->
 <view class="Rose-news" ontap="articleDetail">
-    <view class="Rose-content">
-        <view class="Rose-flex">
-            <view class="Rose-kind">
-                <icon class="green-color iconfont icon-fenlei-xingxiu"></icon>
-                前端
-            </view>
-            <view class="Rose-flex1 Rose-time text-right">
-                2018-07-05 13:29:16
-            </view>
-        </view>
-        <view class="Rose-flex1 Rose-title">
-            积土成山，风雨兴焉；积水成渊,锲而舍之，朽木不折；锲而舍之，朽木不折；
-        </view>
-        <image class="Rose-imgitem" src="/assets/images/ncode.jpg"></image>
-        <div class="Rose-detail">
-            蛟龙生焉；积善成德，而神明自得，圣心备焉。故不积跬步，无以至千里；不积小流，无以成江海。骐骥一跃，不能十步；驽马十驾，功在不舍。锲而舍之，朽木不折；
-        </div>
+  <view class="Rose-content">
+    <view class="Rose-flex">
+      <view class="Rose-kind">
+        <icon class="green-color iconfont icon-fenlei-xingxiu"></icon>
+        前端
+      </view>
+      <view class="Rose-flex1 Rose-time text-right">2018-07-05 13:29:16</view>
     </view>
+    <view class="Rose-flex1 Rose-title">积土成山，风雨兴焉；积水成渊,锲而舍之，朽木不折；锲而舍之，朽木不折；</view>
+    <image class="Rose-imgitem" src="/assets/images/ncode.jpg"></image>
+    <div class="Rose-detail">
+      蛟龙生焉；积善成德，而神明自得，圣心备焉。故不积跬步，无以至千里；不积小流，无以成江海。骐骥一跃，不能十步；驽马十驾，功在不舍。锲而舍之，朽木不折；
+    </div>
+  </view>
 </view>
 <view class="Rose-news" ontap="articleDetail">
-    <view class="Rose-content">
-        <view class="Rose-flex">
-            <view class="Rose-kind">
-                <icon class="green-color iconfont icon-fenlei-xingxiu"></icon>
-                前端
-            </view>
-            <view class="Rose-flex1 Rose-time text-right">
-                2018-07-05 13:29:16
-            </view>
-        </view>
-        <view class="Rose-flex1 Rose-title">
-            积土成山，风雨兴焉；积水成渊,锲而舍之，朽木不折；锲而舍之，朽木不折；
-        </view>
-        <image class="Rose-imgitem" src="/assets/images/ncode.jpg"></image>
-        <div class="Rose-detail">
-            蛟龙生焉；积善成德，而神明自得，圣心备焉。故不积跬步，无以至千里；不积小流，无以成江海。骐骥一跃，不能十步；驽马十驾，功在不舍。锲而舍之，朽木不折；
-        </div>
+  <view class="Rose-content">
+    <view class="Rose-flex">
+      <view class="Rose-kind">
+        <icon class="green-color iconfont icon-fenlei-xingxiu"></icon>
+        前端
+      </view>
+      <view class="Rose-flex1 Rose-time text-right">2018-07-05 13:29:16</view>
     </view>
+    <view class="Rose-flex1 Rose-title">积土成山，风雨兴焉；积水成渊,锲而舍之，朽木不折；锲而舍之，朽木不折；</view>
+    <image class="Rose-imgitem" src="/assets/images/ncode.jpg"></image>
+    <div class="Rose-detail">
+      蛟龙生焉；积善成德，而神明自得，圣心备焉。故不积跬步，无以至千里；不积小流，无以成江海。骐骥一跃，不能十步；驽马十驾，功在不舍。锲而舍之，朽木不折；
+    </div>
+  </view>
 </view>

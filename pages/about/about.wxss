@@ -4,7 +4,7 @@
   margin-bottom: 20rpx;
 }
 .Rose-menu{
-  padding: 40rpx 20rpx 20rpx;
+  padding: 40rpx 30rpx 20rpx;
   display: flex;
   flex-flow:row;
   justify-content: space-between ;
