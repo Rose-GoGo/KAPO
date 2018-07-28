@@ -1,4 +1,5 @@
 // pages/project/project.js
+import Api from '/../../utils/config/api.js';
 Page({
   /**
    * 页面的初始数据
@@ -6,22 +7,7 @@ Page({
   data: {
      swipter_height: '550px',
     swiperCurrent: 1,
-    arr: [{
-      images: '/assets/images/project_1.jpg',
-      name: '项目1'
-    },
-    {
-      images: '/assets/images/project_1.jpg',
-      name: '项目121'
-    },
-    {
-      images: '/assets/images/project_1.jpg',
-      name: '项目3'
-    }
-    ],
-    interval: 2000,
-    duration: 500,
-    circular: true,
+    items: [],
     beforeColor: "#ccc",//指示点颜色
     afterColor: "#1d8f59",//当前选中的指示点颜色
     previousmargin: '30px',//前边距
@@ -32,13 +18,15 @@ Page({
    */
   onLoad: function (options) {
     var that = this;
+    wx.showLoading();
     wx.getSystemInfo({
       success: function(res) {
         that.setData({
           swipter_height: res.windowHeight
         })
       }
-    })
+    });
+    this.getData()
   },
   /**
    * 生命周期函数--监听页面初次渲染完成
@@ -76,7 +64,6 @@ Page({
   onShareAppMessage: function () {
   },
   swiperChange: function (e) {
-    console.log(e.detail.current);
     this.setData({
       swiperCurrent: e.detail.current //获取当前轮播图片的下标
     })
@@ -87,4 +74,20 @@ Page({
       swiperCurrent: e.currentTarget.id
     })
   },
+  getData: function(){
+    let _params = {
+      catid: 19, //项目id
+      page: 1,
+      pagesize: 999 // 可选，默认为为5
+    }
+    Api.lists(_params).then(res=>{
+      if(!this.data.code){
+        let _data = res.data.data;
+        this.setData({
+          items: _data
+        })
+        wx.hideLoading();
+      }
+    })
+  }
 })

@@ -7,10 +7,6 @@ page {
 .text-left {
   text-align: left
 }
-.Rose-floor-title {
-  font-size: 32rpx;
-  padding: 20rpx 0;
-}
 .Rose-floor1 {
   padding: 40rpx;
   background: #1d8f59;
@@ -27,6 +23,27 @@ page {
   margin: 20rpx 0;
   padding: 0 20rpx;
   background: #fff;
+}
+.Rose-floor-title {
+  font-size: 32rpx;
+  padding: 20rpx 0;
+}
+.Rose-best-item {
+  display: inline-block;
+  margin: 0 20rpx 0 0;
+  width: 620rpx;
+  vertical-align: top
+}
+.Rose-imgbest {
+  width: 100%;
+  height: 330rpx;
+}
+.Rose-title {
+  padding: 10rpx 0 20rpx 0;
+  font-size: 34rpx;
+  color: #333;
+  white-space: pre-wrap;
+  word-break: break-word
 }
 .Rose-imgitem {
   flex: none;
@@ -71,23 +88,11 @@ page {
   width: 100%;
   white-space: nowrap;
 }
-.Rose-best-item {
-  display: inline-block;
-  margin: 0 20rpx 0 0;
-  width: 638rpx;
-  vertical-align: top
-}
-.Rose-imgbest {
-  width: 100%;
-  height: 330rpx;
-}
-.Rose-title {
-  padding: 10rpx 0 20rpx 0;
-  font-size: 34rpx;
-  color: #333;
-  white-space: pre-wrap
-}
-
 .green-color{
   margin-top: -18px;
+}
+.green{
+  padding-right: 8rpx;
+  color: #1d8f59;
+  font-size:30rpx;
 }

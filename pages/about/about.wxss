@@ -40,16 +40,16 @@
   line-height: 80rpx;
   margin: 0 auto;
 }
-.color1{
+.color4{
+  background-color: #8a90fa
+}
+.color3{
   background-color: #4dc6ee
 }
 .color2{
   background-color: #fed030
 }
-.color3{
-  background-color: #8a90fa
-}
-.color4{
+.color1{
   background-color: #fd9d21
 }
 .Rose-floor-title{
@@ -62,7 +62,6 @@
   color: #555;
   font-size: 15px;
 }
-
 .Rose-content{
   font-size: 26rpx;
   margin: 10rpx 0 30rpx;

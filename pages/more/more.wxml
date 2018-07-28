@@ -3,116 +3,42 @@
   <form bindsubmit="formSubmit" bindreset="formReset">
     <view class="Rose-section">
       <view class="Rose-section_title">时长</view>
-      <input name="time" class="Rose-input" />
+      <input name="time" value="{{title}}" class="Rose-input" bindinput="forTitle" />
     </view>
     <view class="Rose-section">
       <view class="Rose-section_title">备注</view>
-      <textarea name="beizhu" class="Rose-input" placeholder="说点什么吧"></textarea>
+      <textarea name="beizhu" class="Rose-input" value="{{remark}}" bindinput="forRemark" placeholder="说点什么吧"></textarea>
     </view>
     <view class="Rose-section">
-      <button formType="submit" class="sure-btn"><icon class="icon iconfont icon-tijiao2"></icon> 提交</button>
+      <button formType="submit" class="Rose-btn" disabled="{{disabled}}"><icon class="icon iconfont icon-tijiao2"></icon> 提交</button>
+
     </view>
+
+   <!--  <button open-type="getUserInfo" lang="zh_CN" bindgetuserinfo="onGotUserInfo">获取用户信息</button> -->
   </form>
 </view>
 <view class="Rose-form">
-  <view class="year-line">
-    <view class="year">
+  <view class="Rose-year-line" >
+    <view class="Rose-year">
       <icon class="iconfont icon-md-shijian"></icon> 2018
     </view>
-    <view class="month-list">
-      <view class="month">
-        <icon class="iconfont icon-xiangshang"></icon> 08月
+    <view class="Rose-month-list">
+      <view class="Rose-month">
+        <icon class="iconfont icon-xiangshang"></icon> 07月
       </view>
-      <view class="day-list">
-        <view class="circle"></view>
-        <view class="day">07-25</view>
-        <view class="itemline-item">
-          <view class="event">
-            <view class="event-icon">
+      <view class="Rose-day-list" wx:for="{{items}}" wx:key="index" >
+        <view class="Rose-circle"></view>
+        <view class="Rose-day">{{index}}</view>
+        <view class="Rose-itemline-item">
+          <view class="Rose-event" wx:for="{{item}}" wx:for-index="idx" wx:for-item="day" wx:key="idx">
+            <view class="Rose-event-icon">
               <icon class="iconfont icon-zan4"></icon>
             </view>
             <view>
-              <view class="title">跑步了25分钟</view>
-              <view class="content">
-                今天跑步了25分钟，特别有成就感
-              </view>
-            </view>
-          </view>
-          <view class="event">
-            <view class="event-icon">
-              <icon class="iconfont icon-zan4"></icon>
-            </view>
-            <view>
-              <view class="title">仰卧起坐5个</view>
-              <view class="content">
-                今天跑步了25分钟，特别有成就感
-              </view>
-            </view>
-          </view>
-        </view>
-      </view>
-      <view class="day-list">
-        <view class="circle"></view>
-        <view class="day">07-26</view>
-        <view class="itemline-item">
-          <view class="event">
-            <view class="event-icon">
-              <icon class="iconfont icon-zan4"></icon>
-            </view>
-            <view>
-              <view class="title">跑步了25分钟</view>
-              <view class="content">
-                今天跑步了25分钟，特别有成就感
-              </view>
-            </view>
-          </view>
-        </view>
-      </view>
-    </view>
-    <view class="month-list">
-      <view class="month">
-        <icon class="iconfont icon-xiangshang"></icon> 06月
-      </view>
-      <view class="day-list">
-        <view class="circle"></view>
-        <view class="day">07-25</view>
-        <view class="itemline-item">
-          <view class="event">
-            <view class="event-icon">
-              <icon class="iconfont icon-zan4"></icon>
-            </view>
-            <view>
-              <view class="title">跑步了25分钟</view>
-              <view class="content">
-                今天跑步了25分钟，特别有成就感
-              </view>
-            </view>
-          </view>
-          <view class="event">
-            <view class="event-icon">
-              <icon class="iconfont icon-zan4"></icon>
-            </view>
-            <view>
-              <view class="title">仰卧起坐5个</view>
-              <view class="content">
-                今天跑步了25分钟，特别有成就感
-              </view>
-            </view>
-          </view>
-        </view>
-      </view>
-      <view class="day-list">
-        <view class="circle"></view>
-        <view class="day">07-26</view>
-        <view class="itemline-item">
-          <view class="event">
-            <view class="event-icon">
-              <icon class="iconfont icon-zan4"></icon>
-            </view>
-            <view>
-              <view class="title">跑步了25分钟</view>
-              <view class="content">
-                今天跑步了25分钟，特别有成就感
+              <view class="Rose-title">{{day.title}}</view>
+              <view class="Rose-time">{{day.insert_time}}</view>
+              <view class="Rose-content">
+                {{day.remark}}
               </view>
             </view>
           </view>

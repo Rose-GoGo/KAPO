@@ -17,5 +17,7 @@ page{
 .Rose-addtime{
   margin: 20rpx 0;
   color: #999
-
+}
+.wxParse-pre{
+  background: #000
 }

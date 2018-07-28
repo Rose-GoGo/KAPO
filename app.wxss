@@ -17,7 +17,6 @@ page{
     font-size: 14px;
     color: rgba(8,134,74,0.90)
 }
-/*.iconfont{
-    margin: -18rpx 0 0;
-}
+
+/*@import "/wxParse/wxParse.wxss";
 */

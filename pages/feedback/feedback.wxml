@@ -2,25 +2,32 @@
 <view class="Rose-form">
   <form bindsubmit="formSubmit" bindreset="formReset">
     <view class="Rose-section">
-      <view class="Rose-section_title">标题</view>
-      <input name="time" class="Rose-input" placeholder='请输入标题' />
+      <view class="Rose-section_title">时长</view>
+      <input name="time" value="{{title}}" class="Rose-input" bindinput="forTitle" />
     </view>
     <view class="Rose-section">
       <view class="Rose-section_title">备注</view>
-      <textarea name="beizhu" class="Rose-input" placeholder="想对我说什么呢"></textarea>
+      <textarea name="beizhu" class="Rose-input" value="{{remark}}" bindinput="forRemark" placeholder="说点什么吧"></textarea>
     </view>
     <view class="Rose-section">
-      <button formType="submit" class="sure-btn">
-        <icon class="icon iconfont icon-tijiao2"></icon> 提交</button>
+      <button formType="submit" class="Rose-btn" disabled="{{disabled}}"><icon class="icon iconfont icon-tijiao2"></icon> 提交</button>
+
     </view>
+
+   <!--  <button open-type="getUserInfo" lang="zh_CN" bindgetuserinfo="onGotUserInfo">获取用户信息</button> -->
   </form>
 </view>
-<view class="Rose-tip">
-    tips： 为了产品更方便使用，欢迎您提出宝贵的意见！
-  </view>
 
 <view class="Rose-form">
-  你到底要做什么贵
+  <view class="Rose-line" wx:for="{{items}}" wx:key="index">
+    {{item.username}}
+    {{item.create_time}}
+    {{item.title}}
+
+    {{item.remark}}
+
+
+  </view>
 
 </view>
 

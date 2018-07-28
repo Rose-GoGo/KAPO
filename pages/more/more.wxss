@@ -1,35 +1,39 @@
 /* pages/more/more.wxss */
-.Rose-form{
+
+.Rose-form {
   padding: 10px;
   background: #fff;
   margin: 0 0 10px;
 }
-.Rose-input{
+
+.Rose-input {
   flex: 1;
   line-height: 1;
   padding: 10rpx 20rpx;
-  border: 1rpx solid #D9D9D9;
+  border: 1rpx solid #d9d9d9;
   border-radius: 4rpx;
   font-size: 30rpx;
 }
-.Rose-section_title{
- display:block;
- width:3em;
 
- font-size:30rpx;
- line-height:1;
- padding:24rpx 0 0;
+.Rose-section_title {
+  display: block;
+  width: 3em;
+  font-size: 30rpx;
+  line-height: 1;
+  padding: 24rpx 0 0;
 }
-.Rose-section{
-  display:flex;
-  width:100%;
-  text-align:left;
-  clear:both;
-  margin:20rpx 0;
-  overflow:hidden;
-  justify-content:space-between;
+
+.Rose-section {
+  display: flex;
+  width: 100%;
+  text-align: left;
+  clear: both;
+  margin: 20rpx 0;
+  overflow: hidden;
+  justify-content: space-between;
 }
-.sure-btn {
+
+.Rose-btn {
   width: 100%;
   height: 100%;
   margin-top: 30px;
@@ -37,22 +41,21 @@
   font-size: 17px;
   border: none;
   color: #fff;
-  border-radius: 10px
+  border-radius: 10px;
 }
-.sure-btn.disable {
+
+button[disabled]:not([type]) {
   background: #ddd;
+  color: #fff;
 }
-
-
 
 /*下面*/
-.day-title {
-  margin: 0;
-}
-.year-line {
+
+.Rose-year-line {
   background: #fff;
 }
-.circle {
+
+.Rose-circle {
   position: absolute;
   width: 11px;
   height: 11px;
@@ -63,7 +66,8 @@
   top: 3px;
   background: #fff;
 }
-.circle:before {
+
+.Rose-circle:before {
   position: absolute;
   width: 5px;
   height: 5px;
@@ -73,25 +77,111 @@
   top: 3px;
   left: 3px;
 }
-.icon-jingbao {
-  font-size: 30px;
-  color: #f44e4e;
+
+
+
+
+
+
+.Rose-month {
+  position: relative;
+  padding: 0 0 15px;
+  font-size: 16px;
+  color: #666;
 }
-.icon-xiufu {
-  font-size: 30px;
-  color: #9a96ff;
+
+.Rose-year {
+  padding: 0 10px 20px;
+  color: #333;
+  font-size: 16px;
+  font-weight: 500;
 }
-.icon-gengxinbanben {
-  font-size: 30px;
-  color: #f2892b;
+
+.Rose-month-list {
+  position: relative;
+  padding-left: 10px;
 }
-.icon-shijianjilu {
-  font-size: 30px;
-  color: #5b89ff;
+
+.Rose-day-list {
+  position: relative;
+  padding: 0 0 5px;
 }
-.table-cont {
-  padding: 20px 0 0;
-  font-size: 24px;
+
+.Rose-day {
+  font-size: 14px;
+  color: #333;
+}
+
+.Rose-title {
+  font-size: 32rpx;
+  color: #333;
+}
+
+.Rose-time {
+  font-size: 20rpx;
+  color: #999;
+}
+
+.Rose-add-time {
+  display: block;
+  font-size: 20rpx;
+  margin: 0 0 10rpx;
+  color: #999;
+}
+
+.Rose-content {
+  max-height: 21em;
+  margin: 5px 0 0;
+  font-size: 28rpx;
+  color: #666;
+  line-height: 1.4em;
+  display: -webkit-box;
+  -webkit-line-clamp: 15;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.Rose-year-line {
+  position: relative;
+  margin: 0 10px 0 20px;
+}
+
+.Rose-year-line:before {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 1px;
+  height: 100%;
+  background: #ccc;
+  content: '';
+}
+
+.Rose-event-icon {
+  width: 40px;
+  margin: 0 5px 0 0;
+  flex: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.Rose-event {
+  border: 1px solid #f2f2f2;
+  padding: 5px;
+  border-radius: 4px;
+  display: flex;
+  margin: 0 0 10px;
+}
+
+.Rose-circle-img {
+  display: block;
+  width: 40px;
+  height: 40px;
+  border-radius: 100%;
+}
+
+.icon-zan4 {
+  color: #4bb777;
 }
 .icon-md-shijian {
   position: relative;
@@ -109,86 +199,4 @@
   margin-left: -22px;
   background: #fff;
   font-weight: 500;
-}
-.month {
-  position: relative;
-  padding: 0 0 15px;
-  font-size: 16px;
-  color: #666;
-}
-.year {
-  padding: 0 10px 20px;
-  color: #333;
-  font-size: 16px;
-  font-weight: 500;
-}
-.month-list {
-  position: relative;
-  padding-left: 10px;
-}
-.day-list {
-  position: relative;
-  padding: 0 0 5px;
-}
-.day {
-  font-size: 14px;
-  color: #333;
-}
-.title {
-  font-size: 32rpx;
-  color: #333;
-}
-.add-time {
-  display: block;
-  font-size: 20rpx;
-  margin: 0 0 10rpx;
-  color: #999;
-}
-.content {
-  max-height: 21em;
-  margin: 5px 0 0;
-  font-size: 28rpx;
-  color: #666;
-  line-height: 1.4em;
-  display: -webkit-box;
-  -webkit-line-clamp: 15;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
-}
-.year-line {
-  position: relative;
-  margin: 0 10px 0 20px;
-}
-.year-line:before {
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 1px;
-  height: 100%;
-  background: #ccc;
-  content: '';
-}
-.event-icon {
-  width: 40px;
-  margin: 0 5px 0 0;
-  flex: none;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.event {
-  border: 1px solid #f2f2f2;
-  padding: 5px;
-  border-radius: 4px;
-  display: flex;
-  margin: 0 0 10px;
-}
-.circle-img {
-  display: block;
-  width: 40px;
-  height: 40px;
-  border-radius: 100%;
-}
-.icon-zan4{
-  color: #4bb777
 }
