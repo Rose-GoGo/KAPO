@@ -6,11 +6,11 @@
 }
 .Rose-input {
   flex: 1;
-  line-height: 1;
-  padding: 15rpx 20rpx;
-  border: 1rpx solid #d9d9d9;
-  border-radius: 4rpx;
-  font-size: 30rpx;
+    line-height: 1;
+    padding:16rpx 20rpx;
+  border:2rpx solid #d9d9d9;
+  border-radius:4rpx;
+  font-size:30rpx;
 }
 .Rose-section_title {
   display: block;

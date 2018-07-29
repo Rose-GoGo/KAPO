@@ -30,13 +30,13 @@ page{
 }
 .allLoaded:before {
   position: absolute;
-  left: 0;
+  left: 5%;
   top: 60rpx;
-  width: 100%;
+  width: 90%;
   z-index: 1;
   height: 2rpx;
   content: '';
-  background: #ccc;
+  background: #ddd;
 }
 .line-word {
   position: relative;
