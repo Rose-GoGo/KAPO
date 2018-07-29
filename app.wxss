@@ -1,7 +1,7 @@
 /**app.wxss**/
 @import "assets/icon/iconfont";
 page{
-  background: #e5e5e5
+  background: #e5e9f0
 }
 .container {
   height: 100%;

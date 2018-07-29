@@ -1,14 +1,14 @@
-<view class="Rose-floor">
+<!-- <view class="Rose-floor"> -->
   <view class="Rose-about">
     <view class="Rose-about-title">关于这个博客</view>
     <view class="Rose-content">记录我的前端生活和在开发过程中遇到的问题，整理成文，希望对大家有帮助。始终相信，一步一个脚印，踏实学习。</view>
   </view>
-</view>
+<!-- </view> -->
 <view class="Rose-floor">
-  <view class="Rose-floor-title">
+  <!-- <view class="Rose-floor-title">
     打卡
     <icon class="iconfont icon-icon03"></icon>
-  </view>
+  </view> -->
   <view class="Rose-menu">
     <view class="Rose-kinds" wx:for="{{[1,2,3,4]}}" wx:for-item="i" wx:key="index" ontap="goEveryDay" data-catid="{{i}}">
       <view class="view-circle {{'color'+ (index+1)}}">
@@ -27,20 +27,20 @@
 </view>
 <view class="Rose-floor">
   <view class="Rose-Line">
-    <icon class="iconfont icon-guanyu"></icon>
+    <icon class="iconfont icon-info-circle"></icon>
     关于我
-    <icon class="fr iconfont icon-tiaozhuanqianwangyoujiantouxiangyouxiayibuxianxing"></icon>
+    <icon class="fr iconfont icon-xiangyou"></icon>
   </view>
   <view class="Rose-Line">
-    <icon class="iconfont icon-ganxiekong"></icon>
+    <icon class="iconfont icon-heart"></icon>
     特别感谢
-    <icon class="fr iconfont icon-tiaozhuanqianwangyoujiantouxiangyouxiayibuxianxing"></icon>
+    <icon class="fr iconfont icon-xiangyou"></icon>
   </view>
   <view class="Rose-Line">
-    <navigator url="../feedback/feedback">
-      <icon class="iconfont icon-yijianfankui"></icon>
+    <navigator url="../feedback/feedback" hover-class="none">
+      <icon class="iconfont icon-mail"></icon>
       意见反馈
-      <icon class="fr iconfont icon-tiaozhuanqianwangyoujiantouxiangyouxiayibuxianxing"></icon>
+      <icon class="fr iconfont icon-xiangyou"></icon>
     </navigator>
   </view>
 </view>
@@ -48,7 +48,7 @@
   <view class="pd10">
     <view class="Rose-floor-title">
       文章类型
-      <icon class="iconfont icon-icon03"></icon>
+     <!--  <icon class="iconfont icon-icon03"></icon> -->
     </view>
     <view class="Rose-article">
       <view class="Rose-title" ontap="showOne" data-catid="11">

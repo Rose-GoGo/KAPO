@@ -3,15 +3,18 @@
   故不积跬步，无以至千里；不积小流，无以成江海。骐骥一跃，不能十步；驽马十驾，功在不舍。锲而舍之，朽木不折；锲而不舍，金石可镂。
 </view>
 
-<view class="Rose-news">
+<view class="Rose-lists">
   <view class="Rose-floor-title">精选</view>
-  <scroll-view class="Rose-best" scroll-x="true">
-    <view class="Rose-best-item" wx:for="{{top10}}" wx:key="index" wx:for-item="top" data-id="{{top.id}}" data-catid="{{top.catid}}" ontap="articleDetail">
+  <view class="Rose-box">
+
+  <scroll-view class="Rose-items" scroll-x="true">
+    <view class="Rose-item" wx:for="{{top10}}" wx:key="index" wx:for-item="top" data-id="{{top.id}}" data-catid="{{top.catid}}" ontap="articleDetail">
       <image class="Rose-imgbest" src="{{top.thumb==''? '/assets/images/wx_04.jpg':top.thumb }}"></image>
       <view class="Rose-title">{{ top.title }}</view>
       <view class="Rose-time text-left">{{top.updatetime}}</view>
     </view>
   </scroll-view>
+  </view>
 </view>
 <!-- 菜单 -->
 
@@ -28,8 +31,6 @@
     </view>
     <view class="Rose-flex1 Rose-title">{{item.title}}</view>
     <image class="Rose-imgitem" src="{{item.thumb==''? '/assets/images/ncode.jpg': item.thumb}}"></image>
-    <div class="Rose-detail">
-      {{item.description}}
-    </div>
+    <div class="Rose-detail">{{item.description}}</div>
   </view>
 </view>

@@ -1,5 +1,5 @@
-page {
-  background: #e5e5e5;
+page{
+  background: #e5e5e5
 }
 .text-right {
   text-align: right
@@ -18,6 +18,13 @@ page {
   margin: 60rpx 20rpx;
   font-size: 32rpx
 }
+.Rose-lists{
+ overflow: hidden;
+ margin: 20rpx 0;
+
+ background: #fff;
+
+}
 .Rose-news {
   overflow: hidden;
   margin: 20rpx 0;
@@ -26,12 +33,15 @@ page {
 }
 .Rose-floor-title {
   font-size: 32rpx;
-  padding: 20rpx 0;
+  padding:18rpx 20rpx;
+  margin-bottom: 20rpx;
+  color: #666;
+  border-bottom: 1rpx solid #f2f2f2
 }
-.Rose-best-item {
+.Rose-item {
   display: inline-block;
   margin: 0 20rpx 0 0;
-  width: 620rpx;
+  width: 600rpx;
   vertical-align: top
 }
 .Rose-imgbest {
@@ -57,17 +67,17 @@ page {
 .Rose-time {
   padding: 0 0 20rpx;
   font-size: 24rpx;
-  color: #999
+  color: #a8a8a8
 }
 .Rose-detail {
   display: -webkit-box;
   overflow: hidden;
-  line-height: 1.4;
+  line-height: 1.6;
   text-align: left;
   text-overflow: ellipsis;
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
-  font-size: 28rpx;
+  font-size: 30rpx;
   color: #666;
 }
 .Rose-flex {
@@ -83,7 +93,10 @@ page {
 .Rose-flex1 {
   flex: 1
 }
-.Rose-best {
+.Rose-box{
+  margin: 0 20rpx;
+}
+.Rose-items {
   position: relative;
   width: 100%;
   white-space: nowrap;

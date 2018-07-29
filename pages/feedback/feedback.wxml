@@ -10,25 +10,24 @@
       <textarea name="beizhu" class="Rose-input" value="{{remark}}" bindinput="forRemark" placeholder="说点什么吧"></textarea>
     </view>
     <view class="Rose-section">
-      <button formType="submit" class="Rose-btn" disabled="{{disabled}}"><icon class="icon iconfont icon-tijiao2"></icon> 提交</button>
-
+      <button formType="submit" class="Rose-btn" disabled="{{disabled}}">
+        <icon class="icon iconfont icon-tijiao2"></icon>
+        提交
+      </button>
     </view>
-
-   <!--  <button open-type="getUserInfo" lang="zh_CN" bindgetuserinfo="onGotUserInfo">获取用户信息</button> -->
-  </form>
+</form>
 </view>
-
-<view class="Rose-form">
+<view class="Rose-lists">
+  <view class="Rose-feeds">反馈列表</view>
   <view class="Rose-line" wx:for="{{items}}" wx:key="index">
-    {{item.username}}
-    {{item.create_time}}
-    {{item.title}}
-
-    {{item.remark}}
-
-
+    <view class="Rose-title">{{item.title}}</view>
+    <view class="Rose-content">{{item.remark}}</view>
+    <view class="Rose-info">
+      <view class="Rose-name">
+        <!-- <icon class="iconfont icon-nanxing"></icon> -->
+        <icon class="iconfont icon-nvxing female"></icon>
+      {{item.username}}</view>
+      <view class="Rose-time">{{item.create_time}}</view>
+    </view>
   </view>
-
 </view>
-
-
