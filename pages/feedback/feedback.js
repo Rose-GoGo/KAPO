@@ -71,6 +71,7 @@ Page({
     });
     if(that.data.loadMore){
       that.feedback();
+      console.log(this.data.loadMore)
     }
   },
   /**
@@ -149,10 +150,11 @@ Page({
         that.setData({
           items: _arr
         });
-        if(_arr.length<10){
+        if(_data.length<10){
           that.setData({
             loadMore: false
           })
+
         }
         wx.hideLoading();
       }

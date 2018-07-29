@@ -9,7 +9,8 @@ Page({
     title: '',
     remark: '',
     disabled: true,
-    items: {}
+    items: {},
+    loadNore: true
   },
   /**
    * 生命周期函数--监听页面加载
@@ -23,12 +24,6 @@ Page({
     })
 
     this.getLine();
-
-   // wx.getUserInfo({
-   //   success: function(res) {
-   //     console.log(res.userInfo)
-   //   }
-   // })
   },
   /**
    * 生命周期函数--监听页面初次渲染完成
@@ -107,6 +102,7 @@ Page({
           icon: 'success',
           duration: 2000
         })
+        this.getLine();
       }
     });
   },

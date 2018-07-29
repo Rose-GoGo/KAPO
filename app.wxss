@@ -25,7 +25,7 @@ page{
   position: relative;
   text-align: center;
   font-size: 28rpx;
-  color: #f2f2f2;
+  color: #ccc;
   margin: 40rpx;
 }
 .allLoaded:before {
@@ -36,7 +36,7 @@ page{
   z-index: 1;
   height: 1px;
   content: '';
-  background: #f2f2f2;
+  background: #ccc;
 }
 .line-word {
   position: relative;

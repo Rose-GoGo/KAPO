@@ -31,3 +31,6 @@
     </view>
   </view>
 </view>
+<view class="allLoaded" wx:if="{{items.length!=0 && !loadMore}}">
+  <text class="line-word">我是有底线的~</text>
+</view>

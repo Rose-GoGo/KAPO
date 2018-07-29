@@ -9,7 +9,7 @@
 .Rose-input {
   flex: 1;
   line-height: 1;
-  padding: 10rpx 20rpx;
+  padding: 20rpx 20rpx;
   border: 1rpx solid #d9d9d9;
   border-radius: 4rpx;
   font-size: 30rpx;

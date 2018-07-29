@@ -26,6 +26,7 @@ swiper {
 .Rose-block {
     width: 94%;
     background: #fff;
+    margin: 0 auto;
     border-radius: 12rpx;
     overflow: hidden;
     margin-top: 20rpx;
