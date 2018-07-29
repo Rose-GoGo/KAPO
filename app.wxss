@@ -26,15 +26,15 @@ page{
   text-align: center;
   font-size: 28rpx;
   color: #ccc;
-  margin: 40rpx;
+  padding: 40rpx;
 }
 .allLoaded:before {
   position: absolute;
   left: 0;
-  top: 20rpx;
+  top: 60rpx;
   width: 100%;
   z-index: 1;
-  height: 1px;
+  height: 2rpx;
   content: '';
   background: #ccc;
 }
