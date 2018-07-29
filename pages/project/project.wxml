@@ -1,19 +1,21 @@
-<view class="banner-swiper" style="height:{{swipter_height-20}}px">
+<view class="Rose-swiper" style="height:{{swipter_height-20}}px">
     <swiper current='{{swiperCurrent}}'
     indicator-dots="{{true}}"
     indicator-color="{{beforeColor}}" indicator-active-color="{{afterColor}}" circular='{{true}}'
     previous-margin="{{previousmargin}}" next-margin="{{nextmargin}}" bindchange="swiperChange" style="height:{{swipter_height-20}}px">
     <block wx:for="{{items}}" wx:for-item="item" wx:key="index" >
         <swiper-item data-id="{{item.id}}">
-            <navigator url="../project_page/project_page"  >
-                <view class="slide-block {{index == swiperCurrent ? ' active' : ''}}">
-                    <view class="img-box">
-                        <image src="{{ item.thumb==''? '/assets/images/project_1.jpg' :item.thumb}}" class="slide-image {{index == swiperCurrent ? ' active' : ''}}"
+            <navigator url="../project_page/project_page?id={{item.id}}">
+                <view class="Rose-block {{index == swiperCurrent ? ' active' : ''}}">
+                    <view class="Rose-box">
+                        <image mode="aspectFill"
+                        src="{{ item.thumb==''? '/assets/images/project_1.jpg' :item.thumb}}" class="Rose-image {{index == swiperCurrent ? ' active' : ''}}"
                         bindchange="chuangEvent" id="{{index}}"></image>
                     </view>
-                    <view class="project-info">
-                        <view class="project-name">{{item.title}}</view>
-                        <view class="text-center">{{item.description}}</view>
+
+                    <view class="Rose-info">
+                        <view class="Rose-name">{{item.title}}</view>
+                        <view class="Rose-description">{{item.description}}</view>
                     </view>
                 </view>
             </navigator>

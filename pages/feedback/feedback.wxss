@@ -7,7 +7,7 @@
 .Rose-input {
   flex: 1;
   line-height: 1;
-  padding: 10rpx 20rpx;
+  padding: 15rpx 20rpx;
   border: 1rpx solid #d9d9d9;
   border-radius: 4rpx;
   font-size: 30rpx;
@@ -15,7 +15,7 @@
 .Rose-section_title {
   display: block;
   width: 3em;
-  font-size: 30rpx;
+  font-size: 32rpx;
   line-height: 1;
   padding: 24rpx 0 0;
 }
@@ -69,14 +69,15 @@ button[disabled]:not([type]) {
   border-bottom: none
 }
 .Rose-title{
-  font-size: 32rpx;
+  font-size: 36rpx;
   color: #000;
 }
 .Rose-content{
-  margin: 10rpx 0;
+  margin: 14rpx 0 10rpx;
   font-size: 30rpx;
   color: #3b3b3b;
   color: both;
+  line-height: 1.6
 }
 .Rose-info{
   display: flex;
@@ -101,4 +102,8 @@ button[disabled]:not([type]) {
 }
 .male{
   color: #2a36b1
+}
+
+.Rose-name .iconfont{
+  font-size: 40rpx
 }

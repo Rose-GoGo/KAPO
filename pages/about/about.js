@@ -8,8 +8,6 @@ Page({
     hasUserInfo: false,
     canIUse: wx.canIUse('button.open-type.getUserInfo')
   },
-
-
   onLoad: function () {
     if (app.globalData.userInfo) {
       this.setData({
@@ -78,12 +76,9 @@ Page({
   },
   //事件处理函数
   showOne: function(e) {
-
     let catid = e.currentTarget.dataset.catid;
-
-    wx.switchTab({
-      // url: '../index/index?catid='+ catid
-      url: '../index/index'
+    wx.navigateTo({
+      url: '../lists/lists?catid='+ catid
     })
   },
 })

@@ -8,7 +8,8 @@
     "pages/project/project",
     "pages/project_page/project_page",
     "pages/more/more",
-    "pages/feedback/feedback"
+    "pages/feedback/feedback",
+    "pages/lists/lists"
   ],
   "window": {
     "backgroundTextStyle": "light",

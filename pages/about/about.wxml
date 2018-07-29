@@ -5,10 +5,6 @@
   </view>
 <!-- </view> -->
 <view class="Rose-floor">
-  <!-- <view class="Rose-floor-title">
-    打卡
-    <icon class="iconfont icon-icon03"></icon>
-  </view> -->
   <view class="Rose-menu">
     <view class="Rose-kinds" wx:for="{{[1,2,3,4]}}" wx:for-item="i" wx:key="index" ontap="goEveryDay" data-catid="{{i}}">
       <view class="view-circle {{'color'+ (index+1)}}">
@@ -48,7 +44,6 @@
   <view class="pd10">
     <view class="Rose-floor-title">
       文章类型
-     <!--  <icon class="iconfont icon-icon03"></icon> -->
     </view>
     <view class="Rose-article">
       <view class="Rose-title" ontap="showOne" data-catid="11">

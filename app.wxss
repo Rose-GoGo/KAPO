@@ -20,3 +20,27 @@ page{
 
 /*@import "/wxParse/wxParse.wxss";
 */
+
+.allLoaded {
+  position: relative;
+  text-align: center;
+  font-size: 28rpx;
+  color: #f2f2f2;
+  margin: 40rpx;
+}
+.allLoaded:before {
+  position: absolute;
+  left: 0;
+  top: 20rpx;
+  width: 100%;
+  z-index: 1;
+  height: 1px;
+  content: '';
+  background: #f2f2f2;
+}
+.line-word {
+  position: relative;
+  padding: 0 20rpx;
+  z-index: 2;
+  background: #e5e9f0;
+}

@@ -1,3 +1,4 @@
+<wxs module="comm" src="../comm.wxs"></wxs>
 <view class="Rose-floor1">
   <view class="Rose-top-quote">脚步很慢，但一直在努力，从未放弃！</view>
   故不积跬步，无以至千里；不积小流，无以成江海。骐骥一跃，不能十步；驽马十驾，功在不舍。锲而舍之，朽木不折；锲而不舍，金石可镂。
@@ -9,7 +10,7 @@
 
   <scroll-view class="Rose-items" scroll-x="true">
     <view class="Rose-item" wx:for="{{top10}}" wx:key="index" wx:for-item="top" data-id="{{top.id}}" data-catid="{{top.catid}}" ontap="articleDetail">
-      <image class="Rose-imgbest" src="{{top.thumb==''? '/assets/images/wx_04.jpg':top.thumb }}"></image>
+      <image class="Rose-imgbest" lazy-load="{{true}}" src="{{top.thumb==''? '/assets/images/wx_04.jpg':top.thumb }}"></image>
       <view class="Rose-title">{{ top.title }}</view>
       <view class="Rose-time text-left">{{top.updatetime}}</view>
     </view>
@@ -27,10 +28,13 @@
         <block wx:if="{{item.catid=='12'}}"> 安全</block>
         <block wx:if="{{item.catid=='13'}}"> 生活</block>
       </view>
-      <view class="Rose-flex1 Rose-time text-right">{{item.updatetime}}</view>
+      <view class="Rose-flex1 Rose-time text-right">{{comm.formatTime(item.updatetime)}}</view>
     </view>
     <view class="Rose-flex1 Rose-title">{{item.title}}</view>
-    <image class="Rose-imgitem" src="{{item.thumb==''? '/assets/images/ncode.jpg': item.thumb}}"></image>
-    <div class="Rose-detail">{{item.description}}</div>
+    <image class="Rose-imgitem" lazy-load="{{true}}" src="{{item.thumb==''? '/assets/images/ncode.jpg': item.thumb}}"></image>
+    <view class="Rose-detail">{{item.description}}</view>
   </view>
+</view>
+<view class="allLoaded" wx:if="{{items.length!=0 && !loadMore}}">
+  <text class="line-word">我是有底线的~</text>
 </view>

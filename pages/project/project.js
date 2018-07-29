@@ -5,11 +5,11 @@ Page({
    * 页面的初始数据
    */
   data: {
-     swipter_height: '550px',
+    swipter_height: '550px',
     swiperCurrent: 1,
     items: [],
-    beforeColor: "#ccc",//指示点颜色
-    afterColor: "#1d8f59",//当前选中的指示点颜色
+    beforeColor: "#dcdae3",//指示点颜色
+    afterColor: "#a5a2af",//当前选中的指示点颜色
     previousmargin: '30px',//前边距
     nextmargin: '30px',//后边距
   },
@@ -26,7 +26,7 @@ Page({
         })
       }
     });
-    this.getData()
+    that.getData()
   },
   /**
    * 生命周期函数--监听页面初次渲染完成

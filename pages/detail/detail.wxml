@@ -1,12 +1,11 @@
 <!--pages/detail/detail.wxml-->
 <import src="../../wxParse/wxParse.wxml" />
 <view class="Rose-detail">
-    <view class="Rose-title">
-        {{items.title}}
+    <view class="Rose-title">{{items.title}}</view>
+    <view class="Rose-addtime">{{items.updatetime}}
+    	<text class="Rose-keywords">关键字:{{items.keywords}}</text>
     </view>
-    <view class="Rose-addtime"> {{items.updatetime}}  关键字:{{items.keywords}}</view>
     <view class="Rose-content">
-        <!-- {{dkcontent}} -->
         <template is="wxParse" data="{{wxParseData:dkcontent.nodes}}" />
     </view>
 </view>

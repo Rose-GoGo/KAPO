@@ -7,7 +7,8 @@ Page({
   data: {
     items:[],
     page:1,
-    top10:[]
+    top10:[],
+    loadMore:true
   },
   /**
    * 生命周期函数--监听页面加载
@@ -46,8 +47,10 @@ Page({
     this.setData({
       page: _page
     });
-
+    if(this.data.loadMore){
     this.getLists();
+    }
+
   },
   /**
    * 用户点击右上角分享
@@ -65,13 +68,16 @@ Page({
     let params = {
       page: this.data.page
     }
-
     Api.all(params).then(res => { //文章列表
-
-
       if(res.data.code!=99){
         let _data = res.data.data;
-        let _items = this.data.items.concat(_data)
+        let _items = this.data.items.concat(_data);
+
+        if(_data.length<5){
+          this.setData({
+            loadMore: false
+          })
+        }
         this.setData({
           items: _items
         });
@@ -86,7 +92,6 @@ Page({
         this.setData({
           top10: _data
         });
-
       }
     })
   }
