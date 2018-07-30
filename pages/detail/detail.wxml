@@ -1,11 +1,22 @@
 <!--pages/detail/detail.wxml-->
 <import src="../../wxParse/wxParse.wxml" />
+<view class="Rose-white">
 <view class="Rose-detail">
     <view class="Rose-title">{{items.title}}</view>
     <view class="Rose-addtime">{{items.updatetime}}
-    	<text class="Rose-keywords">关键字:{{items.keywords}}</text>
+        <text class="Rose-keywords">关键字:{{items.keywords}}</text>
     </view>
     <view class="Rose-content">
         <template is="wxParse" data="{{wxParseData:dkcontent.nodes}}" />
     </view>
+    <view class="Rose-sorry">
+        由于文章是在后台用富文本添加的,这里使用了wxParse转码,但是在转码的时候,部分代码被直接翻译成了小程序的语言(如view),给您带来不便,敬请见谅。
+    </view>
+</view>
+</view>
+
+
+<view class="Rose-copyRight">
+    <view class="capo-name">CAPO博客</view>
+    Copyright ©2014-2018 CAPO Powered By Rose
 </view>

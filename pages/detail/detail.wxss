@@ -1,7 +1,5 @@
 /* pages/detail/detail.wxss */
-page{
-  background: #fff
-}
+
 .Rose-detail{
   background: #fff;
     margin: 20rpx;
@@ -25,8 +23,16 @@ page{
   background: #000;
   padding: 10rpx;
   margin: 20rpx 0;
-
 }
 .Rose-keywords{
   margin-left: 20rpx
+}
+.Rose-sorry{
+  padding: 120rpx 0 40rpx;
+  font-size: 24rpx;
+  color: #999;
+}
+.wxParse-p{
+  text-indent: 2em;
+  padding: 5rpx 0;
 }

@@ -28,11 +28,11 @@
   width: 90rpx;
 }
 .Rose-kinds .iconfont{
-  font-size: 36rpx;
+  font-size: 42rpx;
   display: block;
 }
 .view-circle{
-  background: red;
+
   border-radius: 100%;
   color: #fff;
   width: 90rpx;

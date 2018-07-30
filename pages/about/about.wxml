@@ -61,3 +61,7 @@
     </view>
   </view>
 </view>
+<view class="Rose-copyRight">
+    <view class="capo-name">CAPO博客</view>
+    Copyright ©2014-2018 CAPO Powered By Rose
+</view>
