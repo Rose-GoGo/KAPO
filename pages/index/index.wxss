@@ -11,11 +11,11 @@
   padding: 40rpx;
   background: #1d8f59;
   color: #fff;
-  font-size: 24rpx;
+  font-size: 26rpx;
   text-align: center
 }
 .Rose-top-quote {
-  margin: 60rpx 20rpx;
+  margin: 0 20rpx 20rpx;
   font-size: 32rpx
 }
 .Rose-lists{

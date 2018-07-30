@@ -10,20 +10,36 @@ Page({
     remark: '',
     disabled: true,
     items: {},
-    loadNore: true
+    loadNore: true,
+    canIUse: wx.canIUse('button.open-type.getUserInfo'),
+    username:'',
   },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
+     var that = this;
     wx.showLoading();
-
-    this.setData({
+    that.setData({
       catid: options.catid
-
     })
-
-    this.getLine();
+     wx.getSetting({
+          success: function(res){
+            if (res.authSetting['scope.userInfo']) {
+              // 已经授权，可以直接调用 getUserInfo 获取头像昵称
+              wx.getUserInfo({
+                success: function(res) {
+                  var userInfo = res.userInfo;
+                  that.setData({
+                    username:userInfo.nickName,
+                    sex: userInfo.gender
+                  })
+                }
+              })
+            }
+          }
+        });
+    that.getLine();
   },
   /**
    * 生命周期函数--监听页面初次渲染完成
@@ -52,7 +68,12 @@ Page({
   /**
    * 用户点击右上角分享
    */
-  onShareAppMessage: function() {},
+  onShareAppMessage: function() {
+    return {
+      title: '锲而舍之,朽木不折;锲而不舍,金石可镂',
+      imageUrl: '/assets/images/share.jpg'
+    }
+  },
   forTitle: function(e) {
     let _data = e.detail.value;
     this.setData({
@@ -84,25 +105,26 @@ Page({
     }
   },
   formSubmit: function() {
+    var that = this;
     let _params = {
-      catid: this.data.catid,
-      title: this.data.title,
-      remark: this.data.remark,
-      username:'555',
+      catid: that.data.catid,
+      title: that.data.title,
+      remark: that.data.remark,
+      username: that.data.username,
     }
     Api.everyday(_params).then(res => {
       if (!res.data.code) {
-        this.setData({
+        that.setData({
           title: '',
           remark: '',
-
+          disabled: true
         })
         wx.showToast({
           title: '提交成功',
           icon: 'success',
           duration: 2000
         })
-        this.getLine();
+        that.getLine();
       }
     });
   },
@@ -123,9 +145,13 @@ Page({
       }
     });
   },
-  onGotUserInfo: function(e) {
-    console.log(e.detail.errMsg)
-    console.log(e.detail.userInfo)
-    console.log(e.detail.rawData)
-  },
+    bindGetUserInfo: function(e) {
+    var that = this;
+    var userInfo = e.detail.userInfo;
+      that.setData({
+        username:userInfo.nickName,
+        sex: userInfo.gender
+      });
+      that.formSubmit();
+    }
 })

@@ -42,7 +42,8 @@ function sendRrquest(url, method, data, header) {
         wx.showModal({
           title: '提示',
           content: '数据加载失败!'
-        })
+        });
+        wx.hideLoading();
       },
     })
   });

@@ -1,9 +1,9 @@
 //app.js
 App({
   onShow: function(option){ //当小程序启动，或从后台进入前台显示，会触发 onShow
-    console.log(option.path)
-    console.log(option.query)
-    console.log(option.scene)
+    // console.log(option.path)
+    // console.log(option.query)
+    // console.log(option.scene)
 
   },
   onPageNotFound: function(res){

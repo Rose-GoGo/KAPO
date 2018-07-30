@@ -57,6 +57,10 @@ onReachBottom: function() {
  * 用户点击右上角分享
  */
 onShareAppMessage: function() {
+  return {
+      title: this.data.items.title,
+      imageUrl: '/assets/images/share.jpg'
+    }
 },
 getData: function() {
   let _params = {

@@ -12,6 +12,7 @@ Page({
     afterColor: "#a5a2af",//当前选中的指示点颜色
     previousmargin: '30px',//前边距
     nextmargin: '30px',//后边距
+    preIndex: null
   },
   /**
    * 生命周期函数--监听页面加载
@@ -62,11 +63,26 @@ Page({
    * 用户点击右上角分享
    */
   onShareAppMessage: function () {
+    return {
+      title: '锲而舍之,朽木不折;锲而不舍,金石可镂',
+      imageUrl: '/assets/images/share.jpg'
+    }
   },
   swiperChange: function (e) {
-    this.setData({
-      swiperCurrent: e.detail.current //获取当前轮播图片的下标
-    })
+    console.log(e)
+    // this.setData({
+    //   swiperCurrent: e.detail.current //获取当前轮播图片的下标
+    // })
+    if (e.detail.source == "touch") {
+      //防止swiper控件卡死
+      if (this.data.swiperCurrent == 0 && this.data.preIndex>1 ) {//卡死时，重置swiperCurrent为正确索引
+        this.setData({ swiperCurrent: this.data.preIndex });
+      }
+      else {//正常轮转时，记录正确页码索引
+        this.setData({ swiperCurrent: e.detail.current });
+      }
+    }
+
   },
   //滑动图片切换
   chuangEvent: function (e) {

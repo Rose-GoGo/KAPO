@@ -50,12 +50,16 @@ Page({
     if(this.data.loadMore){
     this.getLists();
     }
-
   },
   /**
    * 用户点击右上角分享
    */
-  onShareAppMessage: function() {},
+  onShareAppMessage: function() {
+    return {
+      title: '锲而舍之,朽木不折;锲而不舍,金石可镂',
+      imageUrl: '/assets/images/share.jpg'
+    }
+  },
   articleDetail: function(e) {
     let id = e.currentTarget.dataset.id;
     let catid = e.currentTarget.dataset.catid
@@ -72,7 +76,6 @@ Page({
       if(res.data.code!=99){
         let _data = res.data.data;
         let _items = this.data.items.concat(_data);
-
         if(_data.length<5){
           this.setData({
             loadMore: false

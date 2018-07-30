@@ -10,14 +10,19 @@
       <textarea name="beizhu" class="Rose-input" value="{{remark}}" bindinput="forRemark" placeholder="说点什么吧"></textarea>
     </view>
     <view class="Rose-section">
-      <button formType="submit" class="Rose-btn" disabled="{{disabled}}"><icon class="icon iconfont icon-tijiao2"></icon> 提交</button>
-
+      <button formType="submit" class="Rose-btn" disabled="{{disabled}}"  wx:if="{{canIUse}}" open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo"> 提交</button>
     </view>
-
-   <!--  <button open-type="getUserInfo" lang="zh_CN" bindgetuserinfo="onGotUserInfo">获取用户信息</button> -->
   </form>
 </view>
+
+<view class="Rose-floor-title">
+      <text wx:if="{{catid==1}}"> 每天一个俯卧撑</text>
+      <text wx:if="{{catid==2}}"> 读100本书</text>
+      <text wx:if="{{catid==3}}"> 学一门外语</text>
+      <text wx:if="{{catid==4}}"> 弹吉他</text>
+</view>
 <view class="Rose-form">
+
   <view class="Rose-year-line" >
     <view class="Rose-year">
       <icon class="iconfont icon-md-shijian"></icon> 2018

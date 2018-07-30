@@ -77,7 +77,12 @@ Page({
   /**
    * 用户点击右上角分享
    */
-  onShareAppMessage: function() {},
+  onShareAppMessage: function() {
+    return {
+      title: '锲而舍之,朽木不折;锲而不舍,金石可镂',
+      imageUrl: '/assets/images/share.jpg'
+    }
+  },
   forTitle: function(e) {
     var that = this;
     let _data = e.detail.value;
