@@ -1,5 +1,4 @@
 /* pages/me/me.wxss */
-
 page{
     background: #fff
 }
@@ -28,7 +27,6 @@ page{
 .Rose-item{
     margin-top: 30px;
     font-size: 32rpx
-
 }
 .Rose-line{
     font-size: 36rpx;
@@ -37,7 +35,6 @@ page{
     line-height:1;
     color: #333
 }
-
 .Rose-line:before{
     position: absolute;
     top: 10rpx;
@@ -47,15 +44,10 @@ page{
     content:'';
     background: #4bb777
 }
-
-
 .Rose-h3{
     padding: 20rpx 0 0;
-
     font-weight: 600
-
 }
-
 .Rose-concact{
     display: block
 }

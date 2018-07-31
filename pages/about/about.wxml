@@ -16,7 +16,7 @@
       <block wx:if="{{i== 1}}">健身</block>
       <block wx:if="{{i== 2}}">读书</block>
       <block wx:if="{{i== 3}}">外语</block>
-      <block wx:if="{{i== 4}}">音乐</block>
+      <block wx:if="{{i== 4}}">生活</block>
     </view>
   </view>
   <!-- 博客模块 -->
