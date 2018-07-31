@@ -71,7 +71,7 @@ Page({
     });
     if(that.data.loadMore){
       that.feedback();
-      console.log(this.data.loadMore)
+
     }
   },
   /**

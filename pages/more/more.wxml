@@ -33,7 +33,7 @@
         <view class="Rose-circle"></view>
         <view class="Rose-day">{{ix}}</view>
         <view class="Rose-itemline-item">
-          <view class="Rose-event" wx:for="{{day}}" wx:for-index="i" wx:for-item="dd" wx:key="ix">
+          <view class="Rose-event" wx:for="{{day}}" wx:for-index="i" wx:for-item="dd" wx:key="ix" wx:if="{{day.length>0}}">
             <view class="Rose-event-icon">
               <icon class="iconfont icon-zan4"></icon>
             </view>

@@ -69,7 +69,7 @@ Page({
     }
   },
   swiperChange: function (e) {
-    console.log(e)
+
     // this.setData({
     //   swiperCurrent: e.detail.current //获取当前轮播图片的下标
     // })

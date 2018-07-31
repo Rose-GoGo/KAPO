@@ -73,9 +73,8 @@ Page({
    */
    onReachBottom: function () {
     var that  = this;
-    that.earMonth();
     if(that.data.loadMore){
-      console.log(this.data.bigData)
+      that.earMonth();
       that.getLine();
     }
   },
@@ -177,19 +176,14 @@ Page({
       if (!res.data.code) {
         var _data = res.data.data;
         var obj = Object.assign(that.data.items, _data);// 月数据
-
-        this.setData({
+        that.setData({
           items: obj
         });
-
-        this.data.bigData[this.data.year] = obj;
-
-        this.setData({
-          bigData: this.data.bigData
+        that.data.bigData[that.data.year] = obj;
+        that.setData({
+          bigData: that.data.bigData
         })
-
-
-        if(_data.length==0){
+        if(_data[this.data.month].length == 0){
           that.setData({
             loadMore: false
           })
