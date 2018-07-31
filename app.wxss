@@ -39,10 +39,10 @@ page{
   text-align: center;
   font-size: 20rpx;
   color: #ccc;
-  line-height: 1.2
+  line-height: 1.4
 }
 
 .capo-name{
-  font-size: 28rpx;
-  color: #999
+  font-size: 24rpx;
+  color: #a8a8a8
 }

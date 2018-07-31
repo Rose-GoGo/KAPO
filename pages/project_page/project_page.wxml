@@ -14,8 +14,5 @@
 			<view class="Rose-line">项目详情：</view>
 			<template is="wxParse" data="{{wxParseData:dkcontent.nodes}}" />
 		</view>
-
-
-
 	</view>
 </view>

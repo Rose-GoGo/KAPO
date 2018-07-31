@@ -8,20 +8,21 @@ page{
   display: flex;
   flex-direction: column;
   align-items: stretch;
+
 }
 .container {
   position: relative;
   flex: 1;
   display: flex;
   flex-direction: column;
-  background: #69C3AA;
+  background: #1d8f59;
   align-items: stretch;
   padding: 0;
   height: 100%;
   overflow: hidden;
   justify-content: space-between;
   box-sizing: border-box;
-} 
+}
 .content{
   flex: 1;
   display: flex;
@@ -60,12 +61,12 @@ page{
 }
 .title{
   position: absolute;
-  top: 30rpx;
-  left: 50%;
-  width: 600rpx;
-  height: 200rpx;
-  margin-left: -300rpx;
+  top: 80rpx;
+  width: 390rpx;
+  left:50%;
+  height: 176rpx;
   opacity: 0;
+  margin-left: -185rpx;
   animation: show 2.5s cubic-bezier(0.19, 1, 0.22, 1) .5s forwards;
 }
 

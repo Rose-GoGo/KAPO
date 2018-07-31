@@ -1,5 +1,8 @@
 {
-	"description": "项目配置文件。通常大家在使用一个工具的时候，都会针对各自喜好做一些个性化配置，例如界面颜色、编译配置等等，当你换了另外一台电脑重新安装工具的时候，你还要重新配置。",
+	"description": "项目配置文件。",
+	"packOptions": {
+		"ignore": []
+	},
 	"setting": {
 		"urlCheck": true,
 		"es6": true,
@@ -10,7 +13,13 @@
 	"compileType": "miniprogram",
 	"libVersion": "2.2.1",
 	"appid": "wx11bb9ed460c13af5",
-	"projectname": "SmielRose",
+	"projectname": "firstXCX",
+	"svr": "",
+	"client": "",
+	"qcloudRoot": "",
+	"miniprogramRoot": "",
+	"pluginRoot": "",
+	"scripts": {},
 	"condition": {
 		"search": {
 			"current": -1,
@@ -66,12 +75,6 @@
 					"name": "项目介绍",
 					"pathName": "pages/project_page/project_page",
 					"query": "id=119"
-				},
-				{
-					"id": -1,
-					"name": "文章列表",
-					"pathName": "pages/lists/lists",
-					"query": ""
 				}
 			]
 		}

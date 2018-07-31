@@ -9,7 +9,7 @@
             <navigator url="../project_page/project_page?id={{item.id}}" hover-class="none">
                 <view class="Rose-block {{index == swiperCurrent ? ' active' : ''}}">
                     <view class="Rose-box">
-                        <image mode="aspectFill"
+                        <image
                         src="{{ item.thumb==''? '/assets/images/project_1.jpg' :item.thumb}}" class="Rose-image {{index == swiperCurrent ? ' active' : ''}}"
                         bindchange="chuangEvent" id="{{index}}"></image>
                     </view>
