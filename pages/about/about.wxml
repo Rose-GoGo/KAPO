@@ -23,9 +23,11 @@
 </view>
 <view class="Rose-floor">
   <view class="Rose-Line">
+  <navigator url="../me/me" hover-class="none">
     <icon class="iconfont icon-info-circle"></icon>
     关于我
     <icon class="fr iconfont icon-xiangyou"></icon>
+    </navigator>
   </view>
   <view class="Rose-Line">
     <icon class="iconfont icon-heart"></icon>
