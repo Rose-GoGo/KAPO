@@ -6,7 +6,7 @@
       <text wx:if="{{catid==3}}"> 学一门外语</text>
       <text wx:if="{{catid==4}}"> 弹吉他</text>
 </view>
-  <form bindsubmit="formSubmit" bindreset="formReset">
+ <!--  <form bindsubmit="formSubmit" bindreset="formReset"> -->
     <view class="Rose-section">
       <view class="Rose-section_title">时长</view>
       <input name="time" value="{{title}}" class="Rose-input" bindinput="forTitle" />
@@ -18,7 +18,7 @@
     <view class="Rose-section">
       <button formType="submit" class="Rose-btn" disabled="{{disabled}}"  wx:if="{{canIUse}}" open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo"> 提交</button>
     </view>
-  </form>
+<!--   </form> -->
 </view>
 
 
