@@ -5,6 +5,7 @@ Page({
    * 页面的初始数据
    */
    data: {
+    bigData:{},
     catid: '',
     title: '',
     remark: '',
@@ -13,8 +14,10 @@ Page({
     loadMore: true,
     canIUse: wx.canIUse('button.open-type.getUserInfo'),
     username: '',
-    year: new Date().getFullYear(),
+    year: "2018",
     month: '',
+    topyear:"",
+    topMonth:""
   },
   /**
    * 生命周期函数--监听页面加载
@@ -153,14 +156,15 @@ Page({
       year = year;
       month = month - 1;
     }
+    year = ''+ year;
     month = month >= 10 ? '' + month : '0' + month
     this.setData({
       year: year,
       month: month
     })
-    console.log(year, month)
   },
   getLine: function () {
+    wx.showLoading();
     var that = this;
     let _params = {
       year: that.data.year,
@@ -170,10 +174,49 @@ Page({
     Api.showday(_params).then(res => {
       if (!res.data.code) {
         var _data = res.data.data;
-        var obj = Object.assign(that.data.items, _data);
-        that.setData({
-          items: obj
-        });
+        // var obj = Object.assign(that.data.items, _data);
+        // that.setData({
+        //   items: obj
+        // });
+        var month = that.data.month;
+        var year = that.data.year;
+        var datass = this.data.bigData;
+        var datas={};
+
+
+
+        datas[year] = {
+          [month] : _data
+        }
+     console.log(this.data.bigData)
+         var obj = Object.assign(that.data.bigData, datas);
+         console.log(obj)
+
+        this.setData({
+        bigData: obj
+        })
+
+        console.log(this.data.bigData)
+
+
+
+
+
+
+
+
+
+
+
+        // var obj = Object.assign(datass, datas);
+        // console.log(this.data.bigData)
+        // console.log(obj)
+
+
+
+
+         // console.log(this.data.bigData)
+
         if(_data.length==0){
           that.setData({
             loadMore: false
