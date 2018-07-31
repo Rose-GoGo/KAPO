@@ -24,7 +24,6 @@ Page({
    */
    onLoad: function (options) {
     var that = this;
-    wx.showLoading();
     var ss = new Date().getMonth() + 1;
     ss = ss>=10? ''+ss:'0'+ss;
     that.setData({
@@ -76,6 +75,7 @@ Page({
     var that  = this;
     that.earMonth();
     if(that.data.loadMore){
+      console.log(this.data.bigData)
       that.getLine();
     }
   },
@@ -133,14 +133,16 @@ Page({
         that.setData({
           title: '',
           remark: '',
-          disabled: true
+          disabled: true,
+          year: 2018,
+          month: '07'
         })
+        that.getLine();
         wx.showToast({
           title: '提交成功',
           icon: 'success',
           duration: 2000
         })
-        that.getLine();
       }
     });
   },
@@ -174,48 +176,18 @@ Page({
     Api.showday(_params).then(res => {
       if (!res.data.code) {
         var _data = res.data.data;
-        // var obj = Object.assign(that.data.items, _data);
-        // that.setData({
-        //   items: obj
-        // });
-        var month = that.data.month;
-        var year = that.data.year;
-        var datass = this.data.bigData;
-        var datas={};
-
-
-
-        datas[year] = {
-          [month] : _data
-        }
-     console.log(this.data.bigData)
-         var obj = Object.assign(that.data.bigData, datas);
-         console.log(obj)
+        var obj = Object.assign(that.data.items, _data);// 月数据
 
         this.setData({
-        bigData: obj
+          items: obj
+        });
+
+        this.data.bigData[this.data.year] = obj;
+
+        this.setData({
+          bigData: this.data.bigData
         })
 
-        console.log(this.data.bigData)
-
-
-
-
-
-
-
-
-
-
-
-        // var obj = Object.assign(datass, datas);
-        // console.log(this.data.bigData)
-        // console.log(obj)
-
-
-
-
-         // console.log(this.data.bigData)
 
         if(_data.length==0){
           that.setData({

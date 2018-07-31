@@ -36,15 +36,14 @@ image{
 .Rose-line{
     font-size: 36rpx;
     position: relative;
-    padding: 10rpx 0;
+    padding: 10rpx 20rpx;
     line-height:1;
     color: #333
 }
-
 .Rose-line:before{
     position: absolute;
     top: 10rpx;
-    left: -20rpx;
+    left: 0;
     width: 8rpx;
     height: 36rpx;
     content:'';

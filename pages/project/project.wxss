@@ -58,13 +58,4 @@ swiper {
     text-align: center;
     padding: 20px 0 0;
 }
-/*.Rose {
-    position: absolute;
-    bottom: 140px;
-    left: 0;
-    width: 100%;
-    height: 25px;
-    background: #fff;
-    border-radius: 0 0 50px 50px
-}
-*/
+

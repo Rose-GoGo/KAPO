@@ -1,11 +1,11 @@
 /* pages/detail/detail.wxss */
-
-.Rose-detail{
+.Rose--box{
   background: #fff;
-    margin: 20rpx;
+}
+.Rose-detail{
     font-size: 32rpx;
     line-height: 1.6;
-    padding: 0 0 80rpx;
+    padding: 0 20rpx 80rpx;
     color: #666
 }
 .Rose-title{

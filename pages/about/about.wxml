@@ -30,9 +30,11 @@
     </navigator>
   </view>
   <view class="Rose-Line">
+    <navigator url="../detail/detail?catid=13&id=124" hover-class="none">
     <icon class="iconfont icon-heart"></icon>
     特别感谢
     <icon class="fr iconfont icon-xiangyou"></icon>
+  </navigator>
   </view>
   <view class="Rose-Line">
     <navigator url="../feedback/feedback" hover-class="none">
