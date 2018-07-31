@@ -1,1 +1,61 @@
 /* pages/me/me.wxss */
+
+page{
+    background: #fff
+}
+.Rose-detail{
+    background: #fff;
+    margin: 20rpx;
+    font-size: 32rpx;
+    line-height: 1.6;
+    padding: 0 0 80rpx;
+    color: #666
+}
+.Rose-title{
+    color: #000;
+    font-size: 48rpx;
+    line-height: 1.2
+}
+.Rose-addtime{
+  margin: 20rpx 0;
+  color: #999;
+  font-size:24rpx;
+}
+.Rose-imgitem{
+    width: 100%;
+    height: 330rpx;
+}
+.Rose-item{
+    margin-top: 30px;
+    font-size: 32rpx
+
+}
+.Rose-line{
+    font-size: 36rpx;
+    position: relative;
+    padding: 10rpx 20rpx;
+    line-height:1;
+    color: #333
+}
+
+.Rose-line:before{
+    position: absolute;
+    top: 10rpx;
+    left: 0;
+    width: 8rpx;
+    height: 36rpx;
+    content:'';
+    background: #4bb777
+}
+
+
+.Rose-h3{
+    padding: 20rpx 0 0;
+
+    font-weight: 600
+
+}
+
+.Rose-concact{
+    display: block
+}
