@@ -4,7 +4,6 @@
     "pages/index/index",
     "pages/detail/detail",
     "pages/about/about",
-    "pages/error/error",
     "pages/project/project",
     "pages/project_page/project_page",
     "pages/more/more",
