@@ -15,14 +15,14 @@ swiper {
     display: block;
     margin: 0 auto;
     height: 700rpx;
-    transition: all 0.15s linear;
-    filter: blur(2px);
+    /* transition: all 0.15s linear; */
+    /* filter: blur(2px); */
 }
-.Rose-image.active {
+/* .Rose-image.active {
     margin-top: 0rpx;
     height: 750rpx;
     filter: blur(0);
-}
+} */
 .Rose-block {
     width: 94%;
     background: #fff;
@@ -30,12 +30,12 @@ swiper {
     border-radius: 12rpx;
     overflow: hidden;
     margin-top: 20rpx;
-    will-change:transform;
-    transition: all 0.15s linear;
+    /* will-change:transform; */
+    /* transition: all 0.15s linear; */
 }
-.Rose-block.active {
+/* .Rose-block.active {
     margin-top: 0
-}
+} */
 .Rose-box {
     width: 100%;
     display: block;

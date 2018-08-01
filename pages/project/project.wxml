@@ -10,8 +10,7 @@
                 <view class="Rose-block {{index == swiperCurrent ? ' active' : ''}}">
                     <view class="Rose-box">
                         <image
-                        src="{{ item.thumb==''? '/assets/images/project_1.jpg' :item.thumb}}" class="Rose-image {{index == swiperCurrent ? ' active' : ''}}"
-                        bindchange="chuangEvent" id="{{index}}"></image>
+                        src="{{ item.thumb==''? '/assets/images/project_1.jpg' :item.thumb}}" class="Rose-image" bindchange="chuangEvent" id="{{index}}"></image>
                     </view>
 
                     <view class="Rose-info">

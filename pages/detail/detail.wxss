@@ -32,7 +32,11 @@
   font-size: 24rpx;
   color: #999;
 }
-.wxParse-p{
-  text-indent: 2em;
+.wxParse-p{ 
   padding: 5rpx 0;
+}
+
+image{
+  max-width: 100%;
+  margin:40rpx 0;
 }
