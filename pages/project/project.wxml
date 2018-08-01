@@ -1,6 +1,6 @@
 <view class="Rose-swiper" style="height:{{swipter_height-20}}px">
     <swiper current='{{swiperCurrent}}'
-    duration="150"
+    duration="100"
     indicator-dots="{{true}}"
     indicator-color="{{beforeColor}}" indicator-active-color="{{afterColor}}" circular='{{true}}'
     previous-margin="{{previousmargin}}" next-margin="{{nextmargin}}" bindchange="swiperChange" style="height:{{swipter_height-20}}px">
