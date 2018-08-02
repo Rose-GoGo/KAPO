@@ -42,7 +42,7 @@ page{
   line-height: 1.4
 }
 
-.capo-name{
+.kapo-name{
   font-size: 24rpx;
   color: #a8a8a8
 }
