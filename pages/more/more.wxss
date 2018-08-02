@@ -168,6 +168,7 @@ button[disabled]:not([type]) {
   font-size: 30px;
   margin-left: -24px;
   background: #fff;
+  color: #333
 }
 .icon-xiangshang {
   display: inline-block;

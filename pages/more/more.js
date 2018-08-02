@@ -5,19 +5,19 @@ Page({
    * 页面的初始数据
    */
    data: {
-    bigData:{},
+    bigData: [],
     catid: '',
     title: '',
     remark: '',
     disabled: true,
-    items: {},
+    monthData: {},
     loadMore: true,
     canIUse: wx.canIUse('button.open-type.getUserInfo'),
     username: '',
     year: new Date().getFullYear(),
     month: new Date().getMonth() + 1,
-    topyear:"",
-    topMonth:""
+    isRose: false,
+    dataIndex: 0
   },
   /**
    * 生命周期函数--监听页面加载
@@ -25,19 +25,23 @@ Page({
    onLoad: function (options) {
     var that = this;
     var ss = new Date().getMonth() + 1;
-    ss = ss>=10? ''+ss:'0'+ss;
+    ss = ss >= 10 ? '' + ss : '0' + ss;
     that.setData({
       catid: options.catid,
-      month : ss
+      month: ss
     })
     wx.getSetting({
       success: function (res) {
-        console.log(res)
         if (res.authSetting['scope.userInfo']) {
           // 已经授权，可以直接调用 getUserInfo 获取头像昵称
           wx.getUserInfo({
             success: function (res) {
               var userInfo = res.userInfo;
+              if (userInfo.nickName == '赵') {
+                that.setData({
+                  isRose: true
+                });
+              }
               that.setData({
                 username: userInfo.nickName,
                 sex: userInfo.gender
@@ -73,7 +77,7 @@ Page({
    * 页面上拉触底事件的处理函数
    */
    onReachBottom: function () {
-    var that  = this;
+    var that = this;
     if(that.data.loadMore){
       that.earMonth();
       that.getLine();
@@ -105,7 +109,7 @@ Page({
     }
   },
   forRemark: function (e) {
-    var that =this;
+    var that = this;
     let _data = e.detail.value;
     that.setData({
       remark: _data
@@ -129,20 +133,15 @@ Page({
       username: that.data.username,
     }
     Api.everyday(_params).then(res => {
-      if (res.data.code==0) {
+      if (res.data.code == 0) {
         wx.showToast({
           title: '提交成功',
           icon: 'success',
           duration: 2000
         });
-
         let month = new Date().getMonth() + 1;
         let year = new Date().getFullYear();
-
-         month = month >= 10 ? '' + month : '0' + month;
-
-
-
+        month = month >= 10 ? '' + month : '0' + month;
         that.setData({
           title: '',
           remark: '',
@@ -151,53 +150,65 @@ Page({
           month: month
         })
         that.getLine();
-      }else{
-        wx.showModal({
-          title:'标题',
-          content: res.data.message
-        })
       }
     });
   },
   earMonth: function (n) { //获取年月
-    var ym, year,month;
-    year = this.data.year;
-    month = this.data.month;
+    var ym, year, month;
+    var that = this;
+    year = that.data.year;
+    month = that.data.month;
     ym = year + '-' + month;
     if (new Date(ym).getMonth() == 0) {
       year = year - 1;
       month = 12;
+      let big = that.data.bigData;
+      let index = this.data.dataIndex + 1
+      let datas = { [year]: {} }
+      big.push(datas)
+      that.setData({
+        dataIndex: index,
+        bigData: big
+      });
     } else {
       year = year;
       month = month - 1;
     }
-    year = ''+ year;
+    year = '' + year;
     month = month >= 10 ? '' + month : '0' + month
-    this.setData({
+    that.setData({
       year: year,
       month: month
-    })
+    });
   },
   getLine: function () {
     wx.showLoading();
     var that = this;
+    var year = that.data.year;
+    var month = that.data.month;
+    var dataIndex = this.data.dataIndex;
+    var big = that.data.bigData;
     let _params = {
-      year: that.data.year,
-      month: that.data.month,
+      year: year,
+      month: month,
       catid: that.data.catid,
     }
     Api.showday(_params).then(res => {
       if (!res.data.code) {
         var _data = res.data.data;
-        var obj = Object.assign(that.data.items, _data);// 月数据
+        if (that.data.month == '12') { //换年了
+          var obj = _data;
+        } else {
+          var obj = Object.assign(that.data.monthData, _data);// 月数据
+        }
         that.setData({
-          items: obj
+          monthData: obj
         });
-        that.data.bigData[that.data.year] = obj;
+        big[dataIndex] = { [year]: obj }
         that.setData({
-          bigData: that.data.bigData
+          bigData: big
         })
-        if(_data[this.data.month].length == 0){
+        if (_data[month].length == 0) { //如果没有月数据，则不加载了，本来是想判断是否已经加载到底了，但是这里可能有半途没添加数据的情况，所以这里的逻辑不是很严谨
           that.setData({
             loadMore: false
           })
@@ -213,7 +224,6 @@ Page({
       username: userInfo.nickName,
       sex: userInfo.gender
     });
-     that.formSubmit();
-    // that.getLine();
+    that.formSubmit();
   }
 })

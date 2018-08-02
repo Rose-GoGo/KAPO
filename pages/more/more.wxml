@@ -1,5 +1,5 @@
 <!--pages/more/more.wxml-->
-<view class="Rose-form">
+<view class="Rose-form" wx:if="{{isRose}}">
   <view class="Rose-floor-title">
     <text wx:if="{{catid==1}}">每天一个俯卧撑</text>
     <text wx:if="{{catid==2}}">读100本书</text>
@@ -7,40 +7,46 @@
     <text wx:if="{{catid==4}}">记录生活琐事</text>
   </view>
   <view class="Rose-section">
-    <view class="Rose-section_title">时长</view>
+    <view class="Rose-section_title">标题</view>
     <input name="time" value="{{title}}" class="Rose-input" bindinput="forTitle" />
   </view>
   <view class="Rose-section">
-    <view class="Rose-section_title">备注</view>
+    <view class="Rose-section_title">内容</view>
     <textarea name="beizhu" class="Rose-input" value="{{remark}}" bindinput="forRemark" maxlength="-1" placeholder="说点什么吧"></textarea>
   </view>
   <view class="Rose-section">
     <button class="Rose-btn" disabled="{{disabled}}" wx:if="{{canIUse}}" open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo">提交</button>
   </view>
 </view>
-<view class="Rose-form">
-  <view class="Rose-year-line" wx:for="{{bigData}}" wx:key="index" wx:for-item="year">
-    <view class="Rose-year" >
-      <icon class="iconfont icon-md-shijian"></icon>
-      {{index}}
-    </view>
-    <view class="Rose-month-list" wx:for="{{year}}" wx:for-index="idx"  wx:key="idx" wx:for-item ="month">
-      <view class="Rose-month">
-        <icon class="iconfont icon-xiangshang"></icon>
-        {{idx}}
+
+<view class="Rose-form" >
+  <view wx:for="{{bigData}}" wx:key="index" wx:for-item="years">
+    <view class="Rose-year-line" wx:for="{{years}}" wx:key="index" wx:for-item="year">
+      <view class="Rose-year" >
+        <icon class="iconfont icon-md-shijian"></icon>
+        {{index}}
       </view>
-      <view class="Rose-day-list" wx:for="{{month}}" wx:for-index="ix" wx:key="ix" wx:for-item="day">
-        <view class="Rose-circle"></view>
-        <view class="Rose-day">{{ix}}</view>
-        <view class="Rose-itemline-item">
-          <view class="Rose-event" wx:for="{{day}}" wx:for-index="i" wx:for-item="dd" wx:key="ix" wx:if="{{day.length>0}}">
-            <view class="Rose-event-icon">
-              <icon class="iconfont icon-zan4"></icon>
-            </view>
-            <view>
-              <view class="Rose-title">{{dd.title}}</view>
-              <view class="Rose-time">{{dd.insert_time}}</view>
-              <view class="Rose-content">{{dd.remark}}</view>
+      <view class="Rose-month-list" wx:for="{{year}}" wx:for-index="idx"  wx:key="idx" wx:for-item ="month" wx:if="{{month.length!=0}}">
+        <view class="Rose-month">
+          <icon class="iconfont icon-xiangshang"></icon>
+          {{idx}}
+        </view>
+        <view class="Rose-day-list" wx:for="{{month}}" wx:for-index="ix" wx:key="ix" wx:for-item="day">
+
+          <view class="Rose-circle"></view>
+          <view class="Rose-day">{{ix}}</view>
+          <view class="Rose-itemline-item">
+            <view class="Rose-event" wx:for="{{day}}" wx:for-index="i" wx:for-item="dd" wx:key="i">
+
+
+              <view class="Rose-event-icon">
+                <icon class="iconfont icon-zan4"></icon>
+              </view>
+              <view>
+                <view class="Rose-title">{{dd.title}}</view>
+                <view class="Rose-time">{{dd.insert_time}}</view>
+                <view class="Rose-content">{{dd.remark}}</view>
+              </view>
             </view>
           </view>
         </view>

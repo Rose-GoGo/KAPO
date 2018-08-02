@@ -5,7 +5,10 @@
 </view>
 
 <view class="Rose-lists">
-  <view class="Rose-floor-title">精选</view>
+  <view class="Rose-floor-title">精选
+<navigator url="../lists/lists?catid=11" hover-class='none' class="Rose-go">查看更多</navigator>
+
+  </view>
   <view class="Rose-box">
 
   <scroll-view class="Rose-items" scroll-x="true">
