@@ -4,7 +4,7 @@
     <text wx:if="{{catid==1}}">每天一个俯卧撑</text>
     <text wx:if="{{catid==2}}">读100本书</text>
     <text wx:if="{{catid==3}}">学一门外语</text>
-    <text wx:if="{{catid==4}}">弹吉他</text>
+    <text wx:if="{{catid==4}}">记录生活琐事</text>
   </view>
   <view class="Rose-section">
     <view class="Rose-section_title">时长</view>
@@ -12,7 +12,7 @@
   </view>
   <view class="Rose-section">
     <view class="Rose-section_title">备注</view>
-    <textarea name="beizhu" class="Rose-input" value="{{remark}}" bindinput="forRemark" placeholder="说点什么吧"></textarea>
+    <textarea name="beizhu" class="Rose-input" value="{{remark}}" bindinput="forRemark" maxlength="-1" placeholder="说点什么吧"></textarea>
   </view>
   <view class="Rose-section">
     <button class="Rose-btn" disabled="{{disabled}}" wx:if="{{canIUse}}" open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo">提交</button>

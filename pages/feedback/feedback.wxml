@@ -7,7 +7,7 @@
     </view>
     <view class="Rose-section">
       <view class="Rose-section_title">内容</view>
-      <textarea name="beizhu" class="Rose-input" value="{{remark}}" bindinput="forRemark" placeholder="说点什么吧"></textarea>
+      <textarea name="beizhu" class="Rose-input" maxlength="-1" value="{{remark}}" bindinput="forRemark" placeholder="说点什么吧"></textarea>
     </view>
     <view class="Rose-section">
       <button formType="submit" class="Rose-btn" disabled="{{disabled}}"  wx:if="{{canIUse}}" open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo">

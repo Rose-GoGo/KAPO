@@ -114,15 +114,15 @@ button[disabled]:not([type]) {
   color: #999;
 }
 .Rose-content {
-  max-height: 21em;
+/*  max-height: 21em;*/
   margin: 5px 0 0;
   font-size: 28rpx;
   color: #666;
-  line-height: 1.4em;
+/*  line-height: 1.4em;
   display: -webkit-box;
-  -webkit-line-clamp: 15;
+  -webkit-line-clamp: 15; 限制显示15行
   -webkit-box-orient: vertical;
-  overflow: hidden;
+  overflow: hidden;*/
 }
 .Rose-year-line {
   position: relative;

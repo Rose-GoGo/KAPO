@@ -8,7 +8,6 @@ page{
   display: flex;
   flex-direction: column;
   align-items: stretch;
-
 }
 .container {
   position: relative;
@@ -39,7 +38,6 @@ page{
   transform: translate3d(0,100%,0);
   animation: rise 3s cubic-bezier(0.19, 1, 0.22, 1) .25s forwards;
 }
-
 .remind-box {
   flex: 1;
   display: flex;
@@ -53,7 +51,6 @@ page{
   height: 250rpx;
   padding-bottom: 25rpx;
 }
-
 @keyframes rise{
   0% {opacity: 0;transform: translate3d(0,100%,0);}
   50% {opacity: 1;}
@@ -69,7 +66,6 @@ page{
   margin-left: -185rpx;
   animation: show 2.5s cubic-bezier(0.19, 1, 0.22, 1) .5s forwards;
 }
-
 .smalltitle{
   position: absolute;
   top: 50rpx;
@@ -80,12 +76,10 @@ page{
   opacity: 0;
   animation: show 2.5s cubic-bezier(0.19, 1, 0.22, 1) .5s forwards;
 }
-
 @keyframes show{
   0% {opacity: 0;}
   100% {opacity: .95;}
 }
-
 .hd {
   position: absolute;
   top: 0;
@@ -138,7 +132,6 @@ page{
   from {transform: translate3d(375rpx,0,0);}
   to {transform: translate3d(1375rpx,0,0);}
 }
-
 .bd {
   position: relative;
   flex: 1;
@@ -152,7 +145,6 @@ page{
   from {opacity: 0; transform: translate3d(0,60rpx,0); }
   to {opacity: 1; transform: translate3d(0,0,0); }
 }
-
 .confirm-btn {
   font-size: 13pt;
   line-height: 85rpx;
@@ -166,8 +158,6 @@ page{
 .confirm-btn:active {
   opacity: .8;
 }
-
-
 .copyright {
   font-size: 28rpx;
   color: #999;

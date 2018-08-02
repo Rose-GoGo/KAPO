@@ -14,8 +14,8 @@ Page({
     loadMore: true,
     canIUse: wx.canIUse('button.open-type.getUserInfo'),
     username: '',
-    year: "2018",
-    month: '',
+    year: new Date().getFullYear(),
+    month: new Date().getMonth() + 1,
     topyear:"",
     topMonth:""
   },
@@ -32,6 +32,7 @@ Page({
     })
     wx.getSetting({
       success: function (res) {
+        console.log(res)
         if (res.authSetting['scope.userInfo']) {
           // 已经授权，可以直接调用 getUserInfo 获取头像昵称
           wx.getUserInfo({
@@ -42,7 +43,7 @@ Page({
                 sex: userInfo.gender
               })
             }
-          })
+          });
         }
       }
     });
@@ -128,19 +129,32 @@ Page({
       username: that.data.username,
     }
     Api.everyday(_params).then(res => {
-      if (!res.data.code) {
-        that.setData({
-          title: '',
-          remark: '',
-          disabled: true,
-          year: 2018,
-          month: '07'
-        })
-        that.getLine();
+      if (res.data.code==0) {
         wx.showToast({
           title: '提交成功',
           icon: 'success',
           duration: 2000
+        });
+
+        let month = new Date().getMonth() + 1;
+        let year = new Date().getFullYear();
+
+         month = month >= 10 ? '' + month : '0' + month;
+
+
+
+        that.setData({
+          title: '',
+          remark: '',
+          disabled: true,
+          year: year,
+          month: month
+        })
+        that.getLine();
+      }else{
+        wx.showModal({
+          title:'标题',
+          content: res.data.message
         })
       }
     });
@@ -199,6 +213,7 @@ Page({
       username: userInfo.nickName,
       sex: userInfo.gender
     });
-    that.formSubmit();
+     that.formSubmit();
+    // that.getLine();
   }
 })
