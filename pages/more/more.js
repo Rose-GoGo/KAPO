@@ -7,17 +7,14 @@ Page({
    data: {
     bigData: [],
     catid: '',
-    title: '',
-    remark: '',
     disabled: true,
-    monthData: {},
     loadMore: true,
+    monthData: {},//存储月数据
     canIUse: wx.canIUse('button.open-type.getUserInfo'),
-    username: '',
     year: new Date().getFullYear(),
     month: new Date().getMonth() + 1,
     isRose: false,
-    dataIndex: 0
+    dataIndex: 0 //为了得到bigdata中的数组，特别是是换年
   },
   /**
    * 生命周期函数--监听页面加载
@@ -79,7 +76,7 @@ Page({
    onReachBottom: function () {
     var that = this;
     if(that.data.loadMore){
-      that.earMonth();
+      that.earMonth(); //上个月的时间
       that.getLine();
     }
   },
@@ -183,10 +180,11 @@ Page({
   },
   getLine: function () {
     wx.showLoading();
-    var that = this;
+    var that = this,
+    obj = {};
     var year = that.data.year;
     var month = that.data.month;
-    var dataIndex = this.data.dataIndex;
+    var dataIndex = that.data.dataIndex;
     var big = that.data.bigData;
     let _params = {
       year: year,
@@ -195,11 +193,11 @@ Page({
     }
     Api.showday(_params).then(res => {
       if (!res.data.code) {
-        var _data = res.data.data;
+        let _data = res.data.data;
         if (that.data.month == '12') { //换年了
-          var obj = _data;
+           obj = _data;
         } else {
-          var obj = Object.assign(that.data.monthData, _data);// 月数据
+           obj = Object.assign(that.data.monthData, _data);// 月数据
         }
         that.setData({
           monthData: obj
