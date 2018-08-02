@@ -7,7 +7,6 @@ Page({
   data: {
     items:[],
     page:1,
-    top10:[],
     loadMore:true
   },
   /**
@@ -73,7 +72,7 @@ Page({
       page: this.data.page
     }
     Api.all(params).then(res => { //文章列表
-      if(res.data.code!=99){
+      if(!res.data.code){
         let _data = res.data.data;
         let _items = this.data.items.concat(_data);
         if(_data.length<5){
@@ -90,7 +89,7 @@ Page({
   },
   top10: function(){
     Api.hits().then(res => { //文章列表
-      if(res.data.code!=99){
+      if(!res.data.code){
         let _data = res.data.data;
         this.setData({
           top10: _data

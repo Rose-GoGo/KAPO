@@ -130,7 +130,7 @@ Page({
       username: that.data.username,
     }
     Api.everyday(_params).then(res => {
-      if (res.data.code == 0) {
+      if (!res.data.code) {
         wx.showToast({
           title: '提交成功',
           icon: 'success',
