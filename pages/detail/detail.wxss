@@ -1,48 +1,55 @@
 /* pages/detail/detail.wxss */
-.Rose--box{
+
+.Rose--box {
   background: #fff;
 }
-.Rose-detail{
-    font-size: 32rpx;
-    line-height: 1.6;
-    padding: 0 20rpx 80rpx;
-    color: #666
+
+.Rose-detail {
+  font-size: 32rpx;
+  line-height: 1.6;
+  padding: 0 20rpx 80rpx;
+  color: #666;
 }
-.Rose-title{
-    color: #333;
-    font-size: 48rpx;
-    line-height: 1.2;
-    padding: 20rpx 0
+
+.Rose-title {
+  color: #333;
+  font-size: 48rpx;
+  line-height: 1.2;
+  padding: 20rpx 0;
 }
-.Rose-addtime{
+
+.Rose-addtime {
   margin: 20rpx 0;
   color: #999;
-   font-size:24rpx;
+  font-size: 24rpx;
 }
-.wxParse-pre{
+
+.wxParse-pre {
   background: #000;
   padding: 10rpx;
   margin: 20rpx 0;
 }
-.Rose-keywords{
-  margin-left: 20rpx
+
+.Rose-keywords {
+  margin-left: 20rpx;
 }
-.Rose-sorry{
+
+.Rose-sorry {
   padding: 120rpx 0 40rpx;
   font-size: 24rpx;
   color: #999;
 }
-.wxParse-p{ 
+
+.wxParse-p {
   padding: 10rpx 0;
 }
 
-image{
+image {
   max-width: 100%;
-  margin:40rpx 0;
+  margin: 40rpx 0;
 }
 
-.wxParse-h3{
+.wxParse-h3 {
   font-weight: 600;
-  font-size:34rpx;
-
+  font-size: 34rpx;
 }
