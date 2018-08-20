@@ -10,7 +10,7 @@
         <template is="wxParse" data="{{wxParseData:dkcontent.nodes}}" />
     </view>
     <view class="Rose-sorry">
-        由于文章是在后台用富文本添加的,这里使用了wxParse转码,但是在转码的时候,部分代码被直接翻译成了小程序的语言(如view),给您带来不便,敬请见谅。
+        文章是在后台富文本编辑器添加,转码时部分代码被直接翻译成了小程序的语言(如view),给您带来不便,敬请见谅。
     </view>
 </view>
 </view>

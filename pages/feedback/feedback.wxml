@@ -1,6 +1,6 @@
 <!--pages/feedback/feedback.wxml-->
 <view class="Rose-form">
-  <form bindsubmit="formSubmit" bindreset="formReset">
+  <form bindsubmit="formSubmit">
     <view class="Rose-section">
       <view class="Rose-section_title">标题</view>
       <input name="time" value="{{title}}" class="Rose-input" bindinput="forTitle" />

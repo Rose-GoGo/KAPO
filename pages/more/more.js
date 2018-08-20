@@ -13,7 +13,7 @@ Page({
     canIUse: wx.canIUse('button.open-type.getUserInfo'),
     year: new Date().getFullYear(),
     month: new Date().getMonth() + 1,
-    isRose: true,
+    isRose: false,
     dataIndex: 0 //为了得到bigdata中的数组，特别是是换年
   },
   /**
@@ -126,7 +126,6 @@ Page({
     that.setData({
         disabled: true //想偷懒都不行，这里需要点击按钮后，按钮就设置成disabled, 避免重负提交
     })
-
     let _params = {
       catid: that.data.catid,
       title: that.data.title,
@@ -146,7 +145,6 @@ Page({
         that.setData({
           title: '',
           remark: '',
-
           year: year,
           month: month
         })

@@ -1,6 +1,6 @@
 <!-- <view class="Rose-floor"> -->
   <view class="Rose-about">
-    <view class="Rose-about-title">关于这个博客</view>
+    <view class="Rose-about-title">Rose Zhao</view>
     <view class="Rose-content">记录我的前端生活和在开发过程中遇到的问题，整理成文，希望对大家有帮助。始终相信，一步一个脚印，踏实学习。</view>
   </view>
 <!-- </view> -->

@@ -15,13 +15,13 @@
   color: #333;
   font-size: 48rpx;
   line-height: 1.2;
-  padding: 20rpx 0;
+  padding: 30rpx 0 20rpx;
 }
 
 .Rose-addtime {
-  margin: 20rpx 0;
+  margin: 20rpx 0 40rpx;
   color: #999;
-  font-size: 24rpx;
+  font-size: 28rpx;
 }
 
 .wxParse-pre {
@@ -37,10 +37,11 @@
 .Rose-sorry {
   padding: 120rpx 0 40rpx;
   font-size: 24rpx;
-  color: #999;
+  color: #ccc;
 }
 
 .wxParse-p {
+  word-break: break-all;
   padding: 10rpx 0;
 }
 

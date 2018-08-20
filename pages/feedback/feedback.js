@@ -117,6 +117,9 @@ Page({
   },
   formSubmit: function() {
     var that = this;
+    that.setData({
+        disabled: true //想偷懒都不行，这里需要点击按钮后，按钮就设置成disabled, 避免重负提交
+    })
     let _params = {
       catid: that.data.catid,
       title: that.data.title,

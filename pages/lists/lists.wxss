@@ -49,7 +49,7 @@
   border-bottom: 2rpx solid #f2f2f2;
 }
 .Rose-name{
-  font-size: 32rpx;
+  font-size: 34rpx;
   color: #333;
 }
 .Rose-description{
