@@ -5,6 +5,7 @@ Page({
    * 页面的初始数据
    */
    data: {
+    images:[],
     bigData: [],
     catid: '',
     disabled: true,
@@ -14,6 +15,8 @@ Page({
     year: new Date().getFullYear(),
     month: new Date().getMonth() + 1,
     isRose: false,
+     showEdit: false,
+     id: '',
     dataIndex: 0 //为了得到bigdata中的数组，特别是是换年
   },
   /**
@@ -132,25 +135,36 @@ Page({
       remark: that.data.remark,
       username: that.data.username,
     }
-    Api.everyday(_params).then(res => {
-      if (!res.data.code) {
-        wx.showToast({
-          title: '提交成功',
-          icon: 'success',
-          duration: 2000
-        });
-        let month = new Date().getMonth() + 1;
-        let year = new Date().getFullYear();
-        month = month >= 10 ? '' + month : '0' + month;
-        that.setData({
-          title: '',
-          remark: '',
-          year: year,
-          month: month
-        })
-        that.getLine();
-      }
-    });
+
+    if(this.data.id){//如果有id， 则进行更新，否则为新增
+      console.log('修改内容接口')
+
+    }else{
+      Api.everyday(_params).then(res => {
+        if (!res.data.code) {
+          wx.showToast({
+            title: '提交成功',
+            icon: 'success',
+            duration: 2000
+          });
+          let month = new Date().getMonth() + 1;
+          let year = new Date().getFullYear();
+          month = month >= 10 ? '' + month : '0' + month;
+          that.setData({
+            title: '',
+            remark: '',
+            year: year,
+            month: month
+          })
+          that.getLine();
+        }
+      });
+
+    }
+
+
+   
+   
   },
   earMonth: function (n) { //获取年月
     var ym, year, month;
@@ -225,5 +239,67 @@ Page({
       sex: userInfo.gender
     });
     that.formSubmit();
+  },
+  editItem: function(e){
+    let showEdit = this.data.showEdit;
+    this.setData({
+      showEdit: !showEdit
+    })
+  },
+  editOne: function(e){
+    var that = this;
+    let id = e.currentTarget.dataset.id;
+    let title = e.currentTarget.dataset.title;
+    let remark = e.currentTarget.dataset.remark;  
+    that.setData({
+      title: title,
+      remark: remark,
+      disabled: false,
+      id: id,
+      images:[]
+    });
+  },
+  deleteOne:function(e){ //删除本条
+    let id = e.currentTarget.dataset.id;
+    
+
+
+  },
+  removeImage(e) {
+    const idx = e.target.dataset.idx;
+    let img = this.data.images;
+    img.splice(idx, 1);
+
+    this.setData({
+      images: img
+    })
+
+    
+    
+  },
+  uploadImg: function(){
+    var that = this;
+    wx.chooseImage({
+      //count: 1, // 默认9
+      sizeType: ['compressed'], // 可以指定是原图还是压缩图，默认二者都有
+      sourceType: ['album', 'camera'], // 可以指定来源是相册还是相机，默认二者都有
+      success: function (res) {
+        // 返回选定照片的本地文件路径列表，tempFilePath可以作为img标签的src属性显示图片
+      
+
+        const images = that.data.images.concat(res.tempFilePaths)
+        // 限制最多只能留下3张照片
+        that.data.images = images.length <= 3 ? images : images.slice(0, 3)
+
+  
+
+        that.setData({
+          images: images
+
+        })
+
+      }
+    })
+
   }
 })

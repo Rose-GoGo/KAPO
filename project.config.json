@@ -68,13 +68,19 @@
 					"id": 4,
 					"name": "打卡",
 					"pathName": "pages/more/more",
-					"query": "catid=1"
+					"query": "catid=4"
 				},
 				{
 					"id": 7,
 					"name": "项目介绍",
 					"pathName": "pages/project_page/project_page",
 					"query": "id=119"
+				},
+				{
+					"id": -1,
+					"name": "意见反馈",
+					"pathName": "pages/feedback/feedback",
+					"query": ""
 				}
 			]
 		}

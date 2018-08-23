@@ -31,7 +31,7 @@
 .Rose-btn {
   width: 100%;
   height: 100%;
-  margin-top: 30px;
+  margin-top: 20rpx;
   background: #4bb777;
   font-size: 17px;
   border: none;
@@ -49,7 +49,7 @@ button[disabled]:not([type]) {
   background: #fff;
   color: #000;
   text-align: center;
-  font-weight: 500
+  font-weight: 500;
 }
 .Rose-year-line {
   background: #fff;
@@ -114,11 +114,10 @@ button[disabled]:not([type]) {
   color: #999;
 }
 .Rose-content {
-/*  max-height: 21em;*/
+  /*  max-height: 21em;*/
   margin: 5px 0 0;
   font-size: 28rpx;
-  color: #666;
-/*  line-height: 1.4em;
+  color: #666;  /*  line-height: 1.4em;
   display: -webkit-box;
   -webkit-line-clamp: 15; 限制显示15行
   -webkit-box-orient: vertical;
@@ -137,14 +136,6 @@ button[disabled]:not([type]) {
   background: #ccc;
   content: '';
 }
-.Rose-event-icon {
-  width: 40px;
-  margin: 0 5px 0 0;
-  flex: none;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
 .Rose-event {
   border: 1px solid #f2f2f2;
   padding: 5px;
@@ -158,8 +149,28 @@ button[disabled]:not([type]) {
   height: 40px;
   border-radius: 100%;
 }
-.icon-zan4 {
+.Rose-event-icon {
+  width: 40px;
+  flex: none;
+  font-size: 20rpx;
+  color: #999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.Rose-event-icon icon {
+  font-size: 40rpx;
   color: #4bb777;
+  margin: 0 auto;
+  display: block;
+}
+.Rose-icon-item {
+  margin-bottom: 20rpx;
+}
+.Rose-icon-item icon {
+  font-size: 40rpx;
+  color: #4bb777;
+  margin-right: 20rpx;
 }
 .icon-md-shijian {
   position: relative;
@@ -168,7 +179,7 @@ button[disabled]:not([type]) {
   font-size: 30px;
   margin-left: -24px;
   background: #fff;
-  color: #333
+  color: #333;
 }
 .icon-xiangshang {
   display: inline-block;
@@ -178,4 +189,25 @@ button[disabled]:not([type]) {
   margin-left: -22px;
   background: #fff;
   font-weight: 500;
+}
+.icon-image {
+  font-size: 52rpx;
+  color: #ccc;
+  margin-left: 6px;
+}
+.Rose-upimg {
+  /* display: flex; */
+  width: 100%;
+}
+.Rose-imgbox {
+  margin: 0 1%;
+  font-size: 24rpx;
+  color: #999;
+  text-align: center;
+  width: 31%;
+  float: left;
+}
+.Rose-image {
+  width: 100%;
+  height: 160rpx;
 }

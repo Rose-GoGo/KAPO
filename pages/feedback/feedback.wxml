@@ -27,6 +27,11 @@
         <icon wx:if="{{item.sex==2}}" class="iconfont icon-nvxing female"></icon>
         <icon wx:else class="iconfont icon-nanxing male"></icon>
       {{item.username}}</view>
+      <view class="Rose-edit">
+      <icon class="iconfont icon-bianji"></icon>
+      <icon class="icon iconfont icon-shanchu"></icon>
+
+      </view>
       <view class="Rose-time">{{item.create_time}}</view>
     </view>
   </view>
