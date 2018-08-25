@@ -1,46 +1,73 @@
 <!--pages/more/more.wxml-->
+<view class="Rose-form" wx:if="{{isRose}}">
+  <form bindsubmit="formSubmit">
+    <view class="Rose-section">
+      <view class="Rose-section_title">标题</view>
+      <input name="time" name="title" value="{{title}}" class="Rose-input" bindinput="forTitle" />
+    </view>
+    <view class="Rose-section">
+      <view class="Rose-section_title">内容</view>
+      <textarea name="beizhu" name="remark" class="Rose-input" value="{{remark}}" bindinput="forRemark" maxlength="-1" placeholder="说点什么吧"></textarea>
+    </view>
+    <view class="Rose-section">
+      <view class="Rose-section_title"></view>
+      <view class="Rose-upimg">
+        <icon class="iconfont icon-image" ontap="uploadImg" wx:if="{{images.length < 3}}"></icon>
+      </view>
+    </view>
+    <view class="Rose-section" wx:if="{{ images.length!=0}}">
+      <view class="Rose-section_title"></view>
+      <view class="Rose-upimg">
+        <view class="Rose-imgbox" wx:for="{{images}}" wx:key="*this">
+          <image class="Rose-image" src="{{item}}" mode="aspectFit" data-idx="{{index}}" bindtap="handleImagePreview"></image>
+          <view class="Rose-remover" data-idx="{{index}}" bindtap="removeImage">删除</view>
+        </view>
+      </view>
+    </view>
+    <view class="Rose-section">
+      <button formType="submit" class="Rose-btn" disabled="{{disabled}}" wx:if="{{canIUse}}" bindgetuserinfo="bindGetUserInfo">提交</button>
+    </view>
+  </form>
+</view>
 <view class="Rose-form">
   <view class="Rose-floor-title">
     <text wx:if="{{catid==1}}">每天一个俯卧撑</text>
     <text wx:if="{{catid==2}}">读100本书</text>
     <text wx:if="{{catid==3}}">学一门外语</text>
-    <text wx:if="{{catid==4}}">弹吉他</text>
+    <text wx:if="{{catid==4}}">记录生活琐事</text>
   </view>
-  <view class="Rose-section">
-    <view class="Rose-section_title">时长</view>
-    <input name="time" value="{{title}}" class="Rose-input" bindinput="forTitle" />
-  </view>
-  <view class="Rose-section">
-    <view class="Rose-section_title">备注</view>
-    <textarea name="beizhu" class="Rose-input" value="{{remark}}" bindinput="forRemark" placeholder="说点什么吧"></textarea>
-  </view>
-  <view class="Rose-section">
-    <button class="Rose-btn" disabled="{{disabled}}" wx:if="{{canIUse}}" open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo">提交</button>
-  </view>
-</view>
-<view class="Rose-form">
-  <view class="Rose-year-line" wx:for="{{bigData}}" wx:key="index" wx:for-item="year">
-    <view class="Rose-year" >
-      <icon class="iconfont icon-md-shijian"></icon>
-      {{index}}
-    </view>
-    <view class="Rose-month-list" wx:for="{{year}}" wx:for-index="idx"  wx:key="idx" wx:for-item ="month">
-      <view class="Rose-month">
-        <icon class="iconfont icon-xiangshang"></icon>
-        {{idx}}
+  <view wx:for="{{bigData}}" wx:key="index" wx:for-item="years">
+    <view class="Rose-year-line" wx:for="{{years}}" wx:key="index" wx:for-item="year">
+      <view class="Rose-year">
+        <icon class="iconfont icon-md-shijian"></icon>
+        {{index}}
       </view>
-      <view class="Rose-day-list" wx:for="{{month}}" wx:for-index="ix" wx:key="ix" wx:for-item="day">
-        <view class="Rose-circle"></view>
-        <view class="Rose-day">{{ix}}</view>
-        <view class="Rose-itemline-item">
-          <view class="Rose-event" wx:for="{{day}}" wx:for-index="i" wx:for-item="dd" wx:key="ix" wx:if="{{day.length>0}}">
-            <view class="Rose-event-icon">
-              <icon class="iconfont icon-zan4"></icon>
-            </view>
-            <view>
-              <view class="Rose-title">{{dd.title}}</view>
-              <view class="Rose-time">{{dd.insert_time}}</view>
-              <view class="Rose-content">{{dd.remark}}</view>
+      <view class="Rose-month-list" wx:for="{{year}}" wx:for-index="idx" wx:key="idx" wx:for-item="month" wx:if="{{month.length!=0}}">
+        <view class="Rose-month">
+          <icon class="iconfont icon-xiangshang"></icon>
+          {{idx}}
+        </view>
+        <view class="Rose-day-list" wx:for="{{month}}" wx:for-index="ix" wx:key="ix" wx:for-item="day">
+          <view class="Rose-circle"></view>
+          <view class="Rose-day">{{ix}}</view>
+          <view class="Rose-itemline-item" bindlongpress="editItem">
+            <view class="Rose-event" wx:for="{{day}}" wx:for-index="i" wx:for-item="dd" wx:key="i">
+              <view class="Rose-event-icon">
+                <view>
+                  <icon class="iconfont icon-like"></icon>
+                  198
+                </view>
+              </view>
+              <view>
+                <view class="Rose-title">{{dd.title}}</view>
+                <view class="Rose-time">{{dd.insert_time}}</view>
+                <view class="Rose-content">{{dd.remark}}</view>
+                <!-- 如果是Rose，才可以编辑 -->
+                <view class="Rose-icon-item" wx:if="{{showEdit && isRose}}">
+                  <icon class="iconfont icon-edit" data-id="{{dd.id}}" data-title="{{dd.title}}" data-remark="{{dd.remark}}" bindtap="editOne"></icon>
+                  <icon class="iconfont icon-delete" data-id="{{dd.id}}" bindtap="deleteOne"></icon>
+                </view>
+              </view>
             </view>
           </view>
         </view>

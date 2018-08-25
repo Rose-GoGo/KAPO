@@ -93,7 +93,7 @@ Page({
       catid: this.data.catid
     }
     Api.lists(params).then(res => { //文章列表
-      if (res.data.code==0) {
+      if (!res.data.code) {
         let _data = res.data.data;
         let _items = this.data.items.concat(_data);
         this.setData({

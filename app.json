@@ -1,6 +1,5 @@
 {
   "pages": [
-    "pages/start/start",
     "pages/index/index",
     "pages/detail/detail",
     "pages/about/about",
@@ -14,7 +13,7 @@
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#1d8f59",
-    "navigationBarTitleText": "CAPO博客-记录学习和生活",
+    "navigationBarTitleText": "KAPO博客-记录学习和生活",
     "navigationBarTextStyle": "#fff",
     "enablePullDownRefresh": true,
     "onReachBottomDistance": 50

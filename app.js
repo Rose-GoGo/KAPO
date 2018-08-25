@@ -1,10 +1,21 @@
 //app.js
 App({
-  onShow: function(option) { //å½“å°ç¨‹åºå¯åŠ¨ï¼Œæˆ–ä»ŽåŽå°è¿›å…¥å‰å°æ˜¾ç¤ºï¼Œä¼šè§¦å‘ onShow
+  onShow: function(option) { //µ±Ð¡³ÌÐòÆô¶¯£¬»ò´ÓºóÌ¨½øÈëÇ°Ì¨ÏÔÊ¾£¬»á´¥·¢ onShow
   },
   onPageNotFound: function(res) {
   },
-  onLaunch: function() { //ç”Ÿå‘½å‘¨æœŸå‡½æ•°--ç›‘å¬å°ç¨‹åºåˆå§‹åŒ–
+  onLaunch: function() { //ÉúÃüÖÜÆÚº¯Êý--¼àÌýÐ¡³ÌÐò³õÊ¼»¯
+  },
+  globalData: {
+  }
+})
+//app.js
+App({
+  onShow: function(option){
+  },
+  onPageNotFound: function(res){
+  },
+  onLaunch: function () {
   },
   globalData: {
   }

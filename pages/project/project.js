@@ -12,7 +12,7 @@ Page({
     afterColor: "#a5a2af",//当前选中的指示点颜色
     previousmargin: '30px',//前边距
     nextmargin: '30px',//后边距
-    preIndex: null
+    // preIndex: 1
   },
   /**
    * 生命周期函数--监听页面加载

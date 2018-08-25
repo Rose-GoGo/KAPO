@@ -1,13 +1,13 @@
 <!--pages/feedback/feedback.wxml-->
 <view class="Rose-form">
-  <form bindsubmit="formSubmit" bindreset="formReset">
+  <form bindsubmit="formSubmit">
     <view class="Rose-section">
       <view class="Rose-section_title">标题</view>
       <input name="time" value="{{title}}" class="Rose-input" bindinput="forTitle" />
     </view>
     <view class="Rose-section">
       <view class="Rose-section_title">内容</view>
-      <textarea name="beizhu" class="Rose-input" value="{{remark}}" bindinput="forRemark" placeholder="说点什么吧"></textarea>
+      <textarea name="beizhu" class="Rose-input" maxlength="-1" value="{{remark}}" bindinput="forRemark" placeholder="说点什么吧"></textarea>
     </view>
     <view class="Rose-section">
       <button formType="submit" class="Rose-btn" disabled="{{disabled}}"  wx:if="{{canIUse}}" open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo">
@@ -27,6 +27,11 @@
         <icon wx:if="{{item.sex==2}}" class="iconfont icon-nvxing female"></icon>
         <icon wx:else class="iconfont icon-nanxing male"></icon>
       {{item.username}}</view>
+      <view class="Rose-edit">
+      <icon class="iconfont icon-bianji"></icon>
+      <icon class="icon iconfont icon-shanchu"></icon>
+
+      </view>
       <view class="Rose-time">{{item.create_time}}</view>
     </view>
   </view>
