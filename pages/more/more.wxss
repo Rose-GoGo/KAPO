@@ -169,7 +169,7 @@ button[disabled]:not([type]) {
 }
 .Rose-icon-item icon {
   font-size: 40rpx;
-  color: #4bb777;
+  color: #999;
   margin-right: 20rpx;
 }
 .icon-md-shijian {
