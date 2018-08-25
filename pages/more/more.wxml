@@ -1,5 +1,6 @@
 <!--pages/more/more.wxml-->
-<view class="Rose-form" wx:if="{{isRose}}">
+<view class="Rose-form" >
+<!-- <view class="Rose-form" wx:if="{{isRose}}"> -->
   <form bindsubmit="formSubmit">
     <view class="Rose-section">
       <view class="Rose-section_title">标题</view>

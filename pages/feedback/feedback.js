@@ -14,7 +14,9 @@ Page({
     loadMore: true,
     canIUse: wx.canIUse('button.open-type.getUserInfo'),
     username:'',
-    sex: null
+    sex: null,
+    isRose:false,
+    showEdit: false
   },
   /**
    * 生命周期函数--监听页面加载
@@ -29,6 +31,11 @@ Page({
               wx.getUserInfo({
                 success: function(res) {
                   var userInfo = res.userInfo;
+                  if (userInfo.nickName == '赵') {
+                    that.setData({
+                      isRose: true
+                    });
+                  }
                   that.setData({
                     username:userInfo.nickName,
                     sex: userInfo.gender
@@ -161,7 +168,7 @@ Page({
         if(_data.length<10){
           that.setData({
             loadMore: false
-          })
+          });
 
         }
         wx.hideLoading();
@@ -176,5 +183,33 @@ Page({
       sex: userInfo.gender
     });
     that.formSubmit();
-  }
+  },
+  editItem: function (e) {
+    let showEdit = this.data.showEdit;
+    this.setData({
+      showEdit: !showEdit
+    })
+  },
+  deleteOne: function (e) { //删除本条
+    var that = this;
+    let id = e.currentTarget.dataset.id;
+    let _params = {
+      catid: 5,
+      id: id
+    }
+    Api.everydelete(_params).then(res => {
+      if (!res.data.code) {
+        let month = new Date().getMonth() + 1;
+        let year = new Date().getFullYear();
+        month = month >= 10 ? '' + month : '0' + month;
+        that.setData({
+          items:[],
+         page:1,
+         loadMore:true
+        });
+
+        that.feedback();
+      }
+    });
+  },
 })

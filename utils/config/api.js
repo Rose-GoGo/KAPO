@@ -22,9 +22,17 @@ const ALL_API = {
     method: 'POST',
     url: '/index.php?m=content&c=punch&a=lists'
   },
-  everyday: { //打卡
+  everyadd: { //打卡添加
     method: 'POST',
     url: '/index.php?m=content&c=punch&a=add'
+  },
+  everyupdate: { //打卡编辑
+    method: 'POST',
+    url: '/index.php?m=content&c=punch&a=update'
+  },
+  everydelete: { //打卡删除
+    method: 'POST',
+    url: '/index.php?m=content&c=punch&a=delete'
   },
   feedback: { //意见反馈
     method: 'POST',

@@ -156,7 +156,7 @@ button[disabled]:not([type]) {
   color: #999;
   display: flex;
   align-items: center;
-  justify-content: center;
+  
 }
 .Rose-event-icon icon {
   font-size: 40rpx;

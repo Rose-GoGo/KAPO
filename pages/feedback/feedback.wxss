@@ -108,7 +108,7 @@ button[disabled]:not([type]) {
 }
 
 .Rose-time {
-  width: 40%;
+  flex: 1;
   text-align: right;
   line-height: 40rpx;
   padding-top: 16rpx;
@@ -122,7 +122,7 @@ button[disabled]:not([type]) {
 .Rose-edit icon {
   font-size: 36rpx;
   margin: 0 10rpx;
-  color: #666;
+  color: #999;
 }
 
 .female {
@@ -136,3 +136,4 @@ button[disabled]:not([type]) {
 .Rose-name .iconfont {
   font-size: 40rpx;
 }
+
