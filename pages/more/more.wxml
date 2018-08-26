@@ -19,7 +19,7 @@
       <view class="Rose-section_title"></view>
       <view class="Rose-upimg">
         <view class="Rose-imgbox" wx:for="{{images}}" wx:for-item="upitem" wx:key="*this">
-          <image class="Rose-image" src="{{upitem}}" mode="aspectFit" data-src="{{upitem}}" bindtap="imagePreview"></image>
+          <image class="Rose-image" src="{{upitem}}" data-arr="{{images}}" mode="aspectFit" data-idx="{{index}}" bindtap="imagePreview"></image>
           <view class="Rose-remover" data-idx="{{index}}" bindtap="removeImage">删除</view>
         </view>
       </view>
@@ -55,17 +55,11 @@
               <view class="Rose-event-icon">
                 <view>
                   <icon class="iconfont icon-like"></icon>
-                  198
+                  <!-- 198 -->
                 </view>
               </view>
               <view class="Rose-contentbox">
-                <view class="Rose-item">
-                  <block wx:for="{{dd.imgs}}" wx:key="mm" wx:for-item="imagess">
-                    <view class="Rose-imgbox">
-                      <image class="Rose-img" src="{{imagess}}" mode="scaleToFill" data-src="{{imagess}}" bindtap="imagePreview"> </image>
-                    </view>
-                  </block>
-                </view>
+
                 <view class="Rose-title">{{dd.title}}</view>
                 <view class="Rose-time">{{dd.insert_time}}</view>
                 <view class="Rose-content">{{dd.remark}}</view>
@@ -73,6 +67,14 @@
                 <view class="Rose-icon-item" wx:if="{{showEdit && isRose}}">
                   <icon class="iconfont icon-edit" data-id="{{dd.id}}" data-title="{{dd.title}}" data-remark="{{dd.remark}}" bindtap="editOne"></icon>
                   <icon class="iconfont icon-delete" data-id="{{dd.id}}" bindtap="deleteOne"></icon>
+                </view>
+
+                <view class="Rose-item">
+                  <block wx:for="{{dd.imgs}}" wx:key="mm" wx:for-item="imagess">
+                    <view class="Rose-imgbox">
+                      <image class="Rose-img" src="{{imagess}}" data-idx="{{index}}" mode="scaleToFill" data-arr="{{dd.imgs}}" bindtap="imagePreview"> </image>
+                    </view>
+                  </block>
                 </view>
               </view>
             </view>

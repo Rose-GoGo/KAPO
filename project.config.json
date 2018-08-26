@@ -68,7 +68,7 @@
 					"id": 4,
 					"name": "打卡",
 					"pathName": "pages/more/more",
-					"query": "catid=1"
+					"query": "catid=4"
 				},
 				{
 					"id": 7,

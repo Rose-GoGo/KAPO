@@ -245,7 +245,7 @@ Page({
     });
   },
   removeImage(e) {
-    const idx = e.target.dataset.idx;
+    let idx = e.target.dataset.idx;
     let img = this.data.images;
     img.splice(idx, 1);
     this.setData({
@@ -253,11 +253,11 @@ Page({
     })
   },
   imagePreview(e) {
-    const idx = e.target.dataset.src;
-    // const images = this.data.images
+    let idx = e.target.dataset.idx;
+    let arr = e.target.dataset.arr;
     wx.previewImage({
-      current: idx, //当前预览的图片
-      urls: idx, //所有要预览的图片
+      current: arr[idx], //当前预览的图片
+      urls: arr, //所有要预览的图片
     })
   },
   uploadImg: function () {
@@ -272,7 +272,6 @@ Page({
           const images = that.data.images.concat(res.tempFilePaths);
           // 限制最多只能留下3张照片
           // that.data.images = images.length <= 3 ? images : images.slice(0, 3)
-
           var imgCount = 0;
           var aids = [];
           for (var i = 0, h = images.length; i < h; i++) {
@@ -291,8 +290,8 @@ Page({
                 var _data = JSON.parse(res.data)
                 if (_data.code == 0) {
                   imgCount++;
-                  var productInfo = _data.aid;
-                  aids.push(productInfo);
+                  let _aid = _data.aid;
+                  aids.push(_aid);
                   that.setData({
                     aids: aids
                   });
@@ -330,14 +329,11 @@ Page({
     }
   },
   formSubmit: function () {
-    var that = this;
+    var that = this, aids = [];
     that.setData({
       disabled: true //想偷懒都不行，这里需要点击按钮后，按钮就设置成disabled, 避免重负提交
     });
-    if (that.data.aids.length == 0) {
-      return false;
-    }
-    var aids = that.data.aids.join(';');
+    aids = that.data.aids.join(';');
     let _params = {
       catid: that.data.catid,
       title: that.data.title,
@@ -345,15 +341,10 @@ Page({
       username: that.data.username,
       aids: aids //图片
     }
-    if (this.data.id) { //如果有id， 则进行更新，否则为新增
-      _params.id = this.data.id;
+    if (that.data.id) { //如果有id， 则进行更新，否则为新增
+      _params.id = that.data.id;
       Api.everyupdate(_params).then(res => {
         if (!res.data.code) {
-          wx.showToast({
-            title: '更新成功',
-            icon: 'success',
-            duration: 2000
-          });
           let month = new Date().getMonth() + 1;
           let year = new Date().getFullYear();
           month = month >= 10 ? '' + month : '0' + month;
@@ -364,7 +355,7 @@ Page({
             year: year,
             month: month,
             showEdit: false,
-            images:[]
+            images: []
           })
           that.getLine();
         }
@@ -386,7 +377,7 @@ Page({
             year: year,
             month: month,
             showEdit: false,
-            images:[]
+            images: []
           });
           that.getLine();
         }
