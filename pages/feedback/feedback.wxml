@@ -10,12 +10,12 @@
       <textarea name="beizhu" class="Rose-input" maxlength="-1" value="{{remark}}" bindinput="forRemark" placeholder="说点什么吧"></textarea>
     </view>
     <view class="Rose-section">
-      <button formType="submit" class="Rose-btn" disabled="{{disabled}}"  wx:if="{{canIUse}}" open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo">
+      <button formType="submit" class="Rose-btn" disabled="{{disabled}}" wx:if="{{canIUse}}" open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo">
         <icon class="icon iconfont icon-tijiao2"></icon>
         提交
       </button>
     </view>
-</form>
+  </form>
 </view>
 <view class="Rose-lists" wx:if="{{items.length > 0}}">
   <view class="Rose-feeds">反馈列表</view>
@@ -26,13 +26,13 @@
       <view class="Rose-name">
         <icon wx:if="{{item.sex==2}}" class="iconfont icon-nvxing female"></icon>
         <icon wx:else class="iconfont icon-nanxing male"></icon>
-      {{item.username}}</view>
+        {{item.username}}</view>
       <block wx:if="{{showEdit && isRose}}">
-      <view class="Rose-edit" >
+        <view class="Rose-edit">
 
-      <icon class="iconfont icon-delete" data-id="{{item.id}}" bindtap="deleteOne"></icon>
+          <icon class="iconfont icon-delete" data-id="{{item.id}}" bindtap="deleteOne"></icon>
 
-      </view>
+        </view>
       </block>
       <view class="Rose-time">{{item.create_time}}</view>
     </view>

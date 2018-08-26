@@ -5,20 +5,21 @@ Page({
    * 页面的初始数据
    */
   data: {
-    postType:'', //提交状态
+    postType: '', //提交状态
     images: [],
     bigData: [],
     catid: '',
     disabled: true,
     loadMore: true,
-    monthData: {},//存储月数据
+    monthData: {}, //存储月数据
     canIUse: wx.canIUse('button.open-type.getUserInfo'),
     year: new Date().getFullYear(),
     month: new Date().getMonth() + 1,
     isRose: false,
     showEdit: false,
     id: '',
-    dataIndex: 0 //为了得到bigdata中的数组，特别是是换年
+    dataIndex: 0, //为了得到bigdata中的数组，特别是是换年
+    aids: []
   },
   /**
    * 生命周期函数--监听页面加载
@@ -38,7 +39,7 @@ Page({
           wx.getUserInfo({
             success: function (res) {
               var userInfo = res.userInfo;
-              if (userInfo.nickName == '赵') {
+              if (userInfo.nickName == '赵' || userInfo.nickName == '天道酬勤') {
                 that.setData({
                   isRose: true
                 });
@@ -125,62 +126,6 @@ Page({
       })
     }
   },
-  formSubmit: function () {
-    var that = this;
-    that.setData({
-      disabled: true //想偷懒都不行，这里需要点击按钮后，按钮就设置成disabled, 避免重负提交
-    })
-    let _params = {
-      catid: that.data.catid,
-      title: that.data.title,
-      remark: that.data.remark,
-      username: that.data.username
-    }
-    if (this.data.id) {//如果有id， 则进行更新，否则为新增
-      _params.id = this.data.id;
-      Api.everyupdate(_params).then(res => {
-        if (!res.data.code) {
-          wx.showToast({
-            title: '更新成功',
-            icon: 'success',
-            duration: 2000
-          });
-          let month = new Date().getMonth() + 1;
-          let year = new Date().getFullYear();
-          month = month >= 10 ? '' + month : '0' + month;
-          that.setData({
-            id: '',
-            title: '',
-            remark: '',
-            year: year,
-            month: month,
-            postType: '',
-          })
-          that.getLine();
-        }
-      });
-    } else {
-      Api.everyadd(_params).then(res => {
-        if (!res.data.code) {
-          wx.showToast({
-            title: '提交成功',
-            icon: 'success',
-            duration: 2000
-          });
-          let month = new Date().getMonth() + 1;
-          let year = new Date().getFullYear();
-          month = month >= 10 ? '' + month : '0' + month;
-          that.setData({
-            title: '',
-            remark: '',
-            year: year,
-            month: month
-          })
-          that.getLine();
-        }
-      });
-    }
-  },
   earMonth: function (n) { //获取年月
     var ym, year, month;
     var that = this;
@@ -192,7 +137,9 @@ Page({
       month = 12;
       let big = that.data.bigData;
       let index = this.data.dataIndex + 1
-      let datas = { [year]: {} }
+      let datas = {
+        [year]: {}
+      }
       big.push(datas)
       that.setData({
         dataIndex: index,
@@ -228,12 +175,14 @@ Page({
         if (that.data.month == '12') { //换年了
           obj = _data;
         } else {
-          obj = Object.assign(that.data.monthData, _data);// 月数据
+          obj = Object.assign(that.data.monthData, _data); // 月数据
         }
         that.setData({
           monthData: obj
         });
-        big[dataIndex] = { [year]: obj }
+        big[dataIndex] = {
+          [year]: obj
+        }
         that.setData({
           bigData: big
         })
@@ -267,7 +216,7 @@ Page({
     let title = e.currentTarget.dataset.title;
     let remark = e.currentTarget.dataset.remark;
     that.setData({
-      postType:'update',
+      postType: 'update',
       title: title,
       remark: remark,
       disabled: false,
@@ -291,7 +240,6 @@ Page({
           year: year,
           month: month
         });
-
         that.getLine();
       }
     });
@@ -304,29 +252,145 @@ Page({
       images: img
     })
   },
-  handleImagePreview(e) {
-    const idx = e.target.dataset.idx
-    const images = this.data.images
+  imagePreview(e) {
+    const idx = e.target.dataset.src;
+    // const images = this.data.images
     wx.previewImage({
-      current: images[idx],  //当前预览的图片
-      urls: images,  //所有要预览的图片
+      current: idx, //当前预览的图片
+      urls: idx, //所有要预览的图片
     })
   },
   uploadImg: function () {
     var that = this;
-    wx.chooseImage({
-      //count: 1, // 默认9
-      sizeType: ['original', 'compressed'], // 可以指定是原图还是压缩图，默认二者都有
-      sourceType: ['album', 'camera'], // 可以指定来源是相册还是相机，默认二者都有
-      success: function (res) {
-        // 返回选定照片的本地文件路径列表，tempFilePath可以作为img标签的src属性显示图片
-        const images = that.data.images.concat(res.tempFilePaths)
-        // 限制最多只能留下3张照片
-        that.data.images = images.length <= 3 ? images : images.slice(0, 3)
-        that.setData({
-          images: images
-        })
-      }
-    })
-  }
+    if (this.data.images.length < 3) {
+      wx.chooseImage({
+        count: 3, //最多可以选择的图片总数
+        sizeType: ['original', 'compressed'], // 可以指定是原图还是压缩图，默认二者都有
+        sourceType: ['album', 'camera'], // 可以指定来源是相册还是相机，默认二者都有
+        success: function (res) {
+          // 返回选定照片的本地文件路径列表，tempFilePath可以作为img标签的src属性显示图片
+          const images = that.data.images.concat(res.tempFilePaths);
+          // 限制最多只能留下3张照片
+          // that.data.images = images.length <= 3 ? images : images.slice(0, 3)
+
+          var imgCount = 0;
+          var aids = [];
+          for (var i = 0, h = images.length; i < h; i++) {
+            wx.uploadFile({
+              url: 'https://www.zhmzjl.com/index.php?m=content&c=punch&a=upload',
+              filePath: images[i],
+              name: 'file',
+              formData: {
+                'file': i
+              },
+              header: {
+                // "Content-Type": "multipart/form-data"
+                'content-type': 'application/x-www-form-urlencoded;charset=utf-8'
+              },
+              success: function (res) {
+                var _data = JSON.parse(res.data)
+                if (_data.code == 0) {
+                  imgCount++;
+                  var productInfo = _data.aid;
+                  aids.push(productInfo);
+                  that.setData({
+                    aids: aids
+                  });
+                }
+                if (imgCount == images.length) {
+                  wx.hideToast();
+                }
+              },
+              fail: function (res) {
+                wx.hideToast();
+                wx.showModal({
+                  title: '错误提示',
+                  content: '上传图片失败',
+                  showCancel: false,
+                  success: function (res) { }
+                })
+              }
+            }).onProgressUpdate((res) => { //查看进度
+              // console.log('上传进度', res.progress)
+              // console.log('已经上传的数据长度', res.totalBytesSent)
+              // console.log('预期需要上传的数据总长度', res.totalBytesExpectedToSend)
+            })
+            that.setData({
+              images: images
+            });
+          }
+        }
+      })
+    } else {
+      wx.showToast({
+        title: '最多上传三张图片',
+        icon: 'loading',
+        duration: 3000
+      });
+    }
+  },
+  formSubmit: function () {
+    var that = this;
+    that.setData({
+      disabled: true //想偷懒都不行，这里需要点击按钮后，按钮就设置成disabled, 避免重负提交
+    });
+    if (that.data.aids.length == 0) {
+      return false;
+    }
+    var aids = that.data.aids.join(';');
+    let _params = {
+      catid: that.data.catid,
+      title: that.data.title,
+      remark: that.data.remark,
+      username: that.data.username,
+      aids: aids //图片
+    }
+    if (this.data.id) { //如果有id， 则进行更新，否则为新增
+      _params.id = this.data.id;
+      Api.everyupdate(_params).then(res => {
+        if (!res.data.code) {
+          wx.showToast({
+            title: '更新成功',
+            icon: 'success',
+            duration: 2000
+          });
+          let month = new Date().getMonth() + 1;
+          let year = new Date().getFullYear();
+          month = month >= 10 ? '' + month : '0' + month;
+          that.setData({
+            id: '',
+            title: '',
+            remark: '',
+            year: year,
+            month: month,
+            showEdit: false,
+            images:[]
+          })
+          that.getLine();
+        }
+      });
+    } else {
+      Api.everyadd(_params).then(res => {
+        if (!res.data.code) {
+          wx.showToast({
+            title: '提交成功',
+            icon: 'success',
+            duration: 2000
+          });
+          let month = new Date().getMonth() + 1;
+          let year = new Date().getFullYear();
+          month = month >= 10 ? '' + month : '0' + month;
+          that.setData({
+            title: '',
+            remark: '',
+            year: year,
+            month: month,
+            showEdit: false,
+            images:[]
+          });
+          that.getLine();
+        }
+      });
+    }
+  },
 })

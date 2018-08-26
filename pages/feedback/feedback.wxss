@@ -136,4 +136,3 @@ button[disabled]:not([type]) {
 .Rose-name .iconfont {
   font-size: 40rpx;
 }
-

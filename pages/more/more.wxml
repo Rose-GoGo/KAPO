@@ -1,6 +1,5 @@
 <!--pages/more/more.wxml-->
-<view class="Rose-form" >
-<!-- <view class="Rose-form" wx:if="{{isRose}}"> -->
+<view class="Rose-form" wx:if="{{isRose}}">
   <form bindsubmit="formSubmit">
     <view class="Rose-section">
       <view class="Rose-section_title">标题</view>
@@ -8,7 +7,7 @@
     </view>
     <view class="Rose-section">
       <view class="Rose-section_title">内容</view>
-      <textarea name="beizhu" name="remark" class="Rose-input" value="{{remark}}" bindinput="forRemark" maxlength="-1" placeholder="说点什么吧"></textarea>
+      <textarea name="beizhu" focus name="remark" class="Rose-input" value="{{remark}}" bindinput="forRemark" maxlength="-1" placeholder="说点什么吧"></textarea>
     </view>
     <view class="Rose-section">
       <view class="Rose-section_title"></view>
@@ -19,8 +18,8 @@
     <view class="Rose-section" wx:if="{{ images.length!=0}}">
       <view class="Rose-section_title"></view>
       <view class="Rose-upimg">
-        <view class="Rose-imgbox" wx:for="{{images}}" wx:key="*this">
-          <image class="Rose-image" src="{{item}}" mode="aspectFit" data-idx="{{index}}" bindtap="handleImagePreview"></image>
+        <view class="Rose-imgbox" wx:for="{{images}}" wx:for-item="upitem" wx:key="*this">
+          <image class="Rose-image" src="{{upitem}}" mode="aspectFit" data-src="{{upitem}}" bindtap="imagePreview"></image>
           <view class="Rose-remover" data-idx="{{index}}" bindtap="removeImage">删除</view>
         </view>
       </view>
@@ -59,7 +58,14 @@
                   198
                 </view>
               </view>
-              <view>
+              <view class="Rose-contentbox">
+                <view class="Rose-item">
+                  <block wx:for="{{dd.imgs}}" wx:key="mm" wx:for-item="imagess">
+                    <view class="Rose-imgbox">
+                      <image class="Rose-img" src="{{imagess}}" mode="scaleToFill" data-src="{{imagess}}" bindtap="imagePreview"> </image>
+                    </view>
+                  </block>
+                </view>
                 <view class="Rose-title">{{dd.title}}</view>
                 <view class="Rose-time">{{dd.insert_time}}</view>
                 <view class="Rose-content">{{dd.remark}}</view>

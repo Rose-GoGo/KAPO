@@ -4,7 +4,7 @@ Page({
   /**
    * 页面的初始数据
    */
-   data: {
+  data: {
     catid: '5',
     page: 1,
     title: '',
@@ -13,70 +13,70 @@ Page({
     items: [],
     loadMore: true,
     canIUse: wx.canIUse('button.open-type.getUserInfo'),
-    username:'',
+    username: '',
     sex: null,
-    isRose:false,
+    isRose: false,
     showEdit: false
   },
   /**
    * 生命周期函数--监听页面加载
    */
-   onLoad: function(options) {
+  onLoad: function(options) {
     var that = this;
     wx.showLoading();
     wx.getSetting({
-      success: function(res){
+      success: function(res) {
         if (res.authSetting['scope.userInfo']) {
-              // 已经授权，可以直接调用 getUserInfo 获取头像昵称
-              wx.getUserInfo({
-                success: function(res) {
-                  var userInfo = res.userInfo;
-                  if (userInfo.nickName == '赵') {
-                    that.setData({
-                      isRose: true
-                    });
-                  }
-                  that.setData({
-                    username:userInfo.nickName,
-                    sex: userInfo.gender
-                  })
-                }
+          // 已经授权，可以直接调用 getUserInfo 获取头像昵称
+          wx.getUserInfo({
+            success: function(res) {
+              var userInfo = res.userInfo;
+              if (userInfo.nickName == '赵') {
+                that.setData({
+                  isRose: true
+                });
+              }
+              that.setData({
+                username: userInfo.nickName,
+                sex: userInfo.gender
               })
             }
-          }
-        });
+          })
+        }
+      }
+    });
     that.feedback();
   },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
-   onReady: function() {},
+  onReady: function() {},
   /**
    * 生命周期函数--监听页面显示
    */
-   onShow: function() {},
+  onShow: function() {},
   /**
    * 生命周期函数--监听页面隐藏
    */
-   onHide: function() {},
+  onHide: function() {},
   /**
    * 生命周期函数--监听页面卸载
    */
-   onUnload: function() {},
+  onUnload: function() {},
   /**
    * 页面相关事件处理函数--监听用户下拉动作
    */
-   onPullDownRefresh: function() {},
+  onPullDownRefresh: function() {},
   /**
    * 页面上拉触底事件的处理函数
    */
-   onReachBottom: function() {
+  onReachBottom: function() {
     var that = this;
     let page = that.data.page + 1;
     that.setData({
-      page:page
+      page: page
     });
-    if(that.data.loadMore){
+    if (that.data.loadMore) {
       that.feedback();
 
     }
@@ -84,7 +84,7 @@ Page({
   /**
    * 用户点击右上角分享
    */
-   onShareAppMessage: function() {
+  onShareAppMessage: function() {
     return {
       title: '锲而舍之,朽木不折;锲而不舍,金石可镂',
       imageUrl: '/assets/images/share.jpg'
@@ -125,7 +125,7 @@ Page({
   formSubmit: function() {
     var that = this;
     that.setData({
-        disabled: true //想偷懒都不行，这里需要点击按钮后，按钮就设置成disabled, 避免重负提交
+      disabled: true //想偷懒都不行，这里需要点击按钮后，按钮就设置成disabled, 避免重负提交
     })
     let _params = {
       catid: that.data.catid,
@@ -140,7 +140,7 @@ Page({
           title: '',
           remark: '',
           page: 1,
-          items:[],
+          items: [],
           disabled: true
         });
         wx.showToast({
@@ -165,7 +165,7 @@ Page({
         that.setData({
           items: _arr
         });
-        if(_data.length<10){
+        if (_data.length < 10) {
           that.setData({
             loadMore: false
           });
@@ -179,18 +179,18 @@ Page({
     var that = this;
     var userInfo = e.detail.userInfo;
     that.setData({
-      username:userInfo.nickName,
+      username: userInfo.nickName,
       sex: userInfo.gender
     });
     that.formSubmit();
   },
-  editItem: function (e) {
+  editItem: function(e) {
     let showEdit = this.data.showEdit;
     this.setData({
       showEdit: !showEdit
     })
   },
-  deleteOne: function (e) { //删除本条
+  deleteOne: function(e) { //删除本条
     var that = this;
     let id = e.currentTarget.dataset.id;
     let _params = {
@@ -203,9 +203,9 @@ Page({
         let year = new Date().getFullYear();
         month = month >= 10 ? '' + month : '0' + month;
         that.setData({
-          items:[],
-         page:1,
-         loadMore:true
+          items: [],
+          page: 1,
+          loadMore: true
         });
 
         that.feedback();
