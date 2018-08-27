@@ -13,10 +13,10 @@ Page({
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function (options) {
+  onLoad: function(options) {
     var that = this;
     wx.getNetworkType({ //
-      success: function (res) {
+      success: function(res) {
         // 返回网络类型, 有效值：
         // wifi/2g/3g/4g/unknown(Android下不常见的网络类型)/none(无网络)
         var networkType = res.networkType;
@@ -36,24 +36,23 @@ Page({
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
-  onReady: function () { },
+  onReady: function() {},
   /**
    * 生命周期函数--监听页面显示
    */
-  onShow: function () {
-  },
+  onShow: function() {},
   /**
    * 生命周期函数--监听页面隐藏
    */
-  onHide: function () { },
+  onHide: function() {},
   /**
    * 生命周期函数--监听页面卸载
    */
-  onUnload: function () { },
+  onUnload: function() {},
   /**
    * 页面相关事件处理函数--监听用户下拉动作
    */
-  onPullDownRefresh: function () {
+  onPullDownRefresh: function() {
     wx.showLoading();
     let that = this;
     that.setData({
@@ -62,15 +61,15 @@ Page({
       loadMore: true
     });
     if (that.data.loadMore) {
-       wx.showLoading();
-        that.top10();
-        that.getLists();
+      wx.showLoading();
+      that.top10();
+      that.getLists();
     }
   },
   /**
    * 页面上拉触底事件的处理函数
    */
-  onReachBottom: function () {
+  onReachBottom: function() {
     let that = this;
     let _page = that.data.page + 1;
     that.setData({
@@ -83,20 +82,20 @@ Page({
   /**
    * 用户点击右上角分享
    */
-  onShareAppMessage: function () {
+  onShareAppMessage: function() {
     return {
       title: '锲而舍之,朽木不折;锲而不舍,金石可镂',
       imageUrl: '/assets/images/share.jpg'
     }
   },
-  articleDetail: function (e) {
+  articleDetail: function(e) {
     let id = e.currentTarget.dataset.id;
     let catid = e.currentTarget.dataset.catid
     wx.navigateTo({
       url: '../detail/detail?catid=' + catid + '&id=' + id
     });
   },
-  getLists: function (e) {
+  getLists: function(e) {
     wx.showLoading();
     let that = this;
     let params = {
@@ -118,7 +117,7 @@ Page({
       }
     });
   },
-  top10: function () {
+  top10: function() {
     Api.hits().then(res => { //文章列表
       if (!res.data.code) {
         let _data = res.data.data;
