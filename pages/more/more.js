@@ -262,7 +262,7 @@ Page({
   },
   uploadImg: function () {
     var that = this;
-    if (this.data.images.length < 3) {
+    if (this.data.images.length < 3) { // 限制最多只能留下3张照片
       wx.chooseImage({
         count: 3, //最多可以选择的图片总数
         sizeType: ['original', 'compressed'], // 可以指定是原图还是压缩图，默认二者都有
@@ -270,10 +270,9 @@ Page({
         success: function (res) {
           // 返回选定照片的本地文件路径列表，tempFilePath可以作为img标签的src属性显示图片
           const images = that.data.images.concat(res.tempFilePaths);
-          // 限制最多只能留下3张照片
-          // that.data.images = images.length <= 3 ? images : images.slice(0, 3)
           var imgCount = 0;
           var aids = [];
+
           for (var i = 0, h = images.length; i < h; i++) {
             wx.uploadFile({
               url: 'https://www.zhmzjl.com/index.php?m=content&c=punch&a=upload',

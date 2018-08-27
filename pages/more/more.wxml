@@ -29,6 +29,7 @@
     </view>
   </form>
 </view>
+
 <view class="Rose-form">
   <view class="Rose-floor-title">
     <text wx:if="{{catid==1}}">每天一个俯卧撑</text>
@@ -59,22 +60,20 @@
                 </view>
               </view>
               <view class="Rose-contentbox">
-
                 <view class="Rose-title">{{dd.title}}</view>
                 <view class="Rose-time">{{dd.insert_time}}</view>
                 <view class="Rose-content">{{dd.remark}}</view>
                 <!-- 如果是Rose，才可以编辑 -->
-                <view class="Rose-icon-item" wx:if="{{showEdit && isRose}}">
-                  <icon class="iconfont icon-edit" data-id="{{dd.id}}" data-title="{{dd.title}}" data-remark="{{dd.remark}}" bindtap="editOne"></icon>
-                  <icon class="iconfont icon-delete" data-id="{{dd.id}}" bindtap="deleteOne"></icon>
-                </view>
-
                 <view class="Rose-item">
                   <block wx:for="{{dd.imgs}}" wx:key="mm" wx:for-item="imagess">
                     <view class="Rose-imgbox">
                       <image class="Rose-img" src="{{imagess}}" data-idx="{{index}}" mode="scaleToFill" data-arr="{{dd.imgs}}" bindtap="imagePreview"> </image>
                     </view>
                   </block>
+                </view>
+                <view class="Rose-icon-item" wx:if="{{showEdit && isRose}}">
+                  <icon class="iconfont icon-edit" data-id="{{dd.id}}" data-title="{{dd.title}}" data-remark="{{dd.remark}}" bindtap="editOne"></icon>
+                  <icon class="iconfont icon-delete" data-id="{{dd.id}}" bindtap="deleteOne"></icon>
                 </view>
               </view>
             </view>
