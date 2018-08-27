@@ -34,7 +34,7 @@
       <view class="Rose-flex1 Rose-time text-right">{{comm.formatTime(item.updatetime)}}</view>
     </view>
     <view class="Rose-flex1 Rose-title">{{item.title}}</view>
-    <image class="Rose-imgitem" lazy-load="{{true}}" src="{{item.thumb==''? '/assets/images/ncode.jpg': item.thumb}}"></image>
+    <image class="Rose-imgitem" mode="widthFix" lazy-load="{{true}}" src="{{item.thumb==''? '/assets/images/ncode.jpg': item.thumb}}"></image>
     <view class="Rose-detail">{{item.description}}</view>
   </view>
 </view>

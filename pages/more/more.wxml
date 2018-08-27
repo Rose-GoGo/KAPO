@@ -7,12 +7,12 @@
     </view>
     <view class="Rose-section">
       <view class="Rose-section_title">内容</view>
-      <textarea name="beizhu" focus name="remark" class="Rose-input" value="{{remark}}" bindinput="forRemark" maxlength="-1" placeholder="说点什么吧"></textarea>
+      <textarea name="beizhu" name="remark" class="Rose-input" value="{{remark}}" bindinput="forRemark" maxlength="-1" placeholder="说点什么吧"></textarea>
     </view>
     <view class="Rose-section">
       <view class="Rose-section_title"></view>
       <view class="Rose-upimg">
-        <icon class="iconfont icon-image" ontap="uploadImg" wx:if="{{images.length < 3}}"></icon>
+        <icon class="iconfont icon-image" ontap="chooseImg" wx:if="{{images.length < 3}}"></icon>
       </view>
     </view>
     <view class="Rose-section" wx:if="{{ images.length!=0}}">

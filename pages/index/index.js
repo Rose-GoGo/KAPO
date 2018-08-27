@@ -41,26 +41,26 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    var that = this;
-    wx.getNetworkType({ //
-      success: function (res) {
-        // 返回网络类型, 有效值：
-        // wifi/2g/3g/4g/unknown(Android下不常见的网络类型)/none(无网络)
-        var networkType = res.networkType;
-        if (networkType == 'none') {
-          wx.showModal({
-            title: '提示',
-            content: '网络连接失败!',
-          });
-        } else {
-          if (that.data.top10.length == 0) { //如果没有数据，再请求一次
-            wx.showLoading();
-            that.top10();
-            that.getLists();
-          }
-        }
-      }
-    });
+    // var that = this;
+    // wx.getNetworkType({ //
+    //   success: function (res) {
+    //     // 返回网络类型, 有效值：
+    //     // wifi/2g/3g/4g/unknown(Android下不常见的网络类型)/none(无网络)
+    //     var networkType = res.networkType;
+    //     if (networkType == 'none') {
+    //       wx.showModal({
+    //         title: '提示',
+    //         content: '网络连接失败!',
+    //       });
+    //     } else {
+    //       if (that.data.top10.length == 0) { //如果没有数据，再请求一次
+    //         wx.showLoading();
+    //         that.top10();
+    //         that.getLists();
+    //       }
+    //     }
+    //   }
+    // });
   },
   /**
    * 生命周期函数--监听页面隐藏
@@ -74,6 +74,18 @@ Page({
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh: function () {
+    wx.showLoading();
+    let that = this;
+    that.setData({
+      items: [],
+      page: 1,
+      loadMore: true
+    });
+    if (that.data.loadMore) {
+       wx.showLoading();
+        that.top10();
+        that.getLists();
+    }
   },
   /**
    * 页面上拉触底事件的处理函数

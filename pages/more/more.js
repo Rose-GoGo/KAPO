@@ -5,7 +5,6 @@ Page({
    * 页面的初始数据
    */
   data: {
-    postType: '', //提交状态
     images: [],
     bigData: [],
     catid: '',
@@ -216,13 +215,28 @@ Page({
     let title = e.currentTarget.dataset.title;
     let remark = e.currentTarget.dataset.remark;
     that.setData({
-      postType: 'update',
       title: title,
       remark: remark,
       disabled: false,
       id: id,
       images: []
     });
+  },
+  resetPage: function () {//默认的展示状态
+    var that = this;
+    let month = new Date().getMonth() + 1;
+    let year = new Date().getFullYear();
+    month = month >= 10 ? '' + month : '0' + month;
+    that.setData({
+      id: '',
+      title: '',
+      remark: '',
+      year: year,
+      month: month,
+      showEdit: false,
+      images: []
+    });
+    that.getLine();
   },
   deleteOne: function (e) { //删除本条
     var that = this;
@@ -233,14 +247,7 @@ Page({
     }
     Api.everydelete(_params).then(res => {
       if (!res.data.code) {
-        let month = new Date().getMonth() + 1;
-        let year = new Date().getFullYear();
-        month = month >= 10 ? '' + month : '0' + month;
-        that.setData({
-          year: year,
-          month: month
-        });
-        that.getLine();
+        that.resetPage();
       }
     });
   },
@@ -262,72 +269,63 @@ Page({
   },
   uploadImg: function () {
     var that = this;
-    if (this.data.images.length < 3) { // 限制最多只能留下3张照片
-      wx.chooseImage({
-        count: 3, //最多可以选择的图片总数
-        sizeType: ['original', 'compressed'], // 可以指定是原图还是压缩图，默认二者都有
-        sourceType: ['album', 'camera'], // 可以指定来源是相册还是相机，默认二者都有
+    var aids = [];
+    var images = that.data.images;
+    for (var i = 0, h = images.length; i < h; i++) {
+      wx.uploadFile({
+        url: 'https://www.zhmzjl.com/index.php?m=content&c=punch&a=upload',
+        filePath: images[i],
+        name: 'file',
+        formData: {
+          'file': i
+        },
         success: function (res) {
-          // 返回选定照片的本地文件路径列表，tempFilePath可以作为img标签的src属性显示图片
-          const images = that.data.images.concat(res.tempFilePaths);
-          var imgCount = 0;
-          var aids = [];
-
-          for (var i = 0, h = images.length; i < h; i++) {
-            wx.uploadFile({
-              url: 'https://www.zhmzjl.com/index.php?m=content&c=punch&a=upload',
-              filePath: images[i],
-              name: 'file',
-              formData: {
-                'file': i
-              },
-              header: {
-                // "Content-Type": "multipart/form-data"
-                'content-type': 'application/x-www-form-urlencoded;charset=utf-8'
-              },
-              success: function (res) {
-                var _data = JSON.parse(res.data)
-                if (_data.code == 0) {
-                  imgCount++;
-                  let _aid = _data.aid;
-                  aids.push(_aid);
-                  that.setData({
-                    aids: aids
-                  });
-                }
-                if (imgCount == images.length) {
-                  wx.hideToast();
-                }
-              },
-              fail: function (res) {
-                wx.hideToast();
-                wx.showModal({
-                  title: '错误提示',
-                  content: '上传图片失败',
-                  showCancel: false,
-                  success: function (res) { }
-                })
-              }
-            }).onProgressUpdate((res) => { //查看进度
-              // console.log('上传进度', res.progress)
-              // console.log('已经上传的数据长度', res.totalBytesSent)
-              // console.log('预期需要上传的数据总长度', res.totalBytesExpectedToSend)
-            })
+          var _data = JSON.parse(res.data)
+          if (_data.code == 0) {
+            let _aid = _data.aid;
+            aids.push(_aid);
             that.setData({
-              images: images
+              aids: aids
             });
           }
+        },
+        fail: function (res) {
+          wx.showModal({
+            title: '错误提示',
+            content: '上传图片失败',
+            showCancel: false,
+            success: function (res) { }
+          })
         }
+      }).onProgressUpdate((res) => { //查看进度
+        console.log('上传进度', res.progress)
+        // console.log('已经上传的数据长度', res.totalBytesSent)
+        // console.log('预期需要上传的数据总长度', res.totalBytesExpectedToSend)
       })
-    } else {
-      wx.showToast({
-        title: '最多上传三张图片',
-        icon: 'loading',
-        duration: 3000
+    }
+  },
+  chooseImg: function () { //选取图片
+    var that = this;
+    if (that.data.images.length < 3) { // 限制最多只能留下3张照片
+      wx.chooseImage({
+        count: 3,
+        sizeType: ['original', 'compressed'],
+        sourceType: ['album', 'camera'], // 指定来源
+        success: function (res) {
+          // 返回选定照片的本地文件路径列表，tempFilePath可以作为img标签的src属性显示图片
+          let images = that.data.images.concat(res.tempFilePaths);
+          that.setData({
+            images: images
+          });
+          if (that.data.images.length != 0) { //如果有图片，进行上传
+            that.uploadImg(); //进行图片的上传
+          }
+        }
       });
     }
   },
   formSubmit: function () {
+    wx.showLoading();
     var that = this, aids = [];
     that.setData({
       disabled: true //想偷懒都不行，这里需要点击按钮后，按钮就设置成disabled, 避免重负提交
@@ -340,47 +338,21 @@ Page({
       username: that.data.username,
       aids: aids //图片
     }
-    if (that.data.id) { //如果有id， 则进行更新，否则为新增
+    if (that.data.id) { //如果有id， 修改
       _params.id = that.data.id;
       Api.everyupdate(_params).then(res => {
         if (!res.data.code) {
-          let month = new Date().getMonth() + 1;
-          let year = new Date().getFullYear();
-          month = month >= 10 ? '' + month : '0' + month;
-          that.setData({
-            id: '',
-            title: '',
-            remark: '',
-            year: year,
-            month: month,
-            showEdit: false,
-            images: []
-          })
-          that.getLine();
+          wx.hideLoading();
+          that.resetPage();
         }
       });
     } else {
-      Api.everyadd(_params).then(res => {
+      Api.everyadd(_params).then(res => { //更新
         if (!res.data.code) {
-          wx.showToast({
-            title: '提交成功',
-            icon: 'success',
-            duration: 2000
-          });
-          let month = new Date().getMonth() + 1;
-          let year = new Date().getFullYear();
-          month = month >= 10 ? '' + month : '0' + month;
-          that.setData({
-            title: '',
-            remark: '',
-            year: year,
-            month: month,
-            showEdit: false,
-            images: []
-          });
-          that.getLine();
+          wx.hideLoading();
+          that.resetPage();
         }
       });
     }
-  },
+  }
 })
