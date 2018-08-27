@@ -41,26 +41,6 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    // var that = this;
-    // wx.getNetworkType({ //
-    //   success: function (res) {
-    //     // 返回网络类型, 有效值：
-    //     // wifi/2g/3g/4g/unknown(Android下不常见的网络类型)/none(无网络)
-    //     var networkType = res.networkType;
-    //     if (networkType == 'none') {
-    //       wx.showModal({
-    //         title: '提示',
-    //         content: '网络连接失败!',
-    //       });
-    //     } else {
-    //       if (that.data.top10.length == 0) { //如果没有数据，再请求一次
-    //         wx.showLoading();
-    //         that.top10();
-    //         that.getLists();
-    //       }
-    //     }
-    //   }
-    // });
   },
   /**
    * 生命周期函数--监听页面隐藏
@@ -114,7 +94,7 @@ Page({
     let catid = e.currentTarget.dataset.catid
     wx.navigateTo({
       url: '../detail/detail?catid=' + catid + '&id=' + id
-    })
+    });
   },
   getLists: function (e) {
     wx.showLoading();
@@ -136,7 +116,7 @@ Page({
         });
         wx.hideLoading();
       }
-    })
+    });
   },
   top10: function () {
     Api.hits().then(res => { //文章列表
@@ -146,6 +126,6 @@ Page({
           top10: _data
         });
       }
-    })
+    });
   }
 })
