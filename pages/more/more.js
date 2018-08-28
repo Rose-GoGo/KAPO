@@ -102,11 +102,11 @@ Page({
     if (that.data.title && that.data.remark) {
       that.setData({
         disabled: false
-      })
+      });
     } else {
       that.setData({
         disabled: true
-      })
+      });
     }
   },
   forRemark: function (e) {
@@ -118,11 +118,11 @@ Page({
     if (that.data.title && that.data.remark) {
       that.setData({
         disabled: false
-      })
+      });
     } else {
       that.setData({
         disabled: true
-      })
+      });
     }
   },
   earMonth: function (n) { //获取年月
@@ -184,11 +184,11 @@ Page({
         }
         that.setData({
           bigData: big
-        })
+        });
         if (_data[month].length == 0) { //如果没有月数据，则不加载了，本来是想判断是否已经加载到底了，但是这里可能有半途没添加数据的情况，所以这里的逻辑不是很严谨
           that.setData({
             loadMore: false
-          })
+          });
         }
         wx.hideLoading();
       }
@@ -207,7 +207,7 @@ Page({
     let showEdit = this.data.showEdit;
     this.setData({
       showEdit: !showEdit
-    })
+    });
   },
   editOne: function (e) {
     var that = this;
@@ -222,7 +222,7 @@ Page({
       images: []
     });
   },
-  resetPage: function () {//默认的展示状态
+  resetPage: function () { //默认的展示状态
     var that = this;
     let month = new Date().getMonth() + 1;
     let year = new Date().getFullYear();
@@ -257,7 +257,7 @@ Page({
     img.splice(idx, 1);
     this.setData({
       images: img
-    })
+    });
   },
   imagePreview(e) {
     let idx = e.target.dataset.idx;
@@ -265,44 +265,46 @@ Page({
     wx.previewImage({
       current: arr[idx], //当前预览的图片
       urls: arr, //所有要预览的图片
-    })
+    });
   },
   uploadImg: function () {
     var that = this;
     var aids = [];
     var images = that.data.images;
-    for (var i = 0, h = images.length; i < h; i++) {
-      wx.uploadFile({
-        url: 'https://www.zhmzjl.com/index.php?m=content&c=punch&a=upload',
-        filePath: images[i],
-        name: 'file',
-        formData: {
-          'file': i
-        },
-        success: function (res) {
-          var _data = JSON.parse(res.data)
-          if (_data.code == 0) {
-            let _aid = _data.aid;
-            aids.push(_aid);
-            that.setData({
-              aids: aids
+
+    return new Promise(function (resolve, reject) {
+      if(images.length==0){ resolve(); return false;  }
+      for (let i = 0, h = images.length; i < h; i++) {
+        wx.uploadFile({
+          url: 'https://www.zhmzjl.com/index.php?m=content&c=punch&a=upload',
+          filePath: images[i],
+          name: 'file',
+          success: function (res) {
+            let _data = JSON.parse(res.data)
+            if (_data.code == 0) {
+              let _aid = _data.aid;
+              aids.push(_aid);
+              that.setData({
+                aids: aids
+              });
+              if (images.length == aids.length) {
+                resolve(aids);
+              }
+            }
+          },
+          fail: function (res) {
+            reject(res);
+            wx.showModal({
+              title: '提示',
+              content: '上传图片失败',
+              showCancel: false,
+              success: function (res) {
+              }
             });
           }
-        },
-        fail: function (res) {
-          wx.showModal({
-            title: '错误提示',
-            content: '上传图片失败',
-            showCancel: false,
-            success: function (res) { }
-          })
-        }
-      }).onProgressUpdate((res) => { //查看进度
-        console.log('上传进度', res.progress)
-        // console.log('已经上传的数据长度', res.totalBytesSent)
-        // console.log('预期需要上传的数据总长度', res.totalBytesExpectedToSend)
-      })
-    }
+        });
+      }
+    });
   },
   chooseImg: function () { //选取图片
     var that = this;
@@ -317,42 +319,46 @@ Page({
           that.setData({
             images: images
           });
-          if (that.data.images.length != 0) { //如果有图片，进行上传
-            that.uploadImg(); //进行图片的上传
-          }
         }
       });
     }
   },
   formSubmit: function () {
     wx.showLoading();
-    var that = this, aids = [];
+    var that = this,
+      aids = [];
     that.setData({
       disabled: true //想偷懒都不行，这里需要点击按钮后，按钮就设置成disabled, 避免重负提交
     });
-    aids = that.data.aids.join(';');
-    let _params = {
-      catid: that.data.catid,
-      title: that.data.title,
-      remark: that.data.remark,
-      username: that.data.username,
-      aids: aids //图片
-    }
-    if (that.data.id) { //如果有id， 修改
-      _params.id = that.data.id;
-      Api.everyupdate(_params).then(res => {
-        if (!res.data.code) {
-          wx.hideLoading();
-          that.resetPage();
-        }
-      });
-    } else {
-      Api.everyadd(_params).then(res => { //更新
-        if (!res.data.code) {
-          wx.hideLoading();
-          that.resetPage();
-        }
-      });
-    }
+
+    var promise = that.uploadImg(); //进行图片的上传
+
+    promise.then(res => {
+      aids = that.data.aids;
+      let aidStr = aids.join(';');
+      let _params = {
+        catid: that.data.catid,
+        title: that.data.title,
+        remark: that.data.remark,
+        username: that.data.username,
+        aids: aidStr //图片
+      }
+      if (that.data.id) { //如果有id， 修改
+        _params.id = that.data.id;
+        Api.everyupdate(_params).then(res => {
+          if (!res.data.code) {
+            wx.hideLoading();
+            that.resetPage();
+          }
+        });
+      } else {
+        Api.everyadd(_params).then(res => { //更新
+          if (!res.data.code) {
+            wx.hideLoading();
+            that.resetPage();
+          }
+        });
+      }
+    })
   }
 })
