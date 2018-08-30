@@ -1,5 +1,8 @@
-# wxxcx
-这是用微信小程序做的一个自己的博客
+# kapo博客
+
+这是用微信小程序做的一个自己的博客,喜欢记得star哟
+
+github源码地址: https://github.com/Rose-GoGo/KAPO
 
 博客主要分为三大模块： 文章/项目/我
 
