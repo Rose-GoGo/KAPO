@@ -134,7 +134,7 @@ Page({
       username: that.data.username,
       sex: that.data.sex
     }
-    Api.everyday(_params).then(res => {
+    Api.everyadd(_params).then(res => {
       if (!res.data.code) {
         that.setData({
           title: '',
