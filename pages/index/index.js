@@ -96,7 +96,6 @@ Page({
     });
   },
   getLists: function(e) {
-    wx.showLoading();
     let that = this;
     let params = {
       page: that.data.page

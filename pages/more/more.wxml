@@ -83,6 +83,9 @@
     </view>
   </view>
 </view>
+
+<loading load-more="{{loadMore}}"></loading>
+
 <view class="allLoaded" wx:if="{{!loadMore}}">
   <text class="line-word">我是有底线的~</text>
 </view>

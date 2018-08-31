@@ -84,9 +84,9 @@
 				},
 				{
 					"id": 7,
-					"name": "文章详情",
+					"name": "文章列表",
 					"pathName": "pages/lists/lists",
-					"query": "catid=11&page=1"
+					"query": "catid=13&page=1"
 				}
 			]
 		}

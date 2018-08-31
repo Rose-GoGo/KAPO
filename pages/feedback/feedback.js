@@ -78,7 +78,6 @@ Page({
     });
     if (that.data.loadMore) {
       that.feedback();
-
     }
   },
   /**
@@ -154,7 +153,6 @@ Page({
   },
   feedback: function() {
     var that = this;
-    wx.showLoading();
     let _params = {
       page: that.data.page
     }
@@ -169,7 +167,6 @@ Page({
           that.setData({
             loadMore: false
           });
-
         }
         wx.hideLoading();
       }
@@ -207,7 +204,6 @@ Page({
           page: 1,
           loadMore: true
         });
-
         that.feedback();
       }
     });

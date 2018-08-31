@@ -156,7 +156,6 @@ Page({
     });
   },
   getLine: function () {
-    wx.showLoading();
     var that = this,
       obj = {};
     var year = that.data.year;
@@ -271,7 +270,6 @@ Page({
     var that = this;
     var aids = [];
     var images = that.data.images;
-
     return new Promise(function (resolve, reject) {
       if(images.length==0){ resolve(); return false;  }
       for (let i = 0, h = images.length; i < h; i++) {
@@ -330,9 +328,7 @@ Page({
     that.setData({
       disabled: true //想偷懒都不行，这里需要点击按钮后，按钮就设置成disabled, 避免重负提交
     });
-
     var promise = that.uploadImg(); //进行图片的上传
-
     promise.then(res => {
       aids = that.data.aids;
       let aidStr = aids.join(';');

@@ -1,4 +1,7 @@
 {
   "navigationBarTitleText": "意见反馈",
-  "enablePullDownRefresh": false
+  "enablePullDownRefresh": false,
+  "usingComponents": {
+        "loading": "../loading/loading"
+    }
 }
