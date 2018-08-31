@@ -38,7 +38,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 4,
+			"current": 7,
 			"list": [
 				{
 					"id": -1,
@@ -81,6 +81,12 @@
 					"name": "意见反馈",
 					"pathName": "pages/feedback/feedback",
 					"query": ""
+				},
+				{
+					"id": 7,
+					"name": "文章详情",
+					"pathName": "pages/lists/lists",
+					"query": "catid=11&page=1"
 				}
 			]
 		}

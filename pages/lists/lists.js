@@ -1,5 +1,6 @@
 // pages/lists/lists.js
 import Api from '/../../utils/config/api.js';
+const app = getApp();
 Page({
   /**
    * 页面的初始数据
@@ -8,7 +9,8 @@ Page({
     page:1,
     items: [],
     loadMore: true,
-    catid: ''
+    catid: '',
+    kinds: app.globalData.kinds
   },
   /**
    * 生命周期函数--监听页面加载
@@ -16,7 +18,7 @@ Page({
   onLoad: function (options) {
     var catid = options.catid;
     this.setData({
-      catid: catid
+      catid: catid,
     })
     wx.showLoading();
     this.getLists();
@@ -83,7 +85,6 @@ Page({
       loadMore:true
     });
     this.getLists();
-
   },
   getLists: function (e) {
     wx.showLoading();

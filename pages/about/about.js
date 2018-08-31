@@ -3,8 +3,16 @@
 const app = getApp()
 Page({
   data: {
+    kinds: app.globalData.kinds,
+    every:[
+    {icon: 'icon-jianshen', name: '健身',id: 1},
+    {icon: 'icon-book', name: '读书',id: 2},
+    {icon: 'icon-yingyu', name: '外语',id: 3},
+    {icon: 'icon-yinyue', name: '生活',id: 4}
+    ]
   },
   onLoad: function () {
+
   },
   onReady: function() {},
   /**
@@ -35,13 +43,6 @@ Page({
       title: '锲而舍之,朽木不折;锲而不舍,金石可镂',
       imageUrl: '/assets/images/share.jpg'
     }
-  },
-  getUserInfo: function(e) {
-    app.globalData.userInfo = e.detail.userInfo
-    this.setData({
-      userInfo: e.detail.userInfo,
-      hasUserInfo: true
-    })
   },
   goEveryDay: function(e){
      let catid = e.currentTarget.dataset.catid;
