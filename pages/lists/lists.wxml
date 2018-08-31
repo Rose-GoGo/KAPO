@@ -15,12 +15,9 @@
     <view class="Rose-description">{{item.description}}</view>
   </view>
 </view>
-
 <block wx:if="{{items.length!=0 && !loadMore}}">
   <view class="allLoaded">
     <text class="line-word">我是有底线的~</text>
   </view>
 </block>
-
-
 <loading load-more="{{loadMore}}"></loading>

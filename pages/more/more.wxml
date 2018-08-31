@@ -29,7 +29,6 @@
     </view>
   </form>
 </view>
-
 <view class="Rose-form">
   <view class="Rose-floor-title">
     <text wx:if="{{catid==1}}">每天一个俯卧撑</text>
@@ -83,9 +82,7 @@
     </view>
   </view>
 </view>
-
-<loading load-more="{{loadMore}}"></loading>
-
 <view class="allLoaded" wx:if="{{!loadMore}}">
   <text class="line-word">我是有底线的~</text>
 </view>
+<loading load-more="{{loadMore}}"></loading>
