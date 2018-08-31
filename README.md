@@ -1,9 +1,7 @@
 # KAPO博客
 这是用微信小程序做的一个自己的博客, 喜欢记得star哟！
 
-长期维护版本，
-
-欢迎大家踊跃提交贡献代码，
+长期维护版本，欢迎大家踊跃提交贡献代码，
 
 更多项目请关注 [https://github.com/Rose-GoGo](https://github.com/Rose-GoGo)。
 
@@ -20,11 +18,6 @@
 </p>
 
 
-## 博客PC地址
-欢迎大家关注我的博客，PC地址: [https://www.zhmzjl.com/](https://www.zhmzjl.com.com/)
-
-
-
 ## 博客主要分为三大模块： 文章/项目/我
 
 - 文章：主要记录我在开发中遇到的问题，并且记录下来，作为技术分享
@@ -39,6 +32,10 @@
 - 打卡功能添加图片
 - 首页添加下拉刷新功能
 
+
+
+## 博客PC地址
+欢迎大家关注我的博客，PC地址: [https://www.zhmzjl.com/](https://www.zhmzjl.com.com/)
 
 
 
