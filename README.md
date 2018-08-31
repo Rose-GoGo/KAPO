@@ -12,11 +12,17 @@
 开发问题欢迎一起交流： QQ：583459700
 
 
+
 ## 扫码体验
 
 <p>
     <img src="https://zhmzjl.com/statics/images/blog/kapo.jpg" width="200px">
 </p>
+
+
+## PC博客地址
+欢迎大家关注我的博客，PC地址: [https://zhmzjl.com/](https://zhmzjl.com/)
+
 
 
 ## 博客主要分为三大模块： 文章/项目/我
