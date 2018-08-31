@@ -1,56 +1,70 @@
-/* pages/detail/detail.wxss */
-
-.Rose--box {
-  background: #fff;
+/* pages/peoject_page/project_page.wxss */
+.Rose-white{
+    background: #fff
 }
-
-.Rose-detail {
-  font-size: 32rpx;
-  line-height: 1.6;
-  padding: 0 20rpx 80rpx;
-  color: #666;
+image{
+    width: 100%;
 }
+.Rose-detail{
+    background: #fff;
 
-.Rose-title {
-  color: #333;
-  font-size: 48rpx;
-  line-height: 1.2;
-  padding: 30rpx 0 20rpx;
+    font-size: 32rpx;
+    line-height: 1.6;
+    padding: 20rpx 20rpx 80rpx;
+    color: #666
 }
-
-.Rose-addtime {
-  margin: 20rpx 0 40rpx;
+.Rose-title{
+    color: #000;
+    font-size: 48rpx;
+    line-height: 1.2
+}
+.Rose-addtime{
+  margin: 20rpx 0;
   color: #999;
-  font-size: 28rpx;
+  font-size:24rpx;
 }
-
+.Rose-imgitem{
+    height: 330rpx;
+    display:block;
+    width:100%;
+}
 .wxParse-pre {
   background: #000;
   padding: 10rpx;
   margin: 20rpx 0;
 }
-
 .Rose-keywords {
   margin-left: 20rpx;
 }
-
 .Rose-sorry {
   padding: 120rpx 0 40rpx;
   font-size: 24rpx;
   color: #ccc;
 }
-
+.Rose-item{
+    margin-top: 30px;
+    font-size: 32rpx
+}
 .wxParse-p {
   word-break: break-all;
   padding: 10rpx 0;
 }
-
-image {
-  max-width: 100%;
-  margin: 40rpx 0;
+.Rose-line,.wxParse-h3{
+    font-size: 36rpx;
+    position: relative;
+    padding: 10rpx 20rpx;
+    line-height:1;
+    color: #333
 }
-
-.wxParse-h3 {
-  font-weight: 600;
-  font-size: 34rpx;
+.Rose-line:before,.wxParse-h3:before{
+    position: absolute;
+    top: 10rpx;
+    left: 0;
+    width: 8rpx;
+    height: 36rpx;
+    content:'';
+    background: #4bb777
+}
+.wxParse-h3{
+    margin: 50rpx 0 0;
 }

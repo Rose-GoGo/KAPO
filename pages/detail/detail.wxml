@@ -1,20 +1,18 @@
 <!--pages/detail/detail.wxml-->
 <import src="../../wxParse/wxParse.wxml" />
+<image wx:if="{{catid=='19'}}" class="Rose-imgitem" mode="aspectFill" src="{{ items.thumb==''? '/assets/images/wx_04.jpg' :items.thumb}}"></image>
 <view class="Rose-white">
-<view class="Rose-detail">
+  <view class="Rose-detail">
     <view class="Rose-title">{{items.title}}</view>
     <view class="Rose-addtime">{{items.updatetime}}
-        <text class="Rose-keywords">关键字:{{items.keywords}}</text>
+      <text class="Rose-keywords">关键字:{{items.keywords}}</text>
     </view>
     <view class="Rose-content">
-        <template is="wxParse" data="{{wxParseData:dkcontent.nodes}}" />
+      <template is="wxParse" data="{{wxParseData:dkcontent.nodes}}" />
     </view>
-    <view class="Rose-sorry">
-        文章是在后台富文本编辑器添加,转码时部分代码被直接翻译成了小程序的语言(如view),给您带来不便,敬请见谅。
-    </view>
-</view>
+  </view>
 </view>
 <view class="Rose-copyRight">
-    <view class="kapo-name">KAPO博客</view>
-    Copyright © 2014-2018 KAPO. All Rights Reserved.
+  <view class="kapo-name">KAPO博客</view>
+  Copyright © 2014-2018 KAPO. All Rights Reserved.
 </view>
