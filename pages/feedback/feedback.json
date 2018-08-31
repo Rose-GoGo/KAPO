@@ -2,6 +2,6 @@
   "navigationBarTitleText": "意见反馈",
   "enablePullDownRefresh": false,
   "usingComponents": {
-        "loading": "../loading/loading"
+        "loading": "../../components/loading/loading"
     }
 }

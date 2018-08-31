@@ -1,6 +1,6 @@
 {
   "navigationBarTitleText": "KAPO",
   "usingComponents": {
-    "loading": "../loading/loading"
+    "loading": "../../components/loading/loading"
   }
 }

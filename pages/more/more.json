@@ -2,6 +2,6 @@
   "enablePullDownRefresh": false,
   "navigationBarTitleText": "打卡",
   "usingComponents": {
-    "loading": "../loading/loading"
+    "loading": "../../components/loading/loading"
   }
 }

@@ -2,6 +2,6 @@
   "navigationBarTitleText": "文章列表",
   "enablePullDownRefresh": false,
   "usingComponents": {
-    "loading": "../loading/loading"
+    "loading": "../../components/loading/loading"
   }
 }
