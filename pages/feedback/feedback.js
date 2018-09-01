@@ -78,7 +78,6 @@ Page({
     });
     if (that.data.loadMore) {
       that.feedback();
-
     }
   },
   /**
@@ -134,7 +133,7 @@ Page({
       username: that.data.username,
       sex: that.data.sex
     }
-    Api.everyday(_params).then(res => {
+    Api.everyadd(_params).then(res => {
       if (!res.data.code) {
         that.setData({
           title: '',
@@ -154,7 +153,6 @@ Page({
   },
   feedback: function() {
     var that = this;
-    wx.showLoading();
     let _params = {
       page: that.data.page
     }
@@ -169,7 +167,6 @@ Page({
           that.setData({
             loadMore: false
           });
-
         }
         wx.hideLoading();
       }
@@ -207,7 +204,6 @@ Page({
           page: 1,
           loadMore: true
         });
-
         that.feedback();
       }
     });

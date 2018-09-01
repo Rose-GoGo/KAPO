@@ -3,14 +3,11 @@
   <view class="Rose-top-quote">脚步很慢，但一直在努力，从未放弃！</view>
   故不积跬步，无以至千里；不积小流，无以成江海。骐骥一跃，不能十步；驽马十驾，功在不舍。锲而舍之，朽木不折；锲而不舍，金石可镂。
 </view>
-
 <view class="Rose-lists">
   <view class="Rose-floor-title">精选
 <navigator url="../lists/lists?catid=11" hover-class='none' class="Rose-go">查看更多</navigator>
-
   </view>
   <view class="Rose-box">
-
   <scroll-view class="Rose-items" scroll-x="true">
     <view class="Rose-item" wx:for="{{top10}}" wx:key="index" wx:for-item="top" data-id="{{top.id}}" data-catid="{{top.catid}}" ontap="articleDetail">
       <image class="Rose-imgbest" lazy-load="{{true}}" src="{{top.thumb==''? '/assets/images/wx_04.jpg':top.thumb }}"></image>
@@ -21,7 +18,6 @@
   </view>
 </view>
 <!-- 菜单 -->
-
 <view class="Rose-news" wx:for="{{items}}" wx:key="index" data-id="{{item.id}}" data-catid="{{item.catid}}" ontap="articleDetail">
   <view class="Rose-content" >
     <view class="Rose-flex">
@@ -34,10 +30,11 @@
       <view class="Rose-flex1 Rose-time text-right">{{comm.formatTime(item.updatetime)}}</view>
     </view>
     <view class="Rose-flex1 Rose-title">{{item.title}}</view>
-    <image class="Rose-imgitem" lazy-load="{{true}}" src="{{item.thumb==''? '/assets/images/ncode.jpg': item.thumb}}"></image>
+    <image class="Rose-imgitem" mode="widthFix" lazy-load="{{true}}" src="{{item.thumb==''? '/assets/images/ncode.jpg': item.thumb}}"></image>
     <view class="Rose-detail">{{item.description}}</view>
   </view>
 </view>
 <view class="allLoaded" wx:if="{{items.length!=0 && !loadMore}}">
   <text class="line-word">我是有底线的~</text>
 </view>
+<loading load-more="{{loadMore}}"></loading>

@@ -1,5 +1,6 @@
 // pages/lists/lists.js
 import Api from '/../../utils/config/api.js';
+const app = getApp();
 Page({
   /**
    * 页面的初始数据
@@ -8,7 +9,8 @@ Page({
     page:1,
     items: [],
     loadMore: true,
-    catid: ''
+    catid: '',
+    kinds: app.globalData.kinds
   },
   /**
    * 生命周期函数--监听页面加载
@@ -16,7 +18,7 @@ Page({
   onLoad: function (options) {
     var catid = options.catid;
     this.setData({
-      catid: catid
+      catid: catid,
     })
     wx.showLoading();
     this.getLists();
@@ -50,12 +52,13 @@ Page({
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function () {
-    let page = this.data.page+1;
-    if(this.data.loadMore){
-      this.setData({
+    var that = this;
+    let page = that.data.page+1;
+    if(that.data.loadMore){
+      that.setData({
         page: page
       })
-      this.getLists();
+      that.getLists();
     }
   },
   /**
@@ -83,26 +86,26 @@ Page({
       loadMore:true
     });
     this.getLists();
-
   },
   getLists: function (e) {
-    wx.showLoading();
+    var that = this;
+    // wx.showLoading();
     let params = {
       pagesize: 10,
-      page: this.data.page,
-      catid: this.data.catid
+      page: that.data.page,
+      catid: that.data.catid
     }
     Api.lists(params).then(res => { //文章列表
       if (!res.data.code) {
         let _data = res.data.data;
-        let _items = this.data.items.concat(_data);
-        this.setData({
+        let _items = that.data.items.concat(_data);
+        that.setData({
           items: _items
         });
         if (_data.length < 10) {
-          this.setData({
+          that.setData({
             loadMore: false
-          })
+          });
         }
         wx.hideLoading();
       }

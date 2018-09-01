@@ -5,7 +5,6 @@ Page({
    * 页面的初始数据
    */
   data: {
-    postType: '', //提交状态
     images: [],
     bigData: [],
     catid: '',
@@ -103,11 +102,11 @@ Page({
     if (that.data.title && that.data.remark) {
       that.setData({
         disabled: false
-      })
+      });
     } else {
       that.setData({
         disabled: true
-      })
+      });
     }
   },
   forRemark: function (e) {
@@ -119,11 +118,11 @@ Page({
     if (that.data.title && that.data.remark) {
       that.setData({
         disabled: false
-      })
+      });
     } else {
       that.setData({
         disabled: true
-      })
+      });
     }
   },
   earMonth: function (n) { //获取年月
@@ -157,7 +156,6 @@ Page({
     });
   },
   getLine: function () {
-    wx.showLoading();
     var that = this,
       obj = {};
     var year = that.data.year;
@@ -185,11 +183,11 @@ Page({
         }
         that.setData({
           bigData: big
-        })
+        });
         if (_data[month].length == 0) { //如果没有月数据，则不加载了，本来是想判断是否已经加载到底了，但是这里可能有半途没添加数据的情况，所以这里的逻辑不是很严谨
           that.setData({
             loadMore: false
-          })
+          });
         }
         wx.hideLoading();
       }
@@ -208,7 +206,7 @@ Page({
     let showEdit = this.data.showEdit;
     this.setData({
       showEdit: !showEdit
-    })
+    });
   },
   editOne: function (e) {
     var that = this;
@@ -216,13 +214,28 @@ Page({
     let title = e.currentTarget.dataset.title;
     let remark = e.currentTarget.dataset.remark;
     that.setData({
-      postType: 'update',
       title: title,
       remark: remark,
       disabled: false,
       id: id,
       images: []
     });
+  },
+  resetPage: function () { //默认的展示状态
+    var that = this;
+    let month = new Date().getMonth() + 1;
+    let year = new Date().getFullYear();
+    month = month >= 10 ? '' + month : '0' + month;
+    that.setData({
+      id: '',
+      title: '',
+      remark: '',
+      year: year,
+      month: month,
+      showEdit: false,
+      images: []
+    });
+    that.getLine();
   },
   deleteOne: function (e) { //删除本条
     var that = this;
@@ -233,14 +246,7 @@ Page({
     }
     Api.everydelete(_params).then(res => {
       if (!res.data.code) {
-        let month = new Date().getMonth() + 1;
-        let year = new Date().getFullYear();
-        month = month >= 10 ? '' + month : '0' + month;
-        that.setData({
-          year: year,
-          month: month
-        });
-        that.getLine();
+        that.resetPage();
       }
     });
   },
@@ -250,7 +256,7 @@ Page({
     img.splice(idx, 1);
     this.setData({
       images: img
-    })
+    });
   },
   imagePreview(e) {
     let idx = e.target.dataset.idx;
@@ -258,130 +264,97 @@ Page({
     wx.previewImage({
       current: arr[idx], //当前预览的图片
       urls: arr, //所有要预览的图片
-    })
+    });
   },
   uploadImg: function () {
     var that = this;
-    if (this.data.images.length < 3) {
-      wx.chooseImage({
-        count: 3, //最多可以选择的图片总数
-        sizeType: ['original', 'compressed'], // 可以指定是原图还是压缩图，默认二者都有
-        sourceType: ['album', 'camera'], // 可以指定来源是相册还是相机，默认二者都有
-        success: function (res) {
-          // 返回选定照片的本地文件路径列表，tempFilePath可以作为img标签的src属性显示图片
-          const images = that.data.images.concat(res.tempFilePaths);
-          // 限制最多只能留下3张照片
-          // that.data.images = images.length <= 3 ? images : images.slice(0, 3)
-          var imgCount = 0;
-          var aids = [];
-          for (var i = 0, h = images.length; i < h; i++) {
-            wx.uploadFile({
-              url: 'https://www.zhmzjl.com/index.php?m=content&c=punch&a=upload',
-              filePath: images[i],
-              name: 'file',
-              formData: {
-                'file': i
-              },
-              header: {
-                // "Content-Type": "multipart/form-data"
-                'content-type': 'application/x-www-form-urlencoded;charset=utf-8'
-              },
-              success: function (res) {
-                var _data = JSON.parse(res.data)
-                if (_data.code == 0) {
-                  imgCount++;
-                  let _aid = _data.aid;
-                  aids.push(_aid);
-                  that.setData({
-                    aids: aids
-                  });
-                }
-                if (imgCount == images.length) {
-                  wx.hideToast();
-                }
-              },
-              fail: function (res) {
-                wx.hideToast();
-                wx.showModal({
-                  title: '错误提示',
-                  content: '上传图片失败',
-                  showCancel: false,
-                  success: function (res) { }
-                })
+    var aids = [];
+    var images = that.data.images;
+    return new Promise(function (resolve, reject) {
+      if(images.length==0){ resolve(); return false;  }
+      for (let i = 0, h = images.length; i < h; i++) {
+        wx.uploadFile({
+          url: 'https://www.zhmzjl.com/index.php?m=content&c=punch&a=upload',
+          filePath: images[i],
+          name: 'file',
+          success: function (res) {
+            let _data = JSON.parse(res.data)
+            if (_data.code == 0) {
+              let _aid = _data.aid;
+              aids.push(_aid);
+              that.setData({
+                aids: aids
+              });
+              if (images.length == aids.length) {
+                resolve(aids);
               }
-            }).onProgressUpdate((res) => { //查看进度
-              // console.log('上传进度', res.progress)
-              // console.log('已经上传的数据长度', res.totalBytesSent)
-              // console.log('预期需要上传的数据总长度', res.totalBytesExpectedToSend)
-            })
-            that.setData({
-              images: images
+            }
+          },
+          fail: function (res) {
+            reject(res);
+            wx.showModal({
+              title: '提示',
+              content: '上传图片失败',
+              showCancel: false,
+              success: function (res) {
+              }
             });
           }
+        });
+      }
+    });
+  },
+  chooseImg: function () { //选取图片
+    var that = this;
+    if (that.data.images.length < 3) { // 限制最多只能留下3张照片
+      wx.chooseImage({
+        count: 3,
+        sizeType: ['original', 'compressed'],
+        sourceType: ['album', 'camera'], // 指定来源
+        success: function (res) {
+          // 返回选定照片的本地文件路径列表，tempFilePath可以作为img标签的src属性显示图片
+          let images = that.data.images.concat(res.tempFilePaths);
+          that.setData({
+            images: images
+          });
         }
-      })
-    } else {
-      wx.showToast({
-        title: '最多上传三张图片',
-        icon: 'loading',
-        duration: 3000
       });
     }
   },
   formSubmit: function () {
-    var that = this, aids = [];
+    wx.showLoading();
+    var that = this,
+      aids = [];
     that.setData({
       disabled: true //想偷懒都不行，这里需要点击按钮后，按钮就设置成disabled, 避免重负提交
     });
-    aids = that.data.aids.join(';');
-    let _params = {
-      catid: that.data.catid,
-      title: that.data.title,
-      remark: that.data.remark,
-      username: that.data.username,
-      aids: aids //图片
-    }
-    if (that.data.id) { //如果有id， 则进行更新，否则为新增
-      _params.id = that.data.id;
-      Api.everyupdate(_params).then(res => {
-        if (!res.data.code) {
-          let month = new Date().getMonth() + 1;
-          let year = new Date().getFullYear();
-          month = month >= 10 ? '' + month : '0' + month;
-          that.setData({
-            id: '',
-            title: '',
-            remark: '',
-            year: year,
-            month: month,
-            showEdit: false,
-            images: []
-          })
-          that.getLine();
-        }
-      });
-    } else {
-      Api.everyadd(_params).then(res => {
-        if (!res.data.code) {
-          wx.showToast({
-            title: '提交成功',
-            icon: 'success',
-            duration: 2000
-          });
-          let month = new Date().getMonth() + 1;
-          let year = new Date().getFullYear();
-          month = month >= 10 ? '' + month : '0' + month;
-          that.setData({
-            title: '',
-            remark: '',
-            year: year,
-            month: month,
-            showEdit: false,
-            images: []
-          });
-          that.getLine();
-        }
-      });
-    }
-  },
+    var promise = that.uploadImg(); //进行图片的上传
+    promise.then(res => {
+      aids = that.data.aids;
+      let aidStr = aids.join(';');
+      let _params = {
+        catid: that.data.catid,
+        title: that.data.title,
+        remark: that.data.remark,
+        username: that.data.username,
+        aids: aidStr //图片
+      }
+      if (that.data.id) { //如果有id， 修改
+        _params.id = that.data.id;
+        Api.everyupdate(_params).then(res => {
+          if (!res.data.code) {
+            wx.hideLoading();
+            that.resetPage();
+          }
+        });
+      } else {
+        Api.everyadd(_params).then(res => { //更新
+          if (!res.data.code) {
+            wx.hideLoading();
+            that.resetPage();
+          }
+        });
+      }
+    })
+  }
 })

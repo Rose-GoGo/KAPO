@@ -1,4 +1,6 @@
 {
   "navigationBarTitleText": "KAPO",
-  "enablePullDownRefresh": false
+  "usingComponents": {
+    "loading": "../../components/loading/loading"
+  }
 }

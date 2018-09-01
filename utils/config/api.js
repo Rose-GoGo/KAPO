@@ -1,5 +1,4 @@
 import MyHttp from './request.js';
-
 //所有的请求
 const ALL_API = {
   all: { //全部文章
@@ -37,10 +36,8 @@ const ALL_API = {
   feedback: { //意见反馈
     method: 'POST',
     url: '/index.php?m=content&c=punch&a=feedback'
-  },
-
-
-
+  }
 }
 const Api = new MyHttp({}, ALL_API);
+
 export default Api;

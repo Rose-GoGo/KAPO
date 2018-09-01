@@ -7,12 +7,12 @@
     </view>
     <view class="Rose-section">
       <view class="Rose-section_title">内容</view>
-      <textarea name="beizhu" focus name="remark" class="Rose-input" value="{{remark}}" bindinput="forRemark" maxlength="-1" placeholder="说点什么吧"></textarea>
+      <textarea name="beizhu" name="remark" class="Rose-input" value="{{remark}}" bindinput="forRemark" maxlength="-1" placeholder="说点什么吧"></textarea>
     </view>
     <view class="Rose-section">
       <view class="Rose-section_title"></view>
       <view class="Rose-upimg">
-        <icon class="iconfont icon-image" ontap="uploadImg" wx:if="{{images.length < 3}}"></icon>
+        <icon class="iconfont icon-image" ontap="chooseImg" wx:if="{{images.length < 3}}"></icon>
       </view>
     </view>
     <view class="Rose-section" wx:if="{{ images.length!=0}}">
@@ -59,22 +59,20 @@
                 </view>
               </view>
               <view class="Rose-contentbox">
-
                 <view class="Rose-title">{{dd.title}}</view>
                 <view class="Rose-time">{{dd.insert_time}}</view>
                 <view class="Rose-content">{{dd.remark}}</view>
                 <!-- 如果是Rose，才可以编辑 -->
-                <view class="Rose-icon-item" wx:if="{{showEdit && isRose}}">
-                  <icon class="iconfont icon-edit" data-id="{{dd.id}}" data-title="{{dd.title}}" data-remark="{{dd.remark}}" bindtap="editOne"></icon>
-                  <icon class="iconfont icon-delete" data-id="{{dd.id}}" bindtap="deleteOne"></icon>
-                </view>
-
                 <view class="Rose-item">
                   <block wx:for="{{dd.imgs}}" wx:key="mm" wx:for-item="imagess">
                     <view class="Rose-imgbox">
                       <image class="Rose-img" src="{{imagess}}" data-idx="{{index}}" mode="scaleToFill" data-arr="{{dd.imgs}}" bindtap="imagePreview"> </image>
                     </view>
                   </block>
+                </view>
+                <view class="Rose-icon-item" wx:if="{{showEdit && isRose}}">
+                  <icon class="iconfont icon-edit" data-id="{{dd.id}}" data-title="{{dd.title}}" data-remark="{{dd.remark}}" bindtap="editOne"></icon>
+                  <icon class="iconfont icon-delete" data-id="{{dd.id}}" bindtap="deleteOne"></icon>
                 </view>
               </view>
             </view>
@@ -87,3 +85,4 @@
 <view class="allLoaded" wx:if="{{!loadMore}}">
   <text class="line-word">我是有底线的~</text>
 </view>
+<loading load-more="{{loadMore}}"></loading>
