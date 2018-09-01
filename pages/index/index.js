@@ -26,7 +26,6 @@ Page({
             content: '网络连接失败!',
           });
         } else {
-          // wx.showLoading();
           that.top10();
           that.getLists();
         }

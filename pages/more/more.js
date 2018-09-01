@@ -38,7 +38,7 @@ Page({
           wx.getUserInfo({
             success: function (res) {
               var userInfo = res.userInfo;
-              if (userInfo.nickName == '赵' || userInfo.nickName == '天道酬勤') {
+              if (userInfo.nickName == '赵') {
                 that.setData({
                   isRose: true
                 });
@@ -174,6 +174,11 @@ Page({
           obj = _data;
         } else {
           obj = Object.assign(that.data.monthData, _data); // 月数据
+          if (obj[month].length == 0 && that.data.bigData.length == 0) { //月初没有数据的时候
+            that.earMonth(); //上个月的时间
+            that.getLine();
+            return false;
+          }
         }
         that.setData({
           monthData: obj
@@ -184,7 +189,7 @@ Page({
         that.setData({
           bigData: big
         });
-        if (_data[month].length == 0) { //如果没有月数据，则不加载了，本来是想判断是否已经加载到底了，但是这里可能有半途没添加数据的情况，所以这里的逻辑不是很严谨
+        if (_data[month].length == 0) { //如果没有月数据，则不加载了，本来是想判断是否已经加载到底了，但是这里可能有半途没添加数据或者月初没有数据的情况，所以这里的逻辑不是很严谨
           that.setData({
             loadMore: false
           });
@@ -271,7 +276,7 @@ Page({
     var aids = [];
     var images = that.data.images;
     return new Promise(function (resolve, reject) {
-      if(images.length==0){ resolve(); return false;  }
+      if (images.length == 0) { resolve(); return false; }
       for (let i = 0, h = images.length; i < h; i++) {
         wx.uploadFile({
           url: 'https://www.zhmzjl.com/index.php?m=content&c=punch&a=upload',

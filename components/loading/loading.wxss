@@ -5,7 +5,7 @@
 }
 .icon-loading {
   color: #1d8f59;
-  font-size: 46rpx;
+  font-size: 65rpx;
   animation: rotate 1s linear infinite;
 }
 @keyframes rotate {
