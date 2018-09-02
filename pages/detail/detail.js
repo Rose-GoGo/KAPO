@@ -94,17 +94,14 @@ feedback: function() {
   Api.feedback(_params).then(res => {
     if (!res.data.code) {
       let _data = res.data.data;
-
       that.setData({
         comments: _data
       });
-
     }
   });
 },
 swichNav: function(e) {
     var cur = e.target.dataset.current;
-    console.log(cur)
     if (this.data.currentTab == cur) {
       return false;
     } else {

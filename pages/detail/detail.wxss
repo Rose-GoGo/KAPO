@@ -160,7 +160,7 @@ textarea.Rose-input {
 }
 .Rose-comment-title {
   line-height: 2;
-  color: #333；
+  color: #333;
   font-size:16px;
 }
 .Rose-comment-content {
