@@ -9,7 +9,11 @@ Page({
     items:{},
     dkcontent:'',
     id: '',
-    catid: ''
+    catid: '',
+    comments:[], //反馈列表
+    canIUse: wx.canIUse('button.open-type.getUserInfo'),
+    currentTab: '0',
+    disabled:true
   },
   /**
    * 生命周期函数--监听页面加载
@@ -22,6 +26,7 @@ Page({
         catid: options.catid
     });
     that.getData();
+    // that.feedback();
 },
 /**
  * 生命周期函数--监听页面初次渲染完成
@@ -80,5 +85,32 @@ getData: function() {
       wx.hideLoading();
     }
   })
-}
+},
+feedback: function() {
+  var that = this;
+  let _params = {
+    page: 1
+  }
+  Api.feedback(_params).then(res => {
+    if (!res.data.code) {
+      let _data = res.data.data;
+
+      that.setData({
+        comments: _data
+      });
+
+    }
+  });
+},
+swichNav: function(e) {
+    var cur = e.target.dataset.current;
+    console.log(cur)
+    if (this.data.currentTab == cur) {
+      return false;
+    } else {
+      this.setData({
+        currentTab: cur
+      })
+    }
+  },
 })

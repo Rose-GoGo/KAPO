@@ -30,12 +30,6 @@
   </form>
 </view>
 <view class="Rose-form">
- <!--  <view class="Rose-floor-title">
-    <text wx:if="{{catid==1}}">每天一个俯卧撑</text>
-    <text wx:if="{{catid==2}}">读100本书</text>
-    <text wx:if="{{catid==3}}">学一门外语</text>
-    <text wx:if="{{catid==4}}">记录生活琐事</text>
-  </view> -->
   <view wx:for="{{bigData}}" wx:key="index" wx:for-item="years">
     <view class="Rose-year-line" wx:for="{{years}}" wx:key="index" wx:for-item="year">
       <view class="Rose-year">

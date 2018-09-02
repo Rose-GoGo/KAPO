@@ -12,6 +12,54 @@
     </view>
   </view>
 </view>
+<!-- 评论 -->
+<view class="Rose-comment">
+  <view class="Rose-tab">
+    <view class="Rose-index {{ currentTab == '0'? 'Rose-active': ''}} " bindtap="swichNav" data-current="0">评论列表</view>
+    <view class="Rose-index {{ currentTab == '1'? 'Rose-active': ''}}" bindtap="swichNav" data-current="1">发表评论</view>
+  </view>
+  <!-- 评论列表 -->
+  <view class="Rose-form" wx:if="{{currentTab=='0'}}">
+    <view class="Rose-lists" wx:if="{{comments.length > 0}}">
+      <view class="Rose-items" wx:for="{{comments}}" wx:key="index" wx:for-item="comment">
+        <view class="Rose-comment-title">{{comment.title}}</view>
+        <view class="Rose-comment-content">{{comment.remark}}</view>
+        <view class="Rose-info">
+          <view class="Rose-name">
+            <icon wx:if="{{comment.sex==2}}" class="iconfont icon-nvsheng female"></icon>
+            <icon wx:else class="iconfont icon-nansheng male"></icon>
+            {{comment.username}}
+          </view>
+          <block wx:if="{{showEdit && isRose}}">
+            <view class="Rose-edit">
+              <icon class="iconfont icon-delete" data-id="{{comment.id}}" bindtap="deleteOne"></icon>
+            </view>
+          </block>
+          <view class="Rose-time">{{comment.create_time}}</view>
+        </view>
+      </view>
+    </view>
+    <view class="Rose-empty" wx:else>
+      评论还是空的，快来说两句吧~
+    </view>
+  </view>
+  <!-- 发表评论 -->
+  <view class="Rose-form" wx:if="{{currentTab=='1'}}">
+    <form bindsubmit="formSubmit">
+      <view class="Rose-section">
+        <view class="Rose-section_title">标题</view>
+        <input name="time" name="title" value="{{title}}" class="Rose-input" bindinput="forTitle" />
+      </view>
+      <view class="Rose-section">
+        <view class="Rose-section_title">内容</view>
+        <textarea name="beizhu" name="remark" class="Rose-input" value="{{remark}}" bindinput="forRemark" maxlength="-1" placeholder="尽情吐槽吧!"></textarea>
+      </view>
+      <view class="Rose-section">
+        <button formType="submit" class="Rose-btn" disabled="{{disabled}}" wx:if="{{canIUse}}" bindgetuserinfo="bindGetUserInfo">提交</button>
+      </view>
+    </form>
+  </view>
+</view>
 <view class="Rose-copyRight">
   <view class="kapo-name">KAPO博客</view>
   Copyright © 2014-2018 KAPO. All Rights Reserved.
