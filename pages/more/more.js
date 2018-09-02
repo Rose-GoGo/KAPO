@@ -18,7 +18,8 @@ Page({
     showEdit: false,
     id: '',
     dataIndex: 0, //为了得到bigdata中的数组，特别是是换年
-    aids: []
+    aids: [],
+    barText:['每天一个俯卧撑','读100本书','学一门外语','记录生活琐事']
   },
   /**
    * 生命周期函数--监听页面加载
@@ -30,7 +31,13 @@ Page({
     that.setData({
       catid: options.catid,
       month: ss
+    });
+
+
+    wx.setNavigationBarTitle({
+      title: this.data.barText[options.catid-1]
     })
+
     wx.getSetting({
       success: function (res) {
         if (res.authSetting['scope.userInfo']) {
@@ -38,7 +45,7 @@ Page({
           wx.getUserInfo({
             success: function (res) {
               var userInfo = res.userInfo;
-              if (userInfo.nickName == '赵') {
+              if (userInfo.nickName == 'zhang') {
                 that.setData({
                   isRose: true
                 });
@@ -174,12 +181,15 @@ Page({
           obj = _data;
         } else {
           obj = Object.assign(that.data.monthData, _data); // 月数据
+
           if (obj[month].length == 0 && that.data.bigData.length == 0) { //月初没有数据的时候
+            console.log(111)
             that.earMonth(); //上个月的时间
             that.getLine();
             return false;
           }
         }
+        console.log(222)
         that.setData({
           monthData: obj
         });
