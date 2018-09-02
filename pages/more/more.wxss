@@ -84,7 +84,7 @@ button[disabled]:not([type]) {
 .Rose-year {
   padding: 0 20rpx 40rpx;
   color: #333;
-  font-size: 32rpx;
+  font-size: 36rpx;
   font-weight: 500;
 }
 .Rose-month-list {
@@ -175,8 +175,8 @@ button[disabled]:not([type]) {
   position: relative;
   display: inline-block;
   vertical-align: middle;
-  font-size: 68rpx;
-  margin-left: -48rpx;
+  font-size: 64rpx;
+  margin-left: -52rpx;
   background: #fff;
   color: #333;
 }

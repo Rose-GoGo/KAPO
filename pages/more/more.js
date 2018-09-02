@@ -32,12 +32,9 @@ Page({
       catid: options.catid,
       month: ss
     });
-
-
     wx.setNavigationBarTitle({
-      title: this.data.barText[options.catid-1]
+      title: that.data.barText[options.catid-1]
     })
-
     wx.getSetting({
       success: function (res) {
         if (res.authSetting['scope.userInfo']) {
@@ -45,7 +42,7 @@ Page({
           wx.getUserInfo({
             success: function (res) {
               var userInfo = res.userInfo;
-              if (userInfo.nickName == 'zhang') {
+              if (userInfo.nickName == '赵') {
                 that.setData({
                   isRose: true
                 });
@@ -181,7 +178,6 @@ Page({
           obj = _data;
         } else {
           obj = Object.assign(that.data.monthData, _data); // 月数据
-
           if (obj[month].length == 0 && that.data.bigData.length == 0) { //月初没有数据的时候
             console.log(111)
             that.earMonth(); //上个月的时间
