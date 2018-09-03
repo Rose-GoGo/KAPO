@@ -5,14 +5,13 @@ Page({
   data: {
     kinds: app.globalData.kinds,
     every:[
-    {icon: 'icon-jianshen', name: '健身',id: 1},
-    {icon: 'icon-book', name: '读书',id: 2},
+    {icon: 'icon-yinyue', name: '生活',id: 4},
     {icon: 'icon-yingyu', name: '外语',id: 3},
-    {icon: 'icon-yinyue', name: '生活',id: 4}
+    {icon: 'icon-book', name: '读书',id: 2},
+    {icon: 'icon-jianshen', name: '健身',id: 1}
     ]
   },
   onLoad: function () {
-
   },
   onReady: function() {},
   /**

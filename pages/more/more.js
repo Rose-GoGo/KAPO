@@ -179,13 +179,11 @@ Page({
         } else {
           obj = Object.assign(that.data.monthData, _data); // 月数据
           if (obj[month].length == 0 && that.data.bigData.length == 0) { //月初没有数据的时候
-            console.log(111)
             that.earMonth(); //上个月的时间
             that.getLine();
             return false;
           }
         }
-        console.log(222)
         that.setData({
           monthData: obj
         });

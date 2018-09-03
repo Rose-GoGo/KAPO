@@ -6,8 +6,8 @@
  <!-- 打卡 -->
 <view class="Rose-floor">
   <view class="Rose-menu">
-    <view class="Rose-kinds" wx:for="{{every}}" wx:for-item="i" wx:key="index" ontap="goEveryDay" data-catid="{{index+1}}">
-      <view class="view-circle {{'color'+ (index+1)}}">
+    <view class="Rose-kinds" wx:for="{{every}}" wx:for-item="i" wx:key="index" ontap="goEveryDay" data-catid="{{i.id}}">
+      <view class="view-circle {{'color'+ i.id}}">
         <icon class="iconfont {{i.icon}}"></icon>
       </view>
       {{i.name}}
