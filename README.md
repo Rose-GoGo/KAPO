@@ -14,14 +14,14 @@
 ## 扫码体验
 
 <p>
-    <img src="https://www.zhmzjl.com/statics/images/blog/kapo.jpg" width="200px">
+    <img src="https://www.zhmzjl.com/statics/images/blog/kapo.jpg" width="300px">
 </p>
 
 
 ## 项目截图
 
 <p>
-    <img src="https://zhmzjl.com/uploadfile/2018/0801/20180801064536276.png" >
+    <img src="https://www.zhmzjl.com/uploadfile/2018/0801/20180801064536276.png" >
 </p>
 
 
