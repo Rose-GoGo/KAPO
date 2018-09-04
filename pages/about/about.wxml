@@ -1,5 +1,5 @@
 <view class="Rose-about">
-  <view class="Rose-about-title">公告</view>
+  <view class="Rose-about-title">Rose Zhao</view>
   <view class="Rose-content">记录我的前端生活和在开发过程中遇到的问题，整理成文，希望对大家有帮助。始终相信，一步一个脚印，踏实学习。</view>
 </view>
 
@@ -17,12 +17,13 @@
 
 <view class="Rose-floor">
   <view class="Rose-Line">
-    <navigator url="../me/me" hover-class="none">
-      <icon class="iconfont icon-info-circle"></icon>
-      关于我
+    <navigator url="../feedback/feedback" hover-class="none">
+      <icon class="iconfont icon-mail"></icon>
+      意见反馈
       <icon class="fr iconfont icon-xiangyou"></icon>
     </navigator>
   </view>
+
   <view class="Rose-Line">
     <navigator url="../detail/detail?catid=13&id=124" hover-class="none">
       <icon class="iconfont icon-heart"></icon>
@@ -31,12 +32,13 @@
     </navigator>
   </view>
   <view class="Rose-Line">
-    <navigator url="../feedback/feedback" hover-class="none">
-      <icon class="iconfont icon-mail"></icon>
-      意见反馈
+    <navigator url="../me/me" hover-class="none">
+      <icon class="iconfont icon-info-circle"></icon>
+      关于我
       <icon class="fr iconfont icon-xiangyou"></icon>
     </navigator>
   </view>
+
   <view class="Rose-Line">
     <navigator url="../feedback/feedback" hover-class="none">
       <icon class="iconfont icon-banben1"></icon>

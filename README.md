@@ -21,7 +21,7 @@
 ## 项目截图
 
 <p>
-    <img src="https://www.zhmzjl.com/uploadfile/2018/0801/20180801064536276.png" >
+    <img src="https://www.zhmzjl.com/uploadfile/2018/0904/20180904044608772.jpg" >
 </p>
 
 
