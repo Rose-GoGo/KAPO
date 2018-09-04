@@ -17,10 +17,11 @@
     <img src="https://www.zhmzjl.com/statics/images/blog/kapo.jpg" width="200px">
 </p>
 
-##项目截图
+
+## 项目截图
 
 <p>
-    <img src="https://zhmzjl.com/uploadfile/2018/0801/20180801064536276.png" width="200px">
+    <img src="https://zhmzjl.com/uploadfile/2018/0801/20180801064536276.png" >
 </p>
 
 
@@ -36,20 +37,20 @@
 
 ## 版本更新细信息
 
-####Version 1.0.4
+#### Version 1.0.4
 -  添加公告模块信息;
 -  文章添加评论功能;
 -  更新Rose Zhao的个人信息;
 -  打卡修复月初数据加载异常bug;
 -  代码优化，去除项目详情页的代码，并归入文章详情页;
 
-####Version 1.0.3
+#### Version 1.0.3
 - 首页文章列表图片的高宽解除限制;
 - 修改文章列表的选项卡的表现形式;
 - 添加数据加载的loading效果;
 - 调整打卡顺序;
 
-####Version 1.0.2
+#### Version 1.0.2
 - 打卡功能添加图片
 - 首页添加下拉刷新功能
 
