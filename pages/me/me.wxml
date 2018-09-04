@@ -1,62 +1,57 @@
 <!--pages/me/me.wxml-->
 <view class="Rose-detail">
-    <view class="Rose-title">Rose Zhao</view>
-    <view class="Rose-content">
-        <view class="Rose-item">
-            <view class="Rose-line">个人简介：</view>
-            2013年毕业于成都理工大学，从事WEB前端开发5年。喜欢读书、旅游,热爱生活！
-        </view>
-        <view class="Rose-item">
-            <view class="Rose-line">基本信息：</view>
-            <view class="Rose-content">
-                工作积极，和同事相处愉快，敢于承担责任，生活态度积极乐观，不易受外界干扰，喜欢有计划的安排生活和工作。 四年多的前端生活，创造属于自己的价值。 偶尔去旅游，逛街，骑行。
-            </view>
-        </view>
-        <view class="Rose-item">
-            <view class="Rose-line">技能介绍</view>
-            <view class="Rose-content">
-                1. HTML5+CSS3+jQuery, 有移动端web开发经验
-                2. 具有javascript面向对象编程能力，理解prototype对象原型链，封装插件
-                3. 有丰富的跨浏览器开发经验，熟悉浏览器之间的兼容
-                4. 熟练使用Bootstrap , AmazeUI, mui, Foundation等主流前端框架;zepto移动端开发
-                5. 对Photoshop进行操作，具备一定的UI设计能力
-                6. 熟练使用自动化工具gulp 和 模块化工具 webpack
-                7. 会使用Axure， MockingBot, Xmind 等原型工具
-                8. 熟悉使用node, 有angularJS， Vuejs项目开发经验
-                9. 熟悉小程序开发，熟悉webapp, 微信开发
-                10. 熟练使用SVN, Git
-            </view>
-        </view>
-        <view class="Rose-item">
-            <view class="Rose-line">工作经历：</view>
-            <view  class="Rose-content">
-             <view class="Rose-h3">成都天象互动科技有限公司<text class="Rose-work">（2015.9-现在）</text></view>
-                1. 根据UI设计师的提供的设计图，对页面进行分析，以及使用ps进行切图，制作符合前端标准和搜索引擎优化(SEO)的静态页面,包含PC与移动终端产品开发;
-                2. 配合产品人员的需求编写JavaScript等脚本实现页面的交互功能;
-                3. 调整页面在主流浏览器和平台（包括移动平台）上保持良好的兼容性;
-                4. 使用svn或git配合后台开发人员实现产品界面和功能;
-                5. 用web标准规范页面代码，优化页面代码和网页加载速度，提高网页的性能，提高用户体验;
-                6. 使用webpck模块化工具，gulp自动化构建工具实现版本的更新，优化，与js和css的压缩与加密;
-                7. 使用AngularJS,vueJS等框架对页面的数据进行绑定进行spa（单页web应用）开发;
-                8. 网站日常运营需求维护;
-                9. 学习reactJS
-                <view class="Rose-h3">禾润信息技术有限公司<text class="Rose-work">（2014.7-2015.8）</text></view>
-                1. 根据项目经理的需求对项目做出流程分析，并使用xMind, Microsoft Visio，Axure 画出原型图和流程图；
-                2. 根据UI设计师提供的设计图，实现Web界面（PC前端和移动端）；
-                3. Web端功能设计、开发和实现；
-                4. 运用Javascript框架的应用进行项目开发；
-                5. 优化代码并保持在各浏览器下的良好兼容性；
-                6. 配合后台开发人员实现产品界面和功能；
-            </view>
-        </view>
-        <view class="Rose-item">
-            <view class="Rose-line">博客地址：</view>
-            https://www.zhmzjl.com
-        </view>
-        <view class="Rose-item">
-            <view class="Rose-line">联系我：</view>
-            <text class="Rose-concact">QQ:583459700 </text>
-            <text class="Rose-concact">Whchat: zhao_583459700</text>
-        </view>
+  <view class="Rose-title">Rose Zhao</view>
+  <view class="Rose-content">
+    <view class="Rose-item">
+      <view class="Rose-line">个人简介：</view>
+      2013年毕业于成都理工大学，现坐落于四川成都, 从事WEB前端开发5年。喜欢读书、旅游,热爱生活！
     </view>
+    <view class="Rose-item">
+      <view class="Rose-line">基本信息：</view>
+      <view class="Rose-content">
+        工作积极，和同事相处愉快，敢于承担责任，生活态度积极乐观，不易受外界干扰，喜欢有计划的安排生活和工作。 五年前端生活，创造属于自己的价值。 偶尔去旅游，逛街，骑行。
+      </view>
+    </view>
+    <view class="Rose-item">
+      <view class="Rose-line">技能介绍</view>
+      <view class="Rose-content">
+        1. HTML5+CSS3+jQuery, 有移动端web开发经验 2. 具有javascript面向对象编程能力，理解prototype对象原型链，封装插件 3. 有丰富的跨浏览器开发经验，熟悉浏览器之间的兼容 4. 熟练使用Bootstrap , AmazeUI, mui, Foundation等主流前端框架;zepto移动端开发 5. 对Photoshop进行操作，具备一定的UI设计能力 6. 熟练使用自动化工具gulp 和 模块化工具 webpack 7. 会使用Axure， MockingBot,
+        Xmind 等原型工具 8. 熟悉使用node, 有angularJS， Vuejs项目开发经验 9. 熟悉小程序开发，熟悉webapp, 微信开发 10. 熟练使用SVN, Git
+      </view>
+    </view>
+    <view class="Rose-item">
+      <view class="Rose-line">工作经历：</view>
+      <view class="Rose-content">
+        <view class="Rose-h3"> 爱奇艺公司
+          <text class="Rose-work">（2018.7-现在）</text>
+        </view>
+        <view class="Rose-h3">成都天象互动科技有限公司
+          <text class="Rose-work">（2015.9-2018.7）</text>
+        </view>
+        1. 根据UI设计师的提供的设计图，对页面进行分析，以及使用ps进行切图，制作符合前端标准和搜索引擎优化(SEO)的静态页面,包含PC与移动终端产品开发; 2. 配合产品人员的需求编写JavaScript等脚本实现页面的交互功能; 3. 调整页面在主流浏览器和平台（包括移动平台）上保持良好的兼容性; 4. 使用svn或git配合后台开发人员实现产品界面和功能; 5. 用web标准规范页面代码，优化页面代码和网页加载速度，提高网页的性能，提高用户体验; 6. 使用webpck模块化工具，gulp自动化构建工具实现版本的更新，优化，与js和css的压缩与加密;
+        7. 使用AngularJS,vueJS等框架对页面的数据进行绑定进行spa（单页web应用）开发; 8. 网站日常运营需求维护; 9. 学习reactJS
+        <view class="Rose-h3">禾润信息技术有限公司
+          <text class="Rose-work">（2014.7-2015.8）</text>
+        </view>
+        1. 根据项目经理的需求对项目做出流程分析，并使用xMind, Microsoft Visio，Axure 画出原型图和流程图； 2. 根据UI设计师提供的设计图，实现Web界面（PC前端和移动端）； 3. Web端功能设计、开发和实现； 4. 运用Javascript框架的应用进行项目开发； 5. 优化代码并保持在各浏览器下的良好兼容性； 6. 配合后台开发人员实现产品界面和功能；
+      </view>
+    </view>
+    <view class="Rose-item">
+      <view class="Rose-line">博客地址：</view>
+      https://www.zhmzjl.com
+    </view>
+    <view class="Rose-item">
+      <view class="Rose-line">源码地址：</view>
+      https://github.com/Rose-GoGo/KAPO，代码一直在更新，请大家拉取最新代码，并且欢迎大家踊跃提交贡献代码
+    </view>
+    <view class="Rose-item">
+      <view class="Rose-line">关注我:</view>
+      <text class="Rose-concact">摇一摇,添加博主为好友吧</text>
+    </view>
+    <view class="Rose-item">
+      <view class="Rose-line">联系我：</view>
+      <text class="Rose-concact">QQ:583459700 </text>
+      <text class="Rose-concact">Whchat: zhao_583459700</text>
+    </view>
+  </view>
 </view>

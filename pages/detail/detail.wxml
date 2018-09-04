@@ -13,7 +13,7 @@
   </view>
 </view>
 <!-- 评论 -->
-<view class="Rose-comment">
+<view class="Rose-comment" wx:if="{{catid !='19'}}">
   <view class="Rose-tab">
     <view class="Rose-index {{ currentTab == '0'? 'Rose-active': ''}} " bindtap="swichNav" data-current="0">评论列表</view>
     <view class="Rose-index {{ currentTab == '1'? 'Rose-active': ''}}" bindtap="swichNav" data-current="1">发表评论</view>

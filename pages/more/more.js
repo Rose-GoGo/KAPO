@@ -256,6 +256,11 @@ Page({
     Api.everydelete(_params).then(res => {
       if (!res.data.code) {
         that.resetPage();
+      }else{
+        wx.showModal({
+          title: '提示',
+          content: '该功能已经暂停，暂不支持删除数据!',
+        })
       }
     });
   },
@@ -361,6 +366,12 @@ Page({
           if (!res.data.code) {
             wx.hideLoading();
             that.resetPage();
+          }else{
+            wx.hideLoading();
+            wx.showModal({
+              title: '提示',
+              content: '暂停更新数据功能',
+            })
           }
         });
       }

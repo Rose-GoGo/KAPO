@@ -1,9 +1,9 @@
 <view class="Rose-about">
-  <view class="Rose-about-title">Rose Zhao</view>
+  <view class="Rose-about-title">公告</view>
   <view class="Rose-content">记录我的前端生活和在开发过程中遇到的问题，整理成文，希望对大家有帮助。始终相信，一步一个脚印，踏实学习。</view>
 </view>
 
- <!-- 打卡 -->
+<!-- 打卡 -->
 <view class="Rose-floor">
   <view class="Rose-menu">
     <view class="Rose-kinds" wx:for="{{every}}" wx:for-item="i" wx:key="index" ontap="goEveryDay" data-catid="{{i.id}}">
@@ -34,6 +34,13 @@
     <navigator url="../feedback/feedback" hover-class="none">
       <icon class="iconfont icon-mail"></icon>
       意见反馈
+      <icon class="fr iconfont icon-xiangyou"></icon>
+    </navigator>
+  </view>
+  <view class="Rose-Line">
+    <navigator url="../feedback/feedback" hover-class="none">
+      <icon class="iconfont icon-banben1"></icon>
+      版本记录
       <icon class="fr iconfont icon-xiangyou"></icon>
     </navigator>
   </view>

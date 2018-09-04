@@ -5,7 +5,7 @@
     indicator-color="{{beforeColor}}" indicator-active-color="{{afterColor}}" circular='{{true}}'
     previous-margin="{{previousmargin}}" next-margin="{{nextmargin}}" bindchange="swiperChange" style="height:{{swipter_height-20}}px">
     <block wx:for="{{items}}" wx:for-item="item" wx:key="index"  >
-        <swiper-item data-id="{{item.id}}" wx:if="{{item.id != 120}}">
+        <swiper-item data-id="{{item.id}}">
             <navigator url="../detail/detail?catid=19&id={{item.id}}" hover-class="none">
                 <view class="Rose-block">
                     <view class="Rose-box">
