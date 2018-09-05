@@ -1,8 +1,18 @@
 <wxs module="comm" src="../comm.wxs"></wxs>
 <view class="Rose-floor1">
-  <view class="Rose-top-quote">脚步很慢，但一直在努力，从未放弃！</view>
+  <swiper class="Rose-swiper" indicator-dots="{{true}}"
+  autoplay="{{true}}" interval="{{10000}}" duration="{{200}}" circular="{{true}}" indicator-color="rgba(255,255,255,0.5)" indicator-active-color="rgba(255,255,255,0.8)">
+    <swiper-item>
+      <view class="Rose-top-quote">脚步很慢，但一直在努力，从未放弃！</view>
   故不积跬步，无以至千里；不积小流，无以成江海。骐骥一跃，不能十步；驽马十驾，功在不舍。锲而舍之，朽木不折；锲而不舍，金石可镂。
+    </swiper-item>
+    <swiper-item>
+      <view class="Rose-top-quote">公告</view>
+  源码地址：https://github.com/Rose-GoGo/KAPO，请大家拉取最新代码，并且欢迎大家踊跃提交贡献代码
+    </swiper-item>
+</swiper>
 </view>
+
 <view class="Rose-lists">
   <view class="Rose-floor-title">精选
 <navigator url="../lists/lists?catid=11" hover-class='none' class="Rose-go">查看更多</navigator>
