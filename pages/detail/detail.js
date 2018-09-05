@@ -26,7 +26,7 @@ Page({
         catid: options.catid
     });
     that.getData();
-    // that.feedback();
+    that.feedback();
 },
 /**
  * 生命周期函数--监听页面初次渲染完成
