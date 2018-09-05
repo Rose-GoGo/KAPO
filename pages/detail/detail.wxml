@@ -5,7 +5,7 @@
   <view class="Rose-detail">
     <view class="Rose-title">{{items.title}}</view>
     <view class="Rose-addtime">{{items.updatetime}}
-      <text class="Rose-keywords">关键字:{{items.keywords}}</text>
+      <text class="Rose-keywords" wx:if="{{ catid !='19' && id != '124' && id !='145' }}">关键字:{{items.keywords}}</text>
     </view>
     <view class="Rose-content">
       <template is="wxParse" data="{{wxParseData:dkcontent.nodes}}" />
@@ -13,7 +13,8 @@
   </view>
 </view>
 <!-- 评论 -->
-<view class="Rose-comment" wx:if="{{catid !='19'}}">
+
+<view class="Rose-comment" wx:if="{{ catid !='19' && id != '124' && id !='145' }}">
   <view class="Rose-tab">
     <view class="Rose-index {{ currentTab == '0'? 'Rose-active': ''}} " bindtap="swichNav" data-current="0">评论列表</view>
     <view class="Rose-index {{ currentTab == '1'? 'Rose-active': ''}}" bindtap="swichNav" data-current="1">发表评论</view>
@@ -40,6 +41,7 @@
       </view>
     </view>
     <view class="Rose-empty" wx:else>
+    <icon class="iconfont icon-kong"></icon>
       评论还是空的，快来说两句吧~
     </view>
   </view>

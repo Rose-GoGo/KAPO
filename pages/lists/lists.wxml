@@ -8,8 +8,9 @@
     </view>
   </view>
 </view>
+
 <view class="Rose-list">
-  <view class="Rose-item" wx:for="{{items}}" wx:key="{{index}}" data-id="{{item.id}}" data-catid="{{item.catid}}" ontap="articleDetail">
+  <view class="Rose-item" wx:for="{{items}}" wx:key="{{index}}" data-id="{{item.id}}" data-catid="{{item.catid}}" ontap="articleDetail" wx:if="{{ item.id != '124' && item.id !='145' }}">
     <view class="Rose-name">{{item.title}}</view>
     <view class="Rose-time">{{comm.formatTime(item.updatetime)}}</view>
     <view class="Rose-description">{{item.description}}</view>

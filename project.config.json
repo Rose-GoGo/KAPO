@@ -38,7 +38,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 8,
+			"current": -1,
 			"list": [
 				{
 					"id": -1,
@@ -86,12 +86,6 @@
 					"id": 7,
 					"name": "文章列表",
 					"pathName": "pages/lists/lists",
-					"query": "catid=13&page=1"
-				},
-				{
-					"id": -1,
-					"name": "文章列表",
-					"pathName": "pages/me/me",
 					"query": "catid=13&page=1"
 				}
 			]
