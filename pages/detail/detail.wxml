@@ -41,7 +41,7 @@
       </view>
     </view>
     <view class="Rose-empty" wx:else>
-    <icon class="iconfont icon-kong"></icon>
+    <icon class="iconfont icon-kafei"></icon>
       评论还是空的，快来说两句吧~
     </view>
   </view>

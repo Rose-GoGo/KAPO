@@ -93,6 +93,7 @@ image {
   font-size: 30rpx;
   line-height: 1;
   padding: 24rpx 0 0;
+  color: #666
 }
 .Rose-section {
   display: flex;
@@ -203,7 +204,7 @@ textarea.Rose-input {
   font-size: 34rpx;
 }
 .Rose-empty {
-  padding: 3em;
+  padding: 4em;
   text-align: center;
   font-size: 14px;
   color: #999;
@@ -226,7 +227,9 @@ textarea.Rose-input {
   padding: 5rpx 0;
   font-weight:600;
 }
-.iconfont.icon-kong{
+.iconfont.icon-kafei{
   display:block;
   font-size:60px;
+  color: #eee;
+  margin-bottom: 10rpx
 }

@@ -8,13 +8,17 @@ Page({
     items: [],
     top10: [],
     page: 1,
-    loadMore: true
+    loadMore: true,
   },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
     var that = this;
+
+    that.getNotice();
+
+
     wx.getNetworkType({ //
       success: function(res) {
         // 返回网络类型, 有效值：
@@ -124,5 +128,21 @@ Page({
         });
       }
     });
+  },
+  getNotice: function(){
+    let _params = {
+      catid: 18, //项目id
+
+    }
+    Api.lists(_params).then(res=>{
+      if(!this.data.code){
+        let _data = res.data.data;
+        console.log(_data)
+        // this.setData({
+        //   items: _data
+        // })
+        // wx.hideLoading();
+      }
+    })
   }
 })
