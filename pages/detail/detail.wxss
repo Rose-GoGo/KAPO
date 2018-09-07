@@ -9,7 +9,7 @@ image {
   background: #fff;
   font-size: 32rpx;
   line-height: 1.6;
-  padding: 20rpx 20rpx 80rpx;
+  padding: 20rpx 20rpx 120rpx;
   color: #666;
 }
 .Rose-title {
@@ -217,7 +217,7 @@ textarea.Rose-input {
 .Rose-back{
   margin: 20rpx 10rpx 0 50rpx;
  color:#666;
- font-size:24rpx;
+ font-size:28rpx;
  padding: 10rpx;
  line-height:1.6;
  background:#f5f5f5;
