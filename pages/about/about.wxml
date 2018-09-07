@@ -19,7 +19,7 @@
   <view class="Rose-Line">
     <navigator url="../feedback/feedback" hover-class="none">
       <icon class="iconfont icon-mail"></icon>
-      意见反馈
+      留言
       <icon class="fr iconfont icon-xiangyou"></icon>
     </navigator>
   </view>
