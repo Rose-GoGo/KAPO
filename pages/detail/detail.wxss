@@ -203,7 +203,8 @@ textarea.Rose-input {
   font-size: 34rpx;
 }
 .Rose-empty {
-  padding: 4em;
+  padding: 0 0 20rpx;
+
   text-align: center;
   font-size: 14px;
   color: #999;
@@ -228,7 +229,7 @@ textarea.Rose-input {
 }
 .iconfont.icon-kafei{
   display:block;
-  font-size:60px;
+  font-size:70rpx;
   color: #eee;
   margin-bottom: 10rpx
 }
