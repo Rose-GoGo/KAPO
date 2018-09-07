@@ -26,7 +26,7 @@ Page({
         catid: options.catid
     });
     that.getData();
-    // that.feedback(); //反馈列表
+     that.feedback(); //反馈列表
 },
 /**
  * 生命周期函数--监听页面初次渲染完成
@@ -100,14 +100,5 @@ feedback: function() {
     }
   });
 },
-swichNav: function(e) {
-    var cur = e.target.dataset.current;
-    if (this.data.currentTab == cur) {
-      return false;
-    } else {
-      this.setData({
-        currentTab: cur
-      })
-    }
-  },
+
 })

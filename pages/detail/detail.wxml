@@ -11,62 +11,54 @@
       <template is="wxParse" data="{{wxParseData:dkcontent.nodes}}" />
     </view>
   </view>
-
   <view class="Rose-comments">
-    <view class="Rose-line">评论交流(点击评论内容可恢复)</view>
+    <view class="Rose-line">评论交流<text class="Rose-small">(点击评论回复)</text></view>
     <view class="Rose-lists" wx:if="{{comments.length > 0}}">
       <view class="Rose-items" wx:for="{{comments}}" wx:key="index" wx:for-item="comment">
-        <view class="Rose-comment-title">{{comment.title}}</view>
-        <view class="Rose-comment-content">{{comment.remark}}</view>
-        <view class="Rose-info">
-          <view class="Rose-name">
-            <icon wx:if="{{comment.sex==2}}" class="iconfont icon-nvsheng female"></icon>
-            <icon wx:else class="iconfont icon-nansheng male"></icon>
-            {{comment.username}}
-          </view>
-          <block wx:if="{{showEdit && isRose}}">
-            <view class="Rose-edit">
-              <icon class="iconfont icon-delete" data-id="{{comment.id}}" bindtap="deleteOne"></icon>
+        <div class="Rose-resource">
+          <view class="Rose-info">
+            <view class="Rose-name">
+              <icon wx:if="{{comment.sex==2}}" class="iconfont icon-nvsheng female"></icon>
+              <icon wx:else class="iconfont icon-nansheng male"></icon>
+              {{comment.username}}
             </view>
-          </block>
-          <view class="Rose-time">{{comment.create_time}}</view>
+            <view class="Rose-time">{{comment.create_time}}</view>
+          </view>
+          <view class="Rose-comment-content">{{comment.remark}}</view>
+        </div>
+
+        <view class="Rose-back">
+            <view class="Rose-back-item"><text class="Rose-tt">咸鱼</text> 回复 <text class="Rose-tt">赵</text>： 学习全靠自觉，培训跟打鸡血是的。脑韩热情培训跟打鸡血是的。脑韩热情
+            </view>
+            <view class="Rose-back-item"><text class="Rose-tt">赵 </text>回复 <text class="Rose-tt">赵</text>： 也好，羡慕呀
+            </view>
         </view>
+
       </view>
     </view>
     <view class="Rose-empty" wx:else>
       <icon class="iconfont icon-kafei"></icon>
       评论还是空的，快来说两句吧~
     </view>
-
   </view>
 </view>
-
-
-
-
 <view class="Rose-copyRight">
   <view class="kapo-name">KAPO博客</view>
   Copyright © 2014-2018 KAPO. All Rights Reserved.
 </view>
-
-
 <view class="Rose-fixed" wx:if="{{ catid !='19' && id != '124' && id !='145' }}">
-
-
-  <view class="Rose-comment">
-
-    <!-- 发表评论 -->
-    <view class="Rose-form" wx:if="{{currentTab=='1'}}">
-      <form bindsubmit="formSubmit">
-        <view class="Rose-section">
-          <view class="Rose-section_title">内容</view>
-          <textarea name="beizhu" name="remark" class="Rose-input" value="{{remark}}" bindinput="forRemark" maxlength="-1" placeholder="尽情吐槽吧!"></textarea>
-        </view>
-        <view class="Rose-section">
-          <button formType="submit" class="Rose-btn" disabled="{{disabled}}" wx:if="{{canIUse}}" bindgetuserinfo="bindGetUserInfo">提交</button>
-        </view>
-      </form>
-    </view>
-  </view>
-
+  <!-- 发表评论 -->
+  <view class="Rose-form">
+    <form bindsubmit="formSubmit">
+      <div class="Rose-flex">
+        <view class="Rose-none text-left">
+         <icon class="iconfont icon-hongbao1"></icon>
+       </view>
+       <input name="beizhu" name="remark" class="Rose-input" value="{{remark}}" bindinput="forRemark" maxlength="-1" placeholder="评论" />
+       <view class="Rose-none text-right">
+        <icon class="iconfont icon-fasong1"></icon>
+      </view>
+    </div>
+  </form>
+</view>
 </view>
