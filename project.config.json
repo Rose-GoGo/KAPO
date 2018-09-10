@@ -41,12 +41,6 @@
 			"current": -1,
 			"list": [
 				{
-					"id": -1,
-					"name": "首页",
-					"pathName": "pages/start/start",
-					"query": ""
-				},
-				{
 					"id": 1,
 					"name": "文章详情",
 					"pathName": "pages/detail/detail",

@@ -17,6 +17,14 @@ const ALL_API = {
     method: 'POST',
     url: '/index.php?m=content&c=api&a=show'
   },
+  commentlists: { //文章列表
+    method: 'POST',
+    url: '/index.php?m=content&c=wxcomment&a=lists'
+  },
+  postcomments: { //发布评论
+    method: 'POST',
+    url: '/index.php?m=content&c=wxcomment&a=publish'
+  },
   showday: { //时间轴
     method: 'POST',
     url: '/index.php?m=content&c=punch&a=lists'
@@ -39,5 +47,4 @@ const ALL_API = {
   }
 }
 const Api = new MyHttp({}, ALL_API);
-
 export default Api;

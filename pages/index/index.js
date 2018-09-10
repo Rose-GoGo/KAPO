@@ -1,5 +1,6 @@
 // pages/news/news.js
 import Api from '/../../utils/config/api.js';
+const app = getApp();
 Page({
   /**
    * 页面的初始数据
@@ -15,10 +16,22 @@ Page({
    */
   onLoad: function(options) {
     var that = this;
-
+        wx.getSetting({
+      success: function(res) {
+        if (res.authSetting['scope.userInfo']) {
+          // 已经授权，可以直接调用 getUserInfo 获取头像昵称
+          wx.getUserInfo({
+            success: function(res) {
+              var userInfo = res.userInfo;
+               app.globalData.userInfo = userInfo;
+               console.log(userInfo)
+               wx.setStorageSync('userInfo', userInfo)
+            }
+          })
+        }
+      }
+    });
     that.getNotice();
-
-
     wx.getNetworkType({ //
       success: function(res) {
         // 返回网络类型, 有效值：
@@ -132,7 +145,6 @@ Page({
   getNotice: function(){
     let _params = {
       catid: 18, //项目id
-
     }
     Api.lists(_params).then(res=>{
       if(!this.data.code){
