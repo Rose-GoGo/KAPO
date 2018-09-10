@@ -118,8 +118,9 @@ image {
   padding-top: 6rpx;
 }
 
-.Rose-none .iconfont.icon-hongbao1{
-  color: #ff80c2;}
+.Rose-none .iconfont.icon-hongbao1 {
+  color: #ff80c2;
+}
 
 .Rose-input {
   flex: 1;
@@ -169,6 +170,7 @@ textarea.Rose-input {
 .Rose-comment-content {
   color: #666;
   font-size: 32rpx;
+  line-height: 44rpx;
 }
 
 .Rose-info {
@@ -211,6 +213,10 @@ textarea.Rose-input {
 .wxParse-li {
   position: relative;
   padding-left: 40rpx;
+}
+
+.wxParse-div {
+  word-break: break-all;
 }
 
 .wxParse-li:before {
@@ -256,7 +262,9 @@ textarea.Rose-input {
 }
 
 .Rose-back-item {
+  line-height: 1.4;
   word-break: break-all;
+  padding: 5rpx 0;
 }
 
 .Rose-image {

@@ -1,35 +1,29 @@
 <wxs module="comm" src="../comm.wxs"></wxs>
 <view class="Rose-floor1">
-  <swiper class="Rose-swiper" indicator-dots="{{true}}"
-  autoplay="{{true}}" interval="{{10000}}" duration="{{200}}" circular="{{true}}" indicator-color="rgba(255,255,255,0.5)" indicator-active-color="rgba(255,255,255,0.8)">
-    <swiper-item>
-      <view class="Rose-top-quote">脚步很慢，但一直在努力，从未放弃！</view>
-  故不积跬步，无以至千里；不积小流，无以成江海。骐骥一跃，不能十步；驽马十驾，功在不舍。锲而舍之，朽木不折；锲而不舍，金石可镂。
+  <swiper class="Rose-swiper" indicator-dots="{{true}}" autoplay="{{true}}" interval="{{10000}}" duration="{{200}}" circular="{{true}}" indicator-color="rgba(255,255,255,0.5)" indicator-active-color="rgba(255,255,255,0.8)">
+    <swiper-item wx:for="{{notices}}" wx:key="index" wx:for-item="notice">
+      <view class="Rose-top-quote">{{notice.title}}</view>
+      {{notice.description}}
     </swiper-item>
-    <swiper-item>
-      <view class="Rose-top-quote">公告</view>
-  源码地址：https://github.com/Rose-GoGo/KAPO，请大家拉取最新代码，并且欢迎大家踊跃提交贡献代码
-    </swiper-item>
-</swiper>
+  </swiper>
 </view>
-
 <view class="Rose-lists">
   <view class="Rose-floor-title">精选
-<navigator url="../lists/lists?catid=11" hover-class='none' class="Rose-go">查看更多</navigator>
+    <navigator url="../lists/lists?catid=11" hover-class='none' class="Rose-go">查看更多</navigator>
   </view>
   <view class="Rose-box">
-  <scroll-view class="Rose-items" scroll-x="true">
-    <view class="Rose-item" wx:for="{{top10}}" wx:key="index" wx:for-item="top" data-id="{{top.id}}" data-catid="{{top.catid}}" ontap="articleDetail">
-      <image class="Rose-imgbest" lazy-load="{{true}}" src="{{top.thumb==''? '/assets/images/wx_04.jpg':top.thumb }}"></image>
-      <view class="Rose-title">{{ top.title }}</view>
-      <view class="Rose-time text-left">{{top.updatetime}}</view>
-    </view>
-  </scroll-view>
+    <scroll-view class="Rose-items" scroll-x="true">
+      <view class="Rose-item" wx:for="{{top10}}" wx:key="index" wx:for-item="top" data-id="{{top.id}}" data-catid="{{top.catid}}" ontap="articleDetail">
+        <image class="Rose-imgbest" lazy-load="{{true}}" src="{{top.thumb==''? '/assets/images/wx_04.jpg':top.thumb }}"></image>
+        <view class="Rose-title">{{ top.title }}</view>
+        <view class="Rose-time text-left">{{top.updatetime}}</view>
+      </view>
+    </scroll-view>
   </view>
 </view>
 <!-- 菜单 -->
 <view class="Rose-news" wx:for="{{items}}" wx:key="index" data-id="{{item.id}}" data-catid="{{item.catid}}" ontap="articleDetail" wx:if="{{ item.id != '124' && item.id !='145' }}">
-  <view class="Rose-content" >
+  <view class="Rose-content">
     <view class="Rose-flex">
       <view class="Rose-kind">
         <icon class="green-color iconfont icon-fenlei-xingxiu"></icon>

@@ -38,7 +38,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": -1,
+			"current": 3,
 			"list": [
 				{
 					"id": 1,
@@ -59,10 +59,10 @@
 					"query": ""
 				},
 				{
-					"id": 4,
+					"id": 3,
 					"name": "打卡",
 					"pathName": "pages/more/more",
-					"query": "catid=1"
+					"query": "catid=4"
 				},
 				{
 					"id": 7,

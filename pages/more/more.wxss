@@ -203,8 +203,8 @@ button[disabled]:not([type]) {
   font-size: 24rpx;
   color: #999;
   text-align: center;
-  width: 31%;
-  float: left;
+  
+  flex: 1
 }
 .Rose-image {
   width: 100%;
@@ -216,9 +216,10 @@ button[disabled]:not([type]) {
 .Rose-item {
   margin: 16rpx 0 0;
   display: flex;
+  justify-content:flex-start
 }
 .Rose-item image {
-  flex: 1;
+  
 }
 .Rose-img {
   height: 120rpx;

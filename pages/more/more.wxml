@@ -60,7 +60,7 @@
                 <view class="Rose-item">
                   <block wx:for="{{dd.imgs}}" wx:key="mm" wx:for-item="imagess">
                     <view class="Rose-imgbox">
-                      <image class="Rose-img" src="{{imagess}}" data-idx="{{index}}" mode="scaleToFill" data-arr="{{dd.imgs}}" bindtap="imagePreview"> </image>
+                      <image class="Rose-img" src="{{imagess}}" data-idx="{{index}}" mode="aspectFit" data-arr="{{dd.imgs}}" bindtap="imagePreview"> </image>
                     </view>
                   </block>
                 </view>
