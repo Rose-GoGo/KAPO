@@ -225,7 +225,7 @@ textarea.Rose-input {
   top: 20rpx;
   width: 10rpx;
   height: 10rpx;
-  background: #666;
+  background: #999;
   content: '';
   border-radius: 100%;
 }
