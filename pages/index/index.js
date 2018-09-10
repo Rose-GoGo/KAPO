@@ -10,6 +10,7 @@ Page({
     items: [],
     top10: [],
     page: 1,
+    canIUse: wx.canIUse('button.open-type.getUserInfo'),
     loadMore: true,
   },
   /**
@@ -17,21 +18,6 @@ Page({
    */
   onLoad: function (options) {
     var that = this;
-    wx.getSetting({
-      success: function (res) {
-        if (res.authSetting['scope.userInfo']) {
-          // 已经授权，可以直接调用 getUserInfo 获取头像昵称
-          wx.getUserInfo({
-            success: function (res) {
-              var userInfo = res.userInfo;
-              app.globalData.userInfo = userInfo;
-              console.log(userInfo)
-              wx.setStorageSync('userInfo', userInfo)
-            }
-          })
-        }
-      }
-    });
     wx.getNetworkType({ //
       success: function (res) {
         // 返回网络类型, 有效值：
@@ -154,10 +140,9 @@ Page({
       if (!that.data.code) {
         let _data = res.data.data;
         that.setData({
-          notices: _data
+          notices: _data,
         })
-
       }
-    })
+    });
   }
 })

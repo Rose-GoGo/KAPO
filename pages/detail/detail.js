@@ -14,13 +14,14 @@ Page({
     canIUse: wx.canIUse('button.open-type.getUserInfo'),
     disabled: true,
     loadMore: true,
+    focus: false,
     userInfo: {},
     content: '',
-    focus: false,
     placeholder: '评论',
     reply_username: '',
     pid: 0,
-    page:1
+    page: 1,
+    count: 0
   },
   /**
    * 生命周期函数--监听页面加载
@@ -34,6 +35,32 @@ Page({
       id: options.id,
       catid: options.catid
     });
+
+    if ( wx.getStorageSync('userInfo')) {
+
+
+    }else{
+      wx.getSetting({
+        success: function (res) {
+          console.log(res)
+          if (res.authSetting['scope.userInfo']) {
+            // 已经授权，可以直接调用 getUserInfo 获取头像昵称
+            wx.getUserInfo({
+              success: function (res) {
+                console.log(res)
+                let _userInfo = res.userInfo;
+                app.globalData.userInfo = _userInfo;
+                wx.setStorageSync('userInfo', _userInfo)
+              },
+              fail: function(){
+              }
+            })
+          }
+        }
+      });
+
+    }
+
 
     that.commentlists(); //反馈列表
     that.getData();
@@ -101,7 +128,6 @@ Page({
           dkcontent: _tpl
         });
         wxparse.wxParse('dkcontent', 'html', _tpl, that, 5);
-
       }
     })
   },
@@ -123,6 +149,7 @@ Page({
   },
   postComments: function () {
     var that = this;
+
     if (!that.data.content) {
       wx.showModal({
         showCancel: false,
@@ -131,6 +158,7 @@ Page({
       });
       return false;
     }
+    wx.showLoading();
     let _params = {
       newsid: that.data.id,  // 博客文章ID
       pid: that.data.pid, // 父评论ID，默认为0
@@ -142,6 +170,7 @@ Page({
     }
     Api.postcomments(_params).then(res => {
       if (!res.data.code) {
+        wx.hideLoading();
         that.setData({
           content: '',
           page: 1,
@@ -164,9 +193,11 @@ Page({
     Api.commentlists(_params).then(res => {
       if (res.data.code==0) {
         let _data = res.data.data;
+        let _count = res.data.count;
         let _arr = that.data.comments.concat(_data);
         that.setData({
-          comments: _arr
+          comments: _arr,
+          count: _count
         });
         if (_data.length < 10) {
           that.setData({
@@ -188,5 +219,13 @@ Page({
       content: '该功能暂未开放',
       showCancel: false
     })
+  },
+  bindGetUserInfo: function(e) {
+    var userInfo = e.detail.userInfo;
+
+    this.setData({
+      userInfo: userInfo
+    })
+   // this.postComments()
   }
 })

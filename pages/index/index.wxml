@@ -16,7 +16,7 @@
       <view class="Rose-item" wx:for="{{top10}}" wx:key="index" wx:for-item="top" data-id="{{top.id}}" data-catid="{{top.catid}}" ontap="articleDetail">
         <image class="Rose-imgbest" lazy-load="{{true}}" src="{{top.thumb==''? '/assets/images/wx_04.jpg':top.thumb }}"></image>
         <view class="Rose-title">{{ top.title }}</view>
-        <view class="Rose-time text-left">{{top.updatetime}}</view>
+        <view class="Rose-time Rose-left">{{top.updatetime}}</view>
       </view>
     </scroll-view>
   </view>
@@ -26,16 +26,33 @@
   <view class="Rose-content">
     <view class="Rose-flex">
       <view class="Rose-kind">
-        <icon class="green-color iconfont icon-fenlei-xingxiu"></icon>
+        <icon class="iconfont icon-fenlei"></icon>
         <block wx:if="{{item.catid=='11'}}"> 前端</block>
         <block wx:if="{{item.catid=='12'}}"> 安全</block>
         <block wx:if="{{item.catid=='13'}}"> 生活</block>
       </view>
-      <view class="Rose-flex1 Rose-time text-right">{{comm.formatTime(item.updatetime)}}</view>
+      <!-- <view class="Rose-flex1 Rose-comment Rose-center">
+        <icon class="iconfont icon-pinglun1"></icon> {{item.cnum}}</view> -->
+     <!--  <view class="Rose-flex1 Rose-time Rose-right">
+      {{comm.formatTime(item.updatetime)}}</view> -->
     </view>
+
     <view class="Rose-flex1 Rose-title">{{item.title}}</view>
     <image class="Rose-imgitem" mode="aspectFill" lazy-load="{{true}}" src="{{item.thumb==''? '/assets/images/ncode.jpg': item.thumb}}"></image>
     <view class="Rose-detail">{{item.description}}</view>
+
+    <view class="Rose-bottom">
+      <view class="Rose-flex1">
+        <icon class="iconfont icon-shijian"></icon>
+        {{comm.formatTime(item.updatetime)}}
+      </view>
+
+      <view class="Rose-flex1 Rose-right">
+        <icon class="iconfont icon-pinglun2"></icon>
+        {{item.cnum}}
+    </view>
+    </view>
+
   </view>
 </view>
 <view class="allLoaded" wx:if="{{items.length!=0 && !loadMore}}">

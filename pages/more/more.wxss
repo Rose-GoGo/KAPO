@@ -199,12 +199,13 @@ button[disabled]:not([type]) {
   width: 100%;
 }
 .Rose-imgbox {
+  width: 33%;
   margin: 0 1%;
   font-size: 24rpx;
   color: #999;
   text-align: center;
-  
-  flex: 1
+
+  /*flex: 1*/
 }
 .Rose-image {
   width: 100%;
@@ -219,7 +220,7 @@ button[disabled]:not([type]) {
   justify-content:flex-start
 }
 .Rose-item image {
-  
+
 }
 .Rose-img {
   height: 120rpx;

@@ -1,11 +1,14 @@
 .Rose-swiper {
   height: 240rpx;
 }
-.text-right {
+.Rose-right {
   text-align: right;
 }
-.text-left {
+.Rose-left {
   text-align: left;
+}
+.Rose-center {
+  text-align: center;
 }
 .Rose-floor1 {
   padding: 40rpx 40rpx 0;
@@ -48,7 +51,7 @@
 }
 .Rose-title {
   display: -webkit-box;
-  padding: 10rpx 0 20rpx 0;
+  padding: 0 0 20rpx;
   font-size: 34rpx;
   color: #333;
   white-space: pre-wrap;
@@ -93,13 +96,29 @@
 }
 .Rose-flex {
   display: flex;
+  margin: 0 0 20rpx;
   flex-direction: row;
 }
 .Rose-kind {
   text-align: left;
-  font-size: 26rpx;
-  font-weight: bold;
-  color: #1d8f59;
+  font-size: 24rpx;
+  color: #999;
+  margin-top:-18rpx;
+  font-weight:600;
+}
+.Rose-bottom{
+  display: flex;
+  font-size:24rpx;
+  color:#999;
+  margin-top:20rpx;
+}
+.Rose-bottom .iconfont{
+  margin-top:-18rpx;
+  font-size:28rpx;
+}
+.icon-fenlei{
+color: #1d8f59;
+font-size:28rpx;
 }
 .Rose-flex1 {
   flex: 1;
@@ -124,4 +143,9 @@
 .Rose-go {
   float: right;
   color: #999;
+}
+.Rose-comment{
+  font-size: 24rpx;
+  color: #999;
+  margin-top:-18rpx;
 }

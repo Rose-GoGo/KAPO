@@ -12,7 +12,7 @@ Page({
     disabled: true,
     items: [],
     loadMore: true,
-    canIUse: wx.canIUse('button.open-type.getUserInfo'),
+    canIUse: wx.canIUse('icon.open-type.getUserInfo'),
     username: '',
     sex: null,
     isRose: false,
@@ -39,9 +39,9 @@ Page({
               that.setData({
                 username: userInfo.nickName,
                 sex: userInfo.gender
-              })
+              });
             }
-          })
+          });
         }
       }
     });

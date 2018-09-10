@@ -14,6 +14,8 @@
   <view class="Rose-comments" wx:if="{{catid!=='19' && id !='124' && id !='145'}}">
     <view class="Rose-line">评论交流
       <text class="Rose-small">(点击评论回复)</text>
+      <text class="Rose-Right">共:{{count}}条</text>
+
     </view>
     <view class="Rose-lists" wx:if="{{comments.length > 0}}">
       <view class="Rose-items" wx:for="{{comments}}" wx:key="index" wx:for-item="comment">
@@ -35,7 +37,6 @@
         </view>
       </view>
     </view>
-
     <view class="Rose-empty" wx:else>
       <icon class="iconfont icon-kafei"></icon>
       评论还是空的，快来说两句吧~
@@ -46,9 +47,6 @@
     <loading load-more="{{loadMore}}"></loading>
   </view>
 </view>
-
-
-
 <view class="Rose-copyRight">
   <view class="kapo-name">KAPO博客</view>
   Copyright © 2014-2018 KAPO. All Rights Reserved.
@@ -62,7 +60,7 @@
           <icon class="iconfont icon-hongbao1"></icon>
         </view>
         <input class="Rose-input" value="{{content}}" focus="{{focus}}" bindinput="forContent" maxlength="-1" placeholder="{{placeholder}}" />
-        <view class="Rose-none text-right" bindtap="postComments">
+        <view class="Rose-none text-right" bindtap="postComments" wx:if="{{canIUse}}" open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo">
           <icon class="iconfont icon-fasong1"></icon>
         </view>
       </div>
