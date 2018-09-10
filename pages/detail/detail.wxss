@@ -252,7 +252,7 @@ textarea.Rose-input {
 }
 
 .Rose-tt {
-  color: #1d8f59;
+  color: #333;
 }
 
 .Rose-back-item {
