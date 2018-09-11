@@ -12,7 +12,7 @@ Page({
     disabled: true,
     items: [],
     loadMore: true,
-    canIUse: wx.canIUse('icon.open-type.getUserInfo'),
+    canIUse: wx.canIUse('button.open-type.getUserInfo'),
     username: '',
     sex: null,
     isRose: false,

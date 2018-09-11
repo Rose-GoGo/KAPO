@@ -6,7 +6,7 @@ Page({
   /**
    * 页面的初始数据
    */
-  data: {
+   data: {
     dkcontent: '',
     id: '',
     catid: '',
@@ -17,7 +17,7 @@ Page({
     focus: false,
     userInfo: {},
     content: '',
-    placeholder: '评论',
+    placeholder: '评论...',
     reply_username: '',
     pid: 0,
     page: 1,
@@ -26,7 +26,7 @@ Page({
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function (options) {
+   onLoad: function (options) {
     wx.showLoading();
     var that = this;
     let _userInfo = wx.getStorageSync('userInfo')
@@ -68,32 +68,32 @@ Page({
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
-  onReady: function () {
-  },
+   onReady: function () {
+   },
   /**
    * 生命周期函数--监听页面显示
    */
-  onShow: function () {
-  },
+   onShow: function () {
+   },
   /**
    * 生命周期函数--监听页面隐藏
    */
-  onHide: function () {
-  },
+   onHide: function () {
+   },
   /**
    * 生命周期函数--监听页面卸载
    */
-  onUnload: function () {
-  },
+   onUnload: function () {
+   },
   /**
    * 页面相关事件处理函数--监听用户下拉动作
    */
-  onPullDownRefresh: function () {
-  },
+   onPullDownRefresh: function () {
+   },
   /**
    * 页面上拉触底事件的处理函数
    */
-  onReachBottom: function () {
+   onReachBottom: function () {
     var that = this;
     let page = that.data.page + 1;
     that.setData({
@@ -106,7 +106,7 @@ Page({
   /**
    * 用户点击右上角分享
    */
-  onShareAppMessage: function () {
+   onShareAppMessage: function () {
     return {
       title: this.data.items.title,
       imageUrl: '/assets/images/share.jpg'
@@ -120,7 +120,7 @@ Page({
     };
     Api.pageitem(_params).then(res => {
       if (!res.data.code) {
-          wx.hideLoading();
+        wx.hideLoading();
         let _data = res.data.data;
         var _tpl = _data.content;
         that.setData({
@@ -177,7 +177,7 @@ Page({
           comments: [],
           reply_username: '',
           pid: 0,
-          placeholder: '评论'
+          placeholder: '评论...'
         });
         that.commentlists();
       }
@@ -205,15 +205,30 @@ Page({
           });
         }
       }else {
-          wx.showModal({
-            showCancel: false,
-            title: '提示',
-            content: '评论加载失败!'
-          })
-        }
+        wx.showModal({
+          showCancel: false,
+          title: '提示',
+          content: '评论加载失败!'
+        })
+      }
     });
   },
   rewardRose: function () {
+    console.log(222)
+
+    // wx.requestPayment(
+    // {
+    //   'timeStamp': '',
+    //   'nonceStr': '',
+    //   'package': '',
+    //   'signType': 'MD5',
+    //   'paySign': '',
+    //   'success':function(res){
+    //     console.log('1111')
+    //   },
+    //   'fail':function(res){},
+    //   'complete':function(res){}
+    // })
     wx.showModal({
       title: '提示',
       content: '该功能暂未开放',
@@ -222,10 +237,8 @@ Page({
   },
   bindGetUserInfo: function(e) {
     var userInfo = e.detail.userInfo;
-
     this.setData({
       userInfo: userInfo
     })
-   // this.postComments()
-  }
+ }
 })

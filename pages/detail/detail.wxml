@@ -14,8 +14,7 @@
   <view class="Rose-comments" wx:if="{{catid!=='19' && id !='124' && id !='145'}}">
     <view class="Rose-line">评论交流
       <text class="Rose-small">(点击评论回复)</text>
-      <text class="Rose-Right">共:{{count}}条</text>
-
+      <text class="Rose-Right">共{{count}}条评论</text>
     </view>
     <view class="Rose-lists" wx:if="{{comments.length > 0}}">
       <view class="Rose-items" wx:for="{{comments}}" wx:key="index" wx:for-item="comment">
@@ -29,7 +28,7 @@
             </view>
             <view class="Rose-back" wx:if="{{ comment.children.length}}">
               <view class="Rose-back-item" wx:for="{{comment.children}}" wx:for-index="ii" wx:for-item="child" wx:key="ii" data-pid="{{comment.id}}" data-from="{{child.from_username}}" bindtap="backContent">
-                <text class="Rose-tt">{{child.from_username}}</text> 回复
+                <text class="Rose-tt">{{child.from_username=='赵'? '博主':child.from_username}}</text> 回复
                 <text class="Rose-tt">{{child.reply_username}}</text>： {{child.content}}
               </view>
             </view>
@@ -42,7 +41,7 @@
       评论还是空的，快来说两句吧~
     </view>
     <view class="Rose-end" wx:if="{{comments.length!=0 && !loadMore}}">
-      <text class="Rose-word">没有更多了~</text>
+      <text class="Rose-word">没有更多评论了~</text>
     </view>
     <loading load-more="{{loadMore}}"></loading>
   </view>
@@ -53,14 +52,14 @@
 </view>
 <view class="Rose-fixed" wx:if="{{ catid !='19' && id != '124' && id !='145' }}">
   <!-- 发表评论 -->
-  <view class="Rose-form">
+  <view class="Rose-box">
     <form bindsubmit="formSubmit">
       <div class="Rose-flex">
         <view class="Rose-none text-left" bindtap="rewardRose">
           <icon class="iconfont icon-hongbao1"></icon>
         </view>
         <input class="Rose-input" value="{{content}}" focus="{{focus}}" bindinput="forContent" maxlength="-1" placeholder="{{placeholder}}" />
-        <view class="Rose-none text-right" bindtap="postComments" wx:if="{{canIUse}}" open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo">
+        <view class="Rose-none text-center" bindtap="postComments" wx:if="{{canIUse}}" open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo">
           <icon class="iconfont icon-fasong1"></icon>
         </view>
       </div>

@@ -34,7 +34,9 @@ Page({
     });
     wx.setNavigationBarTitle({
       title: that.data.barText[options.catid-1]
-    })
+    });
+
+
     wx.getSetting({
       success: function (res) {
         if (res.authSetting['scope.userInfo']) {

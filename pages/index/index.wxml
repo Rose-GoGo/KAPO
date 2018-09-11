@@ -26,34 +26,30 @@
   <view class="Rose-content">
     <view class="Rose-flex">
       <view class="Rose-kind">
-        <icon class="iconfont icon-fenlei"></icon>
-        <block wx:if="{{item.catid=='11'}}"> 前端</block>
-        <block wx:if="{{item.catid=='12'}}"> 安全</block>
-        <block wx:if="{{item.catid=='13'}}"> 生活</block>
-      </view>
-      <!-- <view class="Rose-flex1 Rose-comment Rose-center">
-        <icon class="iconfont icon-pinglun1"></icon> {{item.cnum}}</view> -->
-     <!--  <view class="Rose-flex1 Rose-time Rose-right">
-      {{comm.formatTime(item.updatetime)}}</view> -->
+       <icon class="green-color iconfont icon-fenlei-xingxiu"></icon>
+       <block wx:if="{{item.catid=='11'}}"> 前端</block>
+       <block wx:if="{{item.catid=='12'}}"> 安全</block>
+       <block wx:if="{{item.catid=='13'}}"> 生活</block>
+     </view>
+   </view>
+   <view class="Rose-flex1 Rose-title">{{item.title}}</view>
+   <image class="Rose-imgitem" mode="aspectFill" lazy-load="{{true}}" src="{{item.thumb==''? '/assets/images/ncode.jpg': item.thumb}}"></image>
+   <view class="Rose-detail">{{item.description}}</view>
+   <view class="Rose-bottom">
+    <view class="Rose-flex1 Rose-left">
+      <icon class="iconfont icon-pinglun3"></icon>
+      {{item.cnum}}
     </view>
-
-    <view class="Rose-flex1 Rose-title">{{item.title}}</view>
-    <image class="Rose-imgitem" mode="aspectFill" lazy-load="{{true}}" src="{{item.thumb==''? '/assets/images/ncode.jpg': item.thumb}}"></image>
-    <view class="Rose-detail">{{item.description}}</view>
-
-    <view class="Rose-bottom">
-      <view class="Rose-flex1">
-        <icon class="iconfont icon-shijian"></icon>
-        {{comm.formatTime(item.updatetime)}}
-      </view>
-
-      <view class="Rose-flex1 Rose-right">
-        <icon class="iconfont icon-pinglun2"></icon>
-        {{item.cnum}}
+    <view class="Rose-flex1 Rose-left">
+      <icon class="iconfont icon-xiangqu"></icon>
+      {{item.cnum}}
     </view>
+    <view class="Rose-flex1 Rose-right">
+      <icon class="iconfont icon-shijian2"></icon>
+      {{comm.formatDate(item.updatetime)}}
     </view>
-
   </view>
+</view>
 </view>
 <view class="allLoaded" wx:if="{{items.length!=0 && !loadMore}}">
   <text class="line-word">我是有底线的~</text>
