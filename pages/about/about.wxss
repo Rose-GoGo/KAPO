@@ -1,38 +1,45 @@
 /**index.wxss**/
-.Rose-floor{
+
+.Rose-floor {
   background: #fff;
   margin-bottom: 20rpx;
 }
-.Rose-menu{
+
+.Rose-menu {
   padding: 40rpx 30rpx 20rpx;
   display: flex;
-  flex-flow:row;
-  justify-content: space-between ;
+  flex-flow: row;
+  justify-content: space-between;
 }
-.Rose-flex1{
-  flex:1;
+
+.Rose-flex1 {
+  flex: 1;
 }
-.Rose-about-title{
-  text-align: center
+
+.Rose-about-title {
+  text-align: center;
 }
-.Rose-about{
-  padding:20rpx;
+
+.Rose-about {
+  padding: 20rpx;
   background: #1d8f59;
   color: #fff;
-  font-size: 32rpx
+  font-size: 32rpx;
 }
-.Rose-kinds{
+
+.Rose-kinds {
   text-align: center;
   font-size: 28rpx;
   color: #333;
   width: 90rpx;
 }
-.Rose-kinds .iconfont{
+
+.Rose-kinds .iconfont {
   font-size: 42rpx;
   display: block;
 }
-.view-circle{
 
+.view-circle {
   border-radius: 100%;
   color: #fff;
   width: 90rpx;
@@ -40,66 +47,79 @@
   line-height: 90rpx;
   margin: 0 auto 20rpx;
 }
-.color4{
-  background-color: #8a90fa
+
+.color4 {
+  background-color: #8a90fa;
 }
-.color3{
-  background-color: #4dc6ee
+
+.color3 {
+  background-color: #4dc6ee;
 }
-.color2{
-  background-color: #fed030
+
+.color2 {
+  background-color: #fed030;
 }
-.color1{
-  background-color: #fd9d21
+
+.color1 {
+  background-color: #fd9d21;
 }
-.Rose-floor-title{
+
+.Rose-floor-title {
   padding: 20rpx 20rpx;
   font-size: 32rpx;
   color: #666;
   border-bottom: 2rpx solid #f2f2f2;
 }
-.Rose-floor-title .iconfont{
+
+.Rose-floor-title .iconfont {
   color: #555;
   font-size: 15px;
 }
-.Rose-content{
+
+.Rose-content {
   font-size: 26rpx;
   margin: 10rpx 0 30rpx;
-  line-height: 1.4
+  line-height: 1.4;
 }
-.Rose-article{
+
+.Rose-article {
   padding: 50rpx 20rpx 40rpx;
   display: flex;
 }
-.Rose-title{
+
+.Rose-title {
   flex: 1;
   text-align: center;
   font-size: 26rpx;
-  color: #666
+  color: #666;
 }
-.Rose-title .iconfont{
+
+.Rose-title .iconfont {
   font-size: 52rpx;
   display: block;
-  color: #599eec
+  color: #599eec;
 }
-.Rose-Line .iconfont{
+
+.Rose-Line .iconfont {
   color: #599eec;
   font-size: 46rpx;
   padding-right: 10rpx;
   vertical-align: middle;
 }
-.Rose-Line .iconfont.fr{
+
+.Rose-Line .iconfont.fr {
   float: right;
   color: #a8a8a8;
   padding-right: 0;
-  font-size: 30rpx
+  font-size: 30rpx;
 }
-.Rose-Line{
+
+.Rose-Line {
   padding: 20rpx 20rpx 20rpx 0;
   border-bottom: 2rpx solid #f5f5f5;
   background: #fff;
   font-size: 34rpx;
   color: #333;
   margin-left: 20rpx;
-  line-height: 60rpx
+  line-height: 60rpx;
 }

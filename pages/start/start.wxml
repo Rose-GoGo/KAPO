@@ -14,7 +14,7 @@
       <view class="bd">
         <!--  <image class="smalltitle" src="/assets/images/more/confirm-word1.png"></image> -->
         <view class="confirm-btn" bindtap='goToIndex'>
-          <text >去看看</text>
+          <text>去看看</text>
         </view>
         <text class="copyright">©Powered By Rose Zhao</text>
       </view>

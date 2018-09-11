@@ -21,7 +21,7 @@ Page({
     var that = this;
     wx.showLoading();
     wx.getSystemInfo({
-      success: function(res) {
+      success: function (res) {
         that.setData({
           swipter_height: res.windowHeight
         })
@@ -75,7 +75,7 @@ Page({
     // })
     if (e.detail.source == "touch") {
       //防止swiper控件卡死
-      if (this.data.swiperCurrent == 0 && this.data.preIndex>1 ) {//卡死时，重置swiperCurrent为正确索引
+      if (this.data.swiperCurrent == 0 && this.data.preIndex > 1) {//卡死时，重置swiperCurrent为正确索引
         this.setData({ swiperCurrent: this.data.preIndex });
       }
       else {//正常轮转时，记录正确页码索引
@@ -90,14 +90,14 @@ Page({
       swiperCurrent: e.currentTarget.id
     })
   },
-  getData: function(){
+  getData: function () {
     let _params = {
       catid: 19, //项目id
       page: 1,
       pagesize: 999 // 可选，默认为为5
     }
-    Api.lists(_params).then(res=>{
-      if(!this.data.code){
+    Api.lists(_params).then(res => {
+      if (!this.data.code) {
         let _data = res.data.data;
         this.setData({
           items: _data

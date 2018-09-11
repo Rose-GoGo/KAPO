@@ -1,9 +1,11 @@
 /* pages/feedback/feedback.wxss */
+
 .Rose-form {
   padding: 10px;
   background: #fff;
   margin: 0 0 10px;
 }
+
 .Rose-input {
   flex: 1;
   line-height: 1;
@@ -12,14 +14,16 @@
   border-radius: 4rpx;
   font-size: 30rpx;
 }
+
 .Rose-section_title {
   display: block;
   width: 3em;
   font-size: 32rpx;
   line-height: 1;
   padding: 24rpx 0 0;
-  color: #666
+  color: #666;
 }
+
 .Rose-section {
   display: flex;
   width: 100%;
@@ -29,6 +33,7 @@
   overflow: hidden;
   justify-content: space-between;
 }
+
 .Rose-btn {
   width: 100%;
   height: 100%;
@@ -39,40 +44,48 @@
   color: #fff;
   border-radius: 10px;
 }
+
 button[disabled]:not([type]) {
   background: #ddd;
   color: #fff;
 }
+
 .Rose-tip {
   padding: 10px;
   margin-top: 10rpx;
   font-size: 24rpx;
   color: #666;
 }
+
 .Rose-lists {
   border-top: 1rpx solid #f2f2f2;
   border-bottom: 1rpx solid #f2f2f2;
   background: #fff;
 }
+
 .Rose-feeds {
   padding: 10px;
   border-bottom: 1rpx solid #f2f2f2;
   font-size: 32rpx;
   color: #666;
 }
+
 .Rose-line {
   margin-left: 10px;
   padding: 20rpx 20rpx 20rpx 0;
   border-bottom: 1rpx solid #f5f5f5;
   line-height: 1.5;
 }
+
 .Rose-line:last-child {
   border-bottom: none;
 }
+
 .Rose-title {
   font-size: 36rpx;
   color: #000;
 }
+
 .Rose-content {
   margin: 14rpx 0 10rpx;
   font-size: 30rpx;
@@ -80,6 +93,7 @@ button[disabled]:not([type]) {
   color: both;
   line-height: 1.6;
 }
+
 .Rose-info {
   display: flex;
   width: 100%;
@@ -87,33 +101,40 @@ button[disabled]:not([type]) {
   color: #a8a8a8;
   line-height: 1;
 }
+
 .Rose-name {
   width: 40%;
   float: left;
   text-align: left;
 }
+
 .Rose-time {
   flex: 1;
   text-align: right;
   line-height: 40rpx;
   padding-top: 16rpx;
 }
+
 .Rose-edit {
   width: 20%;
   float: left;
 }
+
 .Rose-edit icon {
   font-size: 36rpx;
   margin: 0 10rpx;
   color: #999;
 }
+
 .female {
   color: #ff80c2;
 }
+
 .male {
   color: #8a90fa;
 }
+
 .Rose-name .iconfont {
- font-size:40rpx;
- vertical-align:text-bottom;
+  font-size: 40rpx;
+  vertical-align: text-bottom;
 }

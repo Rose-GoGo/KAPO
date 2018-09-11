@@ -42,7 +42,7 @@ function sendRrquest(url, method, data, header) {
         wx.showModal({
           title: '提示',
           content: '数据加载失败!',
-          success: function(res) {
+          success: function (res) {
             if (res.confirm) {
               console.log('用户点击确定')
             }
@@ -78,12 +78,12 @@ function MyHttp(defaultParams, ALL_API) {
   for (let actionName in ALL_API) {
     let _config = ALL_API[actionName];
     resource[actionName] = (pdata) => {
-     let _params_data = extend({}, pdata);
-     return sendRrquest(_build_url + _config.url, _config.method, _params_data, {
-      'content-type': 'application/x-www-form-urlencoded;charset=utf-8;Authorization'
-    });
-   }
- }
- return resource;
+      let _params_data = extend({}, pdata);
+      return sendRrquest(_build_url + _config.url, _config.method, _params_data, {
+        'content-type': 'application/x-www-form-urlencoded;charset=utf-8;Authorization'
+      });
+    }
+  }
+  return resource;
 }
 export default MyHttp;

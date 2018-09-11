@@ -19,12 +19,12 @@ Page({
     id: '',
     dataIndex: 0, //为了得到bigdata中的数组，特别是是换年
     aids: [],
-    barText:['每天一个俯卧撑','读100本书','学一门外语','记录生活琐事']
+    barText: ['每天一个俯卧撑', '读100本书', '学一门外语', '记录生活琐事']
   },
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function (options) {
+  onLoad: function(options) {
     var that = this;
     var ss = new Date().getMonth() + 1;
     ss = ss >= 10 ? '' + ss : '0' + ss;
@@ -33,16 +33,16 @@ Page({
       month: ss
     });
     wx.setNavigationBarTitle({
-      title: that.data.barText[options.catid-1]
+      title: that.data.barText[options.catid - 1]
     });
 
 
     wx.getSetting({
-      success: function (res) {
+      success: function(res) {
         if (res.authSetting['scope.userInfo']) {
           // 已经授权，可以直接调用 getUserInfo 获取头像昵称
           wx.getUserInfo({
-            success: function (res) {
+            success: function(res) {
               var userInfo = res.userInfo;
               if (userInfo.nickName == '赵') {
                 that.setData({
@@ -63,27 +63,27 @@ Page({
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
-  onReady: function () { },
+  onReady: function() {},
   /**
    * 生命周期函数--监听页面显示
    */
-  onShow: function () { },
+  onShow: function() {},
   /**
    * 生命周期函数--监听页面隐藏
    */
-  onHide: function () { },
+  onHide: function() {},
   /**
    * 生命周期函数--监听页面卸载
    */
-  onUnload: function () { },
+  onUnload: function() {},
   /**
    * 页面相关事件处理函数--监听用户下拉动作
    */
-  onPullDownRefresh: function () { },
+  onPullDownRefresh: function() {},
   /**
    * 页面上拉触底事件的处理函数
    */
-  onReachBottom: function () {
+  onReachBottom: function() {
     var that = this;
     if (that.data.loadMore) {
       that.earMonth(); //上个月的时间
@@ -93,13 +93,13 @@ Page({
   /**
    * 用户点击右上角分享
    */
-  onShareAppMessage: function () {
+  onShareAppMessage: function() {
     return {
       title: '锲而舍之,朽木不折;锲而不舍,金石可镂',
       imageUrl: '/assets/images/share.jpg'
     }
   },
-  forTitle: function (e) {
+  forTitle: function(e) {
     var that = this;
     let _data = e.detail.value;
     that.setData({
@@ -115,7 +115,7 @@ Page({
       });
     }
   },
-  forRemark: function (e) {
+  forRemark: function(e) {
     var that = this;
     let _data = e.detail.value;
     that.setData({
@@ -131,7 +131,7 @@ Page({
       });
     }
   },
-  earMonth: function (n) { //获取年月
+  earMonth: function(n) { //获取年月
     var ym, year, month;
     var that = this;
     year = that.data.year;
@@ -161,7 +161,7 @@ Page({
       month: month
     });
   },
-  getLine: function () {
+  getLine: function() {
     var that = this,
       obj = {};
     var year = that.data.year;
@@ -204,7 +204,7 @@ Page({
       }
     });
   },
-  bindGetUserInfo: function (e) {
+  bindGetUserInfo: function(e) {
     var that = this;
     var userInfo = e.detail.userInfo;
     that.setData({
@@ -213,13 +213,13 @@ Page({
     });
     that.formSubmit();
   },
-  editItem: function (e) {
+  editItem: function(e) {
     let showEdit = this.data.showEdit;
     this.setData({
       showEdit: !showEdit
     });
   },
-  editOne: function (e) {
+  editOne: function(e) {
     var that = this;
     let id = e.currentTarget.dataset.id;
     let title = e.currentTarget.dataset.title;
@@ -232,7 +232,7 @@ Page({
       images: []
     });
   },
-  resetPage: function () { //默认的展示状态
+  resetPage: function() { //默认的展示状态
     var that = this;
     let month = new Date().getMonth() + 1;
     let year = new Date().getFullYear();
@@ -248,7 +248,7 @@ Page({
     });
     that.getLine();
   },
-  deleteOne: function (e) { //删除本条
+  deleteOne: function(e) { //删除本条
     var that = this;
     let id = e.currentTarget.dataset.id;
     let _params = {
@@ -258,7 +258,7 @@ Page({
     Api.everydelete(_params).then(res => {
       if (!res.data.code) {
         that.resetPage();
-      }else{
+      } else {
         wx.showModal({
           title: '提示',
           content: '该功能已经暂停，暂不支持删除数据!',
@@ -282,18 +282,21 @@ Page({
       urls: arr, //所有要预览的图片
     });
   },
-  uploadImg: function () {
+  uploadImg: function() {
     var that = this;
     var aids = [];
     var images = that.data.images;
-    return new Promise(function (resolve, reject) {
-      if (images.length == 0) { resolve(); return false; }
+    return new Promise(function(resolve, reject) {
+      if (images.length == 0) {
+        resolve();
+        return false;
+      }
       for (let i = 0, h = images.length; i < h; i++) {
         wx.uploadFile({
           url: 'https://www.zhmzjl.com/index.php?m=content&c=punch&a=upload',
           filePath: images[i],
           name: 'file',
-          success: function (res) {
+          success: function(res) {
             let _data = JSON.parse(res.data)
             if (_data.code == 0) {
               let _aid = _data.aid;
@@ -306,28 +309,27 @@ Page({
               }
             }
           },
-          fail: function (res) {
+          fail: function(res) {
             reject(res);
             wx.showModal({
               title: '提示',
               content: '上传图片失败',
               showCancel: false,
-              success: function (res) {
-              }
+              success: function(res) {}
             });
           }
         });
       }
     });
   },
-  chooseImg: function () { //选取图片
+  chooseImg: function() { //选取图片
     var that = this;
     if (that.data.images.length < 3) { // 限制最多只能留下3张照片
       wx.chooseImage({
         count: 3,
         sizeType: ['original', 'compressed'],
         sourceType: ['album', 'camera'], // 指定来源
-        success: function (res) {
+        success: function(res) {
           // 返回选定照片的本地文件路径列表，tempFilePath可以作为img标签的src属性显示图片
           let images = that.data.images.concat(res.tempFilePaths);
           that.setData({
@@ -337,7 +339,7 @@ Page({
       });
     }
   },
-  formSubmit: function () {
+  formSubmit: function() {
     wx.showLoading();
     var that = this,
       aids = [];
@@ -368,7 +370,7 @@ Page({
           if (!res.data.code) {
             wx.hideLoading();
             that.resetPage();
-          }else{
+          } else {
             wx.hideLoading();
             wx.showModal({
               title: '提示',

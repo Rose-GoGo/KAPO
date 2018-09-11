@@ -40,7 +40,7 @@
   </view>
 
   <view class="Rose-Line">
-     <navigator url="../detail/detail?catid=13&id=145" hover-class="none">
+    <navigator url="../detail/detail?catid=13&id=145" hover-class="none">
       <icon class="iconfont icon-banben1"></icon>
       版本记录
       <icon class="fr iconfont icon-xiangyou"></icon>

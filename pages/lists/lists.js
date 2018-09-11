@@ -6,7 +6,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    page:1,
+    page: 1,
     items: [],
     loadMore: true,
     catid: '',
@@ -53,8 +53,8 @@ Page({
    */
   onReachBottom: function () {
     var that = this;
-    let page = that.data.page+1;
-    if(that.data.loadMore){
+    let page = that.data.page + 1;
+    if (that.data.loadMore) {
       that.setData({
         page: page
       })
@@ -77,13 +77,13 @@ Page({
       url: '../detail/detail?catid=' + catid + '&id=' + id
     })
   },
-  showOne: function(e){
+  showOne: function (e) {
     let catid = e.currentTarget.dataset.catid;
     this.setData({
-      catid : catid,
-      items:[],
-      page:1,
-      loadMore:true
+      catid: catid,
+      items: [],
+      page: 1,
+      loadMore: true
     });
     this.getLists();
   },

@@ -1,61 +1,56 @@
 /* pages/project/project.wxss */
+
 .Rose-swiper {
-    width: 100%;
-    height: 600rpx;
-    overflow: hidden;
-    margin: 44rpx 0 0;
-}
-swiper {
-    display: block;
-    position: relative;
-    perspective:800;
-}
-.Rose-image {
-    width: 100%;
-    display: block;
-    margin: 0 auto;
-    height: 750rpx;
-    /* transition: all 0.15s linear; */
-    /* filter: blur(2px); */
-}
-/* .Rose-image.active {
-    margin-top: 0rpx;
-    height: 750rpx;
-    filter: blur(0);
-} */
-.Rose-block {
-    width: 94%;
-    background: #fff;
-    margin: 0 auto;
-    border-radius: 12rpx;
-    overflow: hidden;
-    margin-top: 20rpx;
-    /* will-change:transform; */
-    /* transition: all 0.15s linear; */
-}
-/* .Rose-block.active {
-    margin-top: 0
-} */
-.Rose-box {
-    width: 100%;
-    display: block;
-    border-radius: 0 0 90% 90% / 0 0 12% 12%;
-    overflow: hidden;
-}
-.Rose-name {
-    font-size: 40rpx;
-    color: #333
-}
-.Rose-description {
-    padding: 16rpx 0 0;
-    text-align: center;
-    font-size: 26rpx;
-    color: #999;
-}
-.Rose-info {
-    height: 90px;
-    position: relative;
-    text-align: center;
-    padding: 20px 0 0;
+  width: 100%;
+  height: 600rpx;
+  overflow: hidden;
+  margin: 44rpx 0 0;
 }
 
+swiper {
+  display: block;
+  position: relative;
+  perspective: 800;
+}
+
+.Rose-image {
+  width: 100%;
+  display: block;
+  margin: 0 auto;
+  height: 750rpx;
+}
+
+.Rose-block {
+  width: 94%;
+  background: #fff;
+  margin: 0 auto;
+  border-radius: 12rpx;
+  overflow: hidden;
+  margin-top: 20rpx;
+}
+
+.Rose-box {
+  width: 100%;
+  display: block;
+  border-radius: 0 0 90% 90% / 0 0 12% 12%;
+  overflow: hidden;
+}
+
+.Rose-name {
+  font-size: 40rpx;
+  color: #333;
+}
+
+.Rose-description {
+  padding: 16rpx 0 0;
+  text-align: center;
+  font-size: 26rpx;
+  color: #999;
+}
+
+.Rose-info {
+  height: 90px;
+  position: relative;
+  text-align: center;
+  padding: 20px 0 0;
+}

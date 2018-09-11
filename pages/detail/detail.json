@@ -3,5 +3,5 @@
   "enablePullDownRefresh": false,
   "usingComponents": {
     "loading": "../../components/loading/loading"
-    }
+  }
 }
