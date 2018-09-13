@@ -1,6 +1,6 @@
 <wxs module="comm" src="../comm.wxs"></wxs>
 <view class="Rose-floor1">
-  <swiper class="Rose-swiper" indicator-dots="{{true}}" autoplay="{{true}}" interval="{{10000}}" duration="{{200}}" circular="{{true}}" indicator-color="rgba(255,255,255,0.5)" indicator-active-color="rgba(255,255,255,0.8)">
+  <swiper class="Rose-swiper" indicator-dots="{{true}}" autoplay="{{true}}" interval="{{30000}}" duration="{{200}}" circular="{{true}}" indicator-color="rgba(255,255,255,0.5)" indicator-active-color="rgba(255,255,255,0.8)">
     <swiper-item wx:for="{{notices}}" wx:key="index" wx:for-item="notice">
       <view class="Rose-top-quote">{{notice.title}}</view>
       {{notice.description}}

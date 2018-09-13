@@ -40,7 +40,7 @@ function sendRrquest(url, method, data, header) {
       },
       fail: function (res) {
         wx.showModal({
-          title: '提示',
+          showCancel: false,
           content: '数据加载失败!',
           success: function (res) {
             if (res.confirm) {

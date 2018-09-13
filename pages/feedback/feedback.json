@@ -1,5 +1,5 @@
 {
-  "navigationBarTitleText": "意见反馈",
+  "navigationBarTitleText": "留言",
   "enablePullDownRefresh": false,
   "usingComponents": {
     "loading": "../../components/loading/loading"

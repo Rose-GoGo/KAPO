@@ -1,5 +1,6 @@
 .Rose-swiper {
   height: 240rpx;
+  text-align: center
 }
 
 .Rose-right {
