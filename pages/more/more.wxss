@@ -138,6 +138,8 @@ button[disabled]:not([type]) {
   margin: 10rpx 0 0;
   font-size: 28rpx;
   color: #666;
+  word-break:break-word;
+
   /*  line-height: 1.4em;
   display: -webkit-box;
   -webkit-line-clamp: 15; 限制显示15行

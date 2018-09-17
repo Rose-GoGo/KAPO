@@ -40,12 +40,10 @@ Page({
     } else {
       wx.getSetting({
         success: function (res) {
-          console.log(res)
           if (res.authSetting['scope.userInfo']) {
             // 已经授权，可以直接调用 getUserInfo 获取头像昵称
             wx.getUserInfo({
               success: function (res) {
-                console.log(res)
                 let _userInfo = res.userInfo;
                 app.globalData.userInfo = _userInfo;
                 wx.setStorageSync('userInfo', _userInfo)
@@ -170,7 +168,7 @@ Page({
           comments: [],
           reply_username: '',
           pid: 0,
-          placeholder: '评论...'
+          placeholder: '点击评论回复...'
         });
         that.commentlists();
       }
@@ -206,7 +204,6 @@ Page({
     });
   },
   rewardRose: function () {
-    console.log(222)
     // wx.requestPayment(
     // {
     //   'timeStamp': '',
@@ -215,7 +212,6 @@ Page({
     //   'signType': 'MD5',
     //   'paySign': '',
     //   'success':function(res){
-    //     console.log('1111')
     //   },
     //   'fail':function(res){},
     //   'complete':function(res){}
