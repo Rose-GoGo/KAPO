@@ -315,3 +315,14 @@ textarea.Rose-input {
 .icon-xiangqufill {
   color: #ff80c2;
 }
+
+.Rose-post {
+  width: auto;
+  border: none;
+  line-height: 1;
+  background: transparent;
+}
+
+button::after {
+  border: none;
+}

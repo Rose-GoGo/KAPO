@@ -181,3 +181,51 @@
   color: #999;
   margin-top: -18rpx;
 }
+
+
+
+.Rose-menu {
+  padding: 20rpx 30rpx;
+  display: flex;
+  flex-flow: row;
+  justify-content: space-between;
+}
+.Rose-kinds {
+  text-align: center;
+  font-size: 28rpx;
+  color: #333;
+  width: 90rpx;
+}
+
+.Rose-kinds .iconfont {
+  font-size: 42rpx;
+  display: block;
+}
+
+.view-circle {
+  border-radius: 100%;
+  color: #fff;
+  width: 90rpx;
+  height: 90rpx;
+  line-height: 90rpx;
+  margin: 0 auto 20rpx;
+}
+
+.color4 {
+  background-color: #8a90fa;
+}
+
+.color3 {
+  background-color: #4dc6ee;
+}
+
+.color2 {
+  background-color: #fed030;
+}
+
+.color1 {
+  background-color: #fd9d21;
+}
+.Rose-floor{
+  background: #fff
+}

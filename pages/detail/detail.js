@@ -6,7 +6,7 @@ Page({
   /**
    * 页面的初始数据
    */
-   data: {
+  data: {
     dkcontent: '',
     id: '',
     catid: '',
@@ -27,7 +27,7 @@ Page({
   /**
    * 生命周期函数--监听页面加载
    */
-   onLoad: function (options) {
+  onLoad: function (options) {
     wx.showLoading();
     var that = this;
     let _userInfo = wx.getStorageSync('userInfo')
@@ -61,32 +61,32 @@ Page({
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
-   onReady: function () {
-   },
+  onReady: function () {
+  },
   /**
    * 生命周期函数--监听页面显示
    */
-   onShow: function () {
-   },
+  onShow: function () {
+  },
   /**
    * 生命周期函数--监听页面隐藏
    */
-   onHide: function () {
-   },
+  onHide: function () {
+  },
   /**
    * 生命周期函数--监听页面卸载
    */
-   onUnload: function () {
-   },
+  onUnload: function () {
+  },
   /**
    * 页面相关事件处理函数--监听用户下拉动作
    */
-   onPullDownRefresh: function () {
-   },
+  onPullDownRefresh: function () {
+  },
   /**
    * 页面上拉触底事件的处理函数
    */
-   onReachBottom: function () {
+  onReachBottom: function () {
     var that = this;
     let page = that.data.page + 1;
     that.setData({
@@ -99,7 +99,7 @@ Page({
   /**
    * 用户点击右上角分享
    */
-   onShareAppMessage: function () {
+  onShareAppMessage: function () {
     return {
       title: this.data.items.title,
       imageUrl: '/assets/images/share.jpg'
@@ -149,6 +149,7 @@ Page({
       });
       return false;
     }
+    if(!that.data.userInfo) return false;
     wx.showLoading();
     let _params = {
       newsid: that.data.id,  // 博客文章ID
@@ -162,6 +163,11 @@ Page({
     Api.postcomments(_params).then(res => {
       if (!res.data.code) {
         wx.hideLoading();
+        wx.showToast({
+          title: '评论成功',
+          icon: 'success',
+          duration: 2000
+        })
         that.setData({
           content: '',
           page: 1,
@@ -204,46 +210,52 @@ Page({
     });
   },
   rewardRose: function () {
-    // wx.requestPayment(
-    // {
-    //   'timeStamp': '',
-    //   'nonceStr': '',
-    //   'package': '',
-    //   'signType': 'MD5',
-    //   'paySign': '',
-    //   'success':function(res){
-    //   },
-    //   'fail':function(res){},
-    //   'complete':function(res){}
-    // })
     wx.showModal({
       content: '您的分享与关注是对我最大的奖赏！',
       showCancel: false
     })
   },
   bindGetUserInfo: function (e) {
-    var userInfo = e.detail.userInfo;
-    this.setData({
+    var that = this;
+    var userInfo = {};
+    if (e.detail.userInfo) {
+      userInfo = e.detail.userInfo;
+    } else {
+      wx.getUserInfo({
+        success: function (res) {
+          userInfo = res.userInfo;
+        },
+        fail: function(res){
+          wx.showModal({
+            showCancel: false,
+            content: '授权通过后才能评论哟，请重新授权！'
+          })
+        }
+      })
+    }
+    if (JSON.stringify(userInfo)=='{}') return false;
+    that.setData({
       userInfo: userInfo
     })
+    that.postComments()
   },
-  wetherLike: function(){
+  wetherLike: function () {
     var that = this;
     that.setData({
-      like:!that.data.like
+      like: !that.data.like
     })
-    if(that.data.like){
+    if (that.data.like) {
       that.setData({
-        likenum:that.data.likenum+1
+        likenum: that.data.likenum + 1
       })
       wx.showToast({
         title: '感谢您的鼓励！',
         icon: 'none',
         duration: 2000
       })
-    }else{
+    } else {
       that.setData({
-        likenum:that.data.likenum-1
+        likenum: that.data.likenum - 1
       })
       wx.showToast({
         title: '我会继续努力！',
