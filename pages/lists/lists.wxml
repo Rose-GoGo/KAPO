@@ -8,20 +8,16 @@
     </view>
   </view>
 </view>
-
 <view class="Rose-list">
   <view class="Rose-item" wx:for="{{items}}" wx:key="{{index}}" data-id="{{item.id}}" data-catid="{{item.catid}}" ontap="articleDetail" wx:if="{{ item.id != '124' && item.id !='145' }}">
     <view class="Rose-name">{{item.title}}</view>
-
-
     <view class="Rose-time">
-
       <text>{{comm.formatTime(item.updatetime)}}</text>
       <view class="Rose-comment">
-        <icon class="iconfont icon-pinglun3"></icon> {{item.cnum}}</view>
-
+        <icon class="iconfont icon-kanguos"></icon> 1265
+        <icon class="iconfont icon-pinglun3"></icon> {{item.cnum}}
+      </view>
     </view>
-
     <view class="Rose-description">{{item.description}}</view>
   </view>
 </view>

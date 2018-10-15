@@ -1,6 +1,6 @@
 .Rose-swiper {
   height: 240rpx;
-  text-align: center
+  text-align: center;
 }
 
 .Rose-right {
@@ -138,6 +138,10 @@
   font-size: 28rpx;
 }
 
+.Rose-bottom  .iconfont.icon-kanguos {
+  font-size: 30rpx;
+}
+
 .Rose-bottom .iconfont.icon-xiangqu {
   padding-left: 20rpx;
 }
@@ -182,14 +186,13 @@
   margin-top: -18rpx;
 }
 
-
-
 .Rose-menu {
   padding: 20rpx 30rpx;
   display: flex;
   flex-flow: row;
   justify-content: space-between;
 }
+
 .Rose-kinds {
   text-align: center;
   font-size: 28rpx;
@@ -226,6 +229,7 @@
 .color1 {
   background-color: #fd9d21;
 }
-.Rose-floor{
-  background: #fff
+
+.Rose-floor {
+  background: #fff;
 }
