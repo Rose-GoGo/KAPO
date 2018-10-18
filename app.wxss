@@ -46,3 +46,5 @@ page{
   font-size: 24rpx;
   color: #a8a8a8
 }
+@import "/wxParse/wxParse.wxss";
+

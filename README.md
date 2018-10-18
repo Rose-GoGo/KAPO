@@ -14,14 +14,14 @@
 ## 扫码体验
 
 <p>
-    <img src="https://www.zhmzjl.com/statics/images/blog/kapo.jpg" width="300px">
+    <img src="https://www.zhmzjl.com/statics/images/blog/kapo.jpg" style="width:300px" />
 </p>
 
 
 ## 项目截图
 
 <p>
-    <img src="https://www.zhmzjl.com/uploadfile/2018/0904/20180904044608772.jpg" >
+    <img src="https://zhmzjl.com/uploadfile/2018/1018/20181018064945183.jpg" />
 </p>
 
 
@@ -38,10 +38,11 @@
 ## 版本更新细信息
 
 #### Version 1.0.5 开发中
+-  文章列表与首页添加阅读量
 -  文章详情页授权通过后才能评论的bug
--  未授权就无法打卡
+-  未授权无法打卡
 -  简历下载?
--  打赏功能?
+-  打赏功能
 -  打卡添加为富文本编辑器?
 -  摇一摇访问我的小程序或者添加我为好友?
 

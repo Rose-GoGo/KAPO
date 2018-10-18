@@ -11,6 +11,7 @@
       <template is="wxParse" data="{{wxParseData:dkcontent.nodes}}" />
     </view>
   </view>
+  <!-- 评论列表 -->
   <view class="Rose-comments" wx:if="{{catid!=='19' && id !='124' && id !='145'}}">
     <view class="Rose-line">评论交流
       <text class="Rose-small">(共{{count}}条评论)</text>
