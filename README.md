@@ -13,9 +13,7 @@
 
 ## 扫码体验
 
-<p>
-    <img src="https://www.zhmzjl.com/statics/images/blog/kapo.jpg" style="width:300px" />
-</p>
+<p><img src="https://zhmzjl.com/uploadfile/2018/1018/20181018070448419.jpg" /></p>
 
 
 ## 项目截图
