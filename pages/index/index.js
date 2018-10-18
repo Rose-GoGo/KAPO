@@ -42,13 +42,15 @@ Page({
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh: function () {
+
     let that = this;
     that.setData({
       items: [],
       page: 1,
       loadMore: true
     });
-    if (that.data.loadMore) {    
+    if (that.data.loadMore) {
+
       that.top10();
       that.getLists();
     }
