@@ -66,3 +66,8 @@
 欢迎大家关注我的博客，PC地址: [https://www.zhmzjl.com/](https://www.zhmzjl.com.com/)
 此小程序仅供学习，不得以任何形式商用。
 
+## 联系我？
+有任何建议和意见都可以提哟，欢迎指正！
+- QQ： 583459700
+- WeChat: zhao_583459700
+
