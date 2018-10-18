@@ -14,7 +14,7 @@
     <view class="Rose-time">
       <text>{{comm.formatTime(item.updatetime)}}</text>
       <view class="Rose-comment">
-        <icon class="iconfont icon-kanguos"></icon> 1265
+        <icon class="iconfont icon-kanguo"></icon> {{item.views}}
         <icon class="iconfont icon-pinglun3"></icon> {{item.cnum}}
       </view>
     </view>
