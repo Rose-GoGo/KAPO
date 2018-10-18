@@ -1,33 +1,34 @@
 <!--pages/more/more.wxml-->
+<button class="Rose-getuser" wx:if="{{canIUse && !isRose}}" open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo">
+  <icon class="iconfont icon-yonghu"></icon>
+</button>
 <view class="Rose-form" wx:if="{{isRose}}">
-  <form bindsubmit="formSubmit">
-    <view class="Rose-section">
-      <view class="Rose-section_title">标题</view>
-      <input name="time" name="title" value="{{title}}" class="Rose-input" bindinput="forTitle" />
+  <view class="Rose-section">
+    <view class="Rose-section_title">标题</view>
+    <input name="time" name="title" value="{{title}}" class="Rose-input" bindinput="forTitle" />
+  </view>
+  <view class="Rose-section">
+    <view class="Rose-section_title">内容</view>
+    <textarea name="beizhu" name="remark" class="Rose-input" value="{{remark}}" bindinput="forRemark" maxlength="-1" placeholder="说点什么吧"></textarea>
+  </view>
+  <view class="Rose-section">
+    <view class="Rose-section_title"></view>
+    <view class="Rose-upimg">
+      <icon class="iconfont icon-image" ontap="chooseImg" wx:if="{{images.length < 3}}"></icon>
     </view>
-    <view class="Rose-section">
-      <view class="Rose-section_title">内容</view>
-      <textarea name="beizhu" name="remark" class="Rose-input" value="{{remark}}" bindinput="forRemark" maxlength="-1" placeholder="说点什么吧"></textarea>
-    </view>
-    <view class="Rose-section">
-      <view class="Rose-section_title"></view>
-      <view class="Rose-upimg">
-        <icon class="iconfont icon-image" ontap="chooseImg" wx:if="{{images.length < 3}}"></icon>
+  </view>
+  <view class="Rose-section" wx:if="{{ images.length!=0}}">
+    <view class="Rose-section_title"></view>
+    <view class="Rose-upimg">
+      <view class="Rose-imgbox" wx:for="{{images}}" wx:for-item="upitem" wx:key="*this">
+        <image class="Rose-image" src="{{upitem}}" data-arr="{{images}}" mode="aspectFit" data-idx="{{index}}" bindtap="imagePreview"></image>
+        <view class="Rose-remover" data-idx="{{index}}" bindtap="removeImage">删除</view>
       </view>
     </view>
-    <view class="Rose-section" wx:if="{{ images.length!=0}}">
-      <view class="Rose-section_title"></view>
-      <view class="Rose-upimg">
-        <view class="Rose-imgbox" wx:for="{{images}}" wx:for-item="upitem" wx:key="*this">
-          <image class="Rose-image" src="{{upitem}}" data-arr="{{images}}" mode="aspectFit" data-idx="{{index}}" bindtap="imagePreview"></image>
-          <view class="Rose-remover" data-idx="{{index}}" bindtap="removeImage">删除</view>
-        </view>
-      </view>
-    </view>
-    <view class="Rose-section">
-      <button formType="submit" class="Rose-btn" disabled="{{disabled}}" wx:if="{{canIUse}}" bindgetuserinfo="bindGetUserInfo">提交</button>
-    </view>
-  </form>
+  </view>
+  <view class="Rose-section">
+    <button class="Rose-btn" disabled="{{disabled}}" bindtap="formSubmit">提交</button>
+  </view>
 </view>
 <view class="Rose-form">
   <view wx:for="{{bigData}}" wx:key="index" wx:for-item="years">
@@ -60,9 +61,7 @@
                 <view class="Rose-item">
                   <block wx:for="{{dd.imgs}}" wx:key="mm" wx:for-item="imagess">
                     <view class="Rose-imgbox">
-
                       <image class="Rose-img" src="{{imagess}}" data-idx="{{index}}" mode="widthFix" data-arr="{{dd.imgs}}" bindtap="imagePreview"> </image>
-
                     </view>
                   </block>
                 </view>

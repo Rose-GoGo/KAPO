@@ -40,12 +40,10 @@ Page({
     } else {
       wx.getSetting({
         success: function (res) {
-          console.log(res)
           if (res.authSetting['scope.userInfo']) {
             // 已经授权，可以直接调用 getUserInfo 获取头像昵称
             wx.getUserInfo({
               success: function (res) {
-                console.log(res)
                 let _userInfo = res.userInfo;
                 app.globalData.userInfo = _userInfo;
                 wx.setStorageSync('userInfo', _userInfo)
@@ -152,6 +150,7 @@ Page({
       });
       return false;
     }
+    if(!that.data.userInfo) return false;
     wx.showLoading();
     let _params = {
       newsid: that.data.id,  // 博客文章ID
@@ -165,13 +164,18 @@ Page({
     Api.postcomments(_params).then(res => {
       if (!res.data.code) {
         wx.hideLoading();
+        wx.showToast({
+          title: '评论成功',
+          icon: 'success',
+          duration: 2000
+        })
         that.setData({
           content: '',
           page: 1,
           comments: [],
           reply_username: '',
           pid: 0,
-          placeholder: '评论...'
+          placeholder: '点击评论回复...'
         });
         that.commentlists();
       }
@@ -207,30 +211,34 @@ Page({
     });
   },
   rewardRose: function () {
-    console.log(222)
-    // wx.requestPayment(
-    // {
-    //   'timeStamp': '',
-    //   'nonceStr': '',
-    //   'package': '',
-    //   'signType': 'MD5',
-    //   'paySign': '',
-    //   'success':function(res){
-    //     console.log('1111')
-    //   },
-    //   'fail':function(res){},
-    //   'complete':function(res){}
-    // })
     wx.showModal({
       content: '您的分享与关注是对我最大的奖赏！',
       showCancel: false
     })
   },
   bindGetUserInfo: function (e) {
-    var userInfo = e.detail.userInfo;
-    this.setData({
+    var that = this;
+    var userInfo = {};
+    if (e.detail.userInfo) {
+      userInfo = e.detail.userInfo;
+    } else {
+      wx.getUserInfo({
+        success: function (res) {
+          userInfo = res.userInfo;
+        },
+        fail: function(res){
+          wx.showModal({
+            showCancel: false,
+            content: '授权通过后才能评论哟，请重新授权！'
+          })
+        }
+      })
+    }
+    if (JSON.stringify(userInfo)=='{}') return false;
+    that.setData({
       userInfo: userInfo
     })
+    that.postComments()
   },
   wetherLike: function () {
     var that = this;

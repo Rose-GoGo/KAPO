@@ -101,7 +101,7 @@ Page({
         that.setData({
           items: _items
         });
-        wx.hideLoading();
+  
       }
     });
   },

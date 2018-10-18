@@ -138,6 +138,7 @@ button[disabled]:not([type]) {
   margin: 10rpx 0 0;
   font-size: 28rpx;
   color: #666;
+  word-break: break-word;
   /*  line-height: 1.4em;
   display: -webkit-box;
   -webkit-line-clamp: 15; 限制显示15行
@@ -260,4 +261,19 @@ button[disabled]:not([type]) {
 
 .Rose-contentbox {
   width: 100%;
+}
+
+.Rose-getuser {
+  position: fixed;
+  right: 20rpx;
+  bottom: 40rpx;
+  border: 2rpx solid #f2f2f2;
+  z-index: 2;
+  line-height: 1;
+  padding: 10rpx;
+  border-radius: 100%;
+}
+
+.icon-yonghu {
+  margin-top: -18rpx;
 }
