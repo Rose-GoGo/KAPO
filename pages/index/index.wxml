@@ -16,7 +16,8 @@
       <view class="Rose-item" wx:for="{{top10}}" wx:key="index" wx:for-item="top" data-id="{{top.id}}" data-catid="{{top.catid}}" ontap="articleDetail">
         <image class="Rose-imgbest" lazy-load="{{true}}" src="{{top.thumb==''? '/assets/images/wx_04.jpg':top.thumb }}"></image>
         <view class="Rose-title">{{ top.title }}</view>
-        <view class="Rose-time Rose-left">{{top.updatetime}}</view>
+        <view class="Rose-time Rose-left">
+          <icon class="iconfont icon-shijian2"></icon>{{top.updatetime}}</view>
       </view>
     </scroll-view>
   </view>
@@ -36,7 +37,7 @@
     <image class="Rose-imgitem" mode="aspectFill" lazy-load="{{true}}" src="{{item.thumb==''? '/assets/images/ncode.jpg': item.thumb}}"></image>
     <view class="Rose-detail">{{item.description}}</view>
     <view class="Rose-bottom">
-       <view class="Rose-flex1 Rose-left">
+      <view class="Rose-flex1 Rose-left">
         <icon class="iconfont icon-geren"></icon>
         {{item.username}}
       </view>
