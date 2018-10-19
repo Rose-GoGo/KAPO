@@ -10,13 +10,17 @@ Page({
     // title: '',
     remark: '',
     disabled: true,
-    items: [],
+    comments: [],
     loadMore: true,
     canIUse: wx.canIUse('button.open-type.getUserInfo'),
     username: '',
     sex: null,
     isRose: false,
-    showEdit: false
+    showEdit: false,
+    placeholder: '点击评论回复...',
+    reply_username: '',
+    pid: 0,
+
   },
   /**
    * 生命周期函数--监听页面加载
@@ -74,7 +78,8 @@ Page({
     var that = this;
     let page = that.data.page + 1;
     that.setData({
-      page: page
+      page: page,
+
     });
     if (that.data.loadMore) {
       that.feedback();
@@ -108,7 +113,30 @@ Page({
   rewardRose: function () {
     wx.showModal({
       content: '您的分享与关注是对我最大的奖赏！',
-      showCancel: false
+      cancelText: '朕不分享',
+      cancelColor:'#999',
+      confirmText: '乐意效劳',
+      confirmColor: '#1d8f59',
+      success: function(){
+        // wx.showShareMenu({
+        //   return {
+        //     title: '锲而舍之,朽木不折;锲而不舍,金石可镂',
+        //     imageUrl: '/assets/images/share.jpg'
+        //   }
+
+        // })
+        wx.showShareMenu({
+          withShareTicket: true
+        })
+        // Page.onShareAppMessage({
+        //   return {
+        //     title: '锲而舍之,朽木不折;锲而不舍,金石可镂',
+        //     imageUrl: '/assets/images/share.jpg'
+        //   }
+
+        // })
+
+      }
     })
   },
   formSubmit: function () {
@@ -129,7 +157,7 @@ Page({
           title: '',
           remark: '',
           page: 1,
-          items: [],
+          comments: [],
           disabled: true
         });
         wx.showToast({
@@ -149,9 +177,9 @@ Page({
     Api.feedback(_params).then(res => {
       if (!res.data.code) {
         let _data = res.data.data;
-        let _arr = that.data.items.concat(_data);
+        let _arr = that.data.comments.concat(_data);
         that.setData({
-          items: _arr
+          comments: _arr
         });
         if (_data.length < 10) {
           that.setData({
@@ -192,7 +220,7 @@ Page({
         let year = new Date().getFullYear();
         month = month >= 10 ? '' + month : '0' + month;
         that.setData({
-          items: [],
+          comments: [],
           page: 1,
           loadMore: true
         });
