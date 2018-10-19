@@ -55,8 +55,9 @@ Page({
         }
       });
     }
-    that.commentlists(); //反馈列表
     that.getData();
+    that.commentlists(); //反馈列表
+
   },
   /**
    * 生命周期函数--监听页面初次渲染完成

@@ -86,7 +86,7 @@
 }
 .Rose-time {
   font-size: 24rpx;
-  color: #a8a8a8;
+  color: #999;
 }
 .Rose-detail {
   display: -webkit-box;

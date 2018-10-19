@@ -176,6 +176,9 @@ Page({
     Api.showday(_params).then(res => {
       if (!res.data.code) {
         let _data = res.data.data;
+        console.log(_data)
+
+
         if (that.data.month == '12') { //换年了
           obj = _data;
         } else {
@@ -229,8 +232,11 @@ Page({
   },
   editItem: function (e) {
     let showEdit = this.data.showEdit;
+    console.log(e)
+    let showid = e.currentTarget.dataset.forid;
     this.setData({
-      showEdit: !showEdit
+      showEdit: !showEdit,
+      showid: showid
     });
   },
   editOne: function (e) {
