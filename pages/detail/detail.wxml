@@ -13,7 +13,7 @@
   </view>
   <!-- 评论列表 -->
   <view class="Rose-comments" wx:if="{{catid!=='19' && id !='124' && id !='145'}}">
-    <view class="Rose-line">评论交流
+    <view class="Rose-lines">评论交流
       <text class="Rose-small">(共{{count}}条评论)</text>
       <view class="Rose-Right">
         <icon class="iconfont {{ like?'icon-like-fill':'icon-like'}}" bindtap="wetherLike"></icon> {{likenum}}
@@ -23,10 +23,10 @@
       <view class="Rose-items" wx:for="{{comments}}" wx:key="index" wx:for-item="comment">
         <view class="Rose-resource">
           <image class="Rose-image" src="{{comment.from_avatar}}"></image>
-          <view class="Rose-info">
+          <view class="Rose-user">
             <view class="Rose-form">
-              <view class="Rose-name"> {{comment.from_username}}</view>
-              <view class="Rose-time">{{comment.create_time}}</view>
+              <view class="Rose-names"> {{comment.from_username}}</view>
+              <view class="Rose-times">{{comment.create_time}}</view>
               <view class="Rose-comment-content" data-pid="{{comment.id}}" data-from="{{comment.from_username}}" bindtap="backContent">{{comment.content}}</view>
             </view>
             <view class="Rose-back" wx:if="{{ comment.children.length}}">
