@@ -40,7 +40,7 @@ image {
 }
 
 .wxParse-pre {
-  background: #000;
+
   padding: 10rpx;
   margin: 20rpx 0;
 }

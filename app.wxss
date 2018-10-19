@@ -48,3 +48,4 @@ page{
 }
 
 
+@import "/wxParse/wxParse.wxss"
