@@ -4,10 +4,10 @@ Page({
   /**
    * 页面的初始数据
    */
-  data: {
+   data: {
     catid: '5',
     page: 1,
-    title: '',
+    // title: '',
     remark: '',
     disabled: true,
     items: [],
@@ -21,7 +21,7 @@ Page({
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function (options) {
+   onLoad: function (options) {
     var that = this;
     wx.showLoading();
     wx.getSetting({
@@ -50,27 +50,27 @@ Page({
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
-  onReady: function () { },
+   onReady: function () { },
   /**
    * 生命周期函数--监听页面显示
    */
-  onShow: function () { },
+   onShow: function () { },
   /**
    * 生命周期函数--监听页面隐藏
    */
-  onHide: function () { },
+   onHide: function () { },
   /**
    * 生命周期函数--监听页面卸载
    */
-  onUnload: function () { },
+   onUnload: function () { },
   /**
    * 页面相关事件处理函数--监听用户下拉动作
    */
-  onPullDownRefresh: function () { },
+   onPullDownRefresh: function () { },
   /**
    * 页面上拉触底事件的处理函数
    */
-  onReachBottom: function () {
+   onReachBottom: function () {
     var that = this;
     let page = that.data.page + 1;
     that.setData({
@@ -83,26 +83,10 @@ Page({
   /**
    * 用户点击右上角分享
    */
-  onShareAppMessage: function () {
+   onShareAppMessage: function () {
     return {
       title: '锲而舍之,朽木不折;锲而不舍,金石可镂',
       imageUrl: '/assets/images/share.jpg'
-    }
-  },
-  forTitle: function (e) {
-    var that = this;
-    let _data = e.detail.value;
-    that.setData({
-      title: _data
-    });
-    if (that.data.title && that.data.remark) {
-      that.setData({
-        disabled: false
-      })
-    } else {
-      that.setData({
-        disabled: true
-      })
     }
   },
   forRemark: function (e) {
@@ -111,7 +95,7 @@ Page({
     that.setData({
       remark: _data
     });
-    if (that.data.title && that.data.remark) {
+    if (that.data.remark) {
       that.setData({
         disabled: false
       })
@@ -120,6 +104,12 @@ Page({
         disabled: true
       })
     }
+  },
+  rewardRose: function () {
+    wx.showModal({
+      content: '您的分享与关注是对我最大的奖赏！',
+      showCancel: false
+    })
   },
   formSubmit: function () {
     var that = this;

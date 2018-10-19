@@ -1,5 +1,5 @@
 <!--pages/feedback/feedback.wxml-->
-<view class="Rose-form">
+<!-- <view class="Rose-form">
   <form bindsubmit="formSubmit">
     <view class="Rose-section">
       <view class="Rose-section_title">标题</view>
@@ -15,7 +15,7 @@
       </button>
     </view>
   </form>
-</view>
+</view> -->
 <view class="Rose-lists" wx:if="{{items.length > 0}}">
   <view class="Rose-feeds">反馈列表</view>
   <view class="Rose-line" wx:for="{{items}}" wx:key="index" bindlongpress="editItem" data-forid="{{item.id}}">
@@ -39,3 +39,20 @@
   <text class="line-word">我是有底线的~</text>
 </view>
 <loading load-more="{{loadMore}}"></loading>
+
+<view class="Rose-fixed" wx:if="{{ catid !='19' && id != '124' && id !='145' }}">
+  <!-- 发表评论 -->
+  <view class="Rose-box">
+    <view class="Rose-form">
+      <div class="Rose-flex">
+        <view class="Rose-none text-left" bindtap="rewardRose">
+          <icon class="iconfont icon-hongbao1"></icon>
+        </view>
+        <input class="Rose-input" value="{{remark}}" bindinput="forRemark" focus="{{focus}}" maxlength="-1" placeholder="{{placeholder}}" />
+        <button class="Rose-none Rose-post" disabled="{{disabled}}" wx:if="{{canIUse}}" open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo" >
+          评论
+        </button>
+      </div>
+    </view>
+  </view>
+</view>
