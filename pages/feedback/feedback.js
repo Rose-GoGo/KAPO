@@ -182,9 +182,11 @@ Page({
     that.formSubmit();
   },
   editItem: function (e) {
+    let forid = e.currentTarget.dataset.forid;
     let showEdit = this.data.showEdit;
     this.setData({
-      showEdit: !showEdit
+      showEdit: !showEdit,
+      forid: forid
     })
   },
   deleteOne: function (e) { //删除本条

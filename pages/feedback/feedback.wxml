@@ -18,7 +18,7 @@
 </view>
 <view class="Rose-lists" wx:if="{{items.length > 0}}">
   <view class="Rose-feeds">反馈列表</view>
-  <view class="Rose-line" wx:for="{{items}}" wx:key="index" bindlongpress="editItem">
+  <view class="Rose-line" wx:for="{{items}}" wx:key="index" bindlongpress="editItem" data-forid="{{item.id}}">
     <view class="Rose-title">{{item.title}}</view>
     <view class="Rose-content">{{item.remark}}</view>
     <view class="Rose-info">
@@ -26,7 +26,7 @@
         <icon wx:if="{{item.sex==2}}" class="iconfont icon-nvsheng female"></icon>
         <icon wx:else class="iconfont icon-nansheng male"></icon> {{item.username}}
       </view>
-      <block wx:if="{{showEdit && isRose}}">
+      <block wx:if="{{showEdit && isRose && forid==item.id}}">
         <view class="Rose-edit">
           <icon class="iconfont icon-delete" data-id="{{item.id}}" bindtap="deleteOne"></icon>
         </view>
