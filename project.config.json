@@ -14,11 +14,11 @@
 	"libVersion": "2.2.5",
 	"appid": "wx11bb9ed460c13af5",
 	"projectname": "firstXCX",
-	"svr": "",
-	"client": "",
-	"qcloudRoot": "",
-	"miniprogramRoot": "",
-	"pluginRoot": "",
+	"svr": "/",
+	"client": "/",
+	"qcloudRoot": "/",
+	"miniprogramRoot": "/",
+	"pluginRoot": "/",
 	"scripts": {},
 	"condition": {
 		"search": {
@@ -38,7 +38,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 3,
+			"current": 6,
 			"list": [
 				{
 					"id": 1,
@@ -77,10 +77,10 @@
 					"query": ""
 				},
 				{
-					"id": 7,
+					"id": 6,
 					"name": "文章列表",
 					"pathName": "pages/lists/lists",
-					"query": "catid=13&page=1"
+					"query": "catid=11&page=1"
 				}
 			]
 		}

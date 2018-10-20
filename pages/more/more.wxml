@@ -17,7 +17,7 @@
       <icon class="iconfont icon-image" ontap="chooseImg" wx:if="{{images.length < 3}}"></icon>
     </view>
   </view>
-  <view class="Rose-section" wx:if="{{ images.length!=0}}">
+  <view class="Rose-section" wx:if="{{ images.length!=0 }}">
     <view class="Rose-section_title"></view>
     <view class="Rose-upimg">
       <view class="Rose-imgbox" wx:for="{{images}}" wx:for-item="upitem" wx:key="*this">
