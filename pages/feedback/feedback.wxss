@@ -1,12 +1,11 @@
 /* pages/feedback/feedback.wxss */
-
 /*改版评论*/
 .Rose-fixed {
   position: fixed;
   left: 0;
   bottom: 0;
   width: 100%;
-  border-top: 1px solid #d9d9d9;
+  border-top: 2rpx solid #d9d9d9;
   background: #fff;
   z-index: 5
 }
@@ -55,9 +54,6 @@ button::after {
   text-align: center;
   box-shadow: none;
 }
-
-
-
 .Rose-comments {
   margin: 20rpx 0 0;
   background: #fff;
@@ -75,9 +71,8 @@ button::after {
   border-radius: 4rpx;
 }
 .Rose-image .iconfont{
-  font-size: 60rpx;
+  font-size: 64rpx;
   color: #999
-
 }
 .Rose-user {
   flex: 1;
@@ -90,7 +85,6 @@ button::after {
 .Rose-items {
   padding: 30rpx 0 0;
 }
-
 .Rose-items:last-child .Rose-user{
   border-bottom: none
 }
@@ -107,8 +101,7 @@ button::after {
   font-size: 20rpx;
 }
 .Rose-edit {
-  width: 20%;
-  float: left;
+  float: right;
 }
 .Rose-edit icon {
   font-size: 36rpx;
@@ -136,10 +129,9 @@ button::after {
 .Rose-tt {
   color: #333;
 }
-
 .Rose-feeds {
   padding: 10px;
-  border-bottom: 2rpx solid #f2f2f2;
+  border-bottom: 1rpx solid #f2f2f2;
   font-size: 32rpx;
   color: #666;
 }

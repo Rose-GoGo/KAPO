@@ -1,6 +1,6 @@
 {
   "navigationBarTitleText": "留言",
-  "enablePullDownRefresh": false,
+  "enablePullDownRefresh": true,
   "usingComponents": {
     "loading": "../../components/loading/loading"
   }

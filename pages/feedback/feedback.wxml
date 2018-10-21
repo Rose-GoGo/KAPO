@@ -1,89 +1,49 @@
 <!--pages/feedback/feedback.wxml-->
-
-<view class="Rose-comments" >
-<view class="Rose-feeds">共{{comments.length}}条评论</view>
-<view class="Rose-lists" wx:if="{{comments.length > 0}}">
-  <!-- 评论列表 -->
-  <view class="Rose-items" wx:for="{{comments}}" wx:key="index" wx:for-item="comment" bindlongpress="editItem" data-forid="{{comment.id}}">
-    <view class="Rose-resource">
-      <view class="Rose-image">
-        <image wx:if="{{comment.avatar}}" class="Rose-image" src="{{comment.avatar}}"></image>
-        <icon wx:else class="iconfont icon-geren"></icon>
-      </view>
-      <view class="Rose-user">
-        <view class="Rose-form">
-          <view class="Rise-info">
-            <view class="Rose-names">{{comment.username}}</view>
+<view class="Rose-comments">
+  <view class="Rose-feeds">共{{count}}条留言</view>
+  <view class="Rose-lists" wx:if="{{comments.length > 0}}">
+    <view class="Rose-items" wx:for="{{comments}}" wx:key="index" wx:for-item="comment">
+      <view class="Rose-resource">
+        <view class="Rose-image">
+          <image class="Rose-image" wx-if="{{comment.from_avatar}}" src="{{comment.from_avatar}}"></image>
+          <icon wx:else class="iconfont icon-geren2"></icon>
+        </view>
+        <view class="Rose-user">
+          <view class="Rose-form">
+            <view class="Rose-names">{{comment.from_username}}</view>
             <view class="Rose-times">{{comment.create_time}}</view>
-            <block wx:if="{{showEdit && isRose && forid==comment.id}}">
-              <view class="Rose-edit">
-                <icon class="iconfont icon-shanchu" data-id="{{comment.id}}" bindtap="deleteOne"></icon>
-              </view>
-            </block>
+            <view class="Rose-comment-content" data-pid="{{comment.id}}" data-from="{{comment.from_username}}" bindtap="backContent">{{comment.content}}</view>
           </view>
-          <view class="Rose-comment-content" data-pid="{{comment.id}}" data-from="{{comment.username}}" bindtap="backContent">
-            {{comment.title=='undefined'? '':comment.title}}{{comment.remark}}
-          </view>
-        </view>
-        <view class="Rose-back" wx:if="{{ comment.children.length}}">
-          <view class="Rose-back-item" wx:for="{{comment.children}}" wx:for-index="ii" wx:for-item="child" wx:key="ii" data-pid="{{comment.id}}" data-from="{{child.username}}" bindtap="backContent">
-            <text class="Rose-tt">{{child.username}}</text>
-            回复
-            <text class="Rose-tt">{{child.reply_username}}</text>
-            ： {{child.content}}
+          <view class="Rose-back" wx:if="{{comment.children.length}}">
+            <view class="Rose-back-item" wx:for="{{comment.children}}" wx:for-index="ii" wx:for-item="child" wx:key="ii" data-pid="{{comment.id}}" data-from="{{child.from_username}}" bindtap="backContent">
+              <text class="Rose-tt">{{child.from_username}}</text> 回复
+              <text class="Rose-tt">{{child.reply_username}}</text>： {{child.content}}
+            </view>
           </view>
         </view>
       </view>
     </view>
   </view>
-</view>
-<view class="Rose-empty" wx:else>
-  <icon class="iconfont icon-kafei"></icon>
-  评论还是空的，快来说两句吧~
-</view>
-</view>
-<view class="allLoaded" wx:if="{{items.length!=0 && !loadMore}}">
-<text class="line-word">我是有底线的~</text>
-</view>
-<loading load-more="{{loadMore}}"></loading>
-<!-- <view class="Rose-lists" wx:if="{{items.length >
-0}}">
-<view class="Rose-feeds">反馈列表</view>
-<view class="Rose-line" wx:for="{{items}}" wx:key="index" bindlongpress="editItem" data-forid="{{item.id}}">
-<view class="Rose-content">{{item.title?item.title:''}}: {{item.remark}}</view>
-<view class="Rose-time">{{item.create_time}}</view>
-<view class="Rose-info">
-  <view class="Rose-name">
-    <icon wx:if="{{item.sex==2}}" class="iconfont icon-nvsheng female"></icon>
-    <icon wx:else class="iconfont icon-nansheng male"></icon>
-    {{item.username}}
+  <view class="Rose-empty" wx:else>
+    <icon class="iconfont icon-kafei"></icon>
+    留言还是空的，快来说两句吧~
   </view>
-  <block wx:if="{{showEdit && isRose && forid==item.id}}">
-    <view class="Rose-edit">
-      <icon class="iconfont icon-delete" data-id="{{item.id}}" bindtap="deleteOne"></icon>
-    </view>
-  </block>
 </view>
-</view>
-</view>
--->
-<!--
-<view class="allLoaded" wx:if="{{items.length!=0 && !loadMore}}">
-<text class="line-word">我是有底线的~</text>
+<view class="allLoaded" wx:if="{{comments.length!=0 && !loadMore}}">
+  <text class="line-word">我是有底线的~</text>
 </view>
 <loading load-more="{{loadMore}}"></loading>
--->
 <view class="Rose-fixed" wx:if="{{ catid !='19' && id != '124' && id !='145' }}">
-<!-- 发表评论 -->
-<view class="Rose-box">
-<view class="Rose-form">
-<div class="Rose-flex">
-  <view class="Rose-none" bindtap="rewardRose">
-    <icon class="iconfont icon-hongbao1"></icon>
+  <!-- 发表评论 -->
+  <view class="Rose-box">
+    <view class="Rose-form">
+      <div class="Rose-flex">
+        <view class="Rose-none" bindtap="rewardRose">
+          <icon class="iconfont icon-hongbao1"></icon>
+        </view>
+        <input class="Rose-input" value="{{content}}" bindinput="forRemark" focus="{{focus}}" maxlength="-1" placeholder="{{placeholder}}" />
+        <button class="Rose-none Rose-post" disabled="{{disabled}}" wx:if="{{canIUse}}" open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo">评论</button>
+      </div>
+    </view>
   </view>
-  <input class="Rose-input" value="{{remark}}" bindinput="forRemark" focus="{{focus}}" maxlength="-1" placeholder="{{placeholder}}" />
-  <button class="Rose-none Rose-post" disabled="{{disabled}}" wx:if="{{canIUse}}" open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo" >评论</button>
-</div>
-</view>
-</view>
 </view>

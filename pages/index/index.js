@@ -42,7 +42,6 @@ Page({
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh: function () {
-
     let that = this;
     that.setData({
       items: [],
@@ -50,7 +49,6 @@ Page({
       loadMore: true
     });
     if (that.data.loadMore) {
-
       that.top10();
       that.getLists();
     }
@@ -101,7 +99,6 @@ Page({
         that.setData({
           items: _items
         });
-
       }
     });
   },

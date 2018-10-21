@@ -1,95 +1,104 @@
 // pages/more/more.js
 import Api from '/../../utils/config/api.js';
+const app = getApp();
 Page({
   /**
    * 页面的初始数据
    */
-   data: {
-    catid: '5',
+  data: {
     page: 1,
-    // title: '',
-    remark: '',
+    content: '',
     disabled: true,
     comments: [],
     loadMore: true,
     canIUse: wx.canIUse('button.open-type.getUserInfo'),
-    username: '',
-    avatar: '',
-    sex: null,
     isRose: false,
-    showEdit: false,
+    focus: false,
     placeholder: '点击评论回复...',
-    reply_username: '',
     pid: 0,
-
+    userInfo: {},
+    reply_username: '',
   },
   /**
    * 生命周期函数--监听页面加载
    */
-   onLoad: function (options) {
+  onLoad: function (options) {
     var that = this;
-    wx.showLoading();
-    wx.getSetting({
-      success: function (res) {
-        if (res.authSetting['scope.userInfo']) {
-          // 已经授权，可以直接调用 getUserInfo 获取头像昵称
-          wx.getUserInfo({
-            success: function (res) {
-              var userInfo = res.userInfo;
-              if (userInfo.nickName == '赵') {
-                that.setData({
-                  isRose: true
-                });
-              }
-              that.setData({
-                username: userInfo.nickName,
-                sex: userInfo.gender
-              });
-            }
-          });
-        }
-      }
+    let _userInfo = wx.getStorageSync('userInfo')
+    that.setData({
+      userInfo: _userInfo
     });
-    that.feedback();
+    if (wx.getStorageSync('userInfo')) {
+    } else {
+      wx.getSetting({
+        success: function (res) {
+          if (res.authSetting['scope.userInfo']) {
+            // 已经授权，可以直接调用 getUserInfo 获取头像昵称
+            wx.getUserInfo({
+              success: function (res) {
+                let _userInfo = res.userInfo;
+                app.globalData.userInfo = _userInfo;
+                wx.setStorageSync('userInfo', _userInfo)
+              },
+              fail: function () {
+              }
+            })
+          }
+        }
+      });
+    }
+    that.commentlists(); //反馈列表
   },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
-   onReady: function () { },
+  onReady: function () { },
   /**
    * 生命周期函数--监听页面显示
    */
-   onShow: function () { },
+  onShow: function () { },
   /**
    * 生命周期函数--监听页面隐藏
    */
-   onHide: function () { },
+  onHide: function () { },
   /**
    * 生命周期函数--监听页面卸载
    */
-   onUnload: function () { },
+  onUnload: function () { },
   /**
    * 页面相关事件处理函数--监听用户下拉动作
    */
-   onPullDownRefresh: function () { },
+  onPullDownRefresh: function () {
+    var that = this;
+    that.setData({
+      comments: [],
+      page: 1
+    });
+    that.commentlists();
+  },
   /**
    * 页面上拉触底事件的处理函数
    */
-   onReachBottom: function () {
+  onReachBottom: function () {
     var that = this;
     let page = that.data.page + 1;
     that.setData({
-      page: page,
-
+      page: page
     });
     if (that.data.loadMore) {
-      that.feedback();
+      that.commentlists();
     }
   },
   /**
    * 用户点击右上角分享
    */
-   onShareAppMessage: function () {
+  onShareAppMessage: function (res) {
+    console.log(res)
+    console.log(111)
+    // if (res.from === 'button') {
+    //       // 来自页面内转发按钮
+    //       console.log(res.target)
+    //     }
     return {
       title: '锲而舍之,朽木不折;锲而不舍,金石可镂',
       imageUrl: '/assets/images/share.jpg'
@@ -99,9 +108,9 @@ Page({
     var that = this;
     let _data = e.detail.value;
     that.setData({
-      remark: _data
+      content: _data
     });
-    if (that.data.remark) {
+    if (that.data.content) {
       that.setData({
         disabled: false
       })
@@ -112,125 +121,19 @@ Page({
     }
   },
   rewardRose: function () {
+    var that = this;
     wx.showModal({
       content: '您的分享与关注是对我最大的奖赏！',
       cancelText: '朕不分享',
-      cancelColor:'#999',
+      cancelColor: '#999',
       confirmText: '乐意效劳',
       confirmColor: '#1d8f59',
-      success: function(){
-        // wx.showShareMenu({
-        //   return {
-        //     title: '锲而舍之,朽木不折;锲而不舍,金石可镂',
-        //     imageUrl: '/assets/images/share.jpg'
-        //   }
-
-        // })
-        wx.showShareMenu({
-          withShareTicket: true
-        })
-        // Page.onShareAppMessage({
-        //   return {
-        //     title: '锲而舍之,朽木不折;锲而不舍,金石可镂',
-        //     imageUrl: '/assets/images/share.jpg'
-        //   }
-
-        // })
-
+      success: function (res) {
+        console.log(res)
+        console.log(that)
+        that.onShareAppMessage();
       }
     })
-  },
-  formSubmit: function () {
-    var that = this;
-    that.setData({
-      disabled: true //想偷懒都不行，这里需要点击按钮后，按钮就设置成disabled, 避免重负提交
-    })
-    let _params = {
-      catid: that.data.catid,
-      title: that.data.title,
-      remark: that.data.remark,
-      username: that.data.username,
-      sex: that.data.sex,
-      avatar: that.data.avatar
-
-    }
-    Api.everyadd(_params).then(res => {
-      if (!res.data.code) {
-        that.setData({
-          title: '',
-          remark: '',
-          page: 1,
-          comments: [],
-          disabled: true
-        });
-        wx.showToast({
-          title: '提交成功',
-          icon: 'success',
-          duration: 2000
-        });
-        that.feedback();
-      }
-    });
-  },
-  feedback: function () {
-    var that = this;
-    let _params = {
-      page: that.data.page
-    }
-    Api.feedback(_params).then(res => {
-      if (!res.data.code) {
-        let _data = res.data.data;
-        let _arr = that.data.comments.concat(_data);
-        that.setData({
-          comments: _arr
-        });
-        if (_data.length < 10) {
-          that.setData({
-            loadMore: false
-          });
-        }
-        wx.hideLoading();
-      }
-    });
-  },
-  bindGetUserInfo: function (e) {
-    var that = this;
-    var userInfo = e.detail.userInfo;
-    that.setData({
-      username: userInfo.nickName,
-      sex: userInfo.gender,
-      avatar: userInfo.avatarUrl
-    });
-    that.formSubmit();
-  },
-  editItem: function (e) {
-    let forid = e.currentTarget.dataset.forid;
-    let showEdit = this.data.showEdit;
-    this.setData({
-      showEdit: !showEdit,
-      forid: forid
-    })
-  },
-  deleteOne: function (e) { //删除本条
-    var that = this;
-    let id = e.currentTarget.dataset.id;
-    let _params = {
-      catid: 5,
-      id: id
-    }
-    Api.everydelete(_params).then(res => {
-      if (!res.data.code) {
-        let month = new Date().getMonth() + 1;
-        let year = new Date().getFullYear();
-        month = month >= 10 ? '' + month : '0' + month;
-        that.setData({
-          comments: [],
-          page: 1,
-          loadMore: true
-        });
-        that.feedback();
-      }
-    });
   },
   backContent: function (e) { //回复的评论
     let _from = e.currentTarget.dataset.from;
@@ -240,6 +143,103 @@ Page({
       focus: true,
       reply_username: _from,
       pid: _id
+    });
+  },
+  bindGetUserInfo: function (e) {
+    var that = this;
+    var userInfo = {};
+    if (e.detail.userInfo) {
+      userInfo = e.detail.userInfo;
+    } else {
+      wx.getUserInfo({
+        success: function (res) {
+          userInfo = res.userInfo;
+        },
+        fail: function (res) {
+          wx.showModal({
+            showCancel: false,
+confirmColor: '#1d8f59',
+            confirmColor: '#1d8f59',
+            content: '授权通过后才能评论哟，请重新授权！'
+          })
+        }
+      })
+    }
+    if (JSON.stringify(userInfo) == '{}') return false;
+    that.setData({
+      userInfo: userInfo
+    })
+    that.postComments()
+  },
+  postComments: function () {
+    var that = this;
+    if (!that.data.content) {
+      wx.showModal({
+showCancel: false,
+confirmColor: '#1d8f59',
+        content: '评论不能为空!'
+      });
+      return false;
+    }
+    if (!that.data.userInfo) return false;
+    wx.showLoading();
+    let _params = {
+      type: "punch",
+      pid: that.data.pid, // 父评论ID，默认为0
+      from_username: that.data.userInfo.nickName, // 评论者用户名
+      from_avatar: that.data.userInfo.avatarUrl, // 评论者头像
+      reply_username: that.data.reply_username, // 回复了谁，pid不为0时，不允许未空
+      reply_avatar: "", // 回复了谁的头像，允许为空
+      content: that.data.content
+    }
+    Api.postcomments(_params).then(res => {
+      if (!res.data.code) {
+        wx.showToast({
+          title: '评论成功',
+          icon: 'success',
+          duration: 2000
+        })
+        that.setData({
+          content: '',
+          page: 1,
+          comments: [],
+          reply_username: '',
+          pid: 0,
+          placeholder: '点击评论回复...',
+          disabled: true
+        });
+        that.commentlists();
+      }
+    });
+  },
+  commentlists: function () {
+    var that = this;
+    let _params = {
+      type: "punch",
+      page: this.data.page,
+      pagesize: 10
+    }
+    Api.commentlists(_params).then(res => {
+      if (res.data.code == 0) {
+        let _data = res.data.data;
+        let _count = res.data.count;
+        let _arr = that.data.comments.concat(_data);
+        that.setData({
+          comments: _arr,
+          count: _count
+        });
+        if (_data.length < 10) {
+          that.setData({
+            loadMore: false
+          });
+        }
+      } else {
+        wx.showModal({
+          showCancel: false,
+          confirmColor: '#1d8f59',
+          content: '评论加载失败!'
+        })
+      }
     });
   },
 })

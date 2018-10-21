@@ -177,8 +177,6 @@ Page({
       if (!res.data.code) {
         let _data = res.data.data;
         console.log(_data)
-
-
         if (that.data.month == '12') { //换年了
           obj = _data;
         } else {
@@ -280,7 +278,8 @@ Page({
         that.resetPage();
       } else {
         wx.showModal({
-          title: '提示',
+          showCancel: false,
+          confirmColor: '#1d8f59',
           content: '该功能已经暂停，暂不支持删除数据!',
         })
       }
@@ -332,9 +331,9 @@ Page({
           fail: function (res) {
             reject(res);
             wx.showModal({
-              title: '提示',
               content: '上传图片失败',
               showCancel: false,
+confirmColor: '#1d8f59',
               success: function (res) { }
             });
           }
@@ -393,7 +392,8 @@ Page({
           } else {
             wx.hideLoading();
             wx.showModal({
-              title: '提示',
+              showCancel: false,
+              confirmColor: '#1d8f59',
               content: '暂停更新数据功能',
             })
           }

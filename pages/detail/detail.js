@@ -59,7 +59,6 @@ Page({
     that.getData();
     that.commentlists(); //反馈列表
     that.top10(); //top 10推荐
-
   },
   /**
    * 生命周期函数--监听页面初次渲染完成
@@ -175,6 +174,7 @@ Page({
     if (!that.data.content) {
       wx.showModal({
         showCancel: false,
+        confirmColor: '#1d8f59',
         content: '评论不能为空!'
       });
       return false;
@@ -235,6 +235,7 @@ Page({
       } else {
         wx.showModal({
           showCancel: false,
+          confirmColor: '#1d8f59',
           content: '评论加载失败!'
         })
       }
@@ -242,8 +243,9 @@ Page({
   },
   rewardRose: function () {
     wx.showModal({
-      content: '您的分享与关注是对我最大的奖赏！',
-      showCancel: false
+      showCancel: false,
+      confirmColor: '#1d8f59',
+      content: '您的分享与关注是对我最大的奖赏！'
     })
   },
   bindGetUserInfo: function (e) {
@@ -259,6 +261,8 @@ Page({
         fail: function(res){
           wx.showModal({
             showCancel: false,
+confirmColor: '#1d8f59',
+            confirmColor: '#1d8f59',
             content: '授权通过后才能评论哟，请重新授权！'
           })
         }

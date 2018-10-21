@@ -1,0 +1,9 @@
+<!--components/share/share.wxml-->
+	<view class="Rose-window">
+		<view class= "Rose-shadow"></view>
+		<view class= "Rose-share">
+
+
+		</view>
+
+	</view>
