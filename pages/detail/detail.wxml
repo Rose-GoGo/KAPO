@@ -18,6 +18,10 @@
       </view>
     </view>
   </view>
+
+
+
+
   <!-- 评论列表 -->
   <view class="Rose-comments" wx:if="{{catid!=='19' && id !='124' && id !='145'}}">
     <view class="Rose-lines">精选留言
@@ -33,7 +37,7 @@
               <view class="Rose-times">{{comment.create_time}}</view>
               <view class="Rose-comment-content" data-pid="{{comment.id}}" data-from="{{comment.from_username}}" bindtap="backContent">{{comment.content}}</view>
             </view>
-            <view class="Rose-back" wx:if="{{ comment.children.length}}">
+            <view class="Rose-back" wx:if="{{comment.children.length}}">
               <view class="Rose-back-item" wx:for="{{comment.children}}" wx:for-index="ii" wx:for-item="child" wx:key="ii" data-pid="{{comment.id}}" data-from="{{child.from_username}}" bindtap="backContent">
                 <text class="Rose-tt">{{child.from_username}}</text> 回复
                 <text class="Rose-tt">{{child.reply_username}}</text>： {{child.content}}
@@ -53,11 +57,14 @@
     <loading load-more="{{loadMore}}"></loading>
   </view>
 </view>
+
 <!-- 推荐阅读 -->
-<!-- <view class="Rose-top" wx:if="{{top10.length >0 }}" wx:if="{{ catid !='19' && id != '124' && id !='145' }}">
+<view class="Rose-top" wx:if="{{top10.length >0 }}" wx:if="{{ catid !='19' && id != '124' && id !='145' }}">
   <view class="Rose-lines">推荐阅读</view>
   <view class="Rose-topli" wx:for="{{top10}}" wx:key="index" wx:for-item="top" data-id="{{top.id}}" data-catid="{{top.catid}}" ontap="articleDetail">{{top.title}}</view>
-</view> -->
+</view>
+
+
 <!-- 发表评论 -->
 <view class="Rose-fixed" wx:if="{{ catid !='19' && id != '124' && id !='145' }}">
   <div class="Rose-flex">

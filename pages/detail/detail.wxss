@@ -28,11 +28,12 @@ image {
   width: 100%;
 }
 .wxParse-pre {
-  background: #000;
   padding: 10rpx;
   margin: 20rpx 0;
   white-space: pre;
   overflow: scroll;
+  background: #000;
+  color: #999
 }
 .Rose-keywords {
   margin-left: 20rpx;
@@ -47,7 +48,7 @@ image {
   font-size: 32rpx;
 }
 .wxParse-p {
-  word-break: break-all;
+  word-break: break-word;
   padding: 10rpx 0;
 }
 .Rose-lines, .wxParse-h3 {
@@ -208,7 +209,7 @@ image {
   position: relative;
   padding: 20rpx 20rpx 20rpx 40rpx;
   font-size: 28rpx;
-  color: #666;
+  color: #999;
 }
 .Rose-topli:before {
   position: absolute;
@@ -236,7 +237,8 @@ image {
   font-size: 34rpx;
 }
 .Rose-comments {
-  padding: 40rpx 0 0;
+  margin: 20rpx 0 0;
+  padding: 20rpx 0 0;
   background: #fff;
 }
 /*改版评论*/
