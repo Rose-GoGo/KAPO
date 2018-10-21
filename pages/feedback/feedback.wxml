@@ -81,7 +81,7 @@
   <view class="Rose-box">
     <view class="Rose-form">
       <div class="Rose-flex">
-        <view class="Rose-none text-left" bindtap="rewardRose">
+        <view class="Rose-none" bindtap="rewardRose">
           <icon class="iconfont icon-hongbao1"></icon>
         </view>
         <input class="Rose-input" value="{{remark}}" bindinput="forRemark" focus="{{focus}}" maxlength="-1" placeholder="{{placeholder}}" />

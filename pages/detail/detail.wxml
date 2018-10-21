@@ -1,23 +1,27 @@
 <!--pages/detail/detail.wxml-->
 <import src="../../wxParse/wxParse.wxml" />
 <image wx:if="{{catid=='19'}}" class="Rose-imgitem" mode="aspectFill" src="{{ items.thumb==''? '/assets/images/wx_04.jpg' :items.thumb}}"></image>
-<view class="Rose-white">
+<view class="Rose-box">
   <view class="Rose-detail">
     <view class="Rose-title">{{items.title}}</view>
-    <view class="Rose-addtime">{{items.updatetime}}
+    <view class="Rose-addtime">
+      {{items.updatetime}}
       <text class="Rose-keywords" wx:if="{{ catid !='19' && id != '124' && id !='145' }}">关键字:{{items.keywords}}</text>
     </view>
     <view class="Rose-content">
       <template is="wxParse" data="{{wxParseData:dkcontent.nodes}}" />
     </view>
+    <view class="Rose-read">阅读 3306
+      <view class="Rose-Right" bindtap="wetherLike">
+        <icon class="iconfont {{ like?'icon-like-fill':'icon-like'}}" ></icon>
+        {{likenum}}
+      </view>
+    </view>
   </view>
   <!-- 评论列表 -->
   <view class="Rose-comments" wx:if="{{catid!=='19' && id !='124' && id !='145'}}">
-    <view class="Rose-lines">评论交流
+    <view class="Rose-lines">精选留言
       <text class="Rose-small">(共{{count}}条评论)</text>
-      <view class="Rose-Right">
-        <icon class="iconfont {{ like?'icon-like-fill':'icon-like'}}" bindtap="wetherLike"></icon> {{likenum}}
-      </view>
     </view>
     <view class="Rose-lists" wx:if="{{comments.length > 0}}">
       <view class="Rose-items" wx:for="{{comments}}" wx:key="index" wx:for-item="comment">
@@ -25,7 +29,7 @@
           <image class="Rose-image" src="{{comment.from_avatar}}"></image>
           <view class="Rose-user">
             <view class="Rose-form">
-              <view class="Rose-names"> {{comment.from_username}}</view>
+              <view class="Rose-names">{{comment.from_username}}</view>
               <view class="Rose-times">{{comment.create_time}}</view>
               <view class="Rose-comment-content" data-pid="{{comment.id}}" data-from="{{comment.from_username}}" bindtap="backContent">{{comment.content}}</view>
             </view>
@@ -49,21 +53,22 @@
     <loading load-more="{{loadMore}}"></loading>
   </view>
 </view>
+<!-- 推荐阅读 -->
+<!-- <view class="Rose-top" wx:if="{{top10.length >0 }}" wx:if="{{ catid !='19' && id != '124' && id !='145' }}">
+  <view class="Rose-lines">推荐阅读</view>
+  <view class="Rose-topli" wx:for="{{top10}}" wx:key="index" wx:for-item="top" data-id="{{top.id}}" data-catid="{{top.catid}}" ontap="articleDetail">{{top.title}}</view>
+</view> -->
+<!-- 发表评论 -->
+<view class="Rose-fixed" wx:if="{{ catid !='19' && id != '124' && id !='145' }}">
+  <div class="Rose-flex">
+    <view class="Rose-none text-left" bindtap="rewardRose">
+      <icon class="iconfont icon-hongbao1"></icon>
+    </view>
+    <input class="Rose-input" value="{{content}}" bindinput="forContent" maxlength="-1" placeholder="{{placeholder}}" />
+    <button class="Rose-none Rose-post" disabled="{{disabled}}" wx:if="{{canIUse}}" open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo">评论</button>
+  </div>
+</view>
 <view class="Rose-copyRight">
   <view class="kapo-name">KAPO博客</view>
   Copyright © 2014-2018 KAPO. All Rights Reserved.
-</view>
-<view class="Rose-fixed" wx:if="{{ catid !='19' && id != '124' && id !='145' }}">
-  <!-- 发表评论 -->
-  <view class="Rose-box">
-    <div class="Rose-flex">
-      <view class="Rose-none text-left" bindtap="rewardRose">
-        <icon class="iconfont icon-hongbao1"></icon>
-      </view>
-      <input class="Rose-input" value="{{content}}" focus="{{focus}}" bindinput="forContent" maxlength="-1" placeholder="{{placeholder}}" />
-      <button class="Rose-none Rose-post" wx:if="{{canIUse}}" open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo">
-        <icon class="iconfont icon-fasong1"></icon>
-      </button>
-    </div>
-  </view>
 </view>

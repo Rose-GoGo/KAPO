@@ -22,7 +22,8 @@ Page({
     pid: 0,
     page: 1,
     likenum: 3,
-    like: false
+    like: false,
+    top10: []
   },
   /**
    * 生命周期函数--监听页面加载
@@ -57,6 +58,7 @@ Page({
     }
     that.getData();
     that.commentlists(); //反馈列表
+    that.top10(); //top 10推荐
 
   },
   /**
@@ -126,10 +128,20 @@ Page({
     })
   },
   forContent: function (e) {
+    let that = this;
     let _content = e.detail.value;
-    this.setData({
+    that.setData({
       content: _content
     })
+    if (that.data.content) {
+      that.setData({
+        disabled: false
+      })
+    } else {
+      that.setData({
+        disabled: true
+      })
+    }
   },
   backContent: function (e) { //回复的评论
     let _from = e.currentTarget.dataset.from;
@@ -139,6 +151,23 @@ Page({
       focus: true,
       reply_username: _from,
       pid: _id
+    });
+  },
+  top10: function () {
+    Api.hits().then(res => { //文章列表
+      if (!res.data.code) {
+        let _data = res.data.data;
+        this.setData({
+          top10: _data
+        });
+      }
+    });
+  },
+  articleDetail: function (e) {
+    let id = e.currentTarget.dataset.id;
+    let catid = e.currentTarget.dataset.catid
+    wx.navigateTo({
+      url: '../detail/detail?catid=' + catid + '&id=' + id
     });
   },
   postComments: function () {
@@ -175,7 +204,8 @@ Page({
           comments: [],
           reply_username: '',
           pid: 0,
-          placeholder: '点击评论回复...'
+          placeholder: '点击评论回复...',
+          disabled: true
         });
         that.commentlists();
       }
