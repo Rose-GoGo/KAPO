@@ -1,1 +1,63 @@
 /* components/share/share.wxss */
+
+.mask {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin-top: -104rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.4);
+  z-index: 9999;
+}
+
+.modal-content {
+  display: flex;
+  flex-direction: column;
+  width: 620rpx;
+  background-color: #fff;
+  border-radius: 8rpx;
+  color: #999;
+  text-align: center;
+  font-size: 30rpx;
+}
+
+.modal-btn-wrapper {
+  display: flex;
+  flex-direction: row;
+  height: 98rpx;
+  line-height: 98rpx;
+  border-top: 2rpx solid #e6e5e7;
+  overflow: hidden;
+}
+
+.cancel-btn, .confirm-btn {
+  flex: 1;
+  height: 100rpx;
+  line-height: 100rpx;
+  text-align: center;
+  font-size: 36rpx;
+  color: #999;
+}
+
+.cancel-btn {
+  border-right: 2rpx solid #e6e5e7;
+}
+
+button.confirm-btn {
+  color: #1d8f59;
+  background-color: transparent;
+}
+
+.main-content {
+  flex: 1;
+  height: 100%;
+  overflow-y: hidden;
+}
+
+button.confirm-btn::after {
+  border: none;
+}

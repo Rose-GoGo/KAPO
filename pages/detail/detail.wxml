@@ -68,6 +68,11 @@
     <button class="Rose-none Rose-post" disabled="{{disabled}}" wx:if="{{canIUse}}" open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo">评论</button>
   </div>
 </view>
+<!-- 打赏组件 -->
+<modal show="{{show}}" bindcancel="modalCancel" bindconfirm='modalConfirm' catchtouchmove="true" >
+  <view class='modal-content'>您的分享与关注是对我最大的奖赏！</view>
+</modal>
+<!-- 版权 -->
 <view class="Rose-copyRight">
   <view class="kapo-name">KAPO博客</view>
   Copyright © 2014-2018 KAPO. All Rights Reserved.

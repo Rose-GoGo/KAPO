@@ -2,6 +2,7 @@
   "navigationBarTitleText": "文章详情",
   "enablePullDownRefresh": false,
   "usingComponents": {
-    "loading": "../../components/loading/loading"
+    "loading": "../../components/loading/loading",
+    "modal": "../../components/share/share"
   }
 }

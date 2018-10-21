@@ -1,9 +1,13 @@
-<!--components/share/share.wxml-->
-	<view class="Rose-window">
-		<view class= "Rose-shadow"></view>
-		<view class= "Rose-share">
-
-
-		</view>
-
-	</view>
+<view class='mask' wx:if='{{show}}' bindtap='clickMask'>
+  <view class='modal-content'>
+    <scroll-view scroll-y class='main-content'>
+      <slot></slot>
+    </scroll-view>
+    <view class='modal-btn-wrapper'>
+      <view class='cancel-btn' bindtap='cancel'>朕不分享</view>
+      <!-- <view class='confirm-btn' style='color:#13b5f5' bindtap='confirm' >确定</view>
+		-->
+      <button class='confirm-btn' open-type="share" hover-class="none">乐意效劳</button>
+    </view>
+  </view>
+</view>

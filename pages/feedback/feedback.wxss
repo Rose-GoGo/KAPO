@@ -160,3 +160,7 @@ button::after {
   color: #eee;
   margin-bottom: 10rpx;
 }
+
+.modal-content{
+  padding: 59rpx 0
+}
