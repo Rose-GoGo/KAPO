@@ -69,9 +69,9 @@
   </div>
 </view>
 <!-- 打赏组件 -->
-<modal show="{{show}}" bindcancel="modalCancel" bindconfirm='modalConfirm' catchtouchmove="true" >
+<share show="{{show}}" bindcancel="modalCancel" bindconfirm='modalConfirm' catchtouchmove="true" >
   <view class='modal-content'>您的分享与关注是对我最大的奖赏！</view>
-</modal>
+</share>
 <!-- 版权 -->
 <view class="Rose-copyRight">
   <view class="kapo-name">KAPO博客</view>

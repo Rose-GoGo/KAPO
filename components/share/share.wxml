@@ -1,13 +1,13 @@
-<view class='mask' wx:if='{{show}}' bindtap='clickMask'>
-  <view class='modal-content'>
-    <scroll-view scroll-y class='main-content'>
+<view class='Rose-mask' wx:if='{{show}}' bindtap='clickMask'>
+  <view class='Rose-content'>
+    <scroll-view scroll-y class="Rose-main">
       <slot></slot>
     </scroll-view>
-    <view class='modal-btn-wrapper'>
-      <view class='cancel-btn' bindtap='cancel'>朕不分享</view>
+    <view class='Rose-btns'>
+      <button class="Rose-cancel" bindtap='cancel' hover-class="none">朕不分享</button>
       <!-- <view class='confirm-btn' style='color:#13b5f5' bindtap='confirm' >确定</view>
 		-->
-      <button class='confirm-btn' open-type="share" hover-class="none">乐意效劳</button>
+      <button class="Rose-confirm" open-type="share" hover-class="none">乐意效劳</button>
     </view>
   </view>
 </view>

@@ -1,6 +1,6 @@
 /* components/share/share.wxss */
 
-.mask {
+.Rose-mask {
   position: fixed;
   left: 0;
   right: 0;
@@ -11,13 +11,13 @@
   justify-content: center;
   align-items: center;
   background-color: rgba(0, 0, 0, 0.4);
-  z-index: 9999;
+  z-index: 9;
 }
 
-.modal-content {
+.Rose-content {
   display: flex;
   flex-direction: column;
-  width: 620rpx;
+  width: 618rpx;
   background-color: #fff;
   border-radius: 8rpx;
   color: #999;
@@ -25,7 +25,13 @@
   font-size: 30rpx;
 }
 
-.modal-btn-wrapper {
+.Rose-main {
+  flex: 1;
+  height: 100%;
+  overflow-y: hidden;
+}
+
+.Rose-btns {
   display: flex;
   flex-direction: row;
   height: 98rpx;
@@ -34,30 +40,31 @@
   overflow: hidden;
 }
 
-.cancel-btn, .confirm-btn {
+.Rose-cancel, .Rose-confirm {
+  position: relative;
   flex: 1;
   height: 100rpx;
   line-height: 100rpx;
   text-align: center;
   font-size: 36rpx;
   color: #999;
+  z-index: 1;
 }
 
-.cancel-btn {
-  border-right: 2rpx solid #e6e5e7;
-}
-
-button.confirm-btn {
+button.Rose-confirm {
   color: #1d8f59;
+}
+
+button:after {
+  border: none;
+}
+
+button {
+  border-radius: 0;
+  padding: 0;
   background-color: transparent;
 }
 
-.main-content {
-  flex: 1;
-  height: 100%;
-  overflow-y: hidden;
-}
-
-button.confirm-btn::after {
-  border: none;
+button.Rose-cancel {
+  border-right: 2rpx solid #e6e5e7;
 }
