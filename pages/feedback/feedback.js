@@ -14,6 +14,7 @@ Page({
     loadMore: true,
     canIUse: wx.canIUse('button.open-type.getUserInfo'),
     username: '',
+    avatar: '',
     sex: null,
     isRose: false,
     showEdit: false,
@@ -149,7 +150,9 @@ Page({
       title: that.data.title,
       remark: that.data.remark,
       username: that.data.username,
-      sex: that.data.sex
+      sex: that.data.sex,
+      avatar: that.data.avatar
+
     }
     Api.everyadd(_params).then(res => {
       if (!res.data.code) {
@@ -195,7 +198,8 @@ Page({
     var userInfo = e.detail.userInfo;
     that.setData({
       username: userInfo.nickName,
-      sex: userInfo.gender
+      sex: userInfo.gender,
+      avatar: userInfo.avatarUrl
     });
     that.formSubmit();
   },
@@ -226,6 +230,16 @@ Page({
         });
         that.feedback();
       }
+    });
+  },
+  backContent: function (e) { //回复的评论
+    let _from = e.currentTarget.dataset.from;
+    let _id = e.currentTarget.dataset.pid;
+    this.setData({
+      placeholder: '回复 ' + _from,
+      focus: true,
+      reply_username: _from,
+      pid: _id
     });
   },
 })

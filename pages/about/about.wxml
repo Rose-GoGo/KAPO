@@ -55,8 +55,7 @@
     </view>
     <view class="Rose-article">
       <view wx:for="{{kinds}}" wx:key="index" wx:for-item="rose" ontap="showOne" data-catid="{{rose.catid}}" class="Rose-title {{catid== rose.catid? 'active': ''}}">
-        <icon class="iconfont {{rose.icon}}"></icon>
-        {{rose.name}}
+        <icon class="iconfont {{rose.icon}}"></icon>{{rose.name}}
       </view>
     </view>
   </view>
