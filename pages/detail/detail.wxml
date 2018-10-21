@@ -23,8 +23,8 @@
 
 
   <!-- 评论列表 -->
-  <view class="Rose-comments" wx:if="{{catid!=='19' && id !='124' && id !='145'}}">
-    <view class="Rose-lines">精选留言
+  <view class="Rose-comments" wx:if="{{catid!=='19' && id !='145'}}">
+    <view class="Rose-lines">精选评论
       <text class="Rose-small">(共{{count}}条评论)</text>
     </view>
     <view class="Rose-lists" wx:if="{{comments.length > 0}}">
@@ -59,14 +59,14 @@
 </view>
 
 <!-- 推荐阅读 -->
-<view class="Rose-top" wx:if="{{top10.length >0 }}" wx:if="{{ catid !='19' && id != '124' && id !='145' }}">
+<view class="Rose-top" wx:if="{{top10.length >0 }}" wx:if="{{ catid !='19' && id !='124' && id !='145' }}">
   <view class="Rose-lines">推荐阅读</view>
   <view class="Rose-topli" wx:for="{{top10}}" wx:key="index" wx:for-item="top" data-id="{{top.id}}" data-catid="{{top.catid}}" ontap="articleDetail">{{top.title}}</view>
 </view>
 
 
 <!-- 发表评论 -->
-<view class="Rose-fixed" wx:if="{{ catid !='19' && id != '124' && id !='145' }}">
+<view class="Rose-fixed" wx:if="{{ catid !='19' && id !='145' }}">
   <div class="Rose-flex">
     <view class="Rose-none text-left" bindtap="rewardRose">
       <icon class="iconfont icon-hongbao1"></icon>
