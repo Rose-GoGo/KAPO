@@ -136,7 +136,7 @@ button::after {
   color: #666;
 }
 .Rose-empty {
-  padding: 40rpx 0;
+  padding: 60rpx 0 80rpx;
   text-align: center;
   font-size: 14px;
   color: #999;

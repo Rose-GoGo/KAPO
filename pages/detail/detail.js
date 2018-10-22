@@ -8,7 +8,6 @@ Page({
    */
   data: {
     show: false, //不显示分享
-
     dkcontent: '',
     id: '',
     catid: '',
@@ -147,15 +146,21 @@ Page({
       pid: _id
     });
   },
-  top10: function() {
-    Api.hits().then(res => { //文章列表
+  top10: function() { //推荐阅读
+    var that = this;
+    let params = {
+      pagesize: 5,
+      page: 1,
+      catid: that.data.catid
+    }
+    Api.lists(params).then(res => { //文章列表
       if (!res.data.code) {
         let _data = res.data.data;
-        this.setData({
+        that.setData({
           top10: _data
         });
       }
-    });
+    })
   },
   articleDetail: function(e) {
     let id = e.currentTarget.dataset.id;
@@ -308,6 +313,5 @@ Page({
     this.setData({
       show: false
     })
-
   }
 })

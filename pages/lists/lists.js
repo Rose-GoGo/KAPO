@@ -95,7 +95,6 @@ Page({
   },
   getLists: function (e) {
     var that = this;
-    // wx.showLoading();
     let params = {
       pagesize: 10,
       page: that.data.page,
