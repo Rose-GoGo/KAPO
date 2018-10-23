@@ -5,8 +5,8 @@
   <view class="Rose-detail">
     <view class="Rose-title">{{items.title}}</view>
     <view class="Rose-addtime">
-      {{items.updatetime}}
-      <text class="Rose-keywords" wx:if="{{ catid !='19' && id != '124' && id !='145' }}">关键字:{{items.keywords}}</text>
+      {{items.inputtime}}
+      <text class="Rose-keywords" wx:if="{{ catid !='19' && id != '124' && id !='145' }}">关键字: <block wx:for="{{items.keywords}}" wx:for-item="keyword">{{keyword}}</block></text>
     </view>
     <view class="Rose-content">
       <template is="wxParse" data="{{wxParseData:dkcontent.nodes}}" />
@@ -23,7 +23,7 @@
     <view class="Rose-lines">精选评论
       <text class="Rose-small">(共{{count}}条评论)</text>
     </view>
-    <view class="Rose-lists" wx:if="{{comments.length > 0}}">
+    <view class="Rose-lists" wx:if="{{count!=0}}">
       <view class="Rose-items" wx:for="{{comments}}" wx:key="index" wx:for-item="comment">
         <view class="Rose-resource">
           <image class="Rose-image" src="{{comment.from_avatar}}"></image>
@@ -43,7 +43,7 @@
         </view>
       </view>
     </view>
-    <view class="Rose-empty" wx:else>
+    <view class="Rose-empty" wx:if="{{count==0}}">
       <icon class="iconfont icon-kafei"></icon>
       评论还是空的，快来说两句吧~
     </view>

@@ -6,13 +6,9 @@ Component({
    */
   properties: {
     //是否显示modal
-    show: {
+    backTop: {
       type: Boolean,
       value: false
-    },
-    //modal的高度
-    height: {
-      type: String
     }
   },
 

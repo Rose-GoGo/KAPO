@@ -1,7 +1,7 @@
 <!--pages/feedback/feedback.wxml-->
 <view class="Rose-comments">
   <view class="Rose-feeds">共{{count}}条留言</view>
-  <view class="Rose-lists" wx:if="{{comments.length > 0}}">
+  <view class="Rose-lists" wx:if="{{count!=0}}">
     <view class="Rose-items" wx:for="{{comments}}" wx:key="index" wx:for-item="comment">
       <view class="Rose-resource">
         <view class="Rose-image">
@@ -24,7 +24,7 @@
       </view>
     </view>
   </view>
-  <view class="Rose-empty" wx:else>
+  <view class="Rose-empty" wx:if="{{count==0}}">
     <icon class="iconfont icon-kafei"></icon>
     留言还是空的，快来说两句吧~
   </view>
@@ -32,6 +32,9 @@
 <view class="allLoaded" wx:if="{{comments.length!=0 && !loadMore}}">
   <text class="line-word">我是有底线的~</text>
 </view>
+
+<backtop show="{{ true }}"></backtop>
+
 <loading load-more="{{loadMore}}"></loading>
 <view class="Rose-fixed" wx:if="{{ catid !='19' && id != '124' && id !='145' }}">
   <!-- 发表评论 -->

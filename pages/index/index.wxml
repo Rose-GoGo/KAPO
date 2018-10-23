@@ -1,5 +1,6 @@
 <wxs module="comm" src="../comm.wxs"></wxs>
-<view class="Rose-floor1">
+<view class="Rose-floor1" >
+
   <swiper class="Rose-swiper" indicator-dots="{{true}}" autoplay="{{true}}" interval="{{30000}}" duration="{{200}}" circular="{{true}}" indicator-color="rgba(255,255,255,0.5)" indicator-active-color="rgba(255,255,255,0.8)">
     <swiper-item wx:for="{{notices}}" wx:key="index" wx:for-item="notice">
       <view class="Rose-top-quote">{{notice.title}}</view>
@@ -59,4 +60,8 @@
 <view class="allLoaded" wx:if="{{items.length!=0 && !loadMore}}">
   <text class="line-word">我是有底线的~</text>
 </view>
+<!-- 加载更多 -->
 <loading load-more="{{loadMore}}"></loading>
+<!-- 返回顶部 -->
+
+<backtop hidden="{{floorstatus}}"></backtop>

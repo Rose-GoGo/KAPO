@@ -1,0 +1,4 @@
+<!--components/backtop/backtop.wxml-->
+<view class="Rose-backtop" bindtap='backTop' >
+  <icon class="iconfont icon-shouqi"></icon>
+</view>

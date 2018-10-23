@@ -1,0 +1,33 @@
+/* components/backtop/backtop.wxss */
+@import "/assets/icon/iconfont";
+.Rose-backtop{
+  position:fixed;
+  right:20rpx;
+  bottom:80rpx;
+  border:2rpx solid #1d8f59;
+  z-index:2;
+  line-height:1;
+  padding: 8rpx 10rpx;
+  border-radius:100%;
+  background: #fff;
+  color: #1d8f59;
+  text-align: center;
+
+}
+.icon-shouqi{
+    margin-top: -18rpx
+}
+
+
+@keyframes rotate {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+    transform-origin: 50% 50%;
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+    transform-origin: 50% 50%;
+  }
+}
