@@ -247,8 +247,13 @@ Page({
       remark: remark,
       disabled: false,
       id: id,
-      images: []
+      images: [],
+      showEdit: false
     });
+    wx.pageScrollTo({
+      scrollTop: 0,
+      duration: 300
+    })
   },
   resetPage: function () { //默认的展示状态
     var that = this;

@@ -171,7 +171,7 @@ button[disabled]:not([type]) {
 .Rose-icon-item icon {
   font-size: 40rpx;
   color: #999;
-  margin-right: 40rpx;
+  margin: 0 20rpx 0 40rpx;
 }
 .icon-md-shijian {
   position: relative;
@@ -227,10 +227,11 @@ button[disabled]:not([type]) {
   position: fixed;
   right: 20rpx;
   bottom: 40rpx;
-  border: 2rpx solid #f2f2f2;
+  border: 2rpx solid #1d8f59;
   z-index: 2;
+  color: #1d8f59;
   line-height: 1;
-  padding: 10rpx;
+  padding: 8rpx 10rpx;
   border-radius: 100%;
 }
 .icon-yonghu {
