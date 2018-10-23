@@ -1,5 +1,5 @@
 /**app.wxss**/
-@import "assets/icon/iconfont";
+@import "/assets/icon/iconfont";
 page{
   background: #e5e9f0
 }
