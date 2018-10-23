@@ -32,9 +32,6 @@
 <view class="allLoaded" wx:if="{{comments.length!=0 && !loadMore}}">
   <text class="line-word">我是有底线的~</text>
 </view>
-
-<backtop show="{{ true }}"></backtop>
-
 <loading load-more="{{loadMore}}"></loading>
 <view class="Rose-fixed" wx:if="{{ catid !='19' && id != '124' && id !='145' }}">
   <!-- 发表评论 -->
@@ -50,9 +47,9 @@
     </view>
   </view>
 </view>
-
-
 <!-- 打赏组件 -->
 <share show="{{show}}" bindcancel="modalCancel" bindconfirm='modalConfirm' catchtouchmove="true" >
   <view class='modal-content'>您的分享与关注是对我最大的奖赏！</view>
 </share>
+<!-- 返回顶部 -->
+<backtop back-show="{{backShow}}"></backtop>

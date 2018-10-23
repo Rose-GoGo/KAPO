@@ -100,6 +100,12 @@ Page({
   forRemark: function(e) {
     var that = this;
     let _data = e.detail.value;
+    // 禁止输入空格
+    var regu = "^[ ]+$";
+    var re = new RegExp(regu);
+    var emptyy = re.test(_data);
+    if(emptyy) return false;
+    //end
     that.setData({
       content: _data
     });
@@ -230,5 +236,17 @@ Page({
     this.setData({
       show: false
     })
-  }
+  },
+  onPageScroll: function (e) {
+      console.log(e)
+      if (e.scrollTop > 100) {
+        this.setData({
+          backShow: true
+        });
+      } else {
+        this.setData({
+          backShow: false
+        });
+      }
+    },
 })

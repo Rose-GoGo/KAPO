@@ -81,3 +81,5 @@
   <text class="line-word">我是有底线的~</text>
 </view>
 <loading load-more="{{loadMore}}"></loading>
+<!-- 返回顶部 -->
+<backtop back-show="{{backShow}}"></backtop>

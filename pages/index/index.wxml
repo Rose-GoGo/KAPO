@@ -62,6 +62,6 @@
 </view>
 <!-- 加载更多 -->
 <loading load-more="{{loadMore}}"></loading>
-<!-- 返回顶部 -->
 
-<backtop hidden="{{floorstatus}}"></backtop>
+<!-- 返回顶部 -->
+<backtop back-show="{{backShow}}"></backtop>
