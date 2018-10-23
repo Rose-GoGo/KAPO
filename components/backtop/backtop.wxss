@@ -20,9 +20,8 @@
   animation: fadeInUp 0.5s linear;
 }
 .fadeOutDown {
-  animation: fadeOutDown 0.5s linear;
+  animation: fadeOutDown 0.12s linear;
 }
-
 @-webkit-keyframes fadeInUp {
   from {
     opacity: 0;
