@@ -3,7 +3,7 @@
 .Rose-backtop{
   position:fixed;
   right:20rpx;
-  bottom:160rpx;
+  bottom:80rpx;
   border:2rpx solid #1d8f59;
   z-index:2;
   line-height:1;

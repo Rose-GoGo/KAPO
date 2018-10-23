@@ -12,7 +12,7 @@ Page({
     page: 1,
     canIUse: wx.canIUse('button.open-type.getUserInfo'),
     loadMore: true,
-    backShow: false
+
   },
   /**
    * 生命周期函数--监听页面加载
