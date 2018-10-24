@@ -297,6 +297,7 @@ button::after {
 }
 .Rose-link{
   margin:20rpx 0 0;
-padding:5rpx;
-background:#f5f5f5;
+  padding:5rpx;
+  background:#f5f5f5;
+  color: #999
 }
