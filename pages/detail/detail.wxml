@@ -11,12 +11,24 @@
     <view class="Rose-content">
       <template is="wxParse" data="{{wxParseData:dkcontent.nodes}}" />
     </view>
-    <view class="Rose-read">阅读 3306
+
+
+<view class="Rose-read">阅读 3306
       <view class="Rose-Right" bindtap="wetherLike">
         <icon class="iconfont {{ like?'icon-like-fill':'icon-like'}}"></icon>
         {{likenum}}
       </view>
     </view>
+     <view class="Rose-link">
+      {{items.url}}
+
+    </view>
+  </view>
+  <!-- 推荐阅读 -->
+
+  <view class="Rose-top" wx:if="{{top10.length >0 }}" wx:if="{{ catid !='19' && id !='124' && id !='145' }}">
+    <view class="Rose-lines">推荐阅读</view>
+    <view class="Rose-topli" wx:for="{{top10}}" wx:key="index" wx:for-item="top" data-id="{{top.id}}" data-catid="{{top.catid}}" ontap="articleDetail">{{top.title}}</view>
   </view>
   <!-- 评论列表 -->
   <view class="Rose-comments" wx:if="{{catid!=='19' && id !='145'}}">
@@ -53,11 +65,7 @@
     <loading load-more="{{loadMore}}"></loading>
   </view>
 </view>
-<!-- 推荐阅读 -->
-<view class="Rose-top" wx:if="{{top10.length >0 }}" wx:if="{{ catid !='19' && id !='124' && id !='145' }}">
-  <view class="Rose-lines">推荐阅读</view>
-  <view class="Rose-topli" wx:for="{{top10}}" wx:key="index" wx:for-item="top" data-id="{{top.id}}" data-catid="{{top.catid}}" ontap="articleDetail">{{top.title}}</view>
-</view>
+
 <!-- 发表评论 -->
 <view class="Rose-fixed" wx:if="{{ catid !='19' && id !='145' }}">
   <div class="Rose-flex">
@@ -69,7 +77,7 @@
   </div>
 </view>
 <!-- 打赏组件 -->
-<share show="{{show}}" bindcancel="modalCancel" bindconfirm='modalConfirm' catchtouchmove="true" >
+<share show="{{show}}" bindcancel="modalCancel" bindconfirm='modalConfirm' catchtouchmove="true">
   <view class='modal-content'>您的分享与关注是对我最大的奖赏！</view>
 </share>
 <!-- 版权 -->
