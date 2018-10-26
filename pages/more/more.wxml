@@ -45,12 +45,12 @@
         <view class="Rose-day-list" wx:for="{{month}}" wx:for-index="ix" wx:key="ix" wx:for-item="day">
           <view class="Rose-circle"></view>
           <view class="Rose-day">{{ix}}</view>
-          <view class="Rose-itemline-item" >
+          <view class="Rose-itemline-item">
             <view class="Rose-event" wx:for="{{day}}" wx:for-index="i" wx:for-item="dd" wx:key="i" data-forid="{{dd.id}}" bindlongpress="editItem">
               <view class="Rose-event-icon">
                 <view>
                   <icon class="iconfont icon-like"></icon>
-                 <!--  198 -->
+                  <!--  198 -->
                 </view>
               </view>
               <view class="Rose-contentbox">
@@ -66,8 +66,8 @@
                   </block>
                 </view>
                 <view class="Rose-icon-item" wx:if="{{showEdit && isRose && showid==dd.id}}">
-                  <icon class="iconfont icon-dianping" data-id="{{dd.id}}" data-title="{{dd.title}}" data-remark="{{dd.remark}}" bindtap="editOne"></icon>
                   <icon class="iconfont icon-shanchu" data-id="{{dd.id}}" bindtap="deleteOne"></icon>
+                  <icon class="iconfont icon-dianping" data-id="{{dd.id}}" data-title="{{dd.title}}" data-remark="{{dd.remark}}" bindtap="editOne"></icon>
                 </view>
               </view>
             </view>
