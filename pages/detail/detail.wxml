@@ -11,6 +11,10 @@
     <view class="Rose-content">
       <template is="wxParse" data="{{wxParseData:dkcontent.nodes}}" />
     </view>
+    <view class="Rose-End">
+    - End -
+    </view>
+
     <view class="Rose-read">阅读 3306
       <view class="Rose-Right" bindtap="wetherLike">
         <icon class="iconfont {{ like?'icon-like-fill':'icon-like'}}"></icon>
