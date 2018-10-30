@@ -32,17 +32,31 @@
           <text class="Rose-work">（2018.7-现在）</text>
         </view>
         <view>
-          1.微信小程序开发,一个后台管理系统，包含授权，以及后台数据交互等
+          1. 微信小程序开发, 包含授权，以及后台数据交互等功能
+          2. 大型后台管理系统前端开发，
+          3. 配合产品人员的需求编写JavaScript等脚本实现页面的交互功能;
+          4. 使用webpck模块化工具，gulp自动化构建工具实现版本的更新，优化，与js和css的压缩与加密;
+          5. 使用svn或git配合后台开发人员实现产品界面和功能;
         </view>
         <view class="Rose-h3">成都天象互动科技有限公司
           <text class="Rose-work">（2015.9-2018.7）</text>
         </view>
-        1. 根据UI设计师的提供的设计图，对页面进行分析，以及使用ps进行切图，制作符合前端标准和搜索引擎优化(SEO)的静态页面,包含PC与移动终端产品开发; 2. 配合产品人员的需求编写JavaScript等脚本实现页面的交互功能; 3. 调整页面在主流浏览器和平台（包括移动平台）上保持良好的兼容性; 4. 使用svn或git配合后台开发人员实现产品界面和功能; 5. 用web标准规范页面代码，优化页面代码和网页加载速度，提高网页的性能，提高用户体验; 6. 使用webpck模块化工具，gulp自动化构建工具实现版本的更新，优化，与js和css的压缩与加密;
-        7. 使用AngularJS,vueJS等框架对页面的数据进行绑定进行spa（单页web应用）开发; 8. 网站日常运营需求维护; 9. 学习reactJS
+        1. 根据UI设计师的提供的设计图，对页面进行分析，以及使用ps进行切图，制作符合前端标准和搜索引擎优化(SEO)的静态页面,包含PC与移动终端产品开发;
+        2. 配合产品人员的需求编写JavaScript等脚本实现页面的交互功能;
+        3. 调整页面在主流浏览器和平台（包括移动平台）上保持良好的兼容性;
+        4. 使用svn或git配合后台开发人员实现产品界面和功能;
+        5. web标准规范页面代码，优化页面代码和网页加载速度，提高网页的性能，提高用户体验; 6. 使用webpck模块化工具，gulp自动化构建工具实现版本的更新，优化，与js和css的压缩与加密;
+        7. 使用AngularJS,vueJS等框架对页面的数据进行绑定进行spa（单页web应用）开发; 8. 网站日常运营需求维护;
+        9. 学习reactJS
         <view class="Rose-h3">禾润信息技术有限公司
           <text class="Rose-work">（2014.7-2015.8）</text>
         </view>
-        1. 根据项目经理的需求对项目做出流程分析，并使用xMind, Microsoft Visio，Axure 画出原型图和流程图； 2. 根据UI设计师提供的设计图，实现Web界面（PC前端和移动端）； 3. Web端功能设计、开发和实现； 4. 运用Javascript框架的应用进行项目开发； 5. 优化代码并保持在各浏览器下的良好兼容性； 6. 配合后台开发人员实现产品界面和功能；
+        1. 根据项目经理的需求对项目做出流程分析，并使用xMind, Microsoft Visio，Axure 画出原型图和流程图；
+        2. 根据UI设计师提供的设计图，实现Web界面（PC前端和移动端）；
+        3. Web端功能设计、开发和实现；
+        4. 运用Javascript框架的应用进行项目开发；
+        5. 优化代码并保持在各浏览器下的良好兼容性；
+        6. 配合后台开发人员实现产品界面和功能；
       </view>
     </view>
     <view class="Rose-item">
@@ -59,7 +73,7 @@
     </view>
     <view class="Rose-item">
       <view class="Rose-line">联系我：</view>
-      <text class="Rose-concact">QQ:583459700 </text>
+      <text class="Rose-concact">QQ: 583459700 </text>
       <text class="Rose-concact">Whchat: zhao_583459700</text>
       <text class="Rose-concact">Github: https://github.com/SmileRose</text>
     </view>
