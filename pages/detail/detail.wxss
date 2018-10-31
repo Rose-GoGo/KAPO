@@ -10,7 +10,7 @@ image {
 .Rose-detail {
   background: #fff;
   font-size: 32rpx;
-  line-height: 1.6;
+  line-height: 1.8;
   padding: 20rpx;
   color: #666;
 }
@@ -18,7 +18,7 @@ image {
 .Rose-title {
   color: #000;
   font-size: 48rpx;
-  line-height: 1.2;
+  line-height: 1.4;
 }
 
 .Rose-addtime {
@@ -175,10 +175,7 @@ image {
 .Rose-none .iconfont {
   font-size: 52rpx;
   color: #999;
-  padding: 15rpx 0 0;
-}
-
-.Rose-none .iconfont.icon-hongbao1 {
+  padding: 15rpx 10rpx 0 0;
   color: #4bb777;
 }
 
@@ -186,7 +183,6 @@ image {
   flex: 1;
   height: 76rpx;
   line-height: 76rpx;
-  margin: 0 20rpx;
   padding: 0 20rpx;
   background: #f5f5f5;
   border: 2rpx solid #d9d9d9;
