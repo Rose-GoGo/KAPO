@@ -6,7 +6,7 @@ Component({
    */
   properties: {
     //是否显示modal
-    backTop: {
+    show: {
       type: Boolean,
       value: false
     }

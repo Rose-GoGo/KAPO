@@ -249,7 +249,6 @@ Page({
   },
   rewardRose: function() {
     var that = this;
-    console.log(111)
     that.setData({
       show: true
     })
@@ -262,6 +261,7 @@ Page({
     //   success: function(res) {
     //     console.log(res)
     //     console.log(that)
+    // 最后这一步似乎小程序不能成功，只能自己写一个组件了
     //     that.onShareAppMessage();
     //   }
     // })
@@ -322,7 +322,6 @@ Page({
     })
   },
   onPageScroll: function(e) {
-    console.log(e)
     if (e.scrollTop > 100) {
       this.setData({
         backShow: true
