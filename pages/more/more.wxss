@@ -229,7 +229,13 @@ button[disabled]:not([type]) {
 }
 
 .Rose-upimg {
+  display: flex;
   width: 100%;
+  font-size: 24rpx;
+}
+
+.Rose-upimg .icon-shanchu {
+  font-size: 36rpx;
 }
 
 .Rose-imgbox {

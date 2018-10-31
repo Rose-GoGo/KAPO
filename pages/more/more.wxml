@@ -22,7 +22,9 @@
     <view class="Rose-upimg">
       <view class="Rose-imgbox" wx:for="{{images}}" wx:for-item="upitem" wx:key="*this">
         <image class="Rose-image" src="{{upitem}}" data-arr="{{images}}" mode="aspectFit" data-idx="{{index}}" bindtap="imagePreview"></image>
-        <view class="Rose-remover" data-idx="{{index}}" bindtap="removeImage">删除</view>
+        <view class="Rose-remover" data-idx="{{index}}" bindtap="removeImage">
+        <icon class="iconfont icon-shanchu"></icon>
+      </view>
       </view>
     </view>
   </view>

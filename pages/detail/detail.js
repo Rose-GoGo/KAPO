@@ -6,7 +6,7 @@ Page({
   /**
    * 页面的初始数据
    */
-   data: {
+  data: {
     show: false, //不显示分享
     dkcontent: '',
     id: '',
@@ -29,7 +29,7 @@ Page({
   /**
    * 生命周期函数--监听页面加载
    */
-   onLoad: function(options) {
+  onLoad: function(options) {
     wx.showLoading();
     var that = this;
     let _userInfo = wx.getStorageSync('userInfo')
@@ -62,27 +62,27 @@ Page({
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
-   onReady: function() {},
+  onReady: function() {},
   /**
    * 生命周期函数--监听页面显示
    */
-   onShow: function() {},
+  onShow: function() {},
   /**
    * 生命周期函数--监听页面隐藏
    */
-   onHide: function() {},
+  onHide: function() {},
   /**
    * 生命周期函数--监听页面卸载
    */
-   onUnload: function() {},
+  onUnload: function() {},
   /**
    * 页面相关事件处理函数--监听用户下拉动作
    */
-   onPullDownRefresh: function() {},
+  onPullDownRefresh: function() {},
   /**
    * 页面上拉触底事件的处理函数
    */
-   onReachBottom: function() {
+  onReachBottom: function() {
     var that = this;
     let page = that.data.page + 1;
     that.setData({
@@ -95,7 +95,7 @@ Page({
   /**
    * 用户点击右上角分享
    */
-   onShareAppMessage: function() {
+  onShareAppMessage: function() {
     return {
       title: this.data.items.title,
       imageUrl: '/assets/images/share.jpg'
@@ -127,7 +127,7 @@ Page({
     var regu = "^[ ]+$";
     var re = new RegExp(regu);
     var emptyy = re.test(_content);
-    if(emptyy) return false;
+    if (emptyy) return false;
     //end
     that.setData({
       content: _content
@@ -249,6 +249,7 @@ Page({
   },
   rewardRose: function() {
     var that = this;
+    console.log(111)
     that.setData({
       show: true
     })
@@ -320,16 +321,16 @@ Page({
       show: false
     })
   },
-   onPageScroll: function (e) {
-      console.log(e)
-      if (e.scrollTop > 100) {
-        this.setData({
-          backShow: true
-        });
-      } else {
-        this.setData({
-          backShow: false
-        });
-      }
-    },
+  onPageScroll: function(e) {
+    console.log(e)
+    if (e.scrollTop > 100) {
+      this.setData({
+        backShow: true
+      });
+    } else {
+      this.setData({
+        backShow: false
+      });
+    }
+  },
 })

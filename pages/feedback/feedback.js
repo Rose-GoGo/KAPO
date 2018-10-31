@@ -23,24 +23,24 @@ Page({
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function(options) {
+  onLoad: function (options) {
     var that = this;
     let _userInfo = wx.getStorageSync('userInfo')
     that.setData({
       userInfo: _userInfo
     });
-    if (wx.getStorageSync('userInfo')) {} else {
+    if (wx.getStorageSync('userInfo')) { } else {
       wx.getSetting({
-        success: function(res) {
+        success: function (res) {
           if (res.authSetting['scope.userInfo']) {
             // 已经授权，可以直接调用 getUserInfo 获取头像昵称
             wx.getUserInfo({
-              success: function(res) {
+              success: function (res) {
                 let _userInfo = res.userInfo;
                 app.globalData.userInfo = _userInfo;
                 wx.setStorageSync('userInfo', _userInfo)
               },
-              fail: function() {}
+              fail: function () { }
             })
           }
         }
@@ -51,23 +51,23 @@ Page({
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
-  onReady: function() {},
+  onReady: function () { },
   /**
    * 生命周期函数--监听页面显示
    */
-  onShow: function() {},
+  onShow: function () { },
   /**
    * 生命周期函数--监听页面隐藏
    */
-  onHide: function() {},
+  onHide: function () { },
   /**
    * 生命周期函数--监听页面卸载
    */
-  onUnload: function() {},
+  onUnload: function () { },
   /**
    * 页面相关事件处理函数--监听用户下拉动作
    */
-  onPullDownRefresh: function() {
+  onPullDownRefresh: function () {
     var that = this;
     that.setData({
       comments: [],
@@ -78,7 +78,7 @@ Page({
   /**
    * 页面上拉触底事件的处理函数
    */
-  onReachBottom: function() {
+  onReachBottom: function () {
     var that = this;
     let page = that.data.page + 1;
     that.setData({
@@ -91,20 +91,20 @@ Page({
   /**
    * 用户点击右上角分享
    */
-  onShareAppMessage: function(res) {
+  onShareAppMessage: function (res) {
     return {
       title: '锲而舍之,朽木不折;锲而不舍,金石可镂',
       imageUrl: '/assets/images/share.jpg'
     }
   },
-  forRemark: function(e) {
+  forRemark: function (e) {
     var that = this;
     let _data = e.detail.value;
     // 禁止输入空格
     var regu = "^[ ]+$";
     var re = new RegExp(regu);
     var emptyy = re.test(_data);
-    if(emptyy) return false;
+    if (emptyy) return false;
     //end
     that.setData({
       content: _data
@@ -119,13 +119,14 @@ Page({
       })
     }
   },
-  rewardRose: function() {
+  rewardRose: function () {
+    console.log(111)
     var that = this;
     that.setData({
       show: true
     })
   },
-  backContent: function(e) { //回复的评论
+  backContent: function (e) { //回复的评论
     let _from = e.currentTarget.dataset.from;
     let _id = e.currentTarget.dataset.pid;
     this.setData({
@@ -135,17 +136,17 @@ Page({
       pid: _id
     });
   },
-  bindGetUserInfo: function(e) {
+  bindGetUserInfo: function (e) {
     var that = this;
     var userInfo = {};
     if (e.detail.userInfo) {
       userInfo = e.detail.userInfo;
     } else {
       wx.getUserInfo({
-        success: function(res) {
+        success: function (res) {
           userInfo = res.userInfo;
         },
-        fail: function(res) {
+        fail: function (res) {
           wx.showModal({
             showCancel: false,
             confirmColor: '#1d8f59',
@@ -161,7 +162,7 @@ Page({
     })
     that.postComments()
   },
-  postComments: function() {
+  postComments: function () {
     var that = this;
     if (!that.data.content) {
       wx.showModal({
@@ -202,7 +203,7 @@ Page({
       }
     });
   },
-  commentlists: function() {
+  commentlists: function () {
     var that = this;
     let _params = {
       type: "punch",
@@ -232,21 +233,21 @@ Page({
       }
     });
   },
-  modalCancel: function() {
+  modalCancel: function () {
     this.setData({
       show: false
     })
   },
   onPageScroll: function (e) {
-      console.log(e)
-      if (e.scrollTop > 100) {
-        this.setData({
-          backShow: true
-        });
-      } else {
-        this.setData({
-          backShow: false
-        });
-      }
-    },
+    console.log(e)
+    if (e.scrollTop > 100) {
+      this.setData({
+        backShow: true
+      });
+    } else {
+      this.setData({
+        backShow: false
+      });
+    }
+  },
 })
