@@ -5,12 +5,14 @@ Page({
    * 页面的初始数据
    */
    data: {
+    whichMonth:'',
+    closeMonth: false,
     images: [],
     bigData: [],
     catid: '',
     disabled: true,
     loadMore: true,
-    monthData: {}, //存储月数据
+    monthData: [], //存储月数据
     canIUse: wx.canIUse('button.open-type.getUserInfo'),
     year: new Date().getFullYear(),
     month: new Date().getMonth() + 1,
@@ -162,12 +164,12 @@ Page({
     });
   },
   getLine: function () {
-    var that = this,
-    obj = {};
+    var that = this;
     var year = that.data.year;
     var month = that.data.month;
     var dataIndex = that.data.dataIndex;
     var big = that.data.bigData;
+    var thisMonthData = {};
     let _params = {
       year: year,
       month: month,
@@ -176,22 +178,25 @@ Page({
     Api.showday(_params).then(res => {
       if (!res.data.code) {
         let _data = res.data.data;
-        console.log(_data)
         if (that.data.month == '12') { //换年了
-          obj = _data;
+          thisMonthData = _data;
         } else {
-          obj = Object.assign(that.data.monthData, _data); // 月数据
-          if (obj[month].length == 0 && that.data.bigData.length == 0) { //月初没有数据的时候
+          // Object.assign(obj, that.data.monthData, _data); // 月数据，再见了json,不能排序，可惜了，用这个还挺方便
+          thisMonthData = _data;
+          thisMonthData['monthNum'] = month;
+          var _monthData = that.data.monthData
+          _monthData.push(thisMonthData);
+          if (_data[month].length == 0 && that.data.bigData.length == 0) { //月初没有数据的时候
             that.earMonth(); //上个月的时间
             that.getLine();
             return false;
           }
         }
         that.setData({
-          monthData: obj
+          monthData: _monthData
         });
         big[dataIndex] = {
-          [year]: obj
+          [year]: _monthData
         }
         that.setData({
           bigData: big
@@ -230,7 +235,6 @@ Page({
   },
   editItem: function (e) {
     let showEdit = this.data.showEdit;
-    console.log(e)
     let showid = e.currentTarget.dataset.forid;
     this.setData({
       showEdit: !showEdit,
@@ -407,15 +411,25 @@ Page({
     })
   },
   onPageScroll: function (e) {
-      console.log(e)
-      if (e.scrollTop > 100) {
-        this.setData({
-          backShow: true
-        });
-      } else {
-        this.setData({
-          backShow: false
-        });
-      }
-    },
+    if (e.scrollTop > 100) {
+      this.setData({
+        backShow: true
+      });
+    } else {
+      this.setData({
+        backShow: false
+      });
+    }
+  },
+  hideData: function(e){ //隐藏该月的数组
+    var that = this;
+    let month = e.currentTarget.dataset.hidemonth;
+    let num = e.currentTarget.dataset.num;
+    let str = num+month;
+    var _closeMonth = !that.data.closeMonth;
+    that.setData({
+      closeMonth: _closeMonth,
+      whichMonth: str
+    })
+  }
 })
