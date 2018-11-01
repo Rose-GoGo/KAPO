@@ -40,14 +40,11 @@
         {{index}}
       </view>
       <view class="Rose-month-list" wx:for="{{year}}" wx:for-index="idx" wx:key="idx" wx:for-item="month" wx:if="{{month[month.monthNum].length!=0}}">
-
-
         <view class="Rose-month" bindtap="hideData" data-hidemonth="{{idx}}" data-num="{{num}}">
           <icon class="iconfont icon-xiangshang" wx:if="{{ closeMonth &&  whichMonth== (num+idx) }}"></icon>
           <icon class="iconfont icon-xiangshang" wx:else></icon>
           {{month.monthNum}}
         </view>
-
         <view class="Rose-day-list" wx:for="{{ month[month.monthNum] }}" wx:for-index="ix" wx:key="ix" wx:for-item="day" hidden="{{ closeMonth &&  whichMonth== (num+idx) }}">
           <view class="Rose-circle"></view>
           <view class="Rose-day">{{ix}}</view>
