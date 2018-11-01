@@ -12,16 +12,15 @@
       <template is="wxParse" data="{{wxParseData:dkcontent.nodes}}" />
     </view>
     <view class="Rose-End">— End —</view>
-
     <view class="Rose-read">阅读 106
       <view class="Rose-Right" bindtap="wetherLike">
         <icon class="iconfont {{ like?'icon-like-fill':'icon-like'}}"></icon>
         {{likenum}}
       </view>
     </view>
-    <!-- <view class="Rose-link">
+    <view class="Rose-link">
       {{items.url}}
-    </view> -->
+    </view>
   </view>
   <!-- 推荐阅读 -->
   <view class="Rose-top" wx:if="{{top10.length >0 }}" wx:if="{{ catid !='19' && id !='124' && id !='145' }}">
