@@ -24,7 +24,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 function isObject(obj) {
   return (typeof obj === 'undefined' ? 'undefined' : _typeof(obj)) === 'object' && obj !== null;
 }
-function sendRrquest(url, method, data, header) {
+var sendRrquest = function(url, method, data, header) {
   let promise = new Promise(function (resolve, reject) {
     wx.showNavigationBarLoading() //在标题栏中显示加载
     wx.request({
@@ -42,10 +42,10 @@ function sendRrquest(url, method, data, header) {
         wx.showModal({
           showCancel: false,
           confirmColor: '#1d8f59',
-          content: '数据加载失败!',
+          content: '数据加载失败,重新加载!',
           success: function (res) {
             if (res.confirm) {
-              console.log('用户点击确定')
+              sendRrquest()
             }
           }
         });
