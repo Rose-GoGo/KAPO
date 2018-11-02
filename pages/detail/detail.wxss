@@ -37,7 +37,7 @@ image {
   padding: 10rpx;
   margin: 20rpx 0;
   white-space: pre;
-  overflow: scroll;
+  overflow: auto;
   background: #000;
   color: #999;
 }
@@ -61,13 +61,12 @@ image {
   font-size: 36rpx;
   position: relative;
   padding: 10rpx 20rpx;
-  line-height: 1;
   color: #333;
 }
 
 .Rose-lines:before, .wxParse-h3:before {
   position: absolute;
-  top: 10rpx;
+  top: 16rpx;
   left: 0;
   width: 8rpx;
   height: 36rpx;
@@ -77,6 +76,11 @@ image {
 
 .wxParse-h3 {
   margin: 80rpx 0 0;
+  font-weight: 400;
+}
+
+.wxParse-h3:before {
+  top: 24rpx;
 }
 
 .wxParse-li {
