@@ -212,7 +212,7 @@ button[disabled]:not([type]) {
   color: #333;
 }
 
-.icon-xiangshang {
+.icon-xiangshang,.icon-xiangxia {
   display: inline-block;
   vertical-align: sub;
   font-size: 48rpx;

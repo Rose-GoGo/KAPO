@@ -5,8 +5,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    whichMonth: '',
-    closeMonth: false,
+    // closeMonth: false,
     images: [],
     bigData: [],
     catid: '',
@@ -26,7 +25,7 @@ Page({
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function (options) {
+  onLoad: function(options) {
     var that = this;
     var ss = new Date().getMonth() + 1;
     ss = ss >= 10 ? '' + ss : '0' + ss;
@@ -38,11 +37,11 @@ Page({
       title: that.data.barText[options.catid - 1]
     });
     wx.getSetting({
-      success: function (res) {
+      success: function(res) {
         if (res.authSetting['scope.userInfo']) {
           // 已经授权，可以直接调用 getUserInfo 获取头像昵称
           wx.getUserInfo({
-            success: function (res) {
+            success: function(res) {
               var userInfo = res.userInfo;
               if (userInfo.nickName == '赵') {
                 that.setData({
@@ -54,8 +53,7 @@ Page({
                 sex: userInfo.gender
               })
             },
-            fail: function (res) {
-            }
+            fail: function(res) {}
           });
         }
       }
@@ -65,27 +63,27 @@ Page({
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
-  onReady: function () { },
+  onReady: function() {},
   /**
    * 生命周期函数--监听页面显示
    */
-  onShow: function () { },
+  onShow: function() {},
   /**
    * 生命周期函数--监听页面隐藏
    */
-  onHide: function () { },
+  onHide: function() {},
   /**
    * 生命周期函数--监听页面卸载
    */
-  onUnload: function () { },
+  onUnload: function() {},
   /**
    * 页面相关事件处理函数--监听用户下拉动作
    */
-  onPullDownRefresh: function () { },
+  onPullDownRefresh: function() {},
   /**
    * 页面上拉触底事件的处理函数
    */
-  onReachBottom: function () {
+  onReachBottom: function() {
     var that = this;
     if (that.data.loadMore) {
       that.earMonth(); //上个月的时间
@@ -95,13 +93,13 @@ Page({
   /**
    * 用户点击右上角分享
    */
-  onShareAppMessage: function () {
+  onShareAppMessage: function() {
     return {
       title: '锲而舍之,朽木不折;锲而不舍,金石可镂',
       imageUrl: '/assets/images/share.jpg'
     }
   },
-  forTitle: function (e) {
+  forTitle: function(e) {
     var that = this;
     let _data = e.detail.value;
     that.setData({
@@ -117,7 +115,7 @@ Page({
       });
     }
   },
-  forRemark: function (e) {
+  forRemark: function(e) {
     var that = this;
     let _data = e.detail.value;
     that.setData({
@@ -133,7 +131,7 @@ Page({
       });
     }
   },
-  earMonth: function (n) { //获取年月
+  earMonth: function(n) { //获取年月
     var ym, year, month;
     var that = this;
     year = that.data.year;
@@ -163,9 +161,8 @@ Page({
       month: month
     });
   },
-  getLine: function () {
+  getLine: function() {
     var that = this;
-
     var year = that.data.year;
     var month = that.data.month;
     var dataIndex = that.data.dataIndex;
@@ -176,7 +173,6 @@ Page({
       month: month,
       catid: that.data.catid,
     }
-
     Api.showday(_params).then(res => {
       if (!res.data.code) {
         let _data = res.data.data;
@@ -186,6 +182,7 @@ Page({
           // Object.assign(obj, that.data.monthData, _data); // 月数据，再见了json,不能排序，可惜了，用这个还挺方便
           thisMonthData = _data;
           thisMonthData['monthNum'] = month;
+          thisMonthData['monthShow'] = true;
           var _monthData = that.data.monthData
           _monthData.push(thisMonthData);
           if (_data[month].length == 0 && that.data.bigData.length == 0) { //月初没有数据的时候
@@ -212,14 +209,14 @@ Page({
       }
     });
   },
-  bindGetUserInfo: function (res) {
+  bindGetUserInfo: function(res) {
     var that = this;
     var userInfo = {};
     if (res) {
       userInfo = res.detail.userInfo;
     } else {
       wx.getUserInfo({
-        success: function (res) {
+        success: function(res) {
           userInfo = res.userInfo;
         }
       })
@@ -235,7 +232,7 @@ Page({
       });
     }
   },
-  editItem: function (e) {
+  editItem: function(e) {
     let showEdit = this.data.showEdit;
     let showid = e.currentTarget.dataset.forid;
     this.setData({
@@ -243,7 +240,7 @@ Page({
       showid: showid
     });
   },
-  editOne: function (e) {
+  editOne: function(e) {
     var that = this;
     let id = e.currentTarget.dataset.id;
     let title = e.currentTarget.dataset.title;
@@ -261,7 +258,7 @@ Page({
       duration: 300
     })
   },
-  resetPage: function () { //默认的展示状态
+  resetPage: function() { //默认的展示状态
     var that = this;
     let month = new Date().getMonth() + 1;
     let year = new Date().getFullYear();
@@ -279,7 +276,7 @@ Page({
     });
     that.getLine();
   },
-  deleteOne: function (e) { //删除本条
+  deleteOne: function(e) { //删除本条
     var that = this;
     let id = e.currentTarget.dataset.id;
     let _params = {
@@ -314,11 +311,11 @@ Page({
       urls: arr, //所有要预览的图片
     });
   },
-  uploadImg: function () {
+  uploadImg: function() {
     var that = this;
     var aids = [];
     var images = that.data.images;
-    return new Promise(function (resolve, reject) {
+    return new Promise(function(resolve, reject) {
       if (images.length == 0) {
         resolve();
         return false;
@@ -328,7 +325,7 @@ Page({
           url: 'https://www.zhmzjl.com/index.php?m=content&c=punch&a=upload',
           filePath: images[i],
           name: 'file',
-          success: function (res) {
+          success: function(res) {
             let _data = JSON.parse(res.data)
             if (_data.code == 0) {
               let _aid = _data.aid;
@@ -341,27 +338,27 @@ Page({
               }
             }
           },
-          fail: function (res) {
+          fail: function(res) {
             reject(res);
             wx.showModal({
               content: '上传图片失败',
               showCancel: false,
               confirmColor: '#1d8f59',
-              success: function (res) { }
+              success: function(res) {}
             });
           }
         });
       }
     });
   },
-  chooseImg: function () { //选取图片
+  chooseImg: function() { //选取图片
     var that = this;
     if (that.data.images.length < 3) { // 限制最多只能留下3张照片
       wx.chooseImage({
         count: 3,
         sizeType: ['original', 'compressed'],
         sourceType: ['album', 'camera'], // 指定来源
-        success: function (res) {
+        success: function(res) {
           // 返回选定照片的本地文件路径列表，tempFilePath可以作为img标签的src属性显示图片
           let images = that.data.images.concat(res.tempFilePaths);
           that.setData({
@@ -371,7 +368,7 @@ Page({
       });
     }
   },
-  formSubmit: function () {
+  formSubmit: function() {
     wx.showLoading();
     var that = this,
       aids = [];
@@ -414,7 +411,7 @@ Page({
       }
     })
   },
-  onPageScroll: function (e) {
+  onPageScroll: function(e) {
     if (e.scrollTop > 100) {
       this.setData({
         backShow: true
@@ -425,15 +422,15 @@ Page({
       });
     }
   },
-  hideData: function (e) { //隐藏该月的数组
+  hideData: function(e) { //隐藏该月的数组
     var that = this;
-    let month = e.currentTarget.dataset.hidemonth;
-    let num = e.currentTarget.dataset.num;
-    let str = num + month;
-    var _closeMonth = !that.data.closeMonth;
+    let _num = e.currentTarget.dataset.num;
+    let _year = e.currentTarget.dataset.year;
+    let _month = e.currentTarget.dataset.month;
+    let _bigData = that.data.bigData;
+     _bigData[_num][_year][_month]['monthShow'] = !_bigData[_num][_year][_month]['monthShow'];
     that.setData({
-      closeMonth: _closeMonth,
-      whichMonth: str
+      bigData: _bigData
     })
   }
 })
