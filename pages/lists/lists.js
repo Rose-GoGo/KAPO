@@ -50,7 +50,7 @@ Page({
     this.setData({
       page: 1,
       items: []
-    })
+    });
 
     this.getLists();
   },
@@ -114,6 +114,6 @@ Page({
         }
         wx.hideLoading();
       }
-    })
+    });
   },
 })

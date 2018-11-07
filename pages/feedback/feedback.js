@@ -120,7 +120,6 @@ Page({
     }
   },
   rewardRose: function () {
-    console.log(111)
     var that = this;
     that.setData({
       show: true
