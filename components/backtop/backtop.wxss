@@ -1,65 +1,77 @@
 /* components/backtop/backtop.wxss */
 @import "/assets/icon/iconfont";
-.Rose-backtop{
-  position:fixed;
-  right:20rpx;
-  bottom:120rpx;
-  border:2rpx solid #1d8f59;
-  z-index:2;
-  line-height:1;
+
+.Rose-backtop {
+  position: fixed;
+  right: 20rpx;
+  bottom: 120rpx;
+  border: 2rpx solid #1d8f59;
+  z-index: 2;
+  line-height: 1;
   padding: 8rpx 10rpx;
-  border-radius:100%;
+  border-radius: 4px;
   background: #fff;
   color: #1d8f59;
   text-align: center;
 }
-.icon-shouqi{
-    margin-top: -18rpx
+
+.icon-shouqi {
+  margin-top: -18rpx;
 }
+
 .fadeInUp {
   animation: fadeInUp 0.5s linear;
 }
+
 .fadeOutDown {
   animation: fadeOutDown 0.12s linear;
 }
+
 @-webkit-keyframes fadeInUp {
   from {
     opacity: 0;
     -webkit-transform: translate3d(0, 100%, 0);
     transform: translate3d(0, 100%, 0);
   }
+
   to {
     opacity: 1;
     -webkit-transform: none;
     transform: none;
   }
 }
+
 @keyframes fadeInUp {
   from {
     opacity: 0;
     -webkit-transform: translate3d(0, 100%, 0);
     transform: translate3d(0, 100%, 0);
   }
+
   to {
     opacity: 1;
     -webkit-transform: none;
     transform: none;
   }
 }
+
 @-webkit-keyframes fadeOutDown {
   from {
     opacity: 1;
   }
+
   to {
     opacity: 0;
     -webkit-transform: translate3d(0, 100%, 0);
     transform: translate3d(0, 100%, 0);
   }
 }
+
 @keyframes fadeOutDown {
   from {
     opacity: 1;
   }
+
   to {
     opacity: 0;
     -webkit-transform: translate3d(0, 100%, 0);

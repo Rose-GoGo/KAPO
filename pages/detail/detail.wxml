@@ -12,7 +12,7 @@
       <template is="wxParse" data="{{wxParseData:dkcontent.nodes}}" />
     </view>
     <view class="Rose-End" wx:if="{{ catid !='19' && id !='124' && id !='145' }}">— End —</view>
-    <view class="Rose-read">阅读 {{items.views}}
+    <view class="Rose-read" wx:if="{{ catid !='19' && id !='124' && id !='145' }}">阅读 {{items.views}}
       <view class="Rose-Right" bindtap="wetherLike">
         <icon class="iconfont {{ like?'icon-like-fill':'icon-like'}}"></icon>
         {{likenum}}
@@ -28,7 +28,7 @@
     <view class="Rose-topli" wx:for="{{top10}}" wx:key="index" wx:for-item="top" data-id="{{top.id}}" data-catid="{{top.catid}}" ontap="articleDetail">{{top.title}}</view>
   </view>
   <!-- 评论列表 -->
-  <view class="Rose-comments" wx:if="{{catid!=='19' && id !='145'}}">
+  <view class="Rose-comments" wx:if="{{catid!=='19' && id !='124' && id !='145'}}">
     <view class="Rose-lines">精选评论
       <text class="Rose-small">(共{{count}}条)</text>
     </view>
@@ -63,7 +63,7 @@
   </view>
 </view>
 <!-- 发表评论 -->
-<view class="Rose-fixed" wx:if="{{ catid !='19' && id !='145' }}">
+<view class="Rose-fixed" wx:if="{{ catid !='19' && id !='124' && id !='145' }}">
   <div class="Rose-flex">
     <view class="Rose-none text-left" bindtap="goHome">
       <icon class="iconfont icon-shouye"></icon>
