@@ -9,6 +9,7 @@
     "pages/lists/lists",
     "pages/me/me"
   ],
+
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#1d8f59",

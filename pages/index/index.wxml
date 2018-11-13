@@ -1,20 +1,19 @@
 <wxs module="comm" src="../comm.wxs"></wxs>
+<view class="Rose-floor1">
+  <view class="Rose-music">
 
-<view class="Rose-floor1" >
+    <audio src="{{src}}" id="myAudio"></audio>
+    <view class="Rose-play {{isPlay? 'rotate': ''}}" ontap="controlMusic">
+      <icon class="iconfont icon-CD"></icon>
+    </view>
+  </view>
   <swiper class="Rose-swiper" indicator-dots="{{true}}" autoplay="{{true}}" interval="{{30000}}" duration="{{200}}" circular="{{true}}" indicator-color="rgba(255,255,255,0.5)" indicator-active-color="rgba(255,255,255,0.8)">
     <swiper-item wx:for="{{notices}}" wx:key="index" wx:for-item="notice">
       <view class="Rose-top-quote">{{notice.title}}</view>
       {{notice.description}}
     </swiper-item>
   </swiper>
-
-
-  <view>
-   <audio src="{{src}}" id="myAudio" ></audio>
-  </view>
-
 </view>
-
 <view class="Rose-lists">
   <view class="Rose-floor-title">精选
     <navigator url="../lists/lists?catid=11" hover-class='none' class="Rose-go">查看更多</navigator>
@@ -69,6 +68,5 @@
 </view>
 <!-- 加载更多 -->
 <loading load-more="{{loadMore}}"></loading>
-
 <!-- 返回顶部 -->
 <backtop back-show="{{backShow}}"></backtop>

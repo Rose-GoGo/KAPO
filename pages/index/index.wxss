@@ -70,10 +70,10 @@
 .Rose-lists .Rose-time {
   margin: 6rpx 0 0;
 }
-.Rose-lists .Rose-time .iconfont{
- margin:-18rpx 5rpx 0 0;
- vertical-align:text-top;
- font-size:28rpx;
+.Rose-lists .Rose-time .iconfont {
+  margin: -18rpx 5rpx 0 0;
+  vertical-align: text-top;
+  font-size: 28rpx;
 }
 .Rose-imgitem {
   flex: none;
@@ -115,7 +115,7 @@
   display: flex;
   font-size: 24rpx;
   color: #999;
-  margin:5rpx 0 0;
+  margin: 5rpx 0 0;
 }
 .Rose-bottom .iconfont {
   font-size: 26rpx;
@@ -192,4 +192,36 @@
 }
 .Rose-floor {
   background: #fff;
+}
+.Rose-music {
+  position: absolute;
+  right: 20rpx;
+  top: -20rpx;
+  width: 40rpx;
+  height: 40rpx;
+  line-height: 1;
+}
+.Rose-play {
+  position: relative;
+  line-height: 1;
+}
+.rotate{
+  animation: rotate 1s linear infinite;
+}
+.icon-CD{
+  font-size: 20px;
+  margin-top: -10rpx;
+  color: #fefefe
+}
+@keyframes rotate {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+    transform-origin: 0,0;
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+    transform-origin: 0,0;
+  }
 }
