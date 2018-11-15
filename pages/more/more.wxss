@@ -278,7 +278,7 @@ button[disabled]:not([type]) {
   color: #1d8f59;
   line-height: 1;
   padding: 8rpx 10rpx;
-  border-radius: 100%;
+  border-radius: 8rpx;
   background: #fff;
 }
 

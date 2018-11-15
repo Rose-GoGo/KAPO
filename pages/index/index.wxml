@@ -1,8 +1,7 @@
 <wxs module="comm" src="../comm.wxs"></wxs>
 <view class="Rose-floor1">
   <view class="Rose-music">
-
-    <audio src="{{src}}" id="myAudio"></audio>
+    <!-- <audio src="{{src}}" id="myAudio"></audio> -->
     <view class="Rose-play {{isPlay? 'rotate': ''}}" ontap="controlMusic">
       <icon class="iconfont icon-CD"></icon>
     </view>

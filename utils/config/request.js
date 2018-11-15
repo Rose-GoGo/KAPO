@@ -45,7 +45,7 @@ var sendRrquest = function(url, method, data, header) {
           content: '数据加载失败,重新加载!',
           success: function (res) {
             if (res.confirm) {
-              sendRrquest()
+             // sendRrquest()
             }
           }
         });

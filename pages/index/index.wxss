@@ -2,37 +2,45 @@
   height: 240rpx;
   text-align: center;
 }
+
 .Rose-right {
   text-align: right;
 }
+
 .Rose-left {
   text-align: left;
 }
+
 .Rose-center {
   text-align: center;
 }
+
 .Rose-floor1 {
   padding: 40rpx 40rpx 0;
   background: #1d8f59;
   color: #fff;
   font-size: 26rpx;
 }
+
 .Rose-top-quote {
   margin: 0 20rpx 20rpx;
   font-size: 32rpx;
   text-align: center;
 }
+
 .Rose-lists {
   overflow: hidden;
   margin: 20rpx 0;
   background: #fff;
 }
+
 .Rose-news {
   overflow: hidden;
   margin: 20rpx 0;
   padding: 0 20rpx;
   background: #fff;
 }
+
 .Rose-floor-title {
   padding: 18rpx 20rpx;
   margin: 0 0 20rpx;
@@ -40,16 +48,19 @@
   border-bottom: 2rpx solid #f2f2f2;
   font-size: 32rpx;
 }
+
 .Rose-item {
   display: inline-block;
   margin: 0 20rpx 0 0;
   width: 600rpx;
   vertical-align: top;
 }
+
 .Rose-imgbest {
   width: 100%;
   height: 330rpx;
 }
+
 .Rose-title {
   display: -webkit-box;
   padding: 0 0 20rpx;
@@ -58,6 +69,7 @@
   white-space: pre-wrap;
   word-break: break-word;
 }
+
 .Rose-lists .Rose-title {
   padding: 10rpx 0;
   height: 90rpx;
@@ -67,27 +79,33 @@
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 2;
 }
+
 .Rose-lists .Rose-time {
   margin: 6rpx 0 0;
 }
+
 .Rose-lists .Rose-time .iconfont {
   margin: -18rpx 5rpx 0 0;
   vertical-align: text-top;
   font-size: 28rpx;
 }
+
 .Rose-imgitem {
   flex: none;
   width: 100%;
   height: 300rpx;
 }
+
 .Rose-content {
   padding: 20rpx 0;
   color: #333;
 }
+
 .Rose-time {
   font-size: 24rpx;
   color: #999;
 }
+
 .Rose-detail {
   display: -webkit-box;
   overflow: hidden;
@@ -99,11 +117,13 @@
   font-size: 30rpx;
   color: #666;
 }
+
 .Rose-flex {
   display: flex;
   margin: 0 0 20rpx;
   flex-direction: row;
 }
+
 .Rose-kind {
   text-align: left;
   font-size: 24rpx;
@@ -111,65 +131,80 @@
   margin-top: -18rpx;
   font-weight: 600;
 }
+
 .Rose-bottom {
   display: flex;
   font-size: 24rpx;
   color: #999;
   margin: 5rpx 0 0;
 }
+
 .Rose-bottom .iconfont {
   font-size: 26rpx;
 }
+
 .Rose-bottom  .iconfont.icon-kanguos {
   font-size: 30rpx;
 }
+
 .Rose-bottom .iconfont.icon-xiangqu {
   padding-left: 20rpx;
 }
+
 .Rose-flex1 {
   flex: 1;
 }
+
 .Rose-box {
   margin: 0 20rpx;
 }
+
 .Rose-items {
   position: relative;
   width: 100%;
   margin: 10rpx 0;
   white-space: nowrap;
 }
+
 .green-color {
 }
+
 .green {
   padding-right: 8rpx;
   color: #1d8f59;
   font-size: 30rpx;
 }
+
 .Rose-go {
   float: right;
   color: #999;
 }
+
 .Rose-comment {
   font-size: 24rpx;
   color: #999;
   margin-top: -18rpx;
 }
+
 .Rose-menu {
   padding: 20rpx 30rpx;
   display: flex;
   flex-flow: row;
   justify-content: space-between;
 }
+
 .Rose-kinds {
   text-align: center;
   font-size: 28rpx;
   color: #333;
   width: 90rpx;
 }
+
 .Rose-kinds .iconfont {
   font-size: 42rpx;
   display: block;
 }
+
 .view-circle {
   border-radius: 100%;
   color: #fff;
@@ -178,50 +213,61 @@
   line-height: 90rpx;
   margin: 0 auto 20rpx;
 }
+
 .color4 {
   background-color: #8a90fa;
 }
+
 .color3 {
   background-color: #4dc6ee;
 }
+
 .color2 {
   background-color: #fed030;
 }
+
 .color1 {
   background-color: #fd9d21;
 }
+
 .Rose-floor {
   background: #fff;
 }
+
 .Rose-music {
   position: absolute;
   right: 20rpx;
-  top: -20rpx;
+  top: 0;
   width: 40rpx;
   height: 40rpx;
   line-height: 1;
 }
+
 .Rose-play {
   position: relative;
   line-height: 1;
 }
-.rotate{
+
+.rotate {
   animation: rotate 1s linear infinite;
 }
-.icon-CD{
+
+.icon-CD {
   font-size: 20px;
   margin-top: -10rpx;
-  color: #fefefe
+  color: #fefefe;
 }
+
 @keyframes rotate {
   0% {
     -webkit-transform: rotate(0deg);
     transform: rotate(0deg);
-    transform-origin: 0,0;
+    transform-origin: 0, 0;
   }
+
   100% {
     -webkit-transform: rotate(360deg);
     transform: rotate(360deg);
-    transform-origin: 0,0;
+    transform-origin: 0, 0;
   }
 }

@@ -6,7 +6,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    src: 'https://zhmzjl.com/statics/images/blog/kongquexiqu.mp3',
+    // src: 'https://zhmzjl.com/statics/images/blog/kongquexiqu.mp3',
     isPlay: true,
     notices: [],
     items: [],
@@ -18,7 +18,7 @@ Page({
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function(options) {
+  onLoad: function (options) {
     var that = this;
     that.getNotice();
     that.top10();
@@ -27,28 +27,26 @@ Page({
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
-  onReady: function(e) {
-    this.audioCtx = wx.createAudioContext('myAudio');
-    this.audioCtx.play();
-
-
+  onReady: function (e) {
+    // this.audioCtx = wx.createAudioContext('myAudio');
+    // this.audioCtx.play();
   },
   /**
    * 生命周期函数--监听页面显示
    */
-  onShow: function() {},
+  onShow: function () { },
   /**
    * 生命周期函数--监听页面隐藏
    */
-  onHide: function() {},
+  onHide: function () { },
   /**
    * 生命周期函数--监听页面卸载
    */
-  onUnload: function() {},
+  onUnload: function () { },
   /**
    * 页面相关事件处理函数--监听用户下拉动作
    */
-  onPullDownRefresh: function() {
+  onPullDownRefresh: function () {
     let that = this;
     that.setData({
       items: [],
@@ -63,7 +61,7 @@ Page({
   /**
    * 页面上拉触底事件的处理函数
    */
-  onReachBottom: function() {
+  onReachBottom: function () {
     let that = this;
     let _page = that.data.page + 1;
     that.setData({
@@ -76,20 +74,20 @@ Page({
   /**
    * 用户点击右上角分享
    */
-  onShareAppMessage: function() {
+  onShareAppMessage: function () {
     return {
       title: '锲而舍之,朽木不折;锲而不舍,金石可镂',
       imageUrl: '/assets/images/share.jpg'
     }
   },
-  articleDetail: function(e) {
+  articleDetail: function (e) {
     let id = e.currentTarget.dataset.id;
     let catid = e.currentTarget.dataset.catid
     wx.navigateTo({
       url: '../detail/detail?catid=' + catid + '&id=' + id
     });
   },
-  getLists: function(e) {
+  getLists: function (e) {
     let that = this;
     let params = {
       page: that.data.page
@@ -109,7 +107,7 @@ Page({
       }
     });
   },
-  top10: function() {
+  top10: function () {
     Api.hits().then(res => { //文章列表
       if (!res.data.code) {
         let _data = res.data.data;
@@ -119,7 +117,7 @@ Page({
       }
     });
   },
-  getNotice: function() {
+  getNotice: function () {
     var that = this;
     let _params = {
       catid: 21, //项目id
@@ -135,7 +133,7 @@ Page({
       }
     });
   },
-  onPageScroll: function(e) {
+  onPageScroll: function (e) {
     if (e.scrollTop > 100) {
       this.setData({
         backShow: true
@@ -146,14 +144,14 @@ Page({
       });
     }
   },
-  controlMusic: function() {
+  controlMusic: function () {
     if (this.data.isPlay) {
-      this.audioCtx.pause();
+      app.AppMusic.pause();
       this.setData({
         isPlay: false
       });
     } else {
-      this.audioCtx.play();
+      app.AppMusic.play();
       this.setData({
         isPlay: true
       });
