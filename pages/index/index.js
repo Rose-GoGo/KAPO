@@ -5,8 +5,7 @@ Page({
   /**
    * 页面的初始数据
    */
-  data: {
-    // src: 'https://zhmzjl.com/statics/images/blog/kongquexiqu.mp3',
+  data: {   
     isPlay: true,
     notices: [],
     items: [],
