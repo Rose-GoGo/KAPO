@@ -1,5 +1,4 @@
 /* pages/lists/lists.wxss */
-
 .Rose-fixed{
   position: fixed;
   left: 0;
@@ -11,19 +10,16 @@
   background: #fff;
   border-bottom: 1rpx solid #f2f2f2
 }
-
 .Rose-list {
   margin: 150rpx 0 0 0;
   padding: 0 20rpx;
   /*margin*/
   background: #fff;
 }
-
 .Rose-article {
   padding: 20rpx 0;
   display: flex;
 }
-
 .Rose-title {
   position: relative;
   flex: 1;
@@ -31,7 +27,6 @@
   font-size: 26rpx;
   color: #666;
 }
-
 .Rose-title:before {
   position: absolute;
   top: 10rpx;
@@ -41,11 +36,9 @@
   background: #f2f2f2;
   content: '';
 }
-
 .Rose-title:last-child:before {
   background: transparent;
 }
-
 .Rose-title:after {
   position: absolute;
   bottom: -16rpx;
@@ -56,63 +49,52 @@
   content: '';
   transition: all 0.25s linear;
 }
-
 .Rose-title.active:after {
   width: 100%;
   left: 0;
   background: #599eec;
 }
-
 .Rose-title .iconfont {
   font-size: 52rpx;
   display: block;
   color: #666;
 }
-
-.Rose-title.active .iconfont {
+.Rose-title.active .iconfont, .Rose-title.active {
   color: #599eec;
 }
-
 .Rose-Line .iconfont {
   color: #599eec;
   font-size: 46rpx;
   padding-right: 10rpx;
   vertical-align: bottom;
 }
-
 .Rose-Line .iconfont.fr {
   float: right;
   color: #a8a8a8;
   padding-right: 0;
   font-size: 30rpx;
 }
-
 .Rose-item {
   padding: 40rpx 0;
   border-bottom: 2rpx solid #f2f2f2;
 }
-
 .Rose-name {
   font-size: 34rpx;
   color: #333;
 }
-
 .Rose-description {
   font-size: 28rpx;
   color: #666;
 }
-
 .Rose-time {
   padding: 10rpx 0 20rpx;
   color: #999;
   font-size: 24rpx;
 }
-
 .Rose-comment {
   float: right;
   margin-top: -22rpx;
 }
-
 .Rose-comment .iconfont {
   font-size: 26rpx;
   margin-left: 20rpx
