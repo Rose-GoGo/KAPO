@@ -4,8 +4,7 @@ Page({
   /**
    * 页面的初始数据
    */
-  data: {
-    // closeMonth: false,
+   data: {
     images: [],
     bigData: [],
     catid: '',
@@ -25,7 +24,7 @@ Page({
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function(options) {
+   onLoad: function(options) {
     var that = this;
     var ss = new Date().getMonth() + 1;
     ss = ss >= 10 ? '' + ss : '0' + ss;
@@ -63,27 +62,27 @@ Page({
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
-  onReady: function() {},
+   onReady: function() {},
   /**
    * 生命周期函数--监听页面显示
    */
-  onShow: function() {},
+   onShow: function() {},
   /**
    * 生命周期函数--监听页面隐藏
    */
-  onHide: function() {},
+   onHide: function() {},
   /**
    * 生命周期函数--监听页面卸载
    */
-  onUnload: function() {},
+   onUnload: function() {},
   /**
    * 页面相关事件处理函数--监听用户下拉动作
    */
-  onPullDownRefresh: function() {},
+   onPullDownRefresh: function() {},
   /**
    * 页面上拉触底事件的处理函数
    */
-  onReachBottom: function() {
+   onReachBottom: function() {
     var that = this;
     if (that.data.loadMore) {
       that.earMonth(); //上个月的时间
@@ -93,13 +92,13 @@ Page({
   /**
    * 用户点击右上角分享
    */
-  onShareAppMessage: function() {
+   onShareAppMessage: function() {
     return {
       title: '锲而舍之,朽木不折;锲而不舍,金石可镂',
       imageUrl: '/assets/images/share.jpg'
     }
   },
-  forTitle: function(e) {
+  forTitle: function(e) { //打卡数据验证
     var that = this;
     let _data = e.detail.value;
     that.setData({
@@ -115,7 +114,7 @@ Page({
       });
     }
   },
-  forRemark: function(e) {
+  forRemark: function(e) { //打卡数据验证
     var that = this;
     let _data = e.detail.value;
     that.setData({
@@ -161,7 +160,7 @@ Page({
       month: month
     });
   },
-  getLine: function() {
+  getLine: function() { //拉取数据并且处理
     var that = this;
     var year = that.data.year;
     var month = that.data.month;
@@ -176,6 +175,7 @@ Page({
     Api.showday(_params).then(res => {
       if (!res.data.code) {
         let _data = res.data.data;
+
         if (that.data.month == '12') { //换年了
           thisMonthData = _data;
         } else {
@@ -185,7 +185,8 @@ Page({
           thisMonthData['monthShow'] = true;
           var _monthData = that.data.monthData
           _monthData.push(thisMonthData);
-          if (_data[month].length == 0 && that.data.bigData.length == 0) { //月初没有数据的时候
+          let _count = Object.keys(_data[month]).length;
+          if (_count < 4 && that.data.bigData.length == 0) { //月初没有数据或者数据较少的时候加载上个月的数据
             that.earMonth(); //上个月的时间
             that.getLine();
             return false;
@@ -371,7 +372,7 @@ Page({
   formSubmit: function() {
     wx.showLoading();
     var that = this,
-      aids = [];
+    aids = [];
     that.setData({
       disabled: true //想偷懒都不行，这里需要点击按钮后，按钮就设置成disabled, 避免重负提交
     });
@@ -426,11 +427,17 @@ Page({
     var that = this;
     let _num = e.currentTarget.dataset.num;
     let _year = e.currentTarget.dataset.year;
+    let _index = e.currentTarget.dataset.index;
     let _month = e.currentTarget.dataset.month;
     let _bigData = that.data.bigData;
-     _bigData[_num][_year][_month]['monthShow'] = !_bigData[_num][_year][_month]['monthShow'];
+    _bigData[_num][_year][_index]['monthShow'] = !_bigData[_num][_year][_index]['monthShow'];
     that.setData({
       bigData: _bigData
     })
+    //当还有数据，而且这个月是被收缩的，而且小于上一次加载的月，才加载数据
+    if (that.data.loadMore && !_bigData[_num][_year][_index]['monthShow'] && _month <= this.data.month) {
+      that.earMonth(); //上个月的时间
+      that.getLine();
+    }
   }
 })

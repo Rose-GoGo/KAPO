@@ -14,11 +14,6 @@
 	"libVersion": "2.2.5",
 	"appid": "wx11bb9ed460c13af5",
 	"projectname": "firstXCX",
-	"svr": "/",
-	"client": "/",
-	"qcloudRoot": "/",
-	"miniprogramRoot": "/",
-	"pluginRoot": "/",
 	"scripts": {},
 	"condition": {
 		"search": {
@@ -38,7 +33,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": -1,
+			"current": 3,
 			"list": [
 				{
 					"id": 1,
@@ -62,7 +57,7 @@
 					"id": 3,
 					"name": "打卡",
 					"pathName": "pages/more/more",
-					"query": "catid=4"
+					"query": "catid=1"
 				},
 				{
 					"id": -1,

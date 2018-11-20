@@ -1,8 +1,21 @@
 /* pages/lists/lists.wxss */
 
-.Rose-list {
+.Rose-fixed{
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 130rpx;
   padding: 0 20rpx;
   margin-bottom: 20rpx;
+  background: #fff;
+  border-bottom: 1rpx solid #f2f2f2
+}
+
+.Rose-list {
+  margin: 150rpx 0 0 0;
+  padding: 0 20rpx;
+  /*margin*/
   background: #fff;
 }
 
@@ -35,7 +48,7 @@
 
 .Rose-title:after {
   position: absolute;
-  bottom: -20rpx;
+  bottom: -16rpx;
   left: 50%;
   width: 0;
   height: 4rpx;

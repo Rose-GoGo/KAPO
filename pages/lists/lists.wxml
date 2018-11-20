@@ -1,6 +1,7 @@
 <!--pages/lists/lists.wxml-->
 <wxs module="comm" src="../comm.wxs"></wxs>
-<view class="Rose-list">
+
+<view class="Rose-fixed">
   <view class="Rose-article">
     <view wx:for="{{kinds}}" wx:key="index" wx:for-item="rose" ontap="showOne" data-catid="{{rose.catid}}" class="Rose-title {{catid== rose.catid? 'active': ''}}">
       <icon class="iconfont {{rose.icon}}"></icon>
@@ -8,6 +9,7 @@
     </view>
   </view>
 </view>
+
 <view class="Rose-list">
   <view class="Rose-item" wx:for="{{items}}" wx:key="{{index}}" data-id="{{item.id}}" data-catid="{{item.catid}}" ontap="articleDetail" wx:if="{{ item.id != '124' && item.id !='145' }}">
     <view class="Rose-name">{{item.title}}</view>
@@ -27,3 +29,5 @@
   </view>
 </block>
 <loading load-more="{{loadMore}}"></loading>
+<!-- 返回顶部 -->
+<backtop back-show="{{backShow}}"></backtop>

@@ -69,23 +69,13 @@ button[disabled]:not([type]) {
   position: absolute;
   width: 22rpx;
   height: 22rpx;
-  border-radius: 100%;
-  border: 1px solid #4bb777;
   display: block;
-  left: -32rpx;
-  top: 6rpx;
-  background: #fff;
+  left: -35rpx;
+  top: -14rpx;
 }
 
-.Rose-circle:before {
-  position: absolute;
-  width: 10rpx;
-  height: 10rpx;
-  background: #4bb777;
-  content: "";
-  border-radius: 100%;
-  top: 6rpx;
-  left: 6rpx;
+.Rose-circle .iconfont {
+  color: #4bb777;
 }
 
 .Rose-month {
@@ -120,7 +110,7 @@ button[disabled]:not([type]) {
 .Rose-title {
   font-size: 32rpx;
   color: #333;
-  line-height: 1.2
+  line-height: 1.2;
 }
 
 .Rose-time {
@@ -213,7 +203,7 @@ button[disabled]:not([type]) {
   color: #333;
 }
 
-.icon-xiangshang,.icon-xiangxia {
+.icon-xiangshang, .icon-xiangxia {
   display: inline-block;
   vertical-align: sub;
   font-size: 48rpx;

@@ -3,6 +3,7 @@
 page{
   background: #e5e9f0
 }
+button::after{ border: none; }
 .Rose-white{
   background: #fff
 }

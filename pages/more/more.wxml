@@ -23,8 +23,8 @@
       <view class="Rose-imgbox" wx:for="{{images}}" wx:for-item="upitem" wx:key="*this">
         <image class="Rose-image" src="{{upitem}}" data-arr="{{images}}" mode="aspectFit" data-idx="{{index}}" bindtap="imagePreview"></image>
         <view class="Rose-remover" data-idx="{{index}}" bindtap="removeImage">
-        <icon class="iconfont icon-shanchu"></icon>
-      </view>
+          <icon class="iconfont icon-shanchu"></icon>
+        </view>
       </view>
     </view>
   </view>
@@ -33,20 +33,22 @@
   </view>
 </view>
 <view class="Rose-form">
-  <view wx:for="{{bigData}}" wx:key="index" wx:for-index="num"  wx:for-item="years">
+  <view wx:for="{{bigData}}" wx:key="index" wx:for-index="num" wx:for-item="years">
     <view class="Rose-year-line" wx:for="{{years}}" wx:key="index" wx:for-item="year">
       <view class="Rose-year">
         <icon class="iconfont icon-md-shijian"></icon>
         {{index}}
       </view>
       <view class="Rose-month-list" wx:for="{{year}}" wx:for-index="idx" wx:key="idx" wx:for-item="month" wx:if="{{month[month.monthNum].length!=0}}">
-        <view class="Rose-month" bindtap="hideData" data-num="{{num}}"  data-year="{{index}}" data-month="{{idx}}">
+        <view class="Rose-month" bindtap="hideData" data-num="{{num}}" data-year="{{index}}" data-index="{{idx}}" data-month="{{month.monthNum}}">
           <icon class="iconfont icon-xiangshang" wx:if="{{ month.monthShow }}"></icon>
           <icon class="iconfont icon-xiangxia" wx:else></icon>
           {{month.monthNum}}
         </view>
         <view class="Rose-day-list" wx:for="{{ month[month.monthNum] }}" wx:for-index="ix" wx:key="ix" wx:for-item="day" wx:if="{{ month.monthShow }}">
-          <view class="Rose-circle"></view>
+          <view class="Rose-circle">
+            <icon class='iconfont icon-xuanzhong'></icon>
+          </view>
           <view class="Rose-day">{{ix}}</view>
           <view class="Rose-itemline-item">
             <view class="Rose-event" wx:for="{{day}}" wx:for-index="i" wx:for-item="dd" wx:key="i" data-forid="{{dd.id}}" bindlongpress="editItem">
