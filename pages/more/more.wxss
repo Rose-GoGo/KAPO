@@ -70,11 +70,13 @@ button[disabled]:not([type]) {
   width: 22rpx;
   height: 22rpx;
   display: block;
-  left: -35rpx;
+  left: -34rpx;
   top: -14rpx;
 }
 
 .Rose-circle .iconfont {
+  width: 22rpx;
+  height: 22rpx;
   color: #4bb777;
 }
 
