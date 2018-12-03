@@ -176,7 +176,7 @@ Page({
       if (!res.data.code) {
         let _data = res.data.data;
 
-        if (that.data.month == '12') { //换年了
+        if (that.data.month == '01') { //换年了
           thisMonthData = _data;
         } else {
           // Object.assign(obj, that.data.monthData, _data); // 月数据，再见了json,不能排序，可惜了，用这个还挺方便

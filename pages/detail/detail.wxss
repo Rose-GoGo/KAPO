@@ -34,12 +34,20 @@ image {
 }
 
 .wxParse-pre {
-  padding: 10rpx;
+  /* padding: 20rpx;
   margin: 20rpx 0;
   white-space: pre;
   overflow: auto;
   background: #000;
-  color: #999;
+  color: #999; */
+  padding: 20rpx;
+  margin: 20rpx 0;
+  white-space: pre;
+  overflow: auto;
+  background: #f0f0f0;
+  color: #000;
+  border: 2rpx solid #ddd;
+  border-left: 2px solid #1b58b8;
 }
 
 .Rose-keywords {

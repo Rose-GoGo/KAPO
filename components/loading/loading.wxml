@@ -1,6 +1,6 @@
 <!--pages/loading/loading.wxml-->
 <view hidden="{{!loadMore}}">
   <view class="Rose-loading">
-    <icon class="iconfont icon-loading"></icon>
+    <icon class="iconfont icon-loading"></icon> 正在加载
   </view>
 </view>

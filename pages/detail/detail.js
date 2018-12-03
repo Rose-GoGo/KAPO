@@ -18,7 +18,7 @@ Page({
     focus: false,
     userInfo: {},
     content: '',
-    placeholder: '点击评论回复...',
+    placeholder: '留言鼓励一下...',
     reply_username: '',
     pid: 0,
     page: 1,
@@ -252,19 +252,6 @@ Page({
     that.setData({
       show: true
     })
-    // wx.showModal({
-    //   content: '您的分享与关注是对我最大的奖赏！',
-    //   cancelText: '朕不分享',
-    //   cancelColor: '#999',
-    //   confirmText: '乐意效劳',
-    //   confirmColor: '#1d8f59',
-    //   success: function(res) {
-    //     console.log(res)
-    //     console.log(that)
-    // 最后这一步似乎小程序不能成功，只能自己写一个组件了
-    //     that.onShareAppMessage();
-    //   }
-    // })
   },
   bindGetUserInfo: function(e) {
     var that = this;

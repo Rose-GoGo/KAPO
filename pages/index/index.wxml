@@ -42,10 +42,10 @@
     <image class="Rose-imgitem" mode="aspectFill" lazy-load="{{true}}" src="{{item.thumb==''? '/assets/images/ncode.jpg': item.thumb}}"></image>
     <view class="Rose-detail">{{item.description}}</view>
     <view class="Rose-bottom">
-      <view class="Rose-flex1 Rose-left">
+      <!-- <view class="Rose-flex1 Rose-left">
         <icon class="iconfont icon-geren"></icon>
         {{item.username}}
-      </view>
+      </view> -->
       <view class="Rose-flex1 Rose-left">
         <icon class="iconfont icon-kanguo"></icon>
         {{item.views}}
