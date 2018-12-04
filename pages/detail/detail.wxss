@@ -194,7 +194,7 @@ image {
 }
 
 .Rose-none .iconfont {
-  font-size: 52rpx;
+  font-size: 48rpx;
   padding: 15rpx 10rpx 0 0;
   color: #4bb777;
 }

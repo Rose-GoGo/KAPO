@@ -10,6 +10,9 @@
 .Rose-left {
   text-align: left;
 }
+.icon-pinglun3{
+  padding-left: 20rpx;
+}
 
 .Rose-center {
   text-align: center;
