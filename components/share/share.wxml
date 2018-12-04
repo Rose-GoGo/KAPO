@@ -4,9 +4,7 @@
       <slot></slot>
     </scroll-view>
     <view class='Rose-btns'>
-      <button class="Rose-cancel" bindtap='cancel' hover-class="none">朕不分享</button>
-      <!-- <view class='confirm-btn' style='color:#13b5f5' bindtap='confirm' >确定</view>
-		-->
+      <button class="Rose-cancel" bindtap='cancel' hover-class="none">朕不分享</button>  
       <button class="Rose-confirm" open-type="share" hover-class="none">乐意效劳</button>
     </view>
   </view>
