@@ -12,20 +12,22 @@
 
 <view class="Rose-list">
   <view class="Rose-item" wx:for="{{items}}" wx:key="{{index}}" data-id="{{item.id}}" data-catid="{{item.catid}}" ontap="articleDetail" wx:if="{{ item.id != '124' && item.id !='145' }}">
-    <view class="Rose-name">{{item.title}}</view>
-    <view class="Rose-time">
-      <text>{{comm.formatTime(item.updatetime)}}</text>
-      <view class="Rose-comment">
-        <icon class="iconfont icon-kanguo"></icon> {{item.views}}
-        <icon class="iconfont icon-pinglun3"></icon> {{item.cnum}}
+    <view>
+      <view class="Rose-name">{{item.title}}</view>
+      <view class="Rose-time">
+        <text>{{comm.formatTime(item.updatetime)}}</text>
+        <view class="Rose-comment">
+          <icon class="iconfont icon-kanguo"></icon> {{item.views}}
+          <icon class="iconfont icon-pinglun3"></icon> {{item.cnum}}
+        </view>
       </view>
+      <view class="Rose-description">{{item.description}}</view>
     </view>
-    <view class="Rose-description">{{item.description}}</view>
   </view>
 </view>
 <block wx:if="{{items.length!=0 && !loadMore}}">
   <view class="allLoaded">
-    <text class="line-word">我是有底线的~</text>
+    <text class="line-word">我是有底线滴~</text>
   </view>
 </block>
 <loading load-more="{{loadMore}}"></loading>

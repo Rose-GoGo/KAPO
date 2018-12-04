@@ -5,48 +5,40 @@ Page({
   /**
    * 页面的初始数据
    */
-   data: {
+  data: {
     page: 1,
     items: [],
     loadMore: true,
-    catid: '',
+    catid: '11',
     kinds: app.globalData.kinds
   },
   /**
    * 生命周期函数--监听页面加载
    */
-   onLoad: function (options) {
-    var catid = options.catid;
-    this.setData({
-      catid: catid,
-    })
+  onLoad: function (options) {
     wx.showLoading();
     this.getLists();
   },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
-   onReady: function () {
-   },
+  onReady: function () { },
   /**
    * 生命周期函数--监听页面显示
    */
-   onShow: function () {
-   },
+  onShow: function () { },
   /**
    * 生命周期函数--监听页面隐藏
    */
-   onHide: function () {
-   },
+  onHide: function () { },
   /**
    * 生命周期函数--监听页面卸载
    */
-   onUnload: function () {
-   },
+  onUnload: function () { },
   /**
    * 页面相关事件处理函数--监听用户下拉动作
    */
-   onPullDownRefresh: function () {
+  onPullDownRefresh: function () {
     this.setData({
       page: 1,
       items: []
@@ -57,7 +49,7 @@ Page({
   /**
    * 页面上拉触底事件的处理函数
    */
-   onReachBottom: function () {
+  onReachBottom: function () {
     var that = this;
     let page = that.data.page + 1;
     if (that.data.loadMore) {
@@ -70,7 +62,7 @@ Page({
   /**
    * 用户点击右上角分享
    */
-   onShareAppMessage: function () {
+  onShareAppMessage: function () {
     return {
       title: '锲而舍之,朽木不折;锲而不舍,金石可镂',
       imageUrl: '/assets/images/share.jpg'
@@ -93,7 +85,7 @@ Page({
     });
     this.getLists();
   },
-  onPageScroll: function(e) {
+  onPageScroll: function (e) {
     if (e.scrollTop > 100) {
       this.setData({
         backShow: true
@@ -106,10 +98,20 @@ Page({
   },
   getLists: function (e) {
     var that = this;
+    var cat = that.data.catid;
+ 
+
+    // if (cat == '') {
+    //   cat = '11'
+
+    //   // that.setData({
+    //   //   catid: cat
+    //   // })
+    // }
     let params = {
       pagesize: 10,
       page: that.data.page,
-      catid: that.data.catid
+      catid: cat
     }
     Api.lists(params).then(res => { //文章列表
       if (!res.data.code) {

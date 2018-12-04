@@ -1,5 +1,5 @@
 {
-  "navigationBarTitleText": "文章列表",
+  "navigationBarTitleText": "文章分类",
   "enablePullDownRefresh": true,
   "usingComponents": {
     "loading": "../../components/loading/loading",

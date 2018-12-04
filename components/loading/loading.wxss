@@ -1,21 +1,26 @@
 /* pages/loading/loading.wxss */
 @import "/assets/icon/iconfont";
+
 .Rose-loading {
   height: 64rpx;
   text-align: center;
+  font-size: 12px;
+  color: #999;
 }
-.icon-loading {
-  color: #1d8f59;
-  font-size: 64rpx;
+
+.icon-jiazai {
+  height: 72rpx;
+  font-size: 28rpx;
   animation: rotate 1s linear infinite;
-  margin-top: -1rpx
 }
+
 @keyframes rotate {
   0% {
     -webkit-transform: rotate(0deg);
     transform: rotate(0deg);
     transform-origin: 50% 50%;
   }
+
   100% {
     -webkit-transform: rotate(360deg);
     transform: rotate(360deg);

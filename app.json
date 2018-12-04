@@ -27,15 +27,15 @@
     "list": [
       {
         "pagePath": "pages/index/index",
-        "iconPath": "assets/nav/article.png",
-        "selectedIconPath": "assets/nav/article_fill.png",
-        "text": "文章"
+        "iconPath": "assets/nav/home.png",
+        "selectedIconPath": "assets/nav/home_fill.png",
+        "text": "首页"
       },
       {
-        "pagePath": "pages/project/project",
+        "pagePath": "pages/lists/lists",
         "iconPath": "assets/nav/project.png",
         "selectedIconPath": "assets/nav/project_fill.png",
-        "text": "项目"
+        "text": "分类"
       },
       {
         "pagePath": "pages/about/about",

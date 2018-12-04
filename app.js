@@ -14,7 +14,7 @@ App({
     this.AppMusic.autoplay = true;
     this.AppMusic.src = 'https://zhmzjl.com/statics/images/blog/kongquexiqu.mp3';
     this.AppMusic.loop = true;
-    this.AppMusic.volume = 0.8;
+    this.AppMusic.volume = 0.01;
     this.AppMusic.onPlay(() => {
       console.log('开始播放')
     })

@@ -8,6 +8,12 @@
       {{items.inputtime}}
       <text class="Rose-keywords" wx:if="{{ catid !='19' && id != '124' && id !='145' }}">关键字: <block wx:for="{{items.keywords}}" wx:key="index" wx:for-item="keyword">{{keyword}}</block></text>
     </view>
+
+    <view class="Rose-description" wx:if="{{catid!='19'}}">
+      {{items.description}}
+    </view>
+
+
     <view class="Rose-content">
       <template is="wxParse" data="{{wxParseData:dkcontent.nodes}}" />
     </view>

@@ -112,7 +112,7 @@
   line-height: 1.6;
   text-align: left;
   text-overflow: ellipsis;
-  -webkit-line-clamp: 3;
+  -webkit-line-clamp: 1;
   -webkit-box-orient: vertical;
   font-size: 30rpx;
   color: #666;

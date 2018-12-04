@@ -30,7 +30,7 @@
   </view>
 </view>
 <view class="allLoaded" wx:if="{{comments.length!=0 && !loadMore}}">
-  <text class="line-word">我是有底线的~</text>
+  <text class="line-word">我是有底线滴~</text>
 </view>
 <loading load-more="{{loadMore}}"></loading>
 <view class="Rose-fixed" wx:if="{{ catid !='19' && id != '124' && id !='145' }}">

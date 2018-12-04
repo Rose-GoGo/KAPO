@@ -41,19 +41,15 @@
     <view class="Rose-flex1 Rose-title">{{item.title}}</view>
     <image class="Rose-imgitem" mode="aspectFill" lazy-load="{{true}}" src="{{item.thumb==''? '/assets/images/ncode.jpg': item.thumb}}"></image>
     <view class="Rose-detail">{{item.description}}</view>
-    <view class="Rose-bottom">
-      <!-- <view class="Rose-flex1 Rose-left">
-        <icon class="iconfont icon-geren"></icon>
-        {{item.username}}
-      </view> -->
+    <view class="Rose-bottom"> 
       <view class="Rose-flex1 Rose-left">
         <icon class="iconfont icon-kanguo"></icon>
         {{item.views}}
-      </view>
-      <view class="Rose-flex1 Rose-left">
+
         <icon class="iconfont icon-pinglun3"></icon>
         {{item.cnum}}
       </view>
+     
       <view class="Rose-flex1 Rose-right">
         <icon class="iconfont icon-shijian2"></icon>
         {{comm.formatDate(item.updatetime)}}
@@ -62,7 +58,7 @@
   </view>
 </view>
 <view class="allLoaded" wx:if="{{items.length!=0 && !loadMore}}">
-  <text class="line-word">我是有底线的~</text>
+  <text class="line-word">我是有底线滴~</text>
 </view>
 <!-- 加载更多 -->
 <loading load-more="{{loadMore}}"></loading>
