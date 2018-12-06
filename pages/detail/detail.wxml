@@ -83,9 +83,6 @@
   <view class='modal-content'>您的分享与关注是对我最大的奖赏！</view>
 </share>
 <!-- 版权 -->
-<view class="Rose-copyRight">
-  <view class="kapo-name">KAPO博客</view>
-  Copyright © 2014-2018 KAPO. All Rights Reserved.
-</view>
+<copyright></copyright>
 <!-- 返回顶部 -->
 <backtop back-show="{{backShow}}"></backtop>

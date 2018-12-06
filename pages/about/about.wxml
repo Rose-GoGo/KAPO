@@ -2,7 +2,6 @@
   <!-- <view class="Rose-about-title">Rose Zhao</view> -->
   <view class="Rose-content">余秋雨: 一个在教师看来生气勃勃的学生，过几年看到他，他成为了一个平庸的人。所以我始终要提醒大家，人生要不断地设定起点，不断地突破围城，不断地提醒自己，你有一个更精彩的生命。即使年纪很大也应该这样，生命才会比较有价值。</view>
 </view>
-
 <!-- 打卡 -->
 <view class="Rose-floor">
   <view class="Rose-menu">
@@ -14,7 +13,6 @@
     </view>
   </view>
 </view>
-
 <view class="Rose-floor">
   <view class="Rose-Line">
     <navigator url="../feedback/feedback" hover-class="none">
@@ -23,19 +21,16 @@
       <icon class="fr iconfont icon-xiangyou"></icon>
     </navigator>
   </view>
-
   <view class="Rose-Line">
     <navigator url="../detail/detail?catid=13&id=124" hover-class="none">
       <icon class="iconfont icon-heart"></icon>
-      特别感谢
+      感谢
       <icon class="fr iconfont icon-xiangyou"></icon>
     </navigator>
   </view>
-
-
   <view class="Rose-Line">
     <navigator url="../project/project" hover-class="none">
-      <icon class="iconfont icon-banben1"></icon>
+      <icon class="iconfont icon-accountbook"></icon>
       项目
       <icon class="fr iconfont icon-xiangyou"></icon>
     </navigator>
@@ -48,9 +43,5 @@
     </navigator>
   </view>
 </view>
-
 <!-- 版权 -->
-<view class="Rose-copyRight">
-  <view class="kapo-name">KAPO博客</view>
-  Copyright © 2014-2018 KAPO. All Rights Reserved.
-</view>
+ <copyright></copyright>

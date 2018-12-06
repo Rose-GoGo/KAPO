@@ -6,7 +6,7 @@
     </view>
   </view>
   <swiper class="Rose-swiper" indicator-dots="{{true}}" autoplay="{{true}}" interval="{{30000}}" duration="{{200}}" circular="{{true}}" indicator-color="rgba(255,255,255,0.5)" indicator-active-color="rgba(255,255,255,0.8)">
-    <swiper-item wx:for="{{notices}}" wx:key="index" wx:for-item="notice" data-id="{{notice.id}}" data-catid="{{notice.catid}}"  ontap="articleDetail">
+    <swiper-item wx:for="{{notices}}" wx:key="index" wx:for-item="notice" data-id="{{notice.id}}" data-catid="{{notice.catid}}" ontap="articleDetail">
       <view class="Rose-top-quote">{{notice.title}}</view>
       {{notice.description}}
     </swiper-item>
@@ -30,17 +30,20 @@
 <!-- 菜单 -->
 <view class="Rose-news" wx:for="{{items}}" wx:key="index" data-id="{{item.id}}" data-catid="{{item.catid}}" ontap="articleDetail" wx:if="{{ item.id != '124' && item.id !='145' }}">
   <view class="Rose-content">
-    <!-- <view class="Rose-flex">
+      <view class="Rose-flex">
       <view class="Rose-kind">
         <icon class="green-color iconfont icon-fenlei-xingxiu"></icon>
         <block wx:if="{{item.catid=='11'}}"> 前端</block>
         <block wx:if="{{item.catid=='12'}}"> 安全</block>
         <block wx:if="{{item.catid=='13'}}"> 生活</block>
       </view>
-    </view> -->
-    <view class="Rose-flex1 Rose-title">{{item.title}}</view>
-    <image class="Rose-imgitem" mode="aspectFill" lazy-load="{{true}}" src="{{item.thumb==''? '/assets/images/ncode.jpg': item.thumb}}"></image>
-    <view class="Rose-detail">{{item.description}}</view>
+    </view>
+
+    <view class="Rose-title">{{item.title}}</view>
+    <image class='Rose-imgitem' mode="aspectFill" lazy-load="{{true}}" src="{{item.thumb==''? '/assets/images/ncode.jpg': item.thumb}}"></image>
+
+
+    <view class="Rose-flex1 Rose-detail">{{item.description}}</view>
     <view class="Rose-bottom">
       <view class="Rose-flex1 Rose-left">
         <icon class="iconfont icon-kanguo"></icon>
@@ -48,7 +51,6 @@
         <icon class="iconfont icon-pinglun3"></icon>
         {{item.cnum}}
       </view>
-
       <view class="Rose-flex1 Rose-right">
         <icon class="iconfont icon-shijian2"></icon>
         {{comm.formatDate(item.updatetime)}}
