@@ -68,7 +68,7 @@
 .Rose-item {
   display: inline-block;
   margin: 0 20rpx 0 0;
-  width: 500rpx;
+  width: 600rpx;
   vertical-align: top;
 }
 
@@ -87,13 +87,13 @@
 }
 
 .Rose-lists .Rose-title {
-  height: 86rpx;
   padding: 10rpx 0;
   overflow: hidden;
   text-overflow: ellipsis;
   display: -webkit-box;
   -webkit-box-orient: vertical;
-  -webkit-line-clamp: 2;
+  -webkit-line-clamp: 1;
+  line-height: 1.6;
   color: #666;
   font-size: 30rpx;
 }

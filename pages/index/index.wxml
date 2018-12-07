@@ -7,6 +7,7 @@
   </view>
   <swiper class="Rose-swiper" indicator-dots="{{true}}" autoplay="{{true}}" interval="{{30000}}" duration="{{200}}" circular="{{true}}" indicator-color="rgba(255,255,255,0.5)" indicator-active-color="rgba(255,255,255,0.8)">
     <swiper-item wx:for="{{notices}}" wx:key="index" wx:for-item="notice" data-id="{{notice.id}}" data-catid="{{notice.catid}}" ontap="articleDetail">
+      <image class='Rose-imgitem' mode="aspectFill" lazy-load="{{true}}" src="{{item.thumb==''? '/assets/images/ncode.jpg': notice.thumb}}"></image>
       <view class="Rose-top-quote">{{notice.title}}</view>
       {{notice.description}}
     </swiper-item>
