@@ -270,10 +270,11 @@ button[disabled]:not([type]) {
   color: #1d8f59;
   line-height: 1;
   padding: 8rpx 10rpx;
-  border-radius: 8rpx;
+  border-radius: 4rpx;
   background: #fff;
 }
 
-.icon-yonghu {
+.icon-yonghu2 {
   margin-top: -18rpx;
+  font-size: 36rpx;
 }

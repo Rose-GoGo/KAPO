@@ -9,7 +9,7 @@
   z-index: 2;
   line-height: 1;
   padding: 8rpx 10rpx;
-  border-radius: 4px;
+  border-radius: 4rpx;
   background: #fff;
   color: #1d8f59;
   text-align: center;
@@ -17,7 +17,7 @@
 
 .icon-dingbu {
   margin-top: -18rpx;
-  font-size: 20px
+  font-size: 36rpx;
 }
 
 .fadeInUp {
