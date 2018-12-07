@@ -11,8 +11,12 @@
 }
 
 .Rose-swiper {
-  height: 240rpx;
+  height: 300rpx;
   text-align: center;
+}
+
+.Rose-imgnotice {
+  width: 100%;
 }
 
 .Rose-right {
@@ -32,7 +36,7 @@
 }
 
 .Rose-floor1 {
-  padding: 30rpx 36rpx 0;
+  /* padding: 30rpx 36rpx 0; */
   background: #1d8f59;
   color: #fff;
   font-size: 26rpx;
