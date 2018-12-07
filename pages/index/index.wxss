@@ -217,7 +217,7 @@
 .Rose-kinds {
   text-align: center;
   font-size: 24rpx;
-  color: #999;
+  color: #666;
   width: 90rpx;
 }
 
