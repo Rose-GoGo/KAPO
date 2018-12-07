@@ -1,6 +1,6 @@
 <!--pages/more/more.wxml-->
 <button class="Rose-getuser" wx:if="{{canIUse && !isRose}}" open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo">
-  <icon class="iconfont icon-yonghu"></icon>
+  <icon class="iconfont icon-yonghu2"></icon>
 </button>
 <view class="Rose-form" wx:if="{{isRose}}">
   <view class="Rose-section">

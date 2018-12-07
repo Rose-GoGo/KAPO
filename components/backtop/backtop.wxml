@@ -1,4 +1,4 @@
 <!--components/backtop/backtop.wxml-->
 <view class="Rose-backtop {{backShow? 'fadeInUp':'fadeOutDown'}}" bindtap='backTop' hidden="{{!backShow}}">
-  <icon class="iconfont icon-shouqi"></icon>
+  <icon class="iconfont icon-dingbu"></icon>
 </view>

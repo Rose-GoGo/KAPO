@@ -15,8 +15,9 @@
   text-align: center;
 }
 
-.icon-shouqi {
+.icon-dingbu {
   margin-top: -18rpx;
+  font-size: 20px
 }
 
 .fadeInUp {
