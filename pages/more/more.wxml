@@ -14,7 +14,7 @@
   <view class="Rose-section">
     <view class="Rose-section_title"></view>
     <view class="Rose-upimg">
-      <icon class="iconfont icon-image" ontap="chooseImg" wx:if="{{images.length < 3}}"></icon>
+      <icon class="iconfont icon-tupian" ontap="chooseImg" wx:if="{{images.length < 3}}"></icon>
     </view>
   </view>
   <view class="Rose-section" wx:if="{{ images.length!=0 }}">

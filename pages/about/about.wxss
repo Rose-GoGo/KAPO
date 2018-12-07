@@ -2,7 +2,7 @@
 
 .Rose-floor {
   background: #fff;
-  margin-bottom: 20rpx;
+  margin: 20rpx 0;
 }
 
 .Rose-menu {
@@ -123,6 +123,7 @@
   margin-left: 20rpx;
   line-height: 60rpx;
 }
-.Rose-Line:last-child{
-  border-bottom: none
+
+.Rose-Line:last-child {
+  border-bottom: none;
 }

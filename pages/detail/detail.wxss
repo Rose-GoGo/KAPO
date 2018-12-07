@@ -71,8 +71,9 @@ image {
 }
 
 .wxParse-p {
-  word-break: break-word;
   padding: 10rpx 0;
+  font-size: 32rpx;
+  word-break: break-word;
 }
 
 .Rose-lines, .wxParse-h3 {

@@ -18,9 +18,9 @@
 }
 
 .Rose-none .iconfont {
-  font-size: 52rpx;
-  color: #999;
-  padding: 15rpx 0 0;
+  font-size: 48rpx;
+  padding: 15rpx 10rpx 0 0;
+  color: #4bb777;
 }
 
 .Rose-none .iconfont.icon-hongbao1 {
@@ -85,7 +85,7 @@ button::after {
 
 .Rose-image .iconfont {
   font-size: 64rpx;
-  color: #999;
+  color: #f2f2f2;
 }
 
 .Rose-user {
@@ -105,7 +105,7 @@ button::after {
   border-bottom: none;
 }
 
-.Rose-form {
+.Rose-words {
   margin: 0 0 0 20rpx;
 }
 

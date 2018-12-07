@@ -215,7 +215,7 @@ button[disabled]:not([type]) {
   font-weight: 500;
 }
 
-.icon-image {
+.icon-tupian {
   font-size: 52rpx;
   color: #ccc;
   margin-left: 6px;
@@ -263,18 +263,21 @@ button[disabled]:not([type]) {
 
 .Rose-getuser {
   position: fixed;
+  width: 60rpx;
+  height: 60rpx;
   right: 20rpx;
   bottom: 40rpx;
   border: 2rpx solid #1d8f59;
   z-index: 2;
-  color: #1d8f59;
-  line-height: 1;
-  padding: 8rpx 10rpx;
   border-radius: 4rpx;
   background: #fff;
+  color: #1d8f59;
+  text-align: center;
+  line-height: 60rpx;
+  padding: 0;
 }
 
 .icon-yonghu2 {
-  margin-top: -18rpx;
+  margin: -18rpx auto 0;
   font-size: 36rpx;
 }

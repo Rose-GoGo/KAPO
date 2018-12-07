@@ -5,14 +5,20 @@ Page({
   /**
    * 页面的初始数据
    */
-  data: {   
+  data: {
     isPlay: true,
-    notices: [],
+    // notices: [],
     items: [],
-    top10: [],
+    // top10: [],
     page: 1,
     canIUse: wx.canIUse('button.open-type.getUserInfo'),
     loadMore: true,
+    every: [
+      { icon: 'icon-yinyue', name: '生活', id: 4 },
+      { icon: 'icon-yingyu', name: '外语', id: 3 },
+      { icon: 'icon-book', name: '读书', id: 2 },
+      { icon: 'icon-jianshen', name: '健身', id: 1 }
+    ]
   },
   /**
    * 生命周期函数--监听页面加载

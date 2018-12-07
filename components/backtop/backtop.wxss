@@ -3,16 +3,17 @@
 
 .Rose-backtop {
   position: fixed;
+  width: 60rpx;
+  height: 60rpx;
   right: 20rpx;
   bottom: 120rpx;
   border: 2rpx solid #1d8f59;
   z-index: 2;
-  line-height: 1;
-  padding: 8rpx 10rpx;
   border-radius: 4rpx;
   background: #fff;
   color: #1d8f59;
   text-align: center;
+  line-height: 60rpx;
 }
 
 .icon-dingbu {

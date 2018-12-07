@@ -6,10 +6,10 @@
       <view class="Rose-resource">
         <view class="Rose-image">
           <image class="Rose-image" wx-if="{{comment.from_avatar}}" src="{{comment.from_avatar}}"></image>
-          <icon wx:else class="iconfont icon-geren2"></icon>
+          <icon wx:else class="iconfont icon-tupian"></icon>
         </view>
         <view class="Rose-user">
-          <view class="Rose-form">
+          <view class="Rose-words">
             <view class="Rose-names">{{comment.from_username}}</view>
             <view class="Rose-times">{{comment.create_time}}</view>
             <view class="Rose-comment-content" data-pid="{{comment.id}}" data-from="{{comment.from_username}}" bindtap="backContent">{{comment.content}}</view>
@@ -38,8 +38,11 @@
   <view class="Rose-box">
     <view class="Rose-form">
       <div class="Rose-flex">
+        <view class="Rose-none text-left" bindtap="goHome">
+          <icon class="iconfont icon-shouye"></icon>
+        </view>
         <view class="Rose-none" bindtap="rewardRose">
-          <icon class="iconfont icon-hongbao1"></icon>
+          <icon class="iconfont icon-fenxiang1"></icon>
         </view>
         <input class="Rose-input" value="{{content}}" bindinput="forRemark" focus="{{focus}}" maxlength="-1" placeholder="{{placeholder}}" />
         <button class="Rose-none Rose-post" disabled="{{disabled}}" wx:if="{{canIUse}}" open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo">评论</button>

@@ -3,7 +3,7 @@
   <view class="Rose-content">余秋雨: 一个在教师看来生气勃勃的学生，过几年看到他，他成为了一个平庸的人。所以我始终要提醒大家，人生要不断地设定起点，不断地突破围城，不断地提醒自己，你有一个更精彩的生命。即使年纪很大也应该这样，生命才会比较有价值。</view>
 </view>
 <!-- 打卡 -->
-<view class="Rose-floor">
+<!-- <view class="Rose-floor">
   <view class="Rose-menu">
     <view class="Rose-kinds" wx:for="{{every}}" wx:for-item="i" wx:key="index" ontap="goEveryDay" data-catid="{{i.id}}">
       <view class="view-circle {{'color'+ i.id}}">
@@ -12,19 +12,12 @@
       {{i.name}}
     </view>
   </view>
-</view>
+</view> -->
 <view class="Rose-floor">
   <view class="Rose-Line">
     <navigator url="../feedback/feedback" hover-class="none">
       <icon class="iconfont icon-mail"></icon>
       留言
-      <icon class="fr iconfont icon-xiangyou"></icon>
-    </navigator>
-  </view>
-  <view class="Rose-Line">
-    <navigator url="../detail/detail?catid=13&id=124" hover-class="none">
-      <icon class="iconfont icon-heart"></icon>
-      感谢
       <icon class="fr iconfont icon-xiangyou"></icon>
     </navigator>
   </view>
@@ -35,13 +28,29 @@
       <icon class="fr iconfont icon-xiangyou"></icon>
     </navigator>
   </view>
+</view>
+<view class="Rose-floor">
+  <view class="Rose-Line">
+    <navigator url="../detail/detail?catid=13&id=145" hover-class="none">
+      <icon class="iconfont icon-banben1"></icon>
+      版本记录
+      <icon class="fr iconfont icon-xiangyou"></icon>
+    </navigator>
+  </view>
+  <view class="Rose-Line">
+    <navigator url="../detail/detail?catid=13&id=124" hover-class="none">
+      <icon class="iconfont icon-heart"></icon>
+      特别感谢
+      <icon class="fr iconfont icon-xiangyou"></icon>
+    </navigator>
+  </view>
   <view class="Rose-Line">
     <navigator url="../me/me" hover-class="none">
       <icon class="iconfont icon-info-circle"></icon>
-      关于
+      关于我
       <icon class="fr iconfont icon-xiangyou"></icon>
     </navigator>
   </view>
 </view>
 <!-- 版权 -->
- <copyright></copyright>
+<copyright></copyright>

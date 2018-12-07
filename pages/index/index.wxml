@@ -12,14 +12,27 @@
     </swiper-item>
   </swiper>
 </view>
+<view class="Rose-floor">
+  <view class="Rose-menu">
+    <view class="Rose-kinds" wx:for="{{every}}" wx:for-item="i" wx:key="index" ontap="goEveryDay" data-catid="{{i.id}}">
+      <view class="Rose-circle Rose-{{'color'+ i.id}}">
+        <icon class="iconfont {{i.icon}}"></icon>
+      </view>
+      {{i.name}}
+    </view>
+  </view>
+</view>
 <view class="Rose-lists">
   <view class="Rose-floor-title">精选
-    <navigator url="../lists/lists?catid=11" hover-class='none' class="Rose-go">查看更多</navigator>
+    <navigator url="../lists/lists?catid=11" open-type="switchTab" hover-class='none' class="Rose-go">
+
+      <icon class="iconfont icon-gengduo2"></icon>
+    </navigator>
   </view>
   <view class="Rose-box">
     <scroll-view class="Rose-items" scroll-x="true">
       <view class="Rose-item" wx:for="{{top10}}" wx:key="index" wx:for-item="top" data-id="{{top.id}}" data-catid="{{top.catid}}" ontap="articleDetail">
-        <image class="Rose-imgbest" lazy-load="{{true}}" src="{{top.thumb==''? '/assets/images/wx_04.jpg':top.thumb }}"></image>
+        <image mode="aspectFill" class="Rose-imgbest" lazy-load="{{true}}" src="{{top.thumb==''? '/assets/images/wx_04.jpg':top.thumb }}"></image>
         <view class="Rose-title">{{ top.title }}</view>
         <view class="Rose-time Rose-left">
           <icon class="iconfont icon-shijian2"></icon>{{top.updatetime}}</view>
@@ -27,22 +40,20 @@
     </scroll-view>
   </view>
 </view>
+
 <!-- 菜单 -->
 <view class="Rose-news" wx:for="{{items}}" wx:key="index" data-id="{{item.id}}" data-catid="{{item.catid}}" ontap="articleDetail" wx:if="{{ item.id != '124' && item.id !='145' }}">
   <view class="Rose-content">
-      <view class="Rose-flex">
+    <!--   <view class="Rose-flex">
       <view class="Rose-kind">
         <icon class="green-color iconfont icon-fenlei-xingxiu"></icon>
         <block wx:if="{{item.catid=='11'}}"> 前端</block>
         <block wx:if="{{item.catid=='12'}}"> 安全</block>
         <block wx:if="{{item.catid=='13'}}"> 生活</block>
       </view>
-    </view>
-
+    </view> -->
     <view class="Rose-title">{{item.title}}</view>
     <image class='Rose-imgitem' mode="aspectFill" lazy-load="{{true}}" src="{{item.thumb==''? '/assets/images/ncode.jpg': item.thumb}}"></image>
-
-
     <view class="Rose-flex1 Rose-detail">{{item.description}}</view>
     <view class="Rose-bottom">
       <view class="Rose-flex1 Rose-left">
