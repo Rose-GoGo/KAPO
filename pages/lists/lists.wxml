@@ -12,16 +12,17 @@
 
 <view class="Rose-list">
   <view class="Rose-item" wx:for="{{items}}" wx:key="{{index}}" data-id="{{item.id}}" data-catid="{{item.catid}}" ontap="articleDetail" wx:if="{{ item.id != '124' && item.id !='145' }}">
-    <view>
+    <image class='Rose-imgnotice' mode="widthFix" src="{{item.thumb==''? '/assets/images/ncode.jpg': item.thumb}}"></image>
+    <view class="Rose-aign">
       <view class="Rose-name">{{item.title}}</view>
       <view class="Rose-time">
-        <text>{{comm.formatTime(item.updatetime)}}</text>
+        <view class="Rose-left"><icon class='iconfont icon-shijian2'></icon> {{comm.formatTime(item.updatetime)}}</view>
         <view class="Rose-comment">
           <icon class="iconfont icon-kanguo"></icon> {{item.views}}
           <icon class="iconfont icon-pinglun3"></icon> {{item.cnum}}
         </view>
       </view>
-      <view class="Rose-description">{{item.description}}</view>
+      
     </view>
   </view>
 </view>

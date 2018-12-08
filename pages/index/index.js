@@ -7,11 +7,8 @@ Page({
    */
   data: {
     isPlay: true,
-    // notices: [],
     items: [],
-    // top10: [],
     page: 1,
-    canIUse: wx.canIUse('button.open-type.getUserInfo'),
     loadMore: true,
     every: [
       { icon: 'icon-yinyue', name: '生活', id: 4 },
@@ -160,5 +157,11 @@ Page({
         isPlay: true
       });
     }
-  }
+  },
+  goEveryDay: function (e) {
+    let catid = e.currentTarget.dataset.catid;
+    wx.navigateTo({
+      url: '../more/more?catid=' + catid
+    })
+  },
 })

@@ -17,7 +17,6 @@
 }
 
 .icon-dingbu {
-  margin-top: -18rpx;
   font-size: 36rpx;
 }
 

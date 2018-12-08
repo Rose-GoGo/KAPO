@@ -37,6 +37,11 @@ image {
   font-size: 24rpx;
 }
 
+.Rose-addtime .iconfont{
+  font-size: 24rpx;
+  margin-right: 10rpx;
+}
+
 .Rose-imgitem {
   height: 330rpx;
   display: block;

@@ -11,7 +11,8 @@
 }
 
 .Rose-swiper {
-  height: 300rpx;
+  height: 260rpx;
+  padding: 40rpx 40rpx 0;
   text-align: center;
 }
 
@@ -43,7 +44,7 @@
 }
 
 .Rose-top-quote {
-  margin: 0 20rpx 20rpx;
+  margin: 0 20rpx 30rpx;
   font-size: 32rpx;
   text-align: center;
 }
@@ -78,7 +79,7 @@
 
 .Rose-imgbest {
   width: 100%;
-  height: 300rpx;
+  height: 320rpx;
 }
 
 .Rose-title {
@@ -212,21 +213,21 @@
 }
 
 .Rose-menu {
-  padding: 20rpx 30rpx;
+  padding: 20rpx;
   display: flex;
   flex-flow: row;
   justify-content: space-between;
 }
 
 .Rose-kinds {
+  width: 90rpx;
   text-align: center;
   font-size: 24rpx;
-  color: #666;
-  width: 90rpx;
+  color: #333;
 }
 
 .Rose-kinds .iconfont {
-  font-size: 42rpx;
+  font-size: 46rpx;
   display: block;
 }
 
