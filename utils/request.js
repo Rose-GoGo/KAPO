@@ -1,5 +1,6 @@
-
 const GLOBAL_API_DOMAIN = "https://www.zhmzjl.com";
+const app = getApp();
+console.log(app)
 
 
 var deepCopy = function (o) {
@@ -49,10 +50,12 @@ var sendRrquest = function(url, method, data, header) {
           success: function (res) {
             if (res.confirm) {
              sendRrquest(url, method, data, header)
+
             }
           }
         });
         wx.hideLoading();
+        return false; //如果进来的时候数据加载失败，停止请求
       },
     })
   });
