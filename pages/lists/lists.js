@@ -99,15 +99,6 @@ Page({
   getLists: function (e) {
     var that = this;
     var cat = that.data.catid;
- 
-
-    // if (cat == '') {
-    //   cat = '11'
-
-    //   // that.setData({
-    //   //   catid: cat
-    //   // })
-    // }
     let params = {
       pagesize: 10,
       page: that.data.page,

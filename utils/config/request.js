@@ -42,10 +42,10 @@ var sendRrquest = function(url, method, data, header) {
         wx.showModal({
           showCancel: false,
           confirmColor: '#1d8f59',
-          content: '数据加载失败,重新加载!',
+          content: '数据加载失败,点击确定重新加载数据!',
           success: function (res) {
             if (res.confirm) {
-             // sendRrquest()
+             sendRrquest()
             }
           }
         });
