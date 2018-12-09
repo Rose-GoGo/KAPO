@@ -3,6 +3,9 @@
 page {
   background: #fff;
 }
+.Rose-height{
+
+}
 
 .Rose-detail {
   background: #fff;
@@ -31,6 +34,7 @@ page {
 }
 
 .Rose-item {
+  padding: 40rpx;
   margin-top: 30px;
   font-size: 32rpx;
 }

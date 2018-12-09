@@ -33,7 +33,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 3,
+			"current": 6,
 			"list": [
 				{
 					"id": 1,
@@ -70,6 +70,12 @@
 					"name": "文章列表",
 					"pathName": "pages/lists/lists",
 					"query": "catid=11&page=1"
+				},
+				{
+					"id": -1,
+					"name": "关于我",
+					"pathName": "pages/me/me",
+					"query": ""
 				}
 			]
 		}

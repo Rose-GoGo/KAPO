@@ -1,4 +1,4 @@
-// pages/news/news.js
+// pages/index/index.js
 import Api from '/../../utils/config/api.js';
 const app = getApp();
 Page({

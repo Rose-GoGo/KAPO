@@ -1,91 +1,156 @@
 <!--pages/me/me.wxml-->
+<view class="Rose-height" >
+
+  <swiper indicator-dots="{{false}}" autoplay="{{false}}"  current="{{currentTab}}" vertical = "{{true}}" style="height:{{RoseHeight}}px">
+
+    <swiper-item>
+      <view class="Rose-item">
+        <view class="Rose-line">关于我：</view>
+        女，一个三四线互联网公司的打杂员工，现坐落于四川成都。 2013年毕业于成都理工大学(十年寒窗都没冻死我!!)。从事WEB前端开发5年，拿着一丁点微不足道的工资勉强过活。生活中不算宅，喜欢读书、旅行，做事严谨，热爱生活，喜欢和朋友一起嗨，略微文艺，爱折腾， 有idea就立马动手开干，执行力强，未发现有拖延症潜质，不知道是否还有救？！
+      </view>
+    </swiper-item>
+
+    <swiper-item>
+
+      <view class="Rose-item">
+        <view class="Rose-line">关于KAPO：</view>
+        <view class="Rose-content">
+          为什么做这个小程序？自然是为了装X，逢人就拿出来炫耀一番。 为什么叫KAPO， 因为KAPO谐音COUPLE， 考虑 COUPLE 这种花式秀恩爱的做法太略狗， 所以干脆用一个酷酷的的名字‘KAPO’。查了一下KAPO的英文意思， 居然是“犯人头目，管理其他人犯的犯人”，en....因吹斯听， 既然不能做WEB前端的大神，也希望成为垃圾中的战斗机吧。哈哈哈...除此之外，小程序中还做了一个打卡的功能，列举了一些现在想做和未来想做的事情， 用这个小程序监督自己每天前进是每一小步。 还有，希望通过这个小程序把自己的所学给他人奠定一条WEB前端的康庄大道，也算我为社会发光发热了吧！！
+        </view>
+      </view>
+
+    </swiper-item>
+    <swiper-item>
+      <view class="Rose-item">
+        <view class="Rose-line">基本信息：</view>
+        <view class="Rose-content">
+          工作积极，和同事相处愉快，敢于承担责任，生活态度积极乐观，不易受外界干扰，喜欢有计划的安排生活和工作。 五年前端生活，创造属于自己的价值。 偶尔去旅游，逛街，骑行。
+        </view>
+      </view>
+
+    </swiper-item>
+    <swiper-item>
+      <view class="Rose-item">
+        <view class="Rose-line">基本信息：</view>
+        <view class="Rose-content">
+          工作积极，和同事相处愉快，敢于承担责任，生活态度积极乐观，不易受外界干扰，喜欢有计划的安排生活和工作。 五年前端生活，创造属于自己的价值。 偶尔去旅游，逛街，骑行。
+        </view>
+      </view>
+    </swiper-item>
+
+    <swiper-item>
+      <view class="Rose-item">
+        <view class="Rose-line">技能介绍</view>
+        <view class="Rose-content">
+          <text class="Rose-concact">1. HTML5+CSS3+jQuery， 有移动端web开发经验;</text>
+          <text class="Rose-concact">2. 具有javascript面向对象编程能力，理解prototype对象原型链，封装插件;</text>
+          <text class="Rose-concact">3. 有丰富的跨浏览器开发经验，熟悉浏览器之间的兼容;</text>
+          <text class="Rose-concact">4. 熟练使用Bootstrap、AmazeUI、mui、Foundation等主流前端框架;</text>
+          <text class="Rose-concact">5. 对Photoshop进行操作，具备一定的UI设计能力;</text>
+          <text class="Rose-concact">6. 熟练使用自动化工具gulp 和 模块化工具 webpack;</text>
+          <text class="Rose-concact">7. 会使用Axure、MockingBot、Xmind 等原型工具;</text>
+          <text class="Rose-concact">8. 熟悉使用node， 有angularJS、Vuejs项目开发经验;</text>
+          <text class="Rose-concact">9. 熟悉小程序开发，有webapp，移动端开发经验;</text>
+          <text class="Rose-concact">10. 熟练使用SVN， Git</text>
+        </view>
+      </view>
+
+    </swiper-item>
+
+    <swiper-item>
+      <view class="Rose-item">
+        <view class="Rose-line">工作经历：</view>
+        <view class="Rose-content">
+          <view class="Rose-h3">
+            爱奇艺公司
+            <text class="Rose-work">（2018.7-现在）</text>
+          </view>
+          <view>
+            <text class="Rose-concact">1. 微信小程序开发， 包含授权，以及后台数据交互等功能</text>
+            <text class="Rose-concact">2. 大型后台管理系统前端开发，</text>
+            <text class="Rose-concact">3. 配合产品人员的需求编写JavaScript等脚本实现页面的交互功能;</text>
+            <text class="Rose-concact">4. 使用webpck模块化工具，gulp自动化构建工具实现版本的更新，优化，与js和css的压缩与加密;</text>
+            <text class="Rose-concact">5. 使用svn或git配合后台开发人员实现产品界面和功能;</text>
+          </view>
+          <view class="Rose-h3">
+            成都天象互动科技有限公司
+            <text class="Rose-work">（2015.9-2018.7）</text>
+          </view>
+          <text class="Rose-concact">
+            1. 根据UI设计师的提供的设计图，对页面进行分析，以及使用ps进行切图，制作符合前端标准和搜索引擎优化(SEO)的静态页面，包含PC与移动终端产品开发;
+          </text>
+          <text class="Rose-concact">2. 配合产品人员的需求编写JavaScript等脚本实现页面的交互功能;</text>
+          <text class="Rose-concact">3. 调整页面在主流浏览器和平台（包括移动平台）上保持良好的兼容性;</text>
+          <text class="Rose-concact">4. 使用svn或git配合后台开发人员实现产品界面和功能;</text>
+          <text class="Rose-concact">5. web标准规范页面代码，优化页面代码和网页加载速度，提高网页的性能，提高用户体验;</text>
+          <text class="Rose-concact">6. 使用webpck模块化工具，gulp自动化构建工具实现版本的更新，优化，与js和css的压缩与加密;</text>
+          <text class="Rose-concact">7. 使用AngularJS，vueJS等框架对页面的数据进行绑定进行spa（单页web应用）开发;</text>
+          <text class="Rose-concact">8. 网站日常运营需求维护;</text>
+          <text class="Rose-concact">9. 学习reactJS</text>
+          <view class="Rose-h3">
+            禾润信息技术有限公司
+            <text class="Rose-work">（2014.7-2015.8）</text>
+          </view>
+          <text class="Rose-concact">
+            1. 根据项目经理的需求对项目做出流程分析，并使用xMind， Microsoft Visio，Axure 画出原型图和流程图；
+          </text>
+          <text class="Rose-concact">2. 根据UI设计师提供的设计图，实现Web界面（PC前端和移动端）；</text>
+          <text class="Rose-concact">3. Web端功能设计、开发和实现；</text>
+          <text class="Rose-concact">4. 运用Javascript框架的应用进行项目开发；</text>
+          <text class="Rose-concact">5. 优化代码并保持在各浏览器下的良好兼容性；</text>
+          <text class="Rose-concact">6. 配合后台开发人员实现产品界面和功能；</text>
+        </view>
+      </view>
+
+    </swiper-item>
+
+    <swiper-item>
+      <view class="Rose-item">
+        <view class="Rose-line">博客地址：</view>
+        https://www.zhmzjl.com，这个域名，具有特殊含义，是我的名字和我老公的名字的字母组合而来，虽然不是大家喜欢的常用域名类型，但是无论好坏，个人喜欢，无关其他！
+      </view>
+
+    </swiper-item>
+
+    <swiper-item>
+
+      <view class="Rose-item">
+        <view class="Rose-line">源码地址：</view>
+        KAPO博客小程序源码地址：https://github.com/Rose-GoGo/KAPO，代码一直都在更新，欢迎大家拉取最新源码，并且提出宝贵意见或建议，并踊跃提交贡献代码！注：若需要使用该源码，需在你的小程序中详情页添加 KAPO博客 的友情链接(不算过分吧?!).
+      </view>
+
+    </swiper-item>
+
+    <swiper-item>
+
+      <view class="Rose-item">
+        <view class="Rose-line">联系我：</view>
+        <text class="Rose-concact">QQ: 583459700</text>
+        <text class="Rose-concact">Whchat: zhao_583459700</text>
+        <text class="Rose-concact">Github: https://github.com/SmileRose</text>
+      </view>
+
+    </swiper-item>
+
+  </swiper>
+
+</view>
+
+<!--
 <view class="Rose-detail">
-  <view class="Rose-title">Rose Zhao</view>
-  <view class="Rose-content">
-    <view class="Rose-item">
-      <view class="Rose-line">关于我：</view>
-      女，一个三四线互联网公司的打杂员工，现坐落于四川成都。 2013年毕业于成都理工大学(十年寒窗都没冻死我!!)。从事WEB前端开发5年，拿着一丁点微不足道的工资勉强过活。生活中不算宅，喜欢读书、旅行，做事严谨，热爱生活，喜欢和朋友一起嗨，略微文艺，爱折腾， 有idea就立马动手开干，执行力强，未发现有拖延症潜质，不知道是否还有救？！
-    </view>
-    <view class="Rose-item">
-      <view class="Rose-line">关于KAPO：</view>
-      <view class="Rose-content">
-        为什么做这个小程序？自然是为了装X，逢人就拿出来炫耀一番。 为什么叫KAPO， 因为KAPO谐音COUPLE， 考虑 COUPLE 这种花式秀恩爱的做法太略狗， 所以干脆用一个酷酷的的名字‘KAPO’。查了一下KAPO的英文意思， 居然是“犯人头目，管理其他人犯的犯人”，en....因吹斯听， 既然不能做WEB前端的大神，也希望成为垃圾中的战斗机吧。哈哈哈...除此之外，小程序中还做了一个打卡的功能，列举了一些现在想做和未来想做的事情， 用这个小程序监督自己每天前进是每一小步。 还有，希望通过这个小程序把自己的所学给他人奠定一条WEB前端的康庄大道，也算我为社会发光发热了吧！！
-      </view>
-    </view>
-    <view class="Rose-item">
-      <view class="Rose-line">基本信息：</view>
-      <view class="Rose-content">
-        工作积极，和同事相处愉快，敢于承担责任，生活态度积极乐观，不易受外界干扰，喜欢有计划的安排生活和工作。 五年前端生活，创造属于自己的价值。 偶尔去旅游，逛街，骑行。
-      </view>
-    </view>
-    <view class="Rose-item">
-      <view class="Rose-line">技能介绍</view>
-      <view class="Rose-content">
-        <text class="Rose-concact">1. HTML5+CSS3+jQuery， 有移动端web开发经验; </text>
-        <text class="Rose-concact">2. 具有javascript面向对象编程能力，理解prototype对象原型链，封装插件; </text>
-        <text class="Rose-concact">3. 有丰富的跨浏览器开发经验，熟悉浏览器之间的兼容; </text>
-        <text class="Rose-concact">4. 熟练使用Bootstrap、AmazeUI、mui、Foundation等主流前端框架; </text>
-        <text class="Rose-concact">5. 对Photoshop进行操作，具备一定的UI设计能力; </text>
-        <text class="Rose-concact">6. 熟练使用自动化工具gulp 和 模块化工具 webpack; </text>
-        <text class="Rose-concact">7. 会使用Axure、MockingBot、Xmind 等原型工具; </text>
-        <text class="Rose-concact">8. 熟悉使用node， 有angularJS、Vuejs项目开发经验; </text>
-        <text class="Rose-concact">9. 熟悉小程序开发，有webapp，移动端开发经验; </text>
-        <text class="Rose-concact">10. 熟练使用SVN， Git</text>
-      </view>
-    </view>
-    <view class="Rose-item">
-      <view class="Rose-line">工作经历：</view>
-      <view class="Rose-content">
-        <view class="Rose-h3"> 爱奇艺公司
-          <text class="Rose-work">（2018.7-现在）</text>
-        </view>
-        <view>
-          <text class="Rose-concact">1. 微信小程序开发， 包含授权，以及后台数据交互等功能</text>
-          <text class="Rose-concact">2. 大型后台管理系统前端开发，</text>
-          <text class="Rose-concact">3. 配合产品人员的需求编写JavaScript等脚本实现页面的交互功能;</text>
-          <text class="Rose-concact">4. 使用webpck模块化工具，gulp自动化构建工具实现版本的更新，优化，与js和css的压缩与加密;</text>
-          <text class="Rose-concact">5. 使用svn或git配合后台开发人员实现产品界面和功能;</text>
-        </view>
-        <view class="Rose-h3">成都天象互动科技有限公司
-          <text class="Rose-work">（2015.9-2018.7）</text>
-        </view>
-        <text class="Rose-concact">1. 根据UI设计师的提供的设计图，对页面进行分析，以及使用ps进行切图，制作符合前端标准和搜索引擎优化(SEO)的静态页面，包含PC与移动终端产品开发;</text>
-        <text class="Rose-concact">2. 配合产品人员的需求编写JavaScript等脚本实现页面的交互功能;</text>
-        <text class="Rose-concact">3. 调整页面在主流浏览器和平台（包括移动平台）上保持良好的兼容性;</text>
-        <text class="Rose-concact">4. 使用svn或git配合后台开发人员实现产品界面和功能;</text>
-        <text class="Rose-concact">5. web标准规范页面代码，优化页面代码和网页加载速度，提高网页的性能，提高用户体验;  </text>
-        <text class="Rose-concact">6. 使用webpck模块化工具，gulp自动化构建工具实现版本的更新，优化，与js和css的压缩与加密;</text>
-        <text class="Rose-concact">7. 使用AngularJS，vueJS等框架对页面的数据进行绑定进行spa（单页web应用）开发; </text>
-        <text class="Rose-concact">8. 网站日常运营需求维护;</text>
-        <text class="Rose-concact">9. 学习reactJS</text>
-        <view class="Rose-h3">禾润信息技术有限公司
-          <text class="Rose-work">（2014.7-2015.8）</text>
-        </view>
-        <text class="Rose-concact">1. 根据项目经理的需求对项目做出流程分析，并使用xMind， Microsoft Visio，Axure 画出原型图和流程图；</text>
-        <text class="Rose-concact">2. 根据UI设计师提供的设计图，实现Web界面（PC前端和移动端）；</text>
-        <text class="Rose-concact">3. Web端功能设计、开发和实现；</text>
-        <text class="Rose-concact">4. 运用Javascript框架的应用进行项目开发；</text>
-        <text class="Rose-concact">5. 优化代码并保持在各浏览器下的良好兼容性；</text>
-        <text class="Rose-concact">6. 配合后台开发人员实现产品界面和功能；</text>
-      </view>
-    </view>
-    <view class="Rose-item">
-      <view class="Rose-line">博客地址：</view>
-      https://www.zhmzjl.com，这个域名，具有特殊含义，是我的名字和我老公的名字的字母组合而来，虽然不是大家喜欢的常用域名类型，但是无论好坏，个人喜欢，无关其他！
-    </view>
-    <view class="Rose-item">
-      <view class="Rose-line">源码地址：</view>
-      KAPO博客小程序源码地址：https://github.com/Rose-GoGo/KAPO，代码一直都在更新，欢迎大家拉取最新源码，并且提出宝贵意见或建议，并踊跃提交贡献代码！注：若需要使用该源码，需在你的小程序中详情页添加 KAPO博客 的友情链接(不算过分吧?!).
-    </view>
-    <view class="Rose-item">
-      <view class="Rose-line">关注我:</view>
-      <text class="Rose-concact">摇一摇，添加博主为好友吧</text>
-    </view>
-    <view class="Rose-item">
-      <view class="Rose-line">联系我：</view>
-      <text class="Rose-concact">QQ: 583459700 </text>
-      <text class="Rose-concact">Whchat: zhao_583459700</text>
-      <text class="Rose-concact">Github: https://github.com/SmileRose</text>
-    </view>
+<view class="Rose-title">Rose Zhao</view>
+<view class="Rose-content">
+
+  <view class="Rose-item">
+    <view class="Rose-line">关注我:</view>
+    <text class="Rose-concact">摇一摇，添加博主为好友吧</text>
+  </view>
+  <view class="Rose-item">
+    <view class="Rose-line">联系我：</view>
+    <text class="Rose-concact">QQ: 583459700</text>
+    <text class="Rose-concact">Whchat: zhao_583459700</text>
+    <text class="Rose-concact">Github: https://github.com/SmileRose</text>
   </view>
 </view>
+</view>
+-->
