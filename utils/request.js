@@ -1,4 +1,7 @@
-import { GLOBAL_API_DOMAIN } from './config.js';
+
+const GLOBAL_API_DOMAIN = "https://www.zhmzjl.com";
+
+
 var deepCopy = function (o) {
   if (o instanceof Array) {
     var n = [];
@@ -45,7 +48,7 @@ var sendRrquest = function(url, method, data, header) {
           content: '数据加载失败,点击确定重新加载数据!',
           success: function (res) {
             if (res.confirm) {
-             sendRrquest()
+             sendRrquest(url, method, data, header)
             }
           }
         });

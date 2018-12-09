@@ -1,5 +1,5 @@
 // pages/project/project.js
-import Api from '/../../utils/config/api.js';
+import Api from '/../../utils/api.js';
 Page({
   /**
    * 页面的初始数据
