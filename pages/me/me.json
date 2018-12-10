@@ -1,3 +1,4 @@
 {
-  "navigationBarTitleText": "Rose Zhao"
+  "navigationBarTitleText": "Rose Zhao",
+  "enablePullDownRefresh": false
 }

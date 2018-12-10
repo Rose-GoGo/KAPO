@@ -1,5 +1,5 @@
 // pages/index/index.js
-import Api from '/../../utils/config/api.js';
+import Api from '/../../utils/api.js';
 const app = getApp();
 Page({
   /**

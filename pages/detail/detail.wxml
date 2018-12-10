@@ -5,8 +5,8 @@
   <view class="Rose-detail">
     <view class="Rose-title">{{items.title}}</view>
     <view class="Rose-addtime">
-      <icon class='iconfont icon-shijian2'></icon>{{items.inputtime}}
-      <!-- <text class="Rose-keywords" wx:if="{{ catid !='19' && id != '124' && id !='145' }}">关键字: <block wx:for="{{items.keywords}}" wx:key="index" wx:for-item="keyword">{{keyword}}</block></text> -->
+      <view class="Rose-keywords"><icon class='iconfont icon-shijian2'></icon>{{items.inputtime}}</view>
+      <view class="Rose-keywords"><icon class="iconfont icon-kanguo"></icon>{{items.views}}</view>
     </view>
     <view class="Rose-description" wx:if="{{catid!='19'}}">
       {{items.description}}

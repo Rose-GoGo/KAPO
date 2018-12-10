@@ -32,14 +32,19 @@ image {
 }
 
 .Rose-addtime {
-  margin: 20rpx 0;
+  display: flex;
+  margin: 0 0 40rpx;
   color: #999;
   font-size: 24rpx;
 }
 
-.Rose-addtime .iconfont{
+.Rose-addtime .iconfont {
   font-size: 24rpx;
-  margin-right: 10rpx;
+  margin-right: 6rpx;
+}
+
+.Rose-keywords {
+  margin-right: 20rpx;
 }
 
 .Rose-imgitem {
@@ -63,10 +68,6 @@ image {
   color: #000;
   border: 2rpx solid #ddd;
   border-left: 2px solid #1b58b8; */
-}
-
-.Rose-keywords {
-  margin-left: 20rpx;
 }
 
 .Rose-small {
