@@ -5,12 +5,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    imgUrls: [
-      'http://img02.tooopen.com/images/20150928/tooopen_sy_143912755726.jpg',
-      'http://img02.tooopen.com/images/20150928/tooopen_sy_143912755726.jpg',
-      'http://img02.tooopen.com/images/20150928/tooopen_sy_143912755726.jpg'
-    ],
-    RoseHeight: '550px',
+    RoseHeight: '',
     currentTab: 0
   },
   /**
@@ -25,7 +20,6 @@ Page({
         })
       }
     });
-    that.getData();
   },
   /**
    * 生命周期函数--监听页面初次渲染完成
@@ -110,19 +104,4 @@ Page({
       currentTab: curindex
     })
   },
-  // getData: function() {
-  //   var that = this;
-  //   let _params = {
-  //     pagesize: 10,
-  //     page: 1,
-  //     catid: '15'
-  //   };
-  //   Api.lists(_params).then(res => {
-  //     if (!res.data.code) {
-  //       // wx.hideLoading();
-  //       let _data = res.data.data;
-  //       console.log(_data)
-  //     }
-  //   })
-  // },
 })
