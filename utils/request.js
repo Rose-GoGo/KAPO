@@ -1,4 +1,4 @@
-import { GLOBAL_API_DOMAIN } from './config.js';
+const GLOBAL_API_DOMAIN = "https://www.zhmzjl.com";
 var deepCopy = function (o) {
   if (o instanceof Array) {
     var n = [];
@@ -6,6 +6,7 @@ var deepCopy = function (o) {
       n[i] = deepCopy(o[i]);
     }
     return n;
+
   } else if (o instanceof Object) {
     var n = {}
     for (var i in o) {
@@ -21,10 +22,12 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 } : function (obj) {
   return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj;
 };
+
 function isObject(obj) {
   return (typeof obj === 'undefined' ? 'undefined' : _typeof(obj)) === 'object' && obj !== null;
 }
-var sendRrquest = function(url, method, data, header) {
+
+function sendRrquest(url, method, data, header) {
   let promise = new Promise(function (resolve, reject) {
     wx.showNavigationBarLoading() //在标题栏中显示加载
     wx.request({
@@ -42,19 +45,22 @@ var sendRrquest = function(url, method, data, header) {
         wx.showModal({
           showCancel: false,
           confirmColor: '#1d8f59',
-          content: '数据加载失败,重新加载!',
+          content: '数据加载失败,点击确定重新加载数据!',
           success: function (res) {
             if (res.confirm) {
-             // sendRrquest()
+              sendRrquest(url, method, data, header)
+
             }
           }
         });
         wx.hideLoading();
+        return false; //如果进来的时候数据加载失败，停止请求
       },
     })
   });
   return promise;
 };
+
 function extend(obj) {
   for (var _len = arguments.length, args = Array(_len > 1 ? _len - 1 : 0), _key = 1; _key < _len; _key++) {
     args[_key - 1] = arguments[_key];
@@ -73,13 +79,15 @@ function extend(obj) {
   }
   return obj;
 }
+
 function MyHttp(defaultParams, ALL_API) {
   let _build_url = GLOBAL_API_DOMAIN;
   let resource = {};
   for (let actionName in ALL_API) {
     let _config = ALL_API[actionName];
     resource[actionName] = (pdata) => {
-      let _params_data = extend({}, pdata);
+      //let _params_data = extend({}, pdata);
+      let _params_data = pdata;
       return sendRrquest(_build_url + _config.url, _config.method, _params_data, {
         'content-type': 'application/x-www-form-urlencoded;charset=utf-8;Authorization'
       });
