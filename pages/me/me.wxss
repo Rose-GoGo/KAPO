@@ -62,7 +62,7 @@ swiper{
 .Rose-line {
   font-size: 36rpx;
   position: relative;
-  padding: 10rpx 20rpx;
+  padding: 10rpx 20rpx 30rpx;
   line-height: 1;
   color: #fff;
   font-weight: 500
