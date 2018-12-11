@@ -43,7 +43,6 @@ Page({
       page: 1,
       items: []
     });
-
     this.getLists();
   },
   /**
@@ -77,6 +76,7 @@ Page({
   },
   showOne: function (e) {
     let catid = e.currentTarget.dataset.catid;
+    if(catid == this.data.catid) return false;
     this.setData({
       catid: catid,
       items: [],
