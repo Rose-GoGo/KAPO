@@ -8,6 +8,8 @@ Page({
   data: {
     isPlay: true,
     notices: [],
+    top10: [],
+    items: [],
     page: 1,
     loadMore: true,
     every: [{
@@ -45,29 +47,11 @@ Page({
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
-  onReady: function (e) {
-
-
-  },
+  onReady: function (e) { },
   /**
    * 生命周期函数--监听页面显示
    */
-  onShow: function () {
-    var that = this;
-    if (!that.data.notices.length) {
-      let that = this;
-      that.setData({
-        items: [],
-        page: 1,
-        loadMore: true
-      });
-      if (that.data.loadMore) {
-        that.getNotice();
-        that.top10();
-        that.getLists();
-      }
-    }
-  },
+  onShow: function () { },
   /**
    * 生命周期函数--监听页面隐藏
    */
