@@ -45,16 +45,15 @@ function sendRrquest(url, method, data, header) {
         wx.showModal({
           showCancel: false,
           confirmColor: '#1d8f59',
-          content: '数据加载失败,点击确定重新加载数据!',
+          content: '数据加载失败，请检查您的网络，点击确定重新加载数据!',
           success: function (res) {
             if (res.confirm) {
-              sendRrquest(url, method, data, header)
-
+              sendRrquest(url, method, data, header);
             }
           }
         });
         wx.hideLoading();
-        return false; //如果进来的时候数据加载失败，停止请求
+       // return false; //如果进来的时候数据加载失败，停止请求
       },
     })
   });

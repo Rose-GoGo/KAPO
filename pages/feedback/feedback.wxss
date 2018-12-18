@@ -85,7 +85,7 @@ button::after {
 
 .Rose-image .iconfont {
   font-size: 64rpx;
-  color: #f2f2f2;
+  color: #ccc;
 }
 
 .Rose-user {

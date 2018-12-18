@@ -1,6 +1,8 @@
 /**app.wxss**/
 @import "/assets/icon/iconfont";
 page{
+  width: 100%;
+  overflow-x: hidden;
   background: #e5e9f0
 }
 button::after{ border: none; }

@@ -191,9 +191,9 @@ Page({
             return false;
           }
         }
-        that.setData({
-          monthData: _monthData
-        });
+        // that.setData({
+        //   monthData: _monthData
+        // });
         big[dataIndex] = {
           [year]: _monthData
         }

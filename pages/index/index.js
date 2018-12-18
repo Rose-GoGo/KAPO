@@ -7,14 +7,29 @@ Page({
    */
   data: {
     isPlay: true,
-    items: [],
+    notices: [],
     page: 1,
     loadMore: true,
-    every: [
-      { icon: 'icon-yinyue', name: '生活', id: 4 },
-      { icon: 'icon-yingyu', name: '外语', id: 3 },
-      { icon: 'icon-book', name: '读书', id: 2 },
-      { icon: 'icon-jianshen', name: '健身', id: 1 }
+    every: [{
+      icon: 'icon-yinyue',
+      name: '生活',
+      id: 4
+    },
+    {
+      icon: 'icon-yingyu',
+      name: '外语',
+      id: 3
+    },
+    {
+      icon: 'icon-book',
+      name: '读书',
+      id: 2
+    },
+    {
+      icon: 'icon-jianshen',
+      name: '健身',
+      id: 1
+    }
     ]
   },
   /**
@@ -22,6 +37,7 @@ Page({
    */
   onLoad: function (options) {
     var that = this;
+    wx.hideLoading();
     that.getNotice();
     that.top10();
     that.getLists();
@@ -31,11 +47,27 @@ Page({
    */
   onReady: function (e) {
 
+
   },
   /**
    * 生命周期函数--监听页面显示
    */
-  onShow: function () { },
+  onShow: function () {
+    var that = this;
+    if (!that.data.notices.length) {
+      let that = this;
+      that.setData({
+        items: [],
+        page: 1,
+        loadMore: true
+      });
+      if (that.data.loadMore) {
+        that.getNotice();
+        that.top10();
+        that.getLists();
+      }
+    }
+  },
   /**
    * 生命周期函数--监听页面隐藏
    */
@@ -55,6 +87,7 @@ Page({
       loadMore: true
     });
     if (that.data.loadMore) {
+      that.getNotice();
       that.top10();
       that.getLists();
     }
@@ -131,6 +164,7 @@ Page({
         that.setData({
           notices: _data,
         })
+        wx.hideLoading();
       }
     });
   },
