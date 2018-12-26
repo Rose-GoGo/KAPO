@@ -1,6 +1,7 @@
 // pages/more/more.js
 import Api from '/../../utils/api.js';
 const app = getApp();
+
 Page({
   /**
    * 页面的初始数据
@@ -25,7 +26,9 @@ Page({
    */
   onLoad: function (options) {
     var that = this;
+
     let _userInfo = wx.getStorageSync('userInfo')
+
     that.setData({
       userInfo: _userInfo
     });

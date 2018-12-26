@@ -55,8 +55,7 @@ Page({
       });
     }
     that.getData();
-    that.commentlists(); //反馈列表
-    that.top10(); //top 10推荐
+
   },
   /**
    * 生命周期函数--监听页面初次渲染完成
@@ -116,6 +115,10 @@ Page({
           dkcontent: _tpl
         });
         wxparse.wxParse('dkcontent', 'html', _tpl, that, 5);
+
+
+        that.top10(); //top 10推荐
+
       }
     })
   },
@@ -164,6 +167,7 @@ Page({
         that.setData({
           top10: _data
         });
+        that.commentlists(); //反馈列表
       }
     })
   },

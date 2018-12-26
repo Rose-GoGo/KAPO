@@ -1,10 +1,14 @@
 // pages/more/more.js
 import Api from '/../../utils/api.js';
+var username = '';
+
+
+
 Page({
   /**
    * 页面的初始数据
    */
-  data: {
+   data: {
     images: [],
     bigData: [],
     catid: '',
@@ -24,7 +28,7 @@ Page({
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function (options) {
+   onLoad: function (options) {
     var that = this;
     var ss = new Date().getMonth() + 1;
     ss = ss >= 10 ? '' + ss : '0' + ss;
@@ -47,10 +51,7 @@ Page({
                   isRose: true
                 })
               }
-              that.setData({
-                username: userInfo.nickName,
-                sex: userInfo.gender
-              })
+              username = userInfo.nickName;
             },
             fail: function (res) { }
           });
@@ -62,37 +63,37 @@ Page({
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
-  onReady: function () { },
+   onReady: function () { },
   /**
    * 生命周期函数--监听页面显示
    */
-  onShow: function () { },
+   onShow: function () { },
   /**
    * 生命周期函数--监听页面隐藏
    */
-  onHide: function () { },
+   onHide: function () { },
   /**
    * 生命周期函数--监听页面卸载
    */
-  onUnload: function () { },
+   onUnload: function () { },
   /**
    * 页面相关事件处理函数--监听用户下拉动作
    */
-  onPullDownRefresh: function () { },
+   onPullDownRefresh: function () { },
   /**
    * 页面上拉触底事件的处理函数
    */
-  onReachBottom: function () {
+   onReachBottom: function () {
     var that = this;
     if (that.data.loadMore) {
       that.earMonth(); //上个月的时间
-      that.getLine();
+
     }
   },
   /**
    * 用户点击右上角分享
    */
-  onShareAppMessage: function () {
+   onShareAppMessage: function () {
     return {
       title: '锲而舍之,朽木不折;锲而不舍,金石可镂',
       imageUrl: '/assets/images/share.jpg'
@@ -159,6 +160,8 @@ Page({
       year: year,
       month: month
     });
+
+    that.getLine();
   },
   getLine: function () { //拉取数据并且处理
     var that = this;
@@ -191,9 +194,7 @@ Page({
             return false;
           }
         }
-        // that.setData({
-        //   monthData: _monthData
-        // });
+
         big[dataIndex] = {
           [year]: _monthData
         }
@@ -226,10 +227,7 @@ Page({
       that.setData({
         isRose: true
       });
-      that.setData({
-        username: userInfo.nickName,
-        sex: userInfo.gender
-      });
+      username = userInfo.nickName;
     }
   },
   editItem: function (e) {
@@ -382,7 +380,7 @@ Page({
   formSubmit: function () {
     wx.showLoading();
     var that = this,
-      aids = [];
+    aids = [];
     that.setData({
       disabled: true //想偷懒都不行，这里需要点击按钮后，按钮就设置成disabled, 避免重负提交
     });
@@ -394,7 +392,7 @@ Page({
         catid: that.data.catid,
         title: that.data.title,
         remark: that.data.remark,
-        username: that.data.username,
+        username: username,
         aids: aidStr //图片
       }
       if (that.data.id) { //如果有id， 修改

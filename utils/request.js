@@ -88,7 +88,7 @@ function MyHttp(defaultParams, ALL_API) {
       //let _params_data = extend({}, pdata);
       let _params_data = pdata;
       return sendRrquest(_build_url + _config.url, _config.method, _params_data, {
-        'content-type': 'application/x-www-form-urlencoded;charset=utf-8;Authorization'
+        'content-type': 'application/x-www-form-urlencoded;charset=utf-8;Authorization;Cache-Control=public, no-cache'
       });
     }
   }

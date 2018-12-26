@@ -4,23 +4,14 @@ App({
   onShow: function (option) { },
   onPageNotFound: function (res) { },
   onLaunch: function () {
-    // wx.login({
-    //   success: function(res) {
-    //     if (res.code) {}
-    //   }
-    // })
-
     this.AppMusic = wx.createInnerAudioContext();
     this.AppMusic.autoplay = true;
     this.AppMusic.src = 'https://zhmzjl.com/statics/images/blog/qianbenyin.mp3';
     this.AppMusic.loop = true;
     this.AppMusic.volume = 0.05;
     this.AppMusic.onPlay(() => {
-      console.log('开始播放')
     })
     this.AppMusic.onError((res) => {
-      console.log(res.errMsg)
-      console.log(res.errCode)
     });
   },
   globalData: {

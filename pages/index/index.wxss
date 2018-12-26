@@ -2,66 +2,49 @@
   background: #fff;
   margin-bottom: 20rpx;
 }
-
 .Rose-menu {
   padding: 40rpx 30rpx 20rpx;
   display: flex;
   flex-flow: row;
   justify-content: space-between;
 }
-
 .Rose-swiper {
   height: 260rpx;
   padding: 40rpx 40rpx 0;
   text-align: center;
 }
-
 .Rose-imgnotice {
   width: 100%;
-}
-
-.Rose-right {
-  text-align: right;
-}
-
-.Rose-left {
-  text-align: left;
 }
 
 .icon-pinglun3 {
   padding-left: 20rpx;
 }
-
 .Rose-center {
   text-align: center;
 }
-
 .Rose-floor1 {
   /* padding: 30rpx 36rpx 0; */
   background: #1d8f59;
   color: #fff;
   font-size: 26rpx;
 }
-
 .Rose-top-quote {
   margin: 0 20rpx 30rpx;
   font-size: 32rpx;
   text-align: center;
 }
-
 .Rose-lists {
   overflow: hidden;
   margin: 20rpx 0;
   background: #fff;
 }
-
 .Rose-news {
   overflow: hidden;
-  margin: 20rpx 0;
-  padding: 0 20rpx;
+  margin: 20rpx;
   background: #fff;
+  border-radius: 8rpx
 }
-
 .Rose-floor-title {
   padding: 18rpx 40rpx 18rpx 20rpx;
   margin: 0 0 20rpx;
@@ -69,29 +52,25 @@
   border-bottom: 2rpx solid #f2f2f2;
   font-size: 32rpx;
 }
-
 .Rose-item {
   display: inline-block;
   margin: 0 20rpx 0 0;
   width: 600rpx;
   vertical-align: top;
 }
-
 .Rose-imgbest {
   width: 100%;
   height: 320rpx;
 }
-
 .Rose-title {
   display: -webkit-box;
-  padding: 0 0 10rpx;
+  margin: 20rpx 20rpx 0;
   font-size: 34rpx;
   color: #333;
   white-space: pre-wrap;
   word-break: break-word;
 }
-
-.Rose-lists .Rose-title {
+/*.Rose-lists .Rose-title {
   padding: 10rpx 0;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -102,54 +81,40 @@
   color: #666;
   font-size: 30rpx;
 }
-
 .Rose-lists .Rose-time {
   margin: 6rpx 0 0;
 }
-
 .Rose-lists .Rose-time .iconfont {
   margin: -18rpx 5rpx 0 0;
   vertical-align: text-top;
   font-size: 28rpx;
-}
-
+}*/
 .Rose-imgitem {
   position: relative;
   flex: none;
   width: 100%;
   height: 300rpx;
 }
-
 .Rose-content {
   position: relative;
-  padding: 20rpx 0;
   color: #333;
 }
-
 .Rose-time {
   font-size: 24rpx;
   color: #999;
 }
-
 .Rose-detail {
-  display: -webkit-box;
-  overflow: hidden;
-  line-height: 1.6;
-  text-align: left;
-  text-overflow: ellipsis;
-  -webkit-line-clamp: 1;
-  -webkit-box-orient: vertical;
-  font-size: 30rpx;
-  color: #666;
+  padding: 20rpx;
+  font-size: 28rpx;
+  color: #999;
   z-index: 3;
+  line-height: 1.5
 }
-
 .Rose-flex {
   display: flex;
   margin: 0 0 20rpx;
   flex-direction: row;
 }
-
 .Rose-kind {
   text-align: left;
   font-size: 24rpx;
@@ -157,80 +122,64 @@
   margin-top: -18rpx;
   font-weight: 600;
 }
-
 .Rose-bottom {
   display: flex;
-  font-size: 24rpx;
+  font-size: 20rpx;
+  padding: 0 20rpx;
   color: #999;
+  margin: 10rpx 0 0;
 }
-
+.Rose-icon{
+  margin-right: 20rpx;
+}
 .Rose-bottom .iconfont {
-  font-size: 26rpx;
-}
-
-.Rose-bottom  .iconfont.icon-kanguos {
-  font-size: 30rpx;
-}
-
-.Rose-bottom .iconfont.icon-xiangqu {
-  padding-left: 20rpx;
-}
-
-.Rose-flex1 {
-  flex: 1;
+  margin: -22rpx 0 0;
+  font-size: 24rpx;
 }
 
 .Rose-box {
   margin: 0 20rpx;
 }
-
 .Rose-items {
   position: relative;
   width: 100%;
   margin: 10rpx 0;
   white-space: nowrap;
+  -webkit-overflow-scrolling: touch`
 }
-
 .green {
   padding-right: 8rpx;
   color: #1d8f59;
   font-size: 30rpx;
 }
-
 .Rose-go {
   float: right;
   color: #999;
 }
-
 .Rose-go .iconfont {
   margin-top: -6rpx;
 }
-
 .Rose-comment {
   font-size: 24rpx;
   color: #999;
   margin-top: -18rpx;
 }
-
 .Rose-menu {
   padding: 20rpx;
   display: flex;
   flex-flow: row;
   justify-content: space-between;
 }
-
 .Rose-kinds {
   width: 90rpx;
   text-align: center;
   font-size: 24rpx;
   color: #333;
 }
-
 .Rose-kinds .iconfont {
   font-size: 46rpx;
   display: block;
 }
-
 .Rose-circle {
   border-radius: 100%;
   color: #fff;
@@ -239,27 +188,21 @@
   line-height: 90rpx;
   margin: 0 auto 8rpx;
 }
-
 .Rose-color4 {
   background-color: #8a90fa;
 }
-
 .Rose-color3 {
   background-color: #4dc6ee;
 }
-
 .Rose-color2 {
   background-color: #fed030;
 }
-
 .Rose-color1 {
   background-color: #fd9d21;
 }
-
 .Rose-floor {
   background: #fff;
 }
-
 .Rose-music {
   position: absolute;
   right: 20rpx;
@@ -269,29 +212,24 @@
   line-height: 72rpx;
   text-align: center;
 }
-
 .Rose-play {
   position: relative;
   line-height: 72rpx;
 }
-
 .rotate {
   animation: rotate 1s linear infinite;
 }
-
 .icon-CD {
   font-size: 48rpx;
   margin-top: 10rpx;
   color: #fefefe;
 }
-
 @keyframes rotate {
   0% {
     -webkit-transform: rotate(0deg);
     transform: rotate(0deg);
     transform-origin: 0, 0;
   }
-
   100% {
     -webkit-transform: rotate(360deg);
     transform: rotate(360deg);

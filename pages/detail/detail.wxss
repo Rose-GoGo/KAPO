@@ -6,7 +6,6 @@ image {
 .Rose-description {
   padding: 20rpx;
   margin: 20rpx 0;
-  overflow: auto;
   background: #eef0f4;
   color: #666;
   border: 2rpx solid #ddd;
@@ -56,18 +55,11 @@ image {
 .wxParse-pre {
   padding: 0 20rpx 20rpx;
   margin: 20rpx 0;
-  white-space: pre;
+  /*white-space: pre;*/
   overflow: auto;
   background: #282c34;
   color: #abb2bf;
-  /* color: #999;
-  padding: 20rpx;
-  margin: 20rpx 0;
-  white-space: pre;
-  overflow: auto; *//* background: #f0f0f0;
-  color: #000;
-  border: 2rpx solid #ddd;
-  border-left: 2px solid #1b58b8; */
+  -webkit-overflow-scrolling: touch
 }
 
 .Rose-small {
@@ -265,11 +257,6 @@ button::after {
   border-radius: 4rpx;
 }
 
-.Rose-image .iconfont {
-  font-size: 60rpx;
-  color: #999;
-}
-
 .Rose-user {
   flex: 1;
   padding: 0 0 20rpx;
@@ -302,16 +289,6 @@ button::after {
   font-size: 20rpx;
 }
 
-.Rose-edit {
-  width: 20%;
-  float: left;
-}
-
-.Rose-edit icon {
-  font-size: 36rpx;
-  margin: 0 10rpx;
-  color: #999;
-}
 
 .Rose-comment-content {
   color: #666;
@@ -338,12 +315,7 @@ button::after {
   color: #333;
 }
 
-.Rose-feeds {
-  padding: 10px;
-  border-bottom: 2rpx solid #f2f2f2;
-  font-size: 32rpx;
-  color: #666;
-}
+
 
 .Rose-empty {
   padding: 60rpx 0 80rpx;
@@ -353,12 +325,14 @@ button::after {
 }
 
 .Rose-end {
-  margin: -20rpx 0 0;
+  margin: 80rpx 0 0;
   padding: 30rpx 0;
   text-align: center;
   line-height: 1;
   border-top: 1rpx solid #f2f2f2;
+  color: #999
 }
+
 
 .Rose-word {
   line-height: 1;
@@ -375,7 +349,7 @@ button::after {
 }
 
 .modal-content {
-  padding: 59rpx 0;
+  padding: 60rpx 0;
 }
 
 .Rose-link {
@@ -385,8 +359,3 @@ button::after {
   color: #999;
 }
 
-.Rose-End {
-  margin: 80rpx 0 0;
-  text-align: center;
-  color: #999;
-}
