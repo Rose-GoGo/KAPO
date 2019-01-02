@@ -44,7 +44,11 @@ const ALL_API = {
   feedback: { //意见反馈
     method: 'POST',
     url: '/index.php?m=content&c=punch&a=feedback'
-  }
+  },
+  likenum: { //意见反馈
+    method: 'POST',
+    url: '/index.php?m=content&c=api&a=thumbs_up'
+  },
 }
 const Api = new MyHttp({}, ALL_API);
 export default Api;

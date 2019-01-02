@@ -22,14 +22,13 @@ Page({
     placeholder: '留言鼓励一下...',
     reply_username: '',
     pid: 0,
-    // page: 1,
-    likenum: 3,
+    likenum: null,
     like: false,
   },
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function(options) {
+  onLoad: function (options) {
     wx.showLoading();
     var that = this;
     let _userInfo = wx.getStorageSync('userInfo')
@@ -38,18 +37,18 @@ Page({
       id: options.id,
       catid: options.catid
     });
-    if (wx.getStorageSync('userInfo')) {} else {
+    if (wx.getStorageSync('userInfo')) { } else {
       wx.getSetting({
-        success: function(res) {
+        success: function (res) {
           if (res.authSetting['scope.userInfo']) {
             // 已经授权，可以直接调用 getUserInfo 获取头像昵称
             wx.getUserInfo({
-              success: function(res) {
+              success: function (res) {
                 let _userInfo = res.userInfo;
                 app.globalData.userInfo = _userInfo;
                 wx.setStorageSync('userInfo', _userInfo)
               },
-              fail: function() {}
+              fail: function () { }
             })
           }
         }
@@ -60,29 +59,29 @@ Page({
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
-  onReady: function() { },
+  onReady: function () { },
   /**
    * 生命周期函数--监听页面显示
    */
-  onShow: function() {},
+  onShow: function () { },
   /**
    * 生命周期函数--监听页面隐藏
    */
-  onHide: function() {},
+  onHide: function () { },
   /**
    * 生命周期函数--监听页面卸载
    */
-  onUnload: function() {},
+  onUnload: function () { },
   /**
    * 页面相关事件处理函数--监听用户下拉动作
    */
-  onPullDownRefresh: function() { },
+  onPullDownRefresh: function () { },
   /**
    * 页面上拉触底事件的处理函数
    */
-  onReachBottom: function() {
+  onReachBottom: function () {
     var that = this;
-     page = page + 1;
+    page = page + 1;
     // that.setData({
     //   page: page
     // });
@@ -93,13 +92,13 @@ Page({
   /**
    * 用户点击右上角分享
    */
-  onShareAppMessage: function() {
+  onShareAppMessage: function () {
     return {
       title: this.data.items.title,
       imageUrl: '/assets/images/share.jpg'
     }
   },
-  getData: function() {
+  getData: function () {
     var that = this;
     let _params = {
       catid: that.data.catid,
@@ -111,6 +110,7 @@ Page({
         let _data = res.data.data;
         var _tpl = _data.content;
         that.setData({
+          likenum: _data.thumbs_up,
           items: _data,
           dkcontent: _tpl
         });
@@ -119,7 +119,7 @@ Page({
       }
     })
   },
-  forContent: function(e) {
+  forContent: function (e) {
     let that = this;
     let _content = e.detail.value;
     // 禁止输入空格
@@ -141,7 +141,7 @@ Page({
       })
     }
   },
-  backContent: function(e) { //回复的评论
+  backContent: function (e) { //回复的评论
     let _from = e.currentTarget.dataset.from;
     let _id = e.currentTarget.dataset.pid;
     this.setData({
@@ -151,7 +151,7 @@ Page({
       pid: _id
     });
   },
-  top10: function() { //推荐阅读
+  top10: function () { //推荐阅读
     var that = this;
     let params = {
       pagesize: 5,
@@ -168,14 +168,14 @@ Page({
       }
     })
   },
-  articleDetail: function(e) {
+  articleDetail: function (e) {
     let id = e.currentTarget.dataset.id;
     let catid = e.currentTarget.dataset.catid
     wx.navigateTo({
       url: '../detail/detail?catid=' + catid + '&id=' + id
     });
   },
-  postComments: function() {
+  postComments: function () {
     var that = this;
     if (!that.data.content) {
       wx.showModal({
@@ -207,7 +207,6 @@ Page({
         page = 1;
         that.setData({
           content: '',
-
           comments: [],
           reply_username: '',
           pid: 0,
@@ -218,7 +217,7 @@ Page({
       }
     });
   },
-  commentlists: function() {
+  commentlists: function () {
     var that = this;
     let _params = {
       newsid: that.data.id,
@@ -233,10 +232,10 @@ Page({
         let _load = false;
         if (_data.length < 10) {
           _load = false;
-        }else{
+        } else {
           _load = true;
         }
-         that.setData({
+        that.setData({
           comments: _arr,
           count: _count,
           loadMore: _load
@@ -250,23 +249,23 @@ Page({
       }
     });
   },
-  rewardRose: function() {
+  rewardRose: function () {
     var that = this;
     that.setData({
       show: true
     })
   },
-  bindGetUserInfo: function(e) {
+  bindGetUserInfo: function (e) {
     var that = this;
     var userInfo = {};
     if (e.detail.userInfo) {
       userInfo = e.detail.userInfo;
     } else {
       wx.getUserInfo({
-        success: function(res) {
+        success: function (res) {
           userInfo = res.userInfo;
         },
-        fail: function(res) {
+        fail: function (res) {
           wx.showModal({
             showCancel: false,
             confirmColor: '#1d8f59',
@@ -281,23 +280,34 @@ Page({
     })
     that.postComments()
   },
-  wetherLike: function() {
+  wetherLike: function () {//点赞
     var that = this;
-    that.setData({
-      like: !that.data.like
-    })
+    let params = {
+      id: that.data.id,
+      catid: that.data.catid
+    }
+    if (!that.data.like) {
+      Api.likenum(params).then(res => {
+        if (!res.data.code) {
+          let _data = res.data.data;
+          let linknn = parseInt(that.data.likenum)
+          that.setData({
+            likenum: linknn + 1,
+            like: !that.data.like
+          })
+          wx.showToast({
+            title: '感谢您的鼓励！',
+            icon: 'none',
+            duration: 2000
+          })
+        }
+      });
+    }
     if (that.data.like) {
+      let linknn = parseInt(that.data.likenum)
       that.setData({
-        likenum: that.data.likenum + 1
-      })
-      wx.showToast({
-        title: '感谢您的鼓励！',
-        icon: 'none',
-        duration: 2000
-      })
-    } else {
-      that.setData({
-        likenum: that.data.likenum - 1
+        likenum: linknn - 1,
+        like: !that.data.like
       })
       wx.showToast({
         title: '我会继续努力！',
@@ -306,12 +316,12 @@ Page({
       })
     }
   },
-  modalCancel: function() { //关闭分享
+  modalCancel: function () { //关闭分享
     this.setData({
       show: false
     })
   },
-  onPageScroll: function(e) {
+  onPageScroll: function (e) {
     // if (e.scrollTop > 100) {
     //   this.setData({
     //     backShow: true
@@ -322,7 +332,7 @@ Page({
     //   });
     // }
   },
-  goHome: function(){
+  goHome: function () {
     wx.switchTab({
       url: '../index/index'
     });
