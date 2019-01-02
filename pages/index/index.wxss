@@ -215,6 +215,7 @@
   height: 72rpx;
   line-height: 72rpx;
   text-align: center;
+  z-index: 2;
 }
 .Rose-play {
   position: relative;

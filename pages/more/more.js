@@ -87,7 +87,7 @@ Page({
     var that = this;
     if (that.data.loadMore) {
       that.earMonth(); //上个月的时间
-      that.getLine();
+      // that.getLine();
     }
   },
   /**
@@ -160,6 +160,7 @@ Page({
       year: year,
       month: month
     });
+     that.getLine();
   },
   getLine: function () { //拉取数据并且处理
     var that = this;
@@ -194,7 +195,7 @@ Page({
         let _count = Object.keys(_data[month]).length;
         if (_count < 3 || that.data.bigData.length == 0) { //月初没有数据或者数据较少的时候加载上个月的数据
           that.earMonth(); //上个月的时间
-          that.getLine();
+          // that.getLine();
           return false;
         }
         if (_data[month].length == 0) {
@@ -444,7 +445,7 @@ Page({
     //当还有数据，而且这个月是被收缩的，而且小于上一次加载的月，才加载数据
     if (that.data.loadMore && !_bigData[_num][_year][_index]['monthShow'] && _month <= this.data.month) {
       that.earMonth(); //上个月的时间
-      that.getLine();
+      // that.getLine();
     }
   }
 })
