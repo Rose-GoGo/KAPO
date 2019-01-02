@@ -45,7 +45,12 @@
           <icon class="iconfont icon-fenxiang1"></icon>
         </view>
         <input class="Rose-input" value="{{content}}" bindinput="forRemark" focus="{{focus}}" maxlength="-1" placeholder="{{placeholder}}" />
-        <button class="Rose-none Rose-post" disabled="{{disabled}}" wx:if="{{canIUse}}" open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo">评论</button>
+
+
+        <form bindsubmit="testSubmit" report-submit="true">
+          <button class="Rose-none Rose-post" disabled="{{disabled}}" wx:if="{{canIUse}}" open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo">评论</button>
+        </form>
+
       </div>
     </view>
   </view>

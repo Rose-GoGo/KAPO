@@ -1,12 +1,11 @@
 // pages/more/more.js
 import Api from '/../../utils/api.js';
 const app = getApp();
-
 Page({
   /**
    * 页面的初始数据
    */
-  data: {
+   data: {
     show: false, //不显示分享
     page: 1,
     content: '',
@@ -24,11 +23,9 @@ Page({
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function (options) {
+   onLoad: function (options) {
     var that = this;
-
     let _userInfo = wx.getStorageSync('userInfo')
-
     that.setData({
       userInfo: _userInfo
     });
@@ -54,23 +51,23 @@ Page({
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
-  onReady: function () { },
+   onReady: function () { },
   /**
    * 生命周期函数--监听页面显示
    */
-  onShow: function () { },
+   onShow: function () { },
   /**
    * 生命周期函数--监听页面隐藏
    */
-  onHide: function () { },
+   onHide: function () { },
   /**
    * 生命周期函数--监听页面卸载
    */
-  onUnload: function () { },
+   onUnload: function () { },
   /**
    * 页面相关事件处理函数--监听用户下拉动作
    */
-  onPullDownRefresh: function () {
+   onPullDownRefresh: function () {
     var that = this;
     that.setData({
       comments: [],
@@ -81,7 +78,7 @@ Page({
   /**
    * 页面上拉触底事件的处理函数
    */
-  onReachBottom: function () {
+   onReachBottom: function () {
     var that = this;
     let page = that.data.page + 1;
     that.setData({
@@ -94,7 +91,7 @@ Page({
   /**
    * 用户点击右上角分享
    */
-  onShareAppMessage: function (res) {
+   onShareAppMessage: function (res) {
     return {
       title: '锲而舍之,朽木不折;锲而不舍,金石可镂',
       imageUrl: '/assets/images/share.jpg'
@@ -177,7 +174,8 @@ Page({
     if (!that.data.userInfo) return false;
     wx.showLoading();
     let _params = {
-      type: "punch",
+     miniFormId: that.data.formId,
+     type: "punch",
       pid: that.data.pid, // 父评论ID，默认为0
       from_username: that.data.userInfo.nickName, // 评论者用户名
       from_avatar: that.data.userInfo.avatarUrl, // 评论者头像
@@ -241,20 +239,59 @@ Page({
     })
   },
   onPageScroll: function (e) {
-    console.log(e)
-    if (e.scrollTop > 100) {
-      this.setData({
-        backShow: true
-      });
-    } else {
-      this.setData({
-        backShow: false
-      });
-    }
+
+    // if (e.scrollTop > 100) {
+    //   this.setData({
+    //     backShow: true
+    //   });
+    // } else {
+    //   this.setData({
+    //     backShow: false
+    //   });
+    // }
   },
-   goHome: function(){
+  goHome: function(){
     wx.switchTab({
       url: '../index/index'
     });
+  },
+
+
+  testSubmit:function(e){
+    console.log(e.detail.formId)
+    // var self= this;
+    // let _access_token = '5_E1pZJQzTC-lC0r-JJz9wVAZv5Zv22CNtmV_7C1T0sqC9TV7mGE4FTmDX2B0PVM4LaGtaTfXwzfJLnD7fDKTg8DOICJNkKBQgn_Ot2zYmBJyY1g1VXoBNdtwUE0QaP8_9tWlbR-Zq7L1OyrrPKCIjAEAOGM';
+
+
+    // let url='https://api.weixin.qq.com/cgi-bin/message/wxopen/template/send?access_token='+_access_token;
+
+
+    // let _jsonData = {
+    //   access_token: _access_token,
+    //   touser: openid,
+    //   template_id: 'j-3edb01UbYzkecJlaokoqczpheC-ad5bIgGG-uUVZM',
+    //   form_id: e.detail.formId,
+    //   page: "pages/index/index",
+    //   data: {
+    //     "keyword1": { "value": "测试数据一", "color": "#173177" },
+    //     "keyword2": { "value": "测试数据二", "color": "#173177" },
+    //     "keyword3": { "value": "测试数据三", "color": "#173177" },
+    //     "keyword4": { "value": "测试数据四", "color": "#173177" },
+    //   }
+    // }
+    // wx.request({
+    //   url: url,
+    //   data: data,
+    //   method: method,
+    //   success: function (res) {
+    //     console.log(res)
+    //   },
+    //   fail: function (err) {
+    //     console.log('request fail ', err);
+    //   },
+    //   complete: function (res) {
+    //     console.log("request completed!");
+    //   }
+    // })
   }
 })

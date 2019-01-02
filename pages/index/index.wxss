@@ -128,7 +128,8 @@
    display:flex;
    margin:10rpx 0 0;
    padding:0 20rpx;
-   /*background: #282c34;*/
+   /*+
+   */
    color: #abb2bf;
    line-height:2;
  }

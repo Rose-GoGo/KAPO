@@ -1,14 +1,10 @@
 // pages/more/more.js
 import Api from '/../../utils/api.js';
-var username = '';
-
-
-
 Page({
   /**
    * 页面的初始数据
    */
-   data: {
+  data: {
     images: [],
     bigData: [],
     catid: '',
@@ -16,8 +12,8 @@ Page({
     loadMore: true,
     monthData: [], //存储月数据
     canIUse: wx.canIUse('button.open-type.getUserInfo'),
-    year: new Date().getFullYear(),
-    month: new Date().getMonth() + 1,
+    year: '',
+    month: '',
     isRose: false,
     showEdit: false,
     id: '',
@@ -28,12 +24,13 @@ Page({
   /**
    * 生命周期函数--监听页面加载
    */
-   onLoad: function (options) {
+  onLoad: function (options) {
     var that = this;
     var ss = new Date().getMonth() + 1;
     ss = ss >= 10 ? '' + ss : '0' + ss;
     that.setData({
       catid: options.catid,
+      year: new Date().getFullYear(),
       month: ss
     });
     wx.setNavigationBarTitle({
@@ -51,7 +48,10 @@ Page({
                   isRose: true
                 })
               }
-              username = userInfo.nickName;
+              that.setData({
+                username: userInfo.nickName,
+                sex: userInfo.gender
+              })
             },
             fail: function (res) { }
           });
@@ -63,37 +63,37 @@ Page({
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
-   onReady: function () { },
+  onReady: function () { },
   /**
    * 生命周期函数--监听页面显示
    */
-   onShow: function () { },
+  onShow: function () { },
   /**
    * 生命周期函数--监听页面隐藏
    */
-   onHide: function () { },
+  onHide: function () { },
   /**
    * 生命周期函数--监听页面卸载
    */
-   onUnload: function () { },
+  onUnload: function () { },
   /**
    * 页面相关事件处理函数--监听用户下拉动作
    */
-   onPullDownRefresh: function () { },
+  onPullDownRefresh: function () { },
   /**
    * 页面上拉触底事件的处理函数
    */
-   onReachBottom: function () {
+  onReachBottom: function () {
     var that = this;
     if (that.data.loadMore) {
       that.earMonth(); //上个月的时间
-
+      that.getLine();
     }
   },
   /**
    * 用户点击右上角分享
    */
-   onShareAppMessage: function () {
+  onShareAppMessage: function () {
     return {
       title: '锲而舍之,朽木不折;锲而不舍,金石可镂',
       imageUrl: '/assets/images/share.jpg'
@@ -160,8 +160,6 @@ Page({
       year: year,
       month: month
     });
-
-    that.getLine();
   },
   getLine: function () { //拉取数据并且处理
     var that = this;
@@ -177,31 +175,29 @@ Page({
     }
     Api.showday(_params).then(res => {
       if (!res.data.code) {
-        let _data = res.data.data;
+        var _data = res.data.data;
+        thisMonthData = _data;
+        thisMonthData['monthNum'] = month;
+        thisMonthData['monthShow'] = true;
         if (that.data.month == '01') { //换年了
-          thisMonthData = _data;
+          var _monthData = [];
         } else {
-          // Object.assign(obj, that.data.monthData, _data); // 月数据，再见了json,不能排序，可惜了，用这个还挺方便
-          thisMonthData = _data;
-          thisMonthData['monthNum'] = month;
-          thisMonthData['monthShow'] = true;
           var _monthData = that.data.monthData
-          _monthData.push(thisMonthData);
-          let _count = Object.keys(_data[month]).length;
-          if (_count < 4 && that.data.bigData.length == 0) { //月初没有数据或者数据较少的时候加载上个月的数据
-            that.earMonth(); //上个月的时间
-            that.getLine();
-            return false;
-          }
         }
-
+        _monthData.push(thisMonthData);
         big[dataIndex] = {
           [year]: _monthData
         }
         that.setData({
           bigData: big
         });
-        if (_data[month].length == 0) { //如果没有月数据，则不加载了，本来是想判断是否已经加载到底了，但是这里可能有半途没添加数据或者月初没有数据的情况，所以这里的逻辑不是很严谨
+        let _count = Object.keys(_data[month]).length;
+        if (_count < 3 || that.data.bigData.length == 0) { //月初没有数据或者数据较少的时候加载上个月的数据
+          that.earMonth(); //上个月的时间
+          that.getLine();
+          return false;
+        }
+        if (_data[month].length == 0) {
           that.setData({
             loadMore: false
           });
@@ -227,7 +223,10 @@ Page({
       that.setData({
         isRose: true
       });
-      username = userInfo.nickName;
+      that.setData({
+        username: userInfo.nickName,
+        sex: userInfo.gender
+      });
     }
   },
   editItem: function (e) {
@@ -380,7 +379,7 @@ Page({
   formSubmit: function () {
     wx.showLoading();
     var that = this,
-    aids = [];
+      aids = [];
     that.setData({
       disabled: true //想偷懒都不行，这里需要点击按钮后，按钮就设置成disabled, 避免重负提交
     });
@@ -392,7 +391,7 @@ Page({
         catid: that.data.catid,
         title: that.data.title,
         remark: that.data.remark,
-        username: username,
+        username: that.data.username,
         aids: aidStr //图片
       }
       if (that.data.id) { //如果有id， 修改

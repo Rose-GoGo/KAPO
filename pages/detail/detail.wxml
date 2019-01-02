@@ -1,6 +1,7 @@
 <!--pages/detail/detail.wxml-->
 <import src="../../wxParse/wxParse.wxml" />
 <image wx:if="{{catid=='19'}}" class="Rose-imgitem" mode="aspectFill" src="{{ items.thumb==''? '/assets/images/wx_04.jpg' :items.thumb}}"></image>
+
 <view class="Rose-box">
   <view class="Rose-detail">
     <view class="Rose-title">{{items.title}}</view>
@@ -14,7 +15,7 @@
     <view class="Rose-content">
       <template is="wxParse" data="{{wxParseData:dkcontent.nodes}}" />
     </view>
-    <view class="Rose-End" wx:if="{{ catid !='19' && id !='124' && id !='145' }}">— End —</view>
+    <view class="Rose-center" wx:if="{{ catid !='19' && id !='124' && id !='145' }}">— End —</view>
     <view class="Rose-read" wx:if="{{ catid !='19' && id !='124' && id !='145' }}">阅读 {{items.views}}
       <view class="Rose-Right" bindtap="wetherLike">
         <icon class="iconfont {{ like?'icon-like-fill':'icon-like'}}"></icon>

@@ -1,6 +1,7 @@
 //app.js
 App({
-  onLoad: function (options) { },
+  onLoad: function (options) {
+  },
   onShow: function (option) { },
   onPageNotFound: function (res) { },
   onLaunch: function () {

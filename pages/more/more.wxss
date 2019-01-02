@@ -121,6 +121,7 @@ button[disabled]:not([type]) {
 .Rose-year-line {
   position: relative;
   margin: 0 20rpx 0 40rpx;
+  padding-top: 40rpx;
 }
 .Rose-year-line:before {
   position: absolute;
