@@ -26,8 +26,8 @@ Page({
   /**
    * 生命周期函数--监听页面显示
    */
-  onShow: function () { 
-    
+  onShow: function () {
+
   },
   /**
    * 生命周期函数--监听页面隐藏
@@ -88,15 +88,15 @@ Page({
     this.getLists();
   },
   onPageScroll: function (e) {
-    if (e.scrollTop > 100) {
-      this.setData({
-        backShow: true
-      });
-    } else {
-      this.setData({
-        backShow: false
-      });
-    }
+    // if (e.scrollTop > 100) {
+    //   this.setData({
+    //     backShow: true
+    //   });
+    // } else {
+    //   this.setData({
+    //     backShow: false
+    //   });
+    // }
   },
   getLists: function (e) {
     var that = this;

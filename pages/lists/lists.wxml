@@ -30,4 +30,4 @@
 </block>
 <loading load-more="{{loadMore}}"></loading>
 <!-- 返回顶部 -->
-<backtop back-show="{{backShow}}"></backtop>
+<!-- <backtop back-show="{{backShow}}"></backtop> -->
