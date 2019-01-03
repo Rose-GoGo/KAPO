@@ -17,7 +17,7 @@
     </view>
     <view class="Rose-center" wx:if="{{ catid !='19' && id !='124' && id !='145' }}">— End —</view>
     <view class="Rose-read" wx:if="{{ catid !='19' && id !='124' && id !='145' }}">阅读 {{items.views}}
-      <view class="Rose-Right" bindtap="wetherLike">
+      <view class="Rose-Right" bindtap="wetherLike" data-likenum = "{{items.thumbs_up}}">
         <icon class="iconfont {{ like?'icon-like-fill':'icon-like'}}"></icon>
         {{likenum}}
       </view>
