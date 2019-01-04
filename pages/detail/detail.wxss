@@ -24,7 +24,7 @@ image {
 
 .Rose-content {
   overflow: hidden;
-  word-break: break-all;
+  word-break: break-word;
 }
 
 .Rose-detail {

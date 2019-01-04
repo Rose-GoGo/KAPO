@@ -76,7 +76,7 @@
 
 .Rose-title {
   display: -webkit-box;
-  margin: 20rpx 20rpx 0;
+  margin: 0 20rpx;
   font-size: 34rpx;
   color: #333;
   white-space: pre-wrap;
@@ -129,8 +129,9 @@
   display: flex;
   margin: 10rpx 0 0;
   padding: 0 20rpx;
-  color: #abb2bf;
+  color: #fff;
   line-height: 2;
+  background: rgba(0, 0, 0, 0.2);
 }
 
 .Rose-icon {

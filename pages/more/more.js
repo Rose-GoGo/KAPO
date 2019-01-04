@@ -50,7 +50,7 @@ Page({
               }
               that.setData({
                 username: userInfo.nickName,
-                sex: userInfo.gender
+                // sex: userInfo.gender
               })
             },
             fail: function (res) { }
@@ -226,7 +226,7 @@ Page({
       });
       that.setData({
         username: userInfo.nickName,
-        sex: userInfo.gender
+        // sex: userInfo.gender
       });
     }
   },
@@ -421,15 +421,15 @@ Page({
     })
   },
   onPageScroll: function (e) {
-    if (e.scrollTop > 100) {
-      this.setData({
-        backShow: true
-      });
-    } else {
-      this.setData({
-        backShow: false
-      });
-    }
+    // if (e.scrollTop > 100) {
+    //   this.setData({
+    //     backShow: true
+    //   });
+    // } else {
+    //   this.setData({
+    //     backShow: false
+    //   });
+    // }
   },
   hideData: function (e) { //隐藏该月的数组
     var that = this;
