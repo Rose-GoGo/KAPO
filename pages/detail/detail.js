@@ -2,7 +2,6 @@
 import Api from '/../../utils/api.js';
 let wxparse = require("../../wxParse/wxParse.js");
 const app = getApp();
-var page = 1;
 Page({
   /**
    * 页面的初始数据
@@ -22,7 +21,8 @@ Page({
     placeholder: '留言鼓励一下...',
     reply_username: '',
     pid: 0,
-    likenum: null,
+    page: 1,
+    likenum: 3,
     like: false,
   },
   /**
@@ -55,6 +55,8 @@ Page({
       });
     }
     that.getData();
+    that.commentlists(); //反馈列表
+    that.top10(); //top 10推荐
   },
   /**
    * 生命周期函数--监听页面初次渲染完成
@@ -81,10 +83,10 @@ Page({
    */
   onReachBottom: function () {
     var that = this;
-    page = page + 1;
-    // that.setData({
-    //   page: page
-    // });
+    let page = that.data.page + 1;
+    that.setData({
+      page: page
+    });
     if (that.data.loadMore) {
       that.commentlists();
     }
@@ -110,12 +112,10 @@ Page({
         let _data = res.data.data;
         var _tpl = _data.content;
         that.setData({
-          likenum: _data.thumbs_up,
           items: _data,
           dkcontent: _tpl
         });
         wxparse.wxParse('dkcontent', 'html', _tpl, that, 5);
-        that.top10(); //top 10推荐
       }
     })
   },
@@ -164,7 +164,6 @@ Page({
         that.setData({
           top10: _data
         });
-        that.commentlists(); //反馈列表
       }
     })
   },
@@ -204,9 +203,9 @@ Page({
           icon: 'success',
           duration: 2000
         })
-        page = 1;
         that.setData({
           content: '',
+          page: 1,
           comments: [],
           reply_username: '',
           pid: 0,
@@ -221,7 +220,7 @@ Page({
     var that = this;
     let _params = {
       newsid: that.data.id,
-      page: page,
+      page: this.data.page,
       pagesize: 10
     }
     Api.commentlists(_params).then(res => {
@@ -229,17 +228,15 @@ Page({
         let _data = res.data.data;
         let _count = res.data.count;
         let _arr = that.data.comments.concat(_data);
-        let _load = false;
-        if (_data.length < 10) {
-          _load = false;
-        } else {
-          _load = true;
-        }
         that.setData({
           comments: _arr,
-          count: _count,
-          loadMore: _load
+          count: _count
         });
+        if (_data.length < 10) {
+          that.setData({
+            loadMore: false
+          });
+        }
       } else {
         wx.showModal({
           showCancel: false,
@@ -280,34 +277,23 @@ Page({
     })
     that.postComments()
   },
-  wetherLike: function () {//点赞
+  wetherLike: function () {
     var that = this;
-    let params = {
-      id: that.data.id,
-      catid: that.data.catid
-    }
-    if (!that.data.like) {
-      Api.likenum(params).then(res => {
-        if (!res.data.code) {
-          let _data = res.data.data;
-          let linknn = parseInt(that.data.likenum)
-          that.setData({
-            likenum: linknn + 1,
-            like: !that.data.like
-          })
-          wx.showToast({
-            title: '感谢您的鼓励！',
-            icon: 'none',
-            duration: 2000
-          })
-        }
-      });
-    }
+    that.setData({
+      like: !that.data.like
+    })
     if (that.data.like) {
-      let linknn = parseInt(that.data.likenum)
       that.setData({
-        likenum: linknn - 1,
-        like: !that.data.like
+        likenum: that.data.likenum + 1
+      })
+      wx.showToast({
+        title: '感谢您的鼓励！',
+        icon: 'none',
+        duration: 2000
+      })
+    } else {
+      that.setData({
+        likenum: that.data.likenum - 1
       })
       wx.showToast({
         title: '我会继续努力！',
