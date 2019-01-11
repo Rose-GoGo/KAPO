@@ -22,7 +22,7 @@ Page({
     reply_username: '',
     pid: 0,
     page: 1,
-    likenum: 3,
+    likenum: null,
     like: false,
   },
   /**
@@ -112,6 +112,7 @@ Page({
         let _data = res.data.data;
         var _tpl = _data.content;
         that.setData({
+ likenum: _data.thumbs_up,
           items: _data,
           dkcontent: _tpl
         });
@@ -277,23 +278,34 @@ Page({
     })
     that.postComments()
   },
-  wetherLike: function () {
+   wetherLike: function () {//点赞
     var that = this;
-    that.setData({
-      like: !that.data.like
-    })
+    let params = {
+      id: that.data.id,
+      catid: that.data.catid
+    }
+    if (!that.data.like) {
+      Api.likenum(params).then(res => {
+        if (!res.data.code) {
+          let _data = res.data.data;
+          let linknn = parseInt(that.data.likenum)
+          that.setData({
+            likenum: linknn + 1,
+            like: !that.data.like
+          })
+          wx.showToast({
+            title: '感谢您的鼓励！',
+            icon: 'none',
+            duration: 2000
+          })
+        }
+      });
+    }
     if (that.data.like) {
+      let linknn = parseInt(that.data.likenum)
       that.setData({
-        likenum: that.data.likenum + 1
-      })
-      wx.showToast({
-        title: '感谢您的鼓励！',
-        icon: 'none',
-        duration: 2000
-      })
-    } else {
-      that.setData({
-        likenum: that.data.likenum - 1
+        likenum: linknn - 1,
+        like: !that.data.like
       })
       wx.showToast({
         title: '我会继续努力！',
