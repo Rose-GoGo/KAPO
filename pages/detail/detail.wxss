@@ -32,6 +32,7 @@ image {
   line-height: 1.8;
   padding: 20rpx;
   color: #4f4f4f;
+  background: #fff
 }
 
 .Rose-title {
@@ -133,6 +134,7 @@ image {
 /*top10推荐*/
 
 .Rose-top {
+  background: #fff;
   padding: 20rpx 0;
 }
 
@@ -238,6 +240,7 @@ button::after {
 /*最新*/
 
 .Rose-comments {
+  background: #fff;
   padding: 20rpx 0 0;
 }
 
