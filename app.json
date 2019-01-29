@@ -14,7 +14,7 @@
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#1d8f59",
     "navigationBarTitleText": "KAPO博客-记录学习和生活",
-    "navigationBarTextStyle": "#fff",
+    "navigationBarTextStyle": "White",
     "enablePullDownRefresh": true,
     "onReachBottomDistance": 50
   },
