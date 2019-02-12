@@ -50,7 +50,6 @@ Page({
               }
               that.setData({
                 username: userInfo.nickName,
-                // sex: userInfo.gender
               })
             },
             fail: function (res) { }
@@ -180,15 +179,15 @@ Page({
         thisMonthData = _data;
         thisMonthData['monthNum'] = month;
         thisMonthData['monthShow'] = true;
-        if (that.data.month == '01') { //换年了
-          var _monthData = [];
-        } else {
-          var _monthData = that.data.monthData
+        var _monthData = [];
+        if (that.data.month != '12') { //换年了
+          var _monthData = that.data.monthData;
         }
         _monthData.push(thisMonthData);
         big[dataIndex] = {
           [year]: _monthData
         }
+
         that.setData({
           bigData: big
         });
@@ -299,7 +298,7 @@ Page({
             }
           });
         } else if (res.cancel) {
-          console.log('用户点击取消')
+
         }
       }
     })
