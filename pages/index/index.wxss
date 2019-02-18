@@ -204,7 +204,9 @@
   line-height: 90rpx;
   margin: 0 auto 8rpx;
 }
-
+.Rose-color5 {
+  background-color: #16c2c2;
+}
 .Rose-color4 {
   background-color: #8a90fa;
 }

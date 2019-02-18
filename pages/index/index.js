@@ -6,7 +6,7 @@ Page({
   /**
    * 页面的初始数据
    */
-   data: {
+  data: {
     isPlay: true,
     notices: [],
     items: [],
@@ -15,24 +15,29 @@ Page({
       icon: 'icon-yinyue',
       name: '生活',
       id: 4
-    },{
+    }, {
       icon: 'icon-yingyu',
       name: '外语',
       id: 3
-    },{
+    }, {
       icon: 'icon-book',
       name: '读书',
       id: 2
-    },{
+    }, {
       icon: 'icon-jianshen',
       name: '健身',
       id: 1
-    }]
+    }, {
+      icon: 'icon-xiangji',
+      name: '摄影',
+      id: 5
+    }
+    ]
   },
   /**
    * 生命周期函数--监听页面加载
    */
-   onLoad: function (options) {
+  onLoad: function (options) {
     var that = this;
     wx.hideLoading();
     that.getNotice();
@@ -41,23 +46,23 @@ Page({
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
-   onReady: function (e) { },
+  onReady: function (e) { },
   /**
    * 生命周期函数--监听页面显示
    */
-   onShow: function () { },
+  onShow: function () { },
   /**
    * 生命周期函数--监听页面隐藏
    */
-   onHide: function () { },
+  onHide: function () { },
   /**
    * 生命周期函数--监听页面卸载
    */
-   onUnload: function () { },
+  onUnload: function () { },
   /**
    * 页面相关事件处理函数--监听用户下拉动作
    */
-   onPullDownRefresh: function () {
+  onPullDownRefresh: function () {
     let that = this;
     page = 1;
     that.setData({
@@ -72,9 +77,9 @@ Page({
   /**
    * 页面上拉触底事件的处理函数
    */
-   onReachBottom: function () {
+  onReachBottom: function () {
     let that = this;
-     page = page + 1;
+    page = page + 1;
     if (that.data.loadMore) {
       that.getLists();
     }
@@ -83,7 +88,7 @@ Page({
   /**
    * 用户点击右上角分享
    */
-   onShareAppMessage: function () {
+  onShareAppMessage: function () {
     return {
       title: '锲而舍之,朽木不折;锲而不舍,金石可镂',
       imageUrl: '/assets/images/share.jpg'
