@@ -34,13 +34,14 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 3,
+			"current": 0,
 			"list": [
 				{
-					"id": 1,
+					"id": 0,
 					"name": "文章详情",
 					"pathName": "pages/detail/detail",
-					"query": "catid=11&id=118"
+					"query": "catid=11&id=209",
+					"scene": null
 				},
 				{
 					"id": -1,

@@ -2,113 +2,101 @@
 <import src="../../wxParse/wxParse.wxml" />
 <image wx:if="{{catid=='19'}}" class="Rose-imgitem" mode="aspectFill" src="{{ items.thumb==''? '/assets/images/wx_04.jpg' :items.thumb}}"></image>
 <view class="Rose-detail">
-  <view class="Rose-title">{{items.title}}</view>
-  <view class="Rose-addtime">
-    <view class="Rose-keywords">
-      <icon class='iconfont icon-shijian2'></icon>{{items.inputtime}}</view>
-    <view class="Rose-keywords">
-      <icon class="iconfont icon-kanguo"></icon>{{items.views}}</view>
-  </view>
-  <view class="Rose-description" wx:if="{{catid!='19'}}">
-    {{items.description}}
-  </view>
-  <view class="Rose-content">
-    <template is="wxParse" data="{{wxParseData:dkcontent.nodes}}" />
-  </view>
-  <view class="Rose-center" wx:if="{{ catid !='19' && id !='124' && id !='145' }}">— End —</view>
-  <view class="Rose-read" wx:if="{{ catid !='19' && id !='124' && id !='145' }}">阅读 {{items.views}}
-    <view class="Rose-Right" bindtap="wetherLike" data-likenum="{{items.thumbs_up}}">
-      <icon class="iconfont {{ like?'icon-like-fill':'icon-like'}}"></icon>
-      {{likenum}}
+    <view class="Rose-title">{{items.title}}</view>
+    <view class="Rose-addtime">
+        <view class="Rose-keywords">
+            <icon class='iconfont icon-shijian2'></icon>{{items.inputtime}}
+        </view>
+        <view class="Rose-keywords">
+            <icon class="iconfont icon-kanguo"></icon>{{items.views}}
+        </view>
     </view>
-  </view>
-  <view class="Rose-link" wx:if="{{ catid !='19' && id !='124' && id !='145' }}">
-    {{items.url}}
-  </view>
+    <view class="Rose-description" wx:if="{{catid!='19'}}">
+        {{items.description}}
+    </view>
+    <view class="Rose-content">
+        <template is="wxParse" data="{{wxParseData:dkcontent.nodes}}" />
+    </view>
+    <view class="Rose-center" wx:if="{{ catid !='19' && id !='124' && id !='145' }}">— End —</view>
+    <view class="Rose-read" wx:if="{{ catid !='19' && id !='124' && id !='145' }}">阅读 {{items.views}}
+        <view class="Rose-Right" bindtap="wetherLike" data-likenum="{{items.thumbs_up}}">
+            <icon class="iconfont {{ like?'icon-like-fill':'icon-like'}}"></icon>
+            {{likenum}}
+        </view>
+    </view>
+    <view class="Rose-link" wx:if="{{ catid !='19' && id !='124' && id !='145' }}">
+        {{items.url}}
+    </view>
 </view>
 <!-- 推荐阅读 -->
 <view class="Rose-top" wx:if="{{top10.length >0 }}" wx:if="{{ catid !='19' && id !='124' && id !='145' }}">
-  <view class="Rose-lines">推荐阅读</view>
-  <view class="Rose-topli" wx:for="{{top10}}" wx:key="index" wx:for-item="top" data-id="{{top.id}}" data-catid="{{top.catid}}" ontap="articleDetail">{{top.title}}</view>
+    <view class="Rose-lines">推荐阅读</view>
+    <view class="Rose-topli" wx:for="{{top10}}" wx:key="index" wx:for-item="top" data-id="{{top.id}}" data-catid="{{top.catid}}" ontap="articleDetail">{{top.title}}</view>
 </view>
 <!-- 评论列表 -->
 <view class="Rose-comments" wx:if="{{catid!=='19' && id !='124' && id !='145'}}">
-  <view class="Rose-lines">精选评论
-    <text class="Rose-small">(共{{count}}条)</text>
-  </view>
-  <view class="Rose-lists" wx:if="{{count!=0}}">
-    <view class="Rose-items" wx:for="{{comments}}" wx:key="index" wx:for-item="comment">
-      <view class="Rose-resource">
-        <image class="Rose-image" src="{{comment.from_avatar}}"></image>
-        <view class="Rose-user">
-          <view class="Rose-form">
-            <view class="Rose-names">{{comment.from_username}}</view>
-            <view class="Rose-times">{{comment.create_time}}</view>
-            <view class="Rose-comment-content" data-pid="{{comment.id}}" data-from="{{comment.from_username}}" bindtap="backContent">{{comment.content}}</view>
-          </view>
-          <view class="Rose-back" wx:if="{{comment.children.length}}">
-            <view class="Rose-back-item" wx:for="{{comment.children}}" wx:for-index="ii" wx:for-item="child" wx:key="ii" data-pid="{{comment.id}}" data-from="{{child.from_username}}" bindtap="backContent">
-              <text class="Rose-tt">{{child.from_username}}</text> 回复
-              <text class="Rose-tt">{{child.reply_username}}</text>： {{child.content}}
-            </view>
-          </view>
-        </view>
-      </view>
+    <view class="Rose-lines">精选评论
+        <text class="Rose-small">(共{{count}}条)</text>
     </view>
-  </view>
-  <view class="Rose-empty" wx:if="{{count==0}}">
-    <icon class="iconfont icon-kafei"></icon>
-    评论还是空的，快来说两句吧~
-  </view>
-  <view class="Rose-end" wx:if="{{comments.length!=0 && !loadMore}}">
-    <text class="Rose-word">没有更多评论了~</text>
-  </view>
-  <loading load-more="{{loadMore}}"></loading>
+    <view class="Rose-lists" wx:if="{{count!=0}}">
+        <view class="Rose-items" wx:for="{{comments}}" wx:key="index" wx:for-item="comment">
+            <view class="Rose-resource">
+                <image class="Rose-image" src="{{comment.from_avatar}}"></image>
+                <view class="Rose-user">
+                    <view class="Rose-form">
+                        <view class="Rose-names">{{comment.from_username}}</view>
+                        <view class="Rose-times">{{comment.create_time}}</view>
+                        <view class="Rose-comment-content" data-pid="{{comment.id}}" data-from="{{comment.from_username}}" bindtap="backContent">{{comment.content}}</view>
+                    </view>
+                    <view class="Rose-back" wx:if="{{comment.children.length}}">
+                        <view class="Rose-back-item" wx:for="{{comment.children}}" wx:for-index="ii" wx:for-item="child" wx:key="ii" data-pid="{{comment.id}}" data-from="{{child.from_username}}" bindtap="backContent">
+                            <text class="Rose-tt">{{child.from_username}}</text> 回复
+                            <text class="Rose-tt">{{child.reply_username}}</text>： {{child.content}}
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class="Rose-empty" wx:if="{{count==0}}">
+        <icon class="iconfont icon-kafei"></icon>
+        评论还是空的，快来说两句吧~
+    </view>
+    <view class="Rose-end" wx:if="{{comments.length!=0 && !loadMore}}">
+        <text class="Rose-word">没有更多评论了~</text>
+    </view>
+    <loading load-more="{{loadMore}}"></loading>
 </view>
-
 <!-- 发表评论 -->
 <view class="Rose-fixed" wx:if="{{ catid !='19' && id !='124' && id !='145' }}">
-  <div class="Rose-flex">
-
-    <!-- <view class="Rose-none text-left" bindtap="rewardRose">
-      <icon class="iconfont icon-fenxiang1"></icon>
-    </view> -->
-    <view class="Rose-none text-left" bindtap="goHome">
-      <icon class="iconfont icon-shouye"></icon>
-    </view>
-    <input class="Rose-input" value="{{content}}" bindinput="forContent" maxlength="-1" placeholder="{{placeholder}}" />
-    <button class="Rose-none Rose-post" disabled="{{disabled}}" wx:if="{{canIUse}}" open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo">评论</button>
-  </div>
+    <div class="Rose-flex">
+        <view class="Rose-none text-left" bindtap='formSubmit'>
+            <icon class="iconfont icon-fenxiang1"></icon>
+        </view>
+        <view class="Rose-none text-left" bindtap="goHome">
+            <icon class="iconfont icon-shouye"></icon>
+        </view>
+        <input class="Rose-input" value="{{content}}" bindinput="forContent" maxlength="-1" placeholder="{{placeholder}}" />
+        <button class="Rose-none Rose-post" disabled="{{disabled}}" wx:if="{{canIUse}}" open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo">评论</button>
+    </div>
 </view>
 <!-- 打赏组件 -->
 <share show="{{show}}" bindcancel="modalCancel" bindconfirm='modalConfirm' catchtouchmove="true">
-  <view class='modal-content'>您的分享与关注是对我最大的奖赏！</view>
+    <view class='modal-content'>您的分享与关注是对我最大的奖赏！</view>
 </share>
 <!-- 版权 -->
-<copyright></copyright>
+<copyright />
 <!-- 返回顶部 -->
 <backtop back-show="{{backShow}}"></backtop>
-
-
 <!-- 别人家的海报 -->
-
+<!--生成海报  -->
 <view>
-
-
-
-  <view class='imgBox'>
-    <button open-type="share" class='zfbtn'>微信</button>
-    <button class='zfbtn m_l' bindtap='formSubmit'>分享到朋友圈</button>
-  </view>
-
-  <!--生成海报  -->
-
     <view class='imagePathBox' hidden="{{maskHidden == false}}">
-      <image src="{{imagePath}}" class='shengcheng'></image>
-      <button class='baocun' bindtap='baocun'>保存相册，分享到朋友圈</button>
+        <image src="{{imagePath}}" class='shengcheng'></image>
+        <button class='baocun' bindtap='baocun'>保存相册，分享到朋友圈</button>
     </view>
-   <view hidden="{{maskHidden == false}}" class="mask"></view>
-  <view class="canvas-box">
-      <canvas style="width: 375px;height: 667px;position:fixed;top:9999px" canvas-id="mycanvas"/>
-  </view>
+    <view hidden="{{maskHidden == false}}" class="mask"></view>
+    <view class="canvas-box">
+        <canvas style="width: 600px;height: 970px;" canvas-id="mycanvas" />
+    </view>
 </view>
