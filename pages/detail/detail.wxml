@@ -96,7 +96,7 @@
         <button class='baocun' bindtap='baocun'>保存相册，分享到朋友圈</button>
     </view>
     <view hidden="{{maskHidden == false}}" class="mask"></view>
-    <view class="canvas-box">
+    <view class="canvas-box" >
         <canvas style="width: 600px;height: 970px;" canvas-id="mycanvas" />
     </view>
 </view>

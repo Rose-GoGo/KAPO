@@ -429,7 +429,7 @@ Page({
             maskHidden: false
         });
         wx.showToast({
-            title: '装逼中...',
+            title: '请骚等...',
             icon: 'loading',
             duration: 1000
         });
