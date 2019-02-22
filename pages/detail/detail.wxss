@@ -398,6 +398,7 @@ button::after {
   border-radius: 44rpx;
 }
 .canvas-box{
+  width: 0;
   height:0;
   overflow: hidden
 }
