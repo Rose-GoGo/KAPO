@@ -49,6 +49,10 @@ const ALL_API = {
     method: 'POST',
     url: '/index.php?m=content&c=api&a=thumbs_up'
   },
+  creatcode: { //二维码
+    method: 'POST',
+    url: '/index.php?m=content&c=msg&a=get_qrcode'
+  },
 }
 const Api = new MyHttp({}, ALL_API);
 export default Api;

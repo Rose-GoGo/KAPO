@@ -25,16 +25,14 @@ Page({
         page: 1,
         likenum: null,
         like: false,
-        code: "E7AI98",
-        // inputValue:"",
         maskHidden: false,
-        name: "",
-        touxiang: "",
+        codeurl: ""
     },
     /**
      * 生命周期函数--监听页面加载
      */
     onLoad: function(options) {
+        console.log(options)
         wx.showLoading();
         var that = this;
         let _userInfo = wx.getStorageSync('userInfo')
@@ -43,6 +41,23 @@ Page({
             id: options.id,
             catid: options.catid
         });
+
+        if(options.scene){
+            let scene=decodeURIComponent(options.scene);
+
+
+             wx.showModal({
+                showCancel: false,
+                confirmColor: '#1d8f59',
+                content: scene
+            });
+
+
+
+          }
+
+
+
         if (wx.getStorageSync('userInfo')) {} else {
             wx.getSetting({
                 success: function(res) {
@@ -63,6 +78,7 @@ Page({
         that.getData();
         that.commentlists(); //反馈列表
         that.top10(); //top 10推荐
+        that.getCode();
     },
     /**
      * 生命周期函数--监听页面初次渲染完成
@@ -113,6 +129,7 @@ Page({
             id: that.data.id
         };
         Api.pageitem(_params).then(res => {
+            console.log(res)
             if (!res.data.code) {
                 wx.hideLoading();
                 let _data = res.data.data;
@@ -326,21 +343,25 @@ Page({
         })
     },
     onPageScroll: function(e) {
-        // if (e.scrollTop > 100) {
-        //   this.setData({
-        //     backShow: true
-        //   });
-        // } else {
-        //   this.setData({
-        //     backShow: false
-        //   });
-        // }
+        if (e.scrollTop > 100) {
+          this.setData({
+            backShow: true
+          });
+        } else {
+          this.setData({
+            backShow: false
+          });
+        }
     },
     goHome: function() {
         wx.switchTab({
             url: '../index/index'
         });
     },
+
+    /*
+    海报
+    */
     createNewImg: function() {
         var that = this;
         var context = wx.createCanvasContext('mycanvas');
@@ -440,5 +461,22 @@ Page({
                 maskHidden: true
             });
         }, 1000)
-    }
+    },
+    getCode: function() { //生成二维码
+        var that = this;
+        let _params = {
+            catid: that.data.catid,
+            // page: 'pages/detail',
+            id: that.data.id
+        }
+        Api.creatcode(_params).then(res => {
+            if (res.data.code == 0) {
+                let _data = res.data.url;
+
+                that.setData({
+                    codeurl :_data
+                })
+            }
+        });
+    },
 })

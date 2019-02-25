@@ -1,5 +1,5 @@
 {
-  "navigationBarTitleText": "KAPO",
+  "navigationBarTitleText": "KAPO博客",
   "usingComponents": {
     "loading": "../../components/loading/loading",
     "backtop": "../../components/backtop/backtop"
