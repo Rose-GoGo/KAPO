@@ -5,6 +5,8 @@
     "loading": "../../components/loading/loading",
     "share": "../../components/share/share",
     "backtop": "../../components/backtop/backtop",
-    "copyright": "../../components/copyright/copyright"
+    "bottombar": "../../components/bottombar/bottombar"
+
+
   }
 }

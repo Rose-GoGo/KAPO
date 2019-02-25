@@ -163,11 +163,7 @@ image {
   padding: 14rpx 20rpx;
   display: flex;
 }
-.Rose-none .iconfont {
-  font-size: 48rpx;
-  padding: 15rpx 10rpx 0 0;
-  color: #4bb777;
-}
+
 .Rose-input {
   flex: 1;
   height: 76rpx;

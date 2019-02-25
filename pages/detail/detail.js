@@ -6,7 +6,7 @@ Page({
     /**
      * 页面的初始数据
      */
-    data: {
+     data: {
         items: {},
         show: false, //不显示分享
         dkcontent: '',
@@ -31,34 +31,29 @@ Page({
     /**
      * 生命周期函数--监听页面加载
      */
-    onLoad: function(options) {
-        console.log(options)
+     onLoad: function(options) {
         wx.showLoading();
         var that = this;
         let _userInfo = wx.getStorageSync('userInfo')
-        that.setData({
-            userInfo: _userInfo,
-            id: options.id,
-            catid: options.catid
-        });
-
         if(options.scene){
             let scene=decodeURIComponent(options.scene);
-
-
-             wx.showModal({
-                showCancel: false,
-                confirmColor: '#1d8f59',
-                content: scene
+            let info_arr = [];
+            info_arr = scene.split(',');
+            let _catid = info_arr[0];
+            let _id = info_arr[1];
+             that.setData({
+                userInfo: _userInfo,
+                id: _id,
+                catid: _catid
             });
-
-
-
-          }
-
-
-
-        if (wx.getStorageSync('userInfo')) {} else {
+        }else{
+             that.setData({
+                userInfo: _userInfo,
+                id: options.id,
+                catid: options.catid
+            });
+        }
+         if (wx.getStorageSync('userInfo')) {} else {
             wx.getSetting({
                 success: function(res) {
                     if (res.authSetting['scope.userInfo']) {
@@ -83,27 +78,27 @@ Page({
     /**
      * 生命周期函数--监听页面初次渲染完成
      */
-    onReady: function() {},
+     onReady: function() {},
     /**
      * 生命周期函数--监听页面显示
      */
-    onShow: function() {},
+     onShow: function() {},
     /**
      * 生命周期函数--监听页面隐藏
      */
-    onHide: function() {},
+     onHide: function() {},
     /**
      * 生命周期函数--监听页面卸载
      */
-    onUnload: function() {},
+     onUnload: function() {},
     /**
      * 页面相关事件处理函数--监听用户下拉动作
      */
-    onPullDownRefresh: function() {},
+     onPullDownRefresh: function() {},
     /**
      * 页面上拉触底事件的处理函数
      */
-    onReachBottom: function() {
+     onReachBottom: function() {
         var that = this;
         let page = that.data.page + 1;
         that.setData({
@@ -116,7 +111,7 @@ Page({
     /**
      * 用户点击右上角分享
      */
-    onShareAppMessage: function() {
+     onShareAppMessage: function() {
         return {
             title: this.data.items.title,
             imageUrl: '/assets/images/share.jpg'
@@ -129,7 +124,6 @@ Page({
             id: that.data.id
         };
         Api.pageitem(_params).then(res => {
-            console.log(res)
             if (!res.data.code) {
                 wx.hideLoading();
                 let _data = res.data.data;
@@ -346,19 +340,18 @@ Page({
         if (e.scrollTop > 100) {
           this.setData({
             backShow: true
-          });
-        } else {
+        });
+      } else {
           this.setData({
             backShow: false
-          });
-        }
-    },
-    goHome: function() {
-        wx.switchTab({
-            url: '../index/index'
         });
-    },
-
+      }
+  },
+  goHome: function() {
+    wx.switchTab({
+        url: '../index/index'
+    });
+},
     /*
     海报
     */
@@ -371,8 +364,10 @@ Page({
         var title = items.title;
         var desc = items.description;
         var thumb = items.thumb;
+
         var qrcodeLoal = "https://www.zhmzjl.com/statics/images/blog/kapo.jpg";
         context.drawImage(thumb, 40, 40, 520, 260); //绘制首图
+        context.drawImage(qrcodeLoal, 210, 650, 180, 180); //绘制二维码
         context.drawImage(qrcodeLoal, 210, 650, 180, 180); //绘制二维码
         context.setFillStyle("#000000");
         context.setFontSize(20); //设置字体大小
@@ -466,13 +461,11 @@ Page({
         var that = this;
         let _params = {
             catid: that.data.catid,
-            // page: 'pages/detail',
             id: that.data.id
         }
         Api.creatcode(_params).then(res => {
             if (res.data.code == 0) {
                 let _data = res.data.url;
-
                 that.setData({
                     codeurl :_data
                 })

@@ -1,0 +1,81 @@
+page {
+  width: 100%;
+  overflow-x: hidden;
+  background: #e5e9f0
+}
+button::after {
+  border: none;
+}
+.Rose-flex {
+  display: flex;
+}
+.Rose-flex1 {
+  flex: 1;
+}
+.Rose-color5 {
+  background-color: #16c2c2;
+}
+.Rose-color4 {
+  background-color: #8a90fa;
+}
+.Rose-color3 {
+  background-color: #4dc6ee;
+}
+.Rose-color2 {
+  background-color: #fed030;
+}
+.Rose-color1 {
+  background-color: #fd9d21;
+}
+/*none*/
+.allLoaded {
+  position: relative;
+  text-align: center;
+  font-size: 28rpx;
+  color: #ccc;
+  padding: 40rpx;
+}
+.allLoaded:before {
+  position: absolute;
+  left: 5%;
+  top: 60rpx;
+  width: 90%;
+  z-index: 1;
+  height: 2rpx;
+  content: '';
+  background: #ddd;
+}
+.line-word {
+  position: relative;
+  padding: 0 20rpx;
+  z-index: 2;
+  background: #e5e9f0;
+}
+.Rose-center {
+  text-align: center
+}
+.Rose-white {
+  background: #fff
+}
+.green-color {
+  font-size: 14px;
+  color: #1d8f59
+}
+
+.wxParse-wxxxcode-style{
+ white-space: pre;
+}
+
+
+/*copyright*/
+.Rose-copyRight{
+  padding: 40rpx;
+  text-align: center;
+  font-size: 20rpx;
+  color: #ccc;
+  line-height: 1.4
+}
+.kapo-name{
+  font-size: 24rpx;
+  color: #a8a8a8
+}

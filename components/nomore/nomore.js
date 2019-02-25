@@ -1,4 +1,4 @@
-// components/copyright/copyright.js
+// components/comment.js
 Component({
   /**
    * 组件的属性列表

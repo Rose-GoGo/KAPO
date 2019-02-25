@@ -27,11 +27,12 @@ Page({
       icon: 'icon-jianshen',
       name: '健身',
       id: 1
-    }, {
-      icon: 'icon-xiangji',
-      name: '摄影',
-      id: 5
     }
+    // {
+    //   icon: 'icon-xiangji',
+    //   name: '摄影',
+    //   id: 5
+    // }
     ]
   },
   /**
@@ -41,7 +42,6 @@ Page({
     var that = this;
     wx.hideLoading();
     that.getNotice();
-    // that.top10();
   },
   /**
    * 生命周期函数--监听页面初次渲染完成

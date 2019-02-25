@@ -1,3 +1,5 @@
+<import src="../../components/copyright/copyright.wxml" />
+
 <view class="Rose-about">
     <view class="Rose-content">余秋雨: 一个在教师看来生气勃勃的学生，过几年看到他，他成为了一个平庸的人。所以我始终要提醒大家，人生要不断地设定起点，不断地突破围城，不断地提醒自己，你有一个更精彩的生命。即使年纪很大也应该这样，生命才会比较有价值。</view>
 </view>
@@ -49,4 +51,6 @@
     </view>
 </view>
 <!-- 版权 -->
-<copyright></copyright>
+<!-- <copyright></copyright> -->
+
+<template is="copyright"></template>

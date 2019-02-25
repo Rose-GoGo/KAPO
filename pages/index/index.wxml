@@ -2,7 +2,7 @@
 <wxs module="comm" src="../comm.wxs"></wxs>
 <view class="Rose-floor1">
   <view class="Rose-music">
-    <view class="Rose-play {{isPlay? 'rotate': ''}}" ontap="controlMusic">
+    <view class="Rose-play {{isPlay? 'Rose-rotate': ''}}" ontap="controlMusic">
       <icon class="iconfont icon-CD"></icon>
     </view>
   </view>
@@ -13,7 +13,7 @@
     </swiper-item>
   </swiper>
 </view>
-<view class="Rose-floor">
+<view class="Rose-floor2">
   <view class="Rose-menu">
     <view class="Rose-kinds" wx:for="{{every}}" wx:for-item="i" wx:key="index" ontap="goEveryDay" data-catid="{{i.id}}">
       <view class="Rose-circle Rose-{{'color'+ i.id}}">
@@ -24,19 +24,22 @@
   </view>
 </view>
 <!-- 菜单 -->
-<view class="Rose-news" wx:for="{{items}}" wx:key="index" data-id="{{item.id}}" data-catid="{{item.catid}}" ontap="articleDetail" wx:if="{{ item.id != '124' && item.id !='145' }}">
-  <view class="Rose-content">
-    <image class='Rose-imgitem' mode="aspectFill" lazy-load="{{true}}" src="{{item.thumb==''? '/assets/images/ncode.jpg': item.thumb}}"></image>
-    <view class="Rose-title">{{item.title}}</view>
-    <view class="Rose-bottom">
-      <view class="Rose-icon"><icon class="iconfont icon-shijian2"></icon> {{comm.formatDate(item.updatetime)}}
+<view class="Rose-lists">
+  <view class="Rose-news" wx:for="{{items}}" wx:key="index" data-id="{{item.id}}" data-catid="{{item.catid}}" ontap="articleDetail" wx:if="{{ item.id != '124' && item.id !='145' }}">
+    <view class="Rose-content">
+      <image class='Rose-imgitem' mode="aspectFill" lazy-load="{{true}}" src="{{item.thumb==''? '/assets/images/ncode.jpg': item.thumb}}"></image>
+      <view class="Rose-title">{{item.title}}</view>
+      <view class="Rose-bottom">
+        <view class="Rose-icon"><icon class="iconfont icon-shijian2"></icon> {{comm.formatDate(item.updatetime)}}
+        </view>
+        <view class="Rose-icon"><icon class="iconfont icon-kanguo"></icon> {{item.views}}</view>
+        <view class="Rose-icon"><icon class="iconfont icon-pinglun3"></icon> {{item.cnum}}</view>
       </view>
-      <view class="Rose-icon"><icon class="iconfont icon-kanguo"></icon> {{item.views}}</view>
-      <view class="Rose-icon"><icon class="iconfont icon-pinglun3"></icon> {{item.cnum}}</view>
+      <view class="Rose-detail">{{item.description}}</view>
     </view>
-    <view class="Rose-detail">{{item.description}}</view>
   </view>
 </view>
+
 <view class="allLoaded" wx:if="{{items.length!=0 && !loadMore}}">
   <text class="line-word">我是有底线滴~</text>
 </view>

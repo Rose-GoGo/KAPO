@@ -1,7 +1,9 @@
 <!--components/copyright/copyright.wxml-->
 <!-- 版权 -->
-<view class="Rose-copyRight">
-  <view class="kapo-name">KAPO博客</view>
-  Copyright © 2014-2018 KAPO. All Rights Reserved.
-</view>
+<template name="copyright">
+    <view class="Rose-copyRight">
+      <view class="kapo-name">KAPO博客</view>
+      Copyright © 2014-2018 KAPO. All Rights Reserved.
+  </view>
+</template>
 <!-- /版权 -->

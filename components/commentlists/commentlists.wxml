@@ -1,0 +1,12 @@
+<view class="Rose-fixed" wx:if="{{ catid !='19' && id !='124' && id !='145' }}">
+    <div class="Rose-flex">
+        <view class="Rose-none text-left" bindtap='formSubmit'>
+            <icon class="iconfont icon-fenxiang1"></icon>
+        </view>
+        <view class="Rose-none text-left" bindtap="goHome">
+            <icon class="iconfont icon-shouye"></icon>
+        </view>
+        <input class="Rose-input" value="{{content}}" bindinput="forContent" maxlength="-1" placeholder="{{placeholder}}" />
+        <button class="Rose-none Rose-post" disabled="{{disabled}}" wx:if="{{canIUse}}" open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo">评论</button>
+    </div>
+</view>

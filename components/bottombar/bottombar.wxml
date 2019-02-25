@@ -1,0 +1,23 @@
+<view class="Rose-fixed">
+    <view class="Rose-flex">
+        <view class="Rose-input" bindtap="commentBox">点击评论回复</view>
+        <view class="Rose-none Rose-center" bindtap='formSubmit'>
+            <icon class="iconfont {{ like?'icon-xiangqu-fill':'icon-xiangqu'}}"></icon>
+            {{likenum}}
+        </view>
+        <view class="Rose-none Rose-center" bindtap="goHome">
+            <icon class="iconfont icon-shouye"></icon>
+        </view>
+    </view>
+</view>
+
+
+<!-- 评论框 -->
+<view class="Rose-modal" wx:if="{{show}}" bindtap="closeBox"></view>
+
+<view class="Rose-comments" wx:if="{{show}}">
+    <form catchsubmit="formSubmit" report-submit="true">
+        <textarea placeholder="点击评论回复 (300字以内哦)" class="Rose-post"  value="{{content}}" bindinput="forContent" maxlength="-1"  ></textarea>
+        <button class="Rose-btn {{disabled? 'disabled':''}}" size="mini"  wx:if="{{canIUse}}" open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo">发送</button>
+    </form>
+</view>

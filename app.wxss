@@ -1,41 +1,6 @@
 /**app.wxss**/
 @import "/assets/icon/iconfont";
-page{
-  width: 100%;
-  overflow-x: hidden;
-  background: #e5e9f0
-}
-button::after{ border: none; }
-.Rose-white{
-  background: #fff
-}
-.green-color{
-    font-size: 14px;
-    color: #1d8f59
-}
-.allLoaded {
-  position: relative;
-  text-align: center;
-  font-size: 28rpx;
-  color: #ccc;
-  padding: 40rpx;
-}
-.allLoaded:before {
-  position: absolute;
-  left: 5%;
-  top: 60rpx;
-  width: 90%;
-  z-index: 1;
-  height: 2rpx;
-  content: '';
-  background: #ddd;
-}
-.line-word {
-  position: relative;
-  padding: 0 20rpx;
-  z-index: 2;
-  background: #e5e9f0;
-}
+@import "/assets/css/common";
 
 
 

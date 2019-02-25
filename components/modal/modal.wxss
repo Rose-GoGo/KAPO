@@ -1,0 +1,70 @@
+/* components/share/share.wxss */
+
+.Rose-mask {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin-top: -104rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.4);
+  z-index: 9;
+}
+
+.Rose-content {
+  display: flex;
+  flex-direction: column;
+  width: 618rpx;
+  background-color: #fff;
+  border-radius: 8rpx;
+  color: #999;
+  text-align: center;
+  font-size: 30rpx;
+}
+
+.Rose-main {
+  flex: 1;
+  height: 100%;
+  overflow-y: hidden;
+}
+
+.Rose-btns {
+  display: flex;
+  flex-direction: row;
+  height: 98rpx;
+  line-height: 98rpx;
+  border-top: 2rpx solid #e6e5e7;
+  overflow: hidden;
+}
+
+.Rose-cancel, .Rose-confirm {
+  position: relative;
+  flex: 1;
+  height: 100rpx;
+  line-height: 100rpx;
+  text-align: center;
+  font-size: 36rpx;
+  color: #999;
+  z-index: 1;
+}
+
+button.Rose-confirm {
+  color: #1d8f59;
+}
+
+button:after {
+  border: none;
+}
+
+button {
+  border-radius: 0;
+  padding: 0;
+  background-color: transparent;
+}
+
+button.Rose-cancel {
+  border-right: 2rpx solid #e6e5e7;
+}
