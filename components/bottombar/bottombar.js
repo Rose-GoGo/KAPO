@@ -4,11 +4,20 @@ Component({
   /**
    * 组件的属性列表
    */
-  properties: {},
+   properties: {
+    newsid: {
+      type: String,
+      value: ''
+    },
+    pid: {
+      type: String,
+      value: ''
+    }
+  },
   /**
    * 组件的初始数据
    */
-  data: {
+   data: {
     show: false,
     canIUse: wx.canIUse('button.open-type.getUserInfo'),
     disabled: true
@@ -16,7 +25,8 @@ Component({
   /**
    * 组件的方法列表
    */
-  methods: {
+   methods: {
+
     bindGetUserInfo: function (e) {
       var that = this;
       var userInfo = {};
@@ -48,6 +58,11 @@ Component({
       });
     },
     commentBox: function () {
+      this.setData({
+        show: true,
+      })
+    },
+    closeBox:function () {
       this.setData({
         show: false,
       })
@@ -123,8 +138,8 @@ Component({
       if (!that.data.userInfo) return false;
       wx.showLoading();
       let _params = {
-        newsid: that.data.id, // 博客文章ID
-        pid: that.data.pid, // 父评论ID，默认为0
+        newsid: that.data.newsid, // 博客文章ID
+        pid: 0, // 父评论ID，默认为0
         from_username: that.data.userInfo.nickName, // 评论者用户名
         from_avatar: that.data.userInfo.avatarUrl, // 评论者头像
         reply_username: that.data.reply_username, // 回复了谁，pid不为0时，不允许未空
@@ -140,6 +155,7 @@ Component({
             duration: 2000
           })
           that.setData({
+            show: false,
             content: '',
             page: 1,
             comments: [],
@@ -148,7 +164,7 @@ Component({
             placeholder: '点击评论回复...',
             disabled: true
           });
-          that.commentlists();
+          // that.commentlists();
         }
       });
     },

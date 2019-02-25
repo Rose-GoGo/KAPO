@@ -1,7 +1,5 @@
 <!--pages/detail/detail.wxml-->
 <import src="../../components/copyright/copyright.wxml" />
-
-
 <import src="../../wxParse/wxParse.wxml" />
 <image wx:if="{{catid=='19'}}" class="Rose-imgitem" mode="aspectFill" src="{{ items.thumb==''? '/assets/images/wx_04.jpg' :items.thumb}}"></image>
 <view class="Rose-detail">
@@ -71,25 +69,6 @@
     <loading load-more="{{loadMore}}"></loading>
 </view>
 <!-- 发表评论 -->
-
-
- <bottombar />
-<!-- <view class="Rose-fixed" wx:if="{{ catid !='19' && id !='124' && id !='145' }}">
-    <div class="Rose-flex">
-        <view class="Rose-none text-left" bindtap='formSubmit'>
-            <icon class="iconfont icon-fenxiang1"></icon>
-        </view>
-        <view class="Rose-none text-left" bindtap="goHome">
-            <icon class="iconfont icon-shouye"></icon>
-        </view>
-        <input class="Rose-input" value="{{content}}" bindinput="forContent" maxlength="-1" placeholder="{{placeholder}}" />
-        <button class="Rose-none Rose-post" disabled="{{disabled}}" wx:if="{{canIUse}}" open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo">评论</button>
-    </div>
-</view> -->
-<!-- 打赏组件 -->
-<share show="{{show}}" bindcancel="modalCancel" bindconfirm='modalConfirm' catchtouchmove="true">
-    <view class='modal-content'>您的分享与关注是对我最大的奖赏！</view>
-</share>
 <!--生成海报  -->
 <view>
     <view class='imagePathBox' hidden="{{maskHidden == false}}">
@@ -101,6 +80,13 @@
         <canvas style="width: 600px;height: 970px;" canvas-id="mycanvas" />
     </view>
 </view>
+
+
+<bottombar newsid ="{{id}}"  pid="{{0}}"></bottombar>
+<!-- 打赏组件 -->
+<share show="{{show}}" bindcancel="modalCancel" bindconfirm='modalConfirm' catchtouchmove="true">
+    <view class='modal-content'>您的分享与关注是对我最大的奖赏！</view>
+</share>
 <!-- 返回顶部 -->
 <backtop back-show="{{backShow}}"></backtop>
 <!-- 版权 -->
