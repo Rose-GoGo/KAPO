@@ -5,6 +5,10 @@ Component({
    * 组件的属性列表
    */
   properties: {
+    commentShow: {
+      type: Boolean,
+      value: false
+    },
     newsid: {
       type: String,
       value: ''
@@ -20,14 +24,24 @@ Component({
     likenum: {
       type: Number,
       value: 0
-    }
+    },
+    reply_username: {
+      type: String,
+      value: ''
+    },
+    reply_username: {
+      type: String,
+      value: ''
+    },
+
+
   },
   /**
    * 组件的初始数据
    */
   data: {
     bottom:0,
-    show: false,
+    commentShow: false,
     canIUse: wx.canIUse('button.open-type.getUserInfo'),
     userInfo: {},
     disabled: true,
@@ -69,12 +83,14 @@ Component({
     },
     commentBox: function() {
       this.setData({
-        show: true,
+        commentShow: true,
       })
+
+      this.triggerEvent("tap",{{commentShow:this.data.commentShow}}); //triggerEvent函数接受三个值：事件名称、数据、选项值
     },
     closeBox: function() {
       this.setData({
-        show: false,
+        commentShow: false,
       })
     },
     wetherLike: function() { //点赞
@@ -168,7 +184,7 @@ Component({
             duration: 2000
           })
           that.setData({
-            show: false,
+            commentShow: false,
             content: '',
             reply_username: '',
             pid: 0,

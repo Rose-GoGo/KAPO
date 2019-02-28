@@ -42,7 +42,7 @@
     <view class="Rose-lists" wx:if="{{count!=0}}">
         <view class="Rose-items" wx:for="{{comments}}" wx:key="index" wx:for-item="comment">
             <view class="Rose-resource">
-                <image class="Rose-image" src="{{comment.from_avatar}}"></image>
+                <image class="Rose-image" src="{{comment.from_avatar}}" bindtap="backContent"></image>
                 <view class="Rose-user">
                     <view class="Rose-form">
                         <view class="Rose-names">{{comment.from_username}}</view>
@@ -80,9 +80,16 @@
         <canvas style="width: 600px;height: 970px;" canvas-id="mycanvas" />
     </view>
 </view>
-
-
-<bottombar newsid ="{{id}}"  pid="{{0}}"  likenum="{{likenum}}" pinglunnum="{{count}}" bindpostComments="commentlists"></bottombar>
+<bottombar
+    comment-show="{{commentshow}}"
+    newsid ="{{id}}"
+    pid="{{pid}}"
+    likenum="{{likenum}}"
+    pinglunnum="{{count}}"
+    reply_username="{{reply_username}}"
+    bindpostComments="commentlists"
+    placeholder="{{placeholder}}">
+ </bottombar>
 <!-- 打赏组件 -->
 <share show="{{show}}" bindcancel="modalCancel" bindconfirm='modalConfirm' catchtouchmove="true">
     <view class='modal-content'>您的分享与关注是对我最大的奖赏！</view>
@@ -90,5 +97,4 @@
 <!-- 返回顶部 -->
 <backtop back-show="{{backShow}}"></backtop>
 <!-- 版权 -->
-
 <template is="copyright"></template>

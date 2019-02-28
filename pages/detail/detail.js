@@ -26,7 +26,8 @@ Page({
         likenum: null,
         like: false,
         maskHidden: false,
-        codeurl: ""
+        codeurl: "",
+        commentshow: false
     },
     /**
      * 生命周期函数--监听页面加载
@@ -166,8 +167,9 @@ Page({
             placeholder: '回复 ' + _from,
             focus: true,
             reply_username: _from,
-            pid: _id
-        });
+            pid: _id,
+            commentshow: true
+        })
     },
     top10: function() { //推荐阅读
         var that = this;
