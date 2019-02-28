@@ -4,7 +4,7 @@ Component({
   /**
    * 组件的属性列表
    */
-   properties: {
+  properties: {
     newsid: {
       type: String,
       value: ''
@@ -21,32 +21,33 @@ Component({
       type: Number,
       value: 0
     }
-
   },
   /**
    * 组件的初始数据
    */
-   data: {
+  data: {
+    bottom:0,
     show: false,
     canIUse: wx.canIUse('button.open-type.getUserInfo'),
-    disabled: true
+    userInfo: {},
+    disabled: true,
+    content:''
   },
   /**
    * 组件的方法列表
    */
-   methods: {
-
-    bindGetUserInfo: function (e) {
+  methods: {
+    bindGetUserInfo: function(e) {
       var that = this;
       var userInfo = {};
       if (e.detail.userInfo) {
         userInfo = e.detail.userInfo;
       } else {
         wx.getUserInfo({
-          success: function (res) {
+          success: function(res) {
             userInfo = res.userInfo;
           },
-          fail: function (res) {
+          fail: function(res) {
             wx.showModal({
               showCancel: false,
               confirmColor: '#1d8f59',
@@ -59,24 +60,24 @@ Component({
       that.setData({
         userInfo: userInfo
       })
-      that.postComments()
+      that.postComments();
     },
-    goHome: function () {
+    goHome: function() {
       wx.switchTab({
         url: '../index/index'
       });
     },
-    commentBox: function () {
+    commentBox: function() {
       this.setData({
         show: true,
       })
     },
-    closeBox:function () {
+    closeBox: function() {
       this.setData({
         show: false,
       })
     },
-    wetherLike: function () { //点赞
+    wetherLike: function() { //点赞
       var that = this;
       let params = {
         id: that.data.id,
@@ -112,7 +113,7 @@ Component({
         })
       }
     },
-    forContent: function (e) {
+    forContent: function(e) {
       let that = this;
       let _content = e.detail.value;
       // 禁止输入空格
@@ -134,9 +135,10 @@ Component({
         })
       }
     },
-    postComments: function () {
+    postComments: function() {
       var that = this;
-      if (!that.data.content) {
+      var _content = this.data.content;
+      if (!_content) {
         wx.showModal({
           showCancel: false,
           confirmColor: '#1d8f59',
@@ -144,16 +146,18 @@ Component({
         });
         return false;
       }
-      if (!that.data.userInfo) return false;
+      var postinfo =  that.data.userInfo;
+      if (JSON.stringify(postinfo)=="{}") return false;
+      console.log(postinfo)
       wx.showLoading();
       let _params = {
         newsid: that.data.newsid, // 博客文章ID
         pid: 0, // 父评论ID，默认为0
-        from_username: that.data.userInfo.nickName, // 评论者用户名
-        from_avatar: that.data.userInfo.avatarUrl, // 评论者头像
+        from_username: postinfo.nickName, // 评论者用户名
+        from_avatar: postinfo.avatarUrl, // 评论者头像
         reply_username: that.data.reply_username, // 回复了谁，pid不为0时，不允许未空
         reply_avatar: "", // 回复了谁的头像，允许为空
-        content: that.data.content
+        content: _content
       }
       Api.postcomments(_params).then(res => {
         if (!res.data.code) {
@@ -166,19 +170,30 @@ Component({
           that.setData({
             show: false,
             content: '',
-            page: 1,
             reply_username: '',
             pid: 0,
-
             disabled: true
           });
           // that.commentlists();
         }
       });
     },
-    updatecomment:function(){
+    updatecomment: function() {
       this.triggerEvent('postComments')
-
+    },
+    foucus: function(e) {
+      var that = this;
+      that.setData({
+        bottom: e.detail.height
+      })
+    },
+     
+   // 失去聚焦
+    blur: function(e) {
+      var that = this;
+      that.setData({
+        bottom: 0
+      })
     }
   }
 })

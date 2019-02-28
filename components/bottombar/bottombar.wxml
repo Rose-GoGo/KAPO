@@ -1,23 +1,47 @@
 <view class="Rose-fixed">
     <view class="Rose-flex">
         <view class="Rose-input" bindtap="commentBox">点击评论回复</view>
-        <view class="Rose-none Rose-center" bindtap="goHome">
+        <view class="Rose-none Rose-center" bindtap="commentBox">
             <icon class="iconfont icon-pinglun"></icon>{{pinglunnum}}
         </view>
         <view class="Rose-none Rose-center"  bindtap="wetherLike" >
             <icon class="iconfont {{ like?'icon-xiangqu_fill':'icon-xiangqu'}}"></icon>
             {{likenum}}
         </view>
-
     </view>
 </view>
 <!-- 评论框 -->
 <view class="Rose-modal" wx:if="{{show}}" bindtap="closeBox"></view>
-<view class="Rose-comments" wx:if="{{show}}">
-    <form bindsubmit="postComments" report-submit="true">
-        <textarea placeholder="点击评论回复 (300字以内哦)" class="Rose-post"  value="{{content}}" bindinput="forContent" maxlength="-1" fixed focus="true"></textarea>
+<view class="Rose-comments" wx:if="{{show}}"  style="bottom:{{bottom}}px">
+    <form bindsubmit="postComments"   report-submit="true">
+        <textarea
+            name="content"
+            class="Rose-post"
+            value="{{content}}"
+            bindinput="forContent"
+            maxlength="-1"
+            fixed
+            focus="{{show}}"
+            adjust-position="{{true}}"
+            bindfocus="foucus"
+            bindblur="blur"
+            auto-focus ="{{true}}"
+            bindconfirm= "postComments"
+            placeholder="点击评论回复 (300字以内哦)">
+        </textarea>
+ <!--        <textarea
+            name="content"
+            class="Rose-post"
+            value="{{content}}"
+            bindinput="forContent"
+            maxlength="-1"
+            fixed
+            focus="{{show}}"
+            adjust-position="{{true}}"
 
-        <button class="Rose-btn {{disabled? 'disabled':''}}" size="mini"  wx:if="{{canIUse}}" form-type="submit" open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo">发送</button>
+            placeholder="点击评论回复 (300字以内哦)">
+        </textarea> -->
+        <button class="Rose-btn {{disabled? 'disabled':''}}" size="mini" wx:if="{{canIUse}}" form-type="submit" open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo">发送</button>
          <button form-type="reset" class="Rose-btn fl" type="default" size="mini">清空</button>
     </form>
 </view>

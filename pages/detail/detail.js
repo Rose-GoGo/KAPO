@@ -192,7 +192,8 @@ Page({
             url: '../detail/detail?catid=' + catid + '&id=' + id
         });
     },
-    postComments: function() {
+    postComments: function(e) {
+        console.log(e.detail.value);
         var that = this;
         if (!that.data.content) {
             wx.showModal({

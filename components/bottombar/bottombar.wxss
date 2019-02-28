@@ -51,15 +51,16 @@
   z-index: 6;
   background: #fff;
   border-top: 2rpx solid #f2f2f2;
+  transition: all 0.25s ease
 }
 .Rose-post {
  width: auto;
  height: 160rpx;
  margin: 40rpx 40rpx 0;
- padding: 20rpx;
+ padding: 10rpx;
  background: #eee;
- color: #666;
- font-size: 26rpx;
+ color: #333;
+ font-size: 28rpx;
  border-radius: 8rpx;
 }
 .Rose-btn{
