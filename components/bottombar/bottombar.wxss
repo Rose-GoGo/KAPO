@@ -14,23 +14,29 @@
   display: flex;
 }
 .Rose-none{
-  width: 120rpx;
-  flex: none
+  width: 80rpx;
+  flex: none;
+  font-size: 20rpx;
+  color: #999
 }
 .Rose-none .iconfont {
-  font-size: 48rpx;
-  padding: 15rpx 10rpx 0 0;
-  color: #4bb777;
+  font-size: 36rpx;
+  /*color: #4bb777;*/
+  font-weight: 500;
+  display: block;
+  color: #111;
+  margin-top: -9rpx;
 }
 .Rose-input {
   flex: 1;
+  margin: 0 20rpx 0 0;
   height: 64rpx;
   line-height: 64rpx;
   padding: 0 20rpx;
   background: #f5f5f5;
   border: 2rpx solid #d9d9d9;
   font-size: 24rpx;
-  border-radius: 4rpx;
+  border-radius: 40rpx;
   color: #999;
 }
 .Rose-center{

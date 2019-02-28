@@ -82,7 +82,7 @@
 </view>
 
 
-<bottombar newsid ="{{id}}"  pid="{{0}}"></bottombar>
+<bottombar newsid ="{{id}}"  pid="{{0}}"  likenum="{{likenum}}" pinglunnum="{{count}}" bindpostComments="commentlists"></bottombar>
 <!-- 打赏组件 -->
 <share show="{{show}}" bindcancel="modalCancel" bindconfirm='modalConfirm' catchtouchmove="true">
     <view class='modal-content'>您的分享与关注是对我最大的奖赏！</view>
@@ -90,4 +90,5 @@
 <!-- 返回顶部 -->
 <backtop back-show="{{backShow}}"></backtop>
 <!-- 版权 -->
+
 <template is="copyright"></template>

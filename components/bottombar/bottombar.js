@@ -12,7 +12,16 @@ Component({
     pid: {
       type: String,
       value: ''
+    },
+    pinglunnum: {
+      type: Number,
+      value: 0
+    },
+    likenum: {
+      type: Number,
+      value: 0
     }
+
   },
   /**
    * 组件的初始数据
@@ -158,15 +167,18 @@ Component({
             show: false,
             content: '',
             page: 1,
-            comments: [],
             reply_username: '',
             pid: 0,
-            placeholder: '点击评论回复...',
+
             disabled: true
           });
           // that.commentlists();
         }
       });
     },
+    updatecomment:function(){
+      this.triggerEvent('postComments')
+
+    }
   }
 })
