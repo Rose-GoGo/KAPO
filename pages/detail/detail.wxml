@@ -29,11 +29,15 @@
         {{items.url}}
     </view>
 </view>
+
+
 <!-- 推荐阅读 -->
 <view class="Rose-top" wx:if="{{top10.length >0 }}" wx:if="{{ catid !='19' && id !='124' && id !='145' }}">
     <view class="Rose-lines">推荐阅读</view>
     <view class="Rose-topli" wx:for="{{top10}}" wx:key="index" wx:for-item="top" data-id="{{top.id}}" data-catid="{{top.catid}}" ontap="articleDetail">{{top.title}}</view>
 </view>
+
+
 <!-- 评论列表 -->
 <view class="Rose-comments" wx:if="{{catid!=='19' && id !='124' && id !='145'}}">
     <view class="Rose-lines">精选评论
@@ -59,6 +63,8 @@
             </view>
         </view>
     </view>
+
+
     <view class="Rose-empty" wx:if="{{count==0}}">
         <icon class="iconfont icon-kafei"></icon>
         评论还是空的，快来说两句吧~
@@ -80,14 +86,46 @@
         <canvas style="width: 600px;height: 970px;" canvas-id="mycanvas" />
     </view>
 </view>
+
+<!-- <view class="Rose-fixed">
+    <view class="Rose-flex">
+        <view class="Rose-input" bindtap="commentBox">点击评论回复</view>
+        <view class="Rose-none Rose-center" bindtap="commentBox">
+            <icon class="iconfont icon-pinglun"></icon>{{count}}
+        </view>
+        <view class="Rose-none Rose-center"  bindtap="wetherLike" >
+            <icon class="iconfont {{ like?'icon-xiangqu_fill':'icon-xiangqu'}}"></icon>
+            {{likenum}}
+        </view>
+    </view>
+</view>
+ -->
+<view class="Rose-fixed">
+    <view class="Rose-flex">
+        <view class="Rose-none Rose-center" bindtap="goHome">
+            <icon class="iconfont icon-shouye"></icon>
+        </view>
+        <view class="Rose-none Rose-center" bindtap="createNewImg">
+            <icon class="iconfont icon-tupian"></icon>
+        </view>
+        <view class="Rose-input" bindtap="commentBox">{{placeholder}}</view>
+        <view class="Rose-none Rose-center" bindtap="commentBox">
+            <icon class="iconfont icon-pinglun"></icon>{{count}}
+        </view>
+        <view class="Rose-none Rose-center"  bindtap="wetherLike" >
+            <icon class="iconfont {{ like?'icon-xiangqufill':'icon-xiangqu1'}}"></icon>
+            {{likenum}}
+        </view>
+    </view>
+</view>
+
+
 <bottombar
-    comment-show="{{commentshow}}"
+    commentShow="{{commentshow}}"
     newsid ="{{id}}"
     pid="{{pid}}"
-    likenum="{{likenum}}"
-    pinglunnum="{{count}}"
     reply_username="{{reply_username}}"
-    bindpostComments="commentlists"
+    bind:pullComment="commentlists"
     placeholder="{{placeholder}}">
  </bottombar>
 <!-- 打赏组件 -->

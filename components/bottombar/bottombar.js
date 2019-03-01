@@ -17,15 +17,7 @@ Component({
       type: String,
       value: ''
     },
-    pinglunnum: {
-      type: Number,
-      value: 0
-    },
-    likenum: {
-      type: Number,
-      value: 0
-    },
-    reply_username: {
+    placeholder: {
       type: String,
       value: ''
     },
@@ -33,15 +25,16 @@ Component({
       type: String,
       value: ''
     },
-
-
+    reply_username: {
+      type: String,
+      value: ''
+    },
   },
   /**
    * 组件的初始数据
    */
   data: {
     bottom:0,
-    commentShow: false,
     canIUse: wx.canIUse('button.open-type.getUserInfo'),
     userInfo: {},
     disabled: true,
@@ -76,58 +69,10 @@ Component({
       })
       that.postComments();
     },
-    goHome: function() {
-      wx.switchTab({
-        url: '../index/index'
-      });
-    },
-    commentBox: function() {
-      this.setData({
-        commentShow: true,
-      })
-
-      this.triggerEvent("tap",{{commentShow:this.data.commentShow}}); //triggerEvent函数接受三个值：事件名称、数据、选项值
-    },
     closeBox: function() {
       this.setData({
         commentShow: false,
       })
-    },
-    wetherLike: function() { //点赞
-      var that = this;
-      let params = {
-        id: that.data.id,
-        catid: that.data.catid
-      }
-      if (!that.data.like) {
-        Api.likenum(params).then(res => {
-          if (!res.data.code) {
-            let _data = res.data.data;
-            let linknn = parseInt(that.data.likenum)
-            that.setData({
-              likenum: linknn + 1,
-              like: !that.data.like
-            })
-            wx.showToast({
-              title: '感谢您的鼓励！',
-              icon: 'none',
-              duration: 2000
-            })
-          }
-        });
-      }
-      if (that.data.like) {
-        let linknn = parseInt(that.data.likenum)
-        that.setData({
-          likenum: linknn - 1,
-          like: !that.data.like
-        })
-        wx.showToast({
-          title: '我会继续努力！',
-          icon: 'none',
-          duration: 2000
-        })
-      }
     },
     forContent: function(e) {
       let that = this;
@@ -164,11 +109,10 @@ Component({
       }
       var postinfo =  that.data.userInfo;
       if (JSON.stringify(postinfo)=="{}") return false;
-      console.log(postinfo)
       wx.showLoading();
       let _params = {
         newsid: that.data.newsid, // 博客文章ID
-        pid: 0, // 父评论ID，默认为0
+        pid: that.data.pid, // 父评论ID，默认为0
         from_username: postinfo.nickName, // 评论者用户名
         from_avatar: postinfo.avatarUrl, // 评论者头像
         reply_username: that.data.reply_username, // 回复了谁，pid不为0时，不允许未空
@@ -190,20 +134,27 @@ Component({
             pid: 0,
             disabled: true
           });
-          // that.commentlists();
+           that.cancelBut();
+
+          that.triggerEvent('commentlists')
         }
       });
     },
-    updatecomment: function() {
-      this.triggerEvent('postComments')
+
+    cancelBut: function (e) {
+      var that = this;
+      var myEventDetail = { page: 1 } // detail对象，提供给事件监听函数
+      this.triggerEvent('pullComment', myEventDetail ) //
     },
+
+
+
     foucus: function(e) {
       var that = this;
       that.setData({
         bottom: e.detail.height
       })
     },
-     
    // 失去聚焦
     blur: function(e) {
       var that = this;
