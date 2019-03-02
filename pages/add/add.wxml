@@ -1,0 +1,56 @@
+<!--pages/add/add.wxml-->
+<import src="../../wxParse/wxParse.wxml" />
+<view class="Rose-add">
+  <view class="Rose-form">
+
+    <view class="Rose-section">
+      <view class="Rose-section_title">类型</view>
+      <input name="time" name="title" value="{{title}}" class="Rose-input" bindinput="forTitle" />
+    </view>
+
+
+      <view class="Rose-section">
+      <view class="Rose-section_title">标题</view>
+      <input name="time" name="title" value="{{title}}" class="Rose-input" bindinput="forTitle" />
+    </view>
+
+
+
+
+    <view class="Rose-section">
+      <view class="Rose-section_title">内容</view>
+      <!-- <textarea name="beizhu" name="remark" class="Rose-input" value="{{remark}}" bindinput="forRemark" maxlength="-1" placeholder="说点什么吧"></textarea> -->
+      <scroll-view class="intro-box" scroll-y="true">
+      <view class="intro-live">
+        <!-- 引入模板 -->
+        <import src="../../../components/wxParse/wxParse.wxml"/>
+        <!-- 这里data中article为bindName -->
+        <template is="wxParse" data="{{wxParseData:article.nodes}}"/>
+      </view>
+    </scroll-view>
+
+    </view>
+
+
+    <view class="Rose-section">
+      <view class="Rose-section_title">关键字</view>
+      <input name="time" name="title" value="{{title}}" class="Rose-input" bindinput="forTitle" />
+    </view>
+
+
+    <view class="Rose-section">
+      <view class="Rose-section_title">介绍</view>
+      <input name="time" name="title" value="{{title}}" class="Rose-input" bindinput="forTitle" />
+    </view>
+
+
+
+
+    <view class="Rose-section">
+      <view class="Rose-section_title"></view>
+      <view class="Rose-upimg">
+        <icon class="iconfont icon-tupian" ontap="chooseImg" wx:if="{{images.length < 3}}"></icon>
+      </view>
+    </view>
+  </view>
+</view>

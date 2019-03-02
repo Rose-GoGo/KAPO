@@ -19,7 +19,7 @@ Page({
     focus: false,
     userInfo: {},
     content: '',
-    placeholder: '留言鼓励一下...',
+    placeholder: '爱发言的人运气都不会太差',
     reply_username: '',
     pid: 0,
     page: 1,
@@ -74,7 +74,7 @@ Page({
     that.getData();
     that.commentlists(); //反馈列表
     that.top10(); //top 10推荐
-    that.getCode();
+    // that.getCode();
   },
   /**
    * 生命周期函数--监听页面初次渲染完成
@@ -326,11 +326,7 @@ Page({
       //   });
       // }
   },
-    goHome: function() {
-      wx.switchTab({
-          url: '../index/index'
-      });
-  },
+
   /*
   海报
   */

@@ -95,7 +95,7 @@ button[disabled]:not([type]) {
 .Rose-title {
   font-size: 32rpx;
   color: #333;
-  line-height: 1.2;
+  line-height: 1.4;
 }
 .Rose-time {
   font-size: 20rpx;

@@ -7,9 +7,9 @@
     "pages/more/more",
     "pages/feedback/feedback",
     "pages/lists/lists",
-    "pages/me/me"
+    "pages/me/me",
+    "pages/add/add"
   ],
-
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#1d8f59",

@@ -4,7 +4,7 @@ Component({
   /**
    * 组件的属性列表
    */
-  properties: {
+   properties: {
     commentShow: {
       type: Boolean,
       value: false
@@ -33,8 +33,8 @@ Component({
   /**
    * 组件的初始数据
    */
-  data: {
-    bottom:0,
+   data: {
+    bottom: 0,
     canIUse: wx.canIUse('button.open-type.getUserInfo'),
     userInfo: {},
     disabled: true,
@@ -43,7 +43,7 @@ Component({
   /**
    * 组件的方法列表
    */
-  methods: {
+   methods: {
     bindGetUserInfo: function(e) {
       var that = this;
       var userInfo = {};
@@ -134,21 +134,16 @@ Component({
             pid: 0,
             disabled: true
           });
-           that.cancelBut();
-
+          that.cancelBut();
           that.triggerEvent('commentlists')
         }
       });
     },
-
     cancelBut: function (e) {
       var that = this;
       var myEventDetail = { page: 1 } // detail对象，提供给事件监听函数
       this.triggerEvent('pullComment', myEventDetail ) //
     },
-
-
-
     foucus: function(e) {
       var that = this;
       that.setData({
@@ -156,11 +151,28 @@ Component({
       })
     },
    // 失去聚焦
-    blur: function(e) {
-      var that = this;
-      that.setData({
-        bottom: 0
-      })
-    }
+   blur: function(e) {
+    var that = this;
+    that.setData({
+      bottom: 0
+    })
+  },
+  rewardRose: function () {
+    var that = this;
+    that.setData({
+      show: true
+    })
+  },
+  goHome: function() {
+      wx.switchTab({
+          url: '../index/index'
+      });
+  },
+  makePhoto: function(){
+     var myEventDetail = { maskHidden: false }
+
+     this.triggerEvent('makePhoto', myEventDetail) //
+
   }
+}
 })

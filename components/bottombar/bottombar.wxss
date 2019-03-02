@@ -1,31 +1,36 @@
 /* components/bottombar/bottombar.wxss */
-
-
-.Rose-center{
+@import "/assets/icon/iconfont";
+.fl{
+  float: left
+}
+.fr{
+  float: right
+}
+.Rose-center {
   text-align: center
 }
-.Rose-comments{
+.Rose-comments {
   position: fixed;
   left: 0;
   bottom: 0;
   width: 100%;
-  height: 340rpx;
   z-index: 6;
   background: #fff;
   border-top: 2rpx solid #f2f2f2;
-  transition: all 0.25s ease
+  transition: all 0.25s ease;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2)
 }
 .Rose-post {
- width: auto;
- height: 160rpx;
- margin: 40rpx 40rpx 0;
- padding: 10rpx;
- background: #eee;
- color: #333;
- font-size: 28rpx;
- border-radius: 8rpx;
+  width: auto;
+  height: 200rpx;
+  margin: 20rpx 40rpx 0;
+  padding: 10rpx;
+  background: #eee;
+  color: #333;
+  font-size: 28rpx;
+  border-radius: 8rpx;
 }
-.Rose-btn{
+.Rose-btn {
   background: #4bb777;
   margin: 20rpx 40rpx;
   color: #fff;
@@ -34,18 +39,29 @@
   padding: 0 20rpx;
   text-align: center;
   box-shadow: none;
-  float: right
+/*  float: right*/
 }
-.Rose-btn.disabled{
+.Rose-btn.disabled {
   opacity: 0.5;
   color: #eee
 }
-.Rose-modal{
-   position: fixed;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 3;
-  background: rgba(0,0,0,0.5);
+.Rose-tool {
+  color: #999;
+  font-size: 18rpx;
+  padding: 10rpx 0;
+  border-bottom: 1rpx solid #f2f2f2
+}
+.Rose-flex {
+  display: flex;
+}
+.Rose-flex1 {
+  flex: 1
+}
+.Rose-tool .iconfont {
+  display: block;
+  color: #333;
+  font-size: 48rpx;
+}
+.text-center {
+  text-align: center
 }

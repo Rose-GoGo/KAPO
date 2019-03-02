@@ -9,7 +9,7 @@
 		"postcss": true,
 		"minified": true,
 		"newFeature": true,
-		"autoAudits": true
+		"autoAudits": false
 	},
 	"compileType": "miniprogram",
 	"libVersion": "2.4.3",
@@ -37,7 +37,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 0,
+			"current": 7,
 			"list": [
 				{
 					"id": 0,
@@ -81,6 +81,12 @@
 					"name": "关于我",
 					"pathName": "pages/me/me",
 					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "添加文章",
+					"pathName": "pages/add/add",
+					"scene": null
 				}
 			]
 		}

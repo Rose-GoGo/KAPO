@@ -1,8 +1,25 @@
 <!-- 评论框 -->
 <view wx:if='{{commentShow}}'>
-    <view class="Rose-modal" bindtap="closeBox"></view>
     <view class="Rose-comments" style="bottom:{{bottom}}px">
-        <form bindsubmit="postComments"   report-submit="true">
+        <view class="Rose-tool Rose-flex">
+            <view class="Rose-flex1 text-center" bindtap="rewardRose">
+                <icon class="iconfont icon-fenxiang"></icon>
+                转发
+            </view>
+            <view class="Rose-flex1 text-center" bindtap="makePhoto">
+                <icon class="iconfont icon-paizhao"></icon>
+                海报
+            </view>
+            <view class="Rose-flex1 text-center" bindtap="goHome">
+                <icon class="iconfont icon-qian1"></icon>
+                赞赏
+            </view>
+            <view class="Rose-flex1 text-center" bindtap="goHome">
+                <icon class="iconfont icon-fangzi"></icon>
+                首页
+            </view>
+        </view>
+        <form bindsubmit="postComments"  report-submit="true">
             <textarea
             name="content"
             class="Rose-post"
@@ -18,8 +35,10 @@
             bindconfirm= "postComments"
             placeholder="{{placeholder}}">
         </textarea>
-        <button class="Rose-btn {{disabled? 'disabled':''}}" size="mini" wx:if="{{canIUse}}" form-type="submit" open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo">发送</button>
-        <button form-type="reset" class="Rose-btn fl" type="default" size="mini">清空</button>
+        <button class="Rose-btn fr {{disabled? 'disabled':''}}" wx:if="{{canIUse}}" form-type="submit" open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo">发送</button>
+        <button form-type="reset" class="Rose-btn fl" type="default">清空</button>
+        <button class="Rose-btn fl" type="default" ontap="closeBox">关闭</button>
     </form>
 </view>
+
 </view>

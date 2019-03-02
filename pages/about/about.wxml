@@ -50,7 +50,16 @@
         </navigator>
     </view>
 </view>
-<!-- 版权 -->
-<!-- <copyright></copyright> -->
 
+<view class="Rose-floor">
+    <view class="Rose-Line">
+        <navigator url="../add/add" hover-class="none">
+            <icon class="iconfont icon-folder-add"></icon>
+            发表文章
+            <icon class="fr iconfont icon-xiangyou"></icon>
+        </navigator>
+    </view>
+</view>
+
+<!-- 版权 -->
 <template is="copyright"></template>

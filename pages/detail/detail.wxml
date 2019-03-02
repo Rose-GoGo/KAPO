@@ -1,6 +1,8 @@
 <!--pages/detail/detail.wxml-->
 <import src="../../components/copyright/copyright.wxml" />
+<import src="../../components/photo/photo.wxml" />
 <import src="../../wxParse/wxParse.wxml" />
+
 <image wx:if="{{catid=='19'}}" class="Rose-imgitem" mode="aspectFill" src="{{ items.thumb==''? '/assets/images/wx_04.jpg' :items.thumb}}"></image>
 <view class="Rose-detail">
     <view class="Rose-title">{{items.title}}</view>
@@ -75,49 +77,23 @@
     <loading load-more="{{loadMore}}"></loading>
 </view>
 <!-- 发表评论 -->
-<!--生成海报  -->
-<view>
-    <view class='imagePathBox' hidden="{{maskHidden == false}}">
-        <image src="{{imagePath}}" class='shengcheng'></image>
-        <button class='baocun' bindtap='baocun'>保存到本地相册</button>
-    </view>
-    <view hidden="{{maskHidden == false}}" class="mask"></view>
-    <view class="canvas-box" >
-        <canvas style="width: 600px;height: 970px;" canvas-id="mycanvas" />
+
+<view class="Rose-fixed">
+    <view class="Rose-flex">
+
+        <view class="Rose-input" bindtap="commentBox">{{placeholder}}</view>
+        <view class="Rose-none Rose-center" bindtap="commentBox">
+            <icon class="iconfont icon-pinglun1"></icon>{{count}}
+        </view>
+        <view class="Rose-none Rose-center"  bindtap="wetherLike" >
+            <icon class="iconfont {{ like?'icon-xihuan-fill':'icon-xihuan'}}"></icon>
+            {{likenum}}
+        </view>
+
     </view>
 </view>
 
-<!-- <view class="Rose-fixed">
-    <view class="Rose-flex">
-        <view class="Rose-input" bindtap="commentBox">点击评论回复</view>
-        <view class="Rose-none Rose-center" bindtap="commentBox">
-            <icon class="iconfont icon-pinglun"></icon>{{count}}
-        </view>
-        <view class="Rose-none Rose-center"  bindtap="wetherLike" >
-            <icon class="iconfont {{ like?'icon-xiangqu_fill':'icon-xiangqu'}}"></icon>
-            {{likenum}}
-        </view>
-    </view>
-</view>
- -->
-<view class="Rose-fixed">
-    <view class="Rose-flex">
-        <view class="Rose-none Rose-center" bindtap="goHome">
-            <icon class="iconfont icon-shouye"></icon>
-        </view>
-        <view class="Rose-none Rose-center" bindtap="createNewImg">
-            <icon class="iconfont icon-tupian"></icon>
-        </view>
-        <view class="Rose-input" bindtap="commentBox">{{placeholder}}</view>
-        <view class="Rose-none Rose-center" bindtap="commentBox">
-            <icon class="iconfont icon-pinglun"></icon>{{count}}
-        </view>
-        <view class="Rose-none Rose-center"  bindtap="wetherLike" >
-            <icon class="iconfont {{ like?'icon-xiangqufill':'icon-xiangqu1'}}"></icon>
-            {{likenum}}
-        </view>
-    </view>
-</view>
+
 
 
 <bottombar
@@ -126,7 +102,9 @@
     pid="{{pid}}"
     reply_username="{{reply_username}}"
     bind:pullComment="commentlists"
+    bind:makePhoto="getCode"
     placeholder="{{placeholder}}">
+
  </bottombar>
 <!-- 打赏组件 -->
 <share show="{{show}}" bindcancel="modalCancel" bindconfirm='modalConfirm' catchtouchmove="true">
@@ -136,3 +114,16 @@
 <backtop back-show="{{backShow}}"></backtop>
 <!-- 版权 -->
 <template is="copyright"></template>
+
+<!-- <template is="makephoto"></template> -->
+<view wx:if="{{maskHidden}}">
+    <view class='imagePathBox' hidden="{{maskHidden}}">
+        <image src="{{imagePath}}" class='shengcheng'></image>
+        <button class='baocun' bindtap='baocun'>保存到本地相册</button>
+    </view>
+    <view hidden="{{maskHidden == false}}" class="mask"></view>
+    <view class="canvas-box" >
+        <canvas style="width: 600px;height: 970px;" canvas-id="mycanvas" />
+    </view>
+</view>
+
