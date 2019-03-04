@@ -3,10 +3,7 @@
   "enablePullDownRefresh": false,
   "usingComponents": {
     "loading": "../../components/loading/loading",
-    "share": "../../components/share/share",
     "backtop": "../../components/backtop/backtop",
     "bottombar": "../../components/bottombar/bottombar"
-
-
   }
 }

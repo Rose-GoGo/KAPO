@@ -1,14 +1,11 @@
 <!--components/photo/photo.wxml-->
-
-<template name="makephoto">
-<view>
-    <view class='imagePathBox' hidden="{{maskHidden == false}}">
-        <image src="{{imagePath}}" class='shengcheng'></image>
-        <button class='baocun' bindtap='baocun'>保存到本地相册</button>
+<view class="Rose-box">
+    <view class='Rose-photo' hidden="{{modalshow}}">
+        <image src="{{imagePath}}" class='Rose-done'></image>
+        <button class='Rose-save' bindtap='baocun'>保存到本地相册</button>
     </view>
-    <view hidden="{{maskHidden == false}}" class="mask"></view>
-    <view class="canvas-box" >
+   <!--  <view hidden="{{modalshow}}" class="mask"></view> -->
+    <view class="Rose-canvas">
         <canvas style="width: 600px;height: 970px;" canvas-id="mycanvas" />
     </view>
 </view>
-</template>

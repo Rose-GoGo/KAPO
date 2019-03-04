@@ -1,8 +1,6 @@
 <!--pages/detail/detail.wxml-->
 <import src="../../components/copyright/copyright.wxml" />
-<import src="../../components/photo/photo.wxml" />
 <import src="../../wxParse/wxParse.wxml" />
-
 <image wx:if="{{catid=='19'}}" class="Rose-imgitem" mode="aspectFill" src="{{ items.thumb==''? '/assets/images/wx_04.jpg' :items.thumb}}"></image>
 <view class="Rose-detail">
     <view class="Rose-title">{{items.title}}</view>
@@ -31,15 +29,11 @@
         {{items.url}}
     </view>
 </view>
-
-
 <!-- 推荐阅读 -->
 <view class="Rose-top" wx:if="{{top10.length >0 }}" wx:if="{{ catid !='19' && id !='124' && id !='145' }}">
     <view class="Rose-lines">推荐阅读</view>
     <view class="Rose-topli" wx:for="{{top10}}" wx:key="index" wx:for-item="top" data-id="{{top.id}}" data-catid="{{top.catid}}" ontap="articleDetail">{{top.title}}</view>
 </view>
-
-
 <!-- 评论列表 -->
 <view class="Rose-comments" wx:if="{{catid!=='19' && id !='124' && id !='145'}}">
     <view class="Rose-lines">精选评论
@@ -65,8 +59,6 @@
             </view>
         </view>
     </view>
-
-
     <view class="Rose-empty" wx:if="{{count==0}}">
         <icon class="iconfont icon-kafei"></icon>
         评论还是空的，快来说两句吧~
@@ -77,10 +69,8 @@
     <loading load-more="{{loadMore}}"></loading>
 </view>
 <!-- 发表评论 -->
-
 <view class="Rose-fixed">
     <view class="Rose-flex">
-
         <view class="Rose-input" bindtap="commentBox">{{placeholder}}</view>
         <view class="Rose-none Rose-center" bindtap="commentBox">
             <icon class="iconfont icon-pinglun1"></icon>{{count}}
@@ -89,14 +79,12 @@
             <icon class="iconfont {{ like?'icon-xihuan-fill':'icon-xihuan'}}"></icon>
             {{likenum}}
         </view>
-
     </view>
 </view>
 
 
-
-
 <bottombar
+    items = "{{items}}"
     commentShow="{{commentshow}}"
     newsid ="{{id}}"
     pid="{{pid}}"
@@ -104,26 +92,11 @@
     bind:pullComment="commentlists"
     bind:makePhoto="getCode"
     placeholder="{{placeholder}}">
-
  </bottombar>
-<!-- 打赏组件 -->
-<share show="{{show}}" bindcancel="modalCancel" bindconfirm='modalConfirm' catchtouchmove="true">
-    <view class='modal-content'>您的分享与关注是对我最大的奖赏！</view>
-</share>
 <!-- 返回顶部 -->
 <backtop back-show="{{backShow}}"></backtop>
 <!-- 版权 -->
 <template is="copyright"></template>
 
-<!-- <template is="makephoto"></template> -->
-<view wx:if="{{maskHidden}}">
-    <view class='imagePathBox' hidden="{{maskHidden}}">
-        <image src="{{imagePath}}" class='shengcheng'></image>
-        <button class='baocun' bindtap='baocun'>保存到本地相册</button>
-    </view>
-    <view hidden="{{maskHidden == false}}" class="mask"></view>
-    <view class="canvas-box" >
-        <canvas style="width: 600px;height: 970px;" canvas-id="mycanvas" />
-    </view>
-</view>
+
 

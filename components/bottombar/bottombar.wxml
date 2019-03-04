@@ -2,43 +2,47 @@
 <view wx:if='{{commentShow}}'>
     <view class="Rose-comments" style="bottom:{{bottom}}px">
         <view class="Rose-tool Rose-flex">
-            <view class="Rose-flex1 text-center" bindtap="rewardRose">
-                <icon class="iconfont icon-fenxiang"></icon>
-                转发
+            <view class="Rose-flex1 Rose-center">
+                <button open-type="share" class="Rose-share"> <icon class="iconfont icon-fenxiang"></icon>转发</button>
             </view>
-            <view class="Rose-flex1 text-center" bindtap="makePhoto">
+            <view class="Rose-flex1 Rose-center" bindtap='makePhoto'>
                 <icon class="iconfont icon-paizhao"></icon>
                 海报
             </view>
-            <view class="Rose-flex1 text-center" bindtap="goHome">
+            <view class="Rose-flex1 Rose-center" bindtap="rewardRose">
                 <icon class="iconfont icon-qian1"></icon>
                 赞赏
             </view>
-            <view class="Rose-flex1 text-center" bindtap="goHome">
+            <view class="Rose-flex1 Rose-center" bindtap="goHome">
                 <icon class="iconfont icon-fangzi"></icon>
                 首页
             </view>
         </view>
-        <form bindsubmit="postComments"  report-submit="true">
-            <textarea
-            name="content"
-            class="Rose-post"
-            value="{{content}}"
-            bindinput="forContent"
-            maxlength="-1"
-            fixed
-            focus="{{commentShow}}"
-            adjust-position="{{true}}"
-            bindfocus="foucus"
-            bindblur="blur"
-            auto-focus ="{{true}}"
-            bindconfirm= "postComments"
-            placeholder="{{placeholder}}">
+        <form bindsubmit="postComments" report-submit="true">
+            <textarea name="content" class="Rose-post" value="{{content}}" bindinput="forContent" maxlength="-1" fixed focus="{{commentShow}}" adjust-position="{{true}}" bindfocus="foucus" bindblur="blur" auto-focus="{{true}}" bindconfirm="postComments" placeholder="{{placeholder}}">
         </textarea>
-        <button class="Rose-btn fr {{disabled? 'disabled':''}}" wx:if="{{canIUse}}" form-type="submit" open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo">发送</button>
-        <button form-type="reset" class="Rose-btn fl" type="default">清空</button>
-        <button class="Rose-btn fl" type="default" ontap="closeBox">关闭</button>
-    </form>
+            <button class="Rose-btn fr {{disabled? 'disabled':''}}" wx:if="{{canIUse}}" form-type="submit" open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo">发送</button>
+            <button form-type="reset" class="Rose-btn fl" type="default">清空</button>
+            <button class="Rose-btn fl" type="default" ontap="closeBox">关闭</button>
+        </form>
+    </view>
 </view>
 
-</view>
+
+<!-- 打赏组件 -->
+<share
+    show="{{show}}"
+    bindcancel="modalCancel"
+    bindconfirm='modalConfirm'
+    catchtouchmove="true">
+    <view class='Rose-content'>您的转发与关注是对我最大的奖赏！</view>
+</share>
+
+
+<!-- 海报 -->
+<photo
+    id="photo"
+    dataSource="{{items}}"
+    modalshow="{{ showPhoto}}"
+    >
+</photo>

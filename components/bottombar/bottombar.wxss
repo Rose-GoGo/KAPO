@@ -39,7 +39,6 @@
   padding: 0 20rpx;
   text-align: center;
   box-shadow: none;
-/*  float: right*/
 }
 .Rose-btn.disabled {
   opacity: 0.5;
@@ -62,6 +61,12 @@
   color: #333;
   font-size: 48rpx;
 }
-.text-center {
-  text-align: center
+.Rose-content {
+  padding: 60rpx 0;
+}
+.Rose-share{
+  font-size: 18rpx;
+  color: #999;
+  line-height: 1;
+  background:transparent;
 }

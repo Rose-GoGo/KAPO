@@ -1,4 +1,7 @@
 {
   "component": true,
-  "usingComponents": {}
+  "usingComponents": {
+    "share": "../share/share",
+    "photo": "../photo/photo"
+  }
 }
