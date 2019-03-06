@@ -48,6 +48,7 @@
   color: #999;
   font-size: 18rpx;
   padding: 10rpx 0;
+  line-height: 40rpx;
   border-bottom: 1rpx solid #f2f2f2
 }
 .Rose-flex {
@@ -67,12 +68,9 @@
 .Rose-share{
   font-size: 18rpx;
   color: #999;
-  line-height: 1;
+  line-height: 40rpx;
   background:transparent;
 }
-
-
-
 /* components/photo/photo.wxss */
 .Rose-photo{
   width: 100%;

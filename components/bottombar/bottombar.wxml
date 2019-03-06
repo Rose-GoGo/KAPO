@@ -3,7 +3,10 @@
     <view class="Rose-comments" style="bottom:{{bottom}}px">
         <view class="Rose-tool Rose-flex">
             <view class="Rose-flex1 Rose-center">
-                <button open-type="share" class="Rose-share"> <icon class="iconfont icon-fenxiang"></icon>转发</button>
+                <button open-type="share" class="Rose-share">
+                    <icon class="iconfont icon-fenxiang"></icon>
+                    转发
+                </button>
             </view>
             <view class="Rose-flex1 Rose-center" bindtap='makePhoto'>
                 <icon class="iconfont icon-paizhao"></icon>
@@ -19,23 +22,37 @@
             </view>
         </view>
         <form bindsubmit="postComments" report-submit="true">
-            <textarea name="content" class="Rose-post" value="{{content}}" bindinput="forContent" maxlength="-1" fixed focus="{{commentShow}}" adjust-position="{{true}}" bindfocus="foucus" bindblur="blur" auto-focus="{{true}}" bindconfirm="postComments" placeholder="{{placeholder}}">
+            <textarea name="content"
+            class="Rose-post"
+            value="{{content}}"
+            bindinput="forContent"
+            maxlength="-1"
+            focus="{{commentShow}}"
+            adjust-position
+            show-confirm-bar="false"
+            auto-focus
+            bindfocus="foucus"
+            bindblur="blur"
+            auto-focus="{{true}}"
+            bindconfirm="postComments"
+            placeholder="{{placeholder}}"
+            confirm-type="search">
         </textarea>
-            <button class="Rose-btn fr {{disabled? 'disabled':''}}" wx:if="{{canIUse}}" form-type="submit" open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo">发送</button>
-            <button form-type="reset" class="Rose-btn fl" type="default">清空</button>
-            <button class="Rose-btn fl" type="default" ontap="closeBox">关闭</button>
-        </form>
-    </view>
+        <button class="Rose-btn fr {{disabled? 'disabled':''}}" wx:if="{{canIUse}}" form-type="submit" open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo">发送</button>
+        <button form-type="reset" class="Rose-btn fl" type="default">清空</button>
+        <button class="Rose-btn fl" type="default" ontap="closeBox">关闭</button>
+    </form>
+</view>
 </view>
 
 
 <!-- 打赏组件 -->
 <share
-    show="{{show}}"
-    bindcancel="modalCancel"
-    bindconfirm='modalConfirm'
-    catchtouchmove="true">
-    <view class='Rose-content'>您的转发与关注是对我最大的奖赏！</view>
+show="{{show}}"
+bindcancel="modalCancel"
+bindconfirm='modalConfirm'
+catchtouchmove="true">
+<view class='Rose-content'>您的转发与关注是对我最大的奖赏！</view>
 </share>
 
 
@@ -46,6 +63,6 @@
     modalshow="{{ showPhoto}}"
     >
 </photo>
- -->
+-->
 
 
