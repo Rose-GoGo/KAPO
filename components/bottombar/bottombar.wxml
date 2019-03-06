@@ -40,9 +40,12 @@
 
 
 <!-- 海报 -->
-<photo
+<!-- <photo
     id="photo"
     dataSource="{{items}}"
     modalshow="{{ showPhoto}}"
     >
 </photo>
+ -->
+
+

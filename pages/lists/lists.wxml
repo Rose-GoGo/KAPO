@@ -17,17 +17,19 @@
         <view class="Rose-left"><icon class='iconfont icon-shijian2'></icon> {{comm.formatTime(item.updatetime)}}</view>
         <view class="Rose-comment">
           <icon class="iconfont icon-kanguo"></icon> {{item.views}}
-          <icon class="iconfont icon-pinglun3"></icon> {{item.cnum}}
+          <icon class="iconfont icon-pinglun"></icon> {{item.cnum}}
         </view>
       </view>
     </view>
   </view>
 </view>
+
 <block wx:if="{{items.length!=0 && !loadMore}}">
   <view class="allLoaded">
     <text class="line-word">我是有底线滴~</text>
   </view>
 </block>
+
 <loading load-more="{{loadMore}}"></loading>
 <!-- 返回顶部 -->
 <!-- <backtop back-show="{{backShow}}"></backtop> -->

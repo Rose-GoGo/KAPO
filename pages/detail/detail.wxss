@@ -337,3 +337,48 @@ button::after {
   border-radius: 40rpx;
   color: #999;
 }
+
+
+
+/* components/photo/photo.wxss */
+.Rose-photo{
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.7);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 10;
+}
+.Rose-done{
+  width: 80%;
+  height: 80%;
+  position: fixed;
+  top: 50rpx;
+  left: 50%;
+  margin-left: -40%;
+  z-index: 10;
+}
+.Rose-save{
+  display: block;
+  width: 80%;
+  height: 80rpx;
+  padding: 0;
+  line-height: 80rpx;
+  text-align: center;
+  position: fixed;
+  bottom: 50rpx;
+  left: 10%;
+  background: #fff;
+  color: #333;
+  font-size: 32rpx;
+  border-radius: 44rpx;
+}
+.Rose-canvas{
+  width: 0;
+  height:0;
+  overflow: hidden
+
+}
