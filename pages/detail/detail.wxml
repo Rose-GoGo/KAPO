@@ -109,7 +109,8 @@
 
 <view class="">
     <view class='Rose-photo' hidden="{{modalshow}}">
-        <image wx:if="imagePath" src="{{imagePath}}" class='Rose-done' data-src="{{imagePath}}" bindtap="previewImage"></image>
+        <image wx:if="imagePath" src="{{imagePath}}" class='Rose-done' data-src="{{imagePath}}"
+    bindtap="previewImage"></image>
         <button class='Rose-save' bindtap='baocun'>保存到本地相册</button>
     </view>
     <view hidden="{{modalshow}}" class="mask" ontap="close"></view>

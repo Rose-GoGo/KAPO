@@ -37,13 +37,13 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 7,
+			"current": 0,
 			"list": [
 				{
 					"id": 0,
 					"name": "文章详情",
 					"pathName": "pages/detail/detail",
-					"query": "catid=11&id=212",
+					"query": "catid=11&id=209",
 					"scene": null
 				},
 				{
@@ -86,6 +86,7 @@
 					"id": -1,
 					"name": "添加文章",
 					"pathName": "pages/add/add",
+					"query": "",
 					"scene": null
 				}
 			]

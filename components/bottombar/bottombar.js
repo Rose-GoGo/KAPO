@@ -4,7 +4,7 @@ Component({
     /**
      * 组件的属性列表
      */
-     properties: {
+    properties: {
         commentShow: {
             type: Boolean,
             value: false
@@ -29,15 +29,12 @@ Component({
             type: String,
             value: ''
         },
-        reply_username: {
-            type: String,
-            value: ''
-        },
+
     },
     /**
      * 组件的初始数据
      */
-     data: {
+    data: {
         bottom: 0,
         canIUse: wx.canIUse('button.open-type.getUserInfo'),
         userInfo: {},
@@ -48,7 +45,7 @@ Component({
     /**
      * 组件的方法列表
      */
-     methods: {
+    methods: {
         bindGetUserInfo: function(e) {
             var that = this;
             var userInfo = {};
@@ -153,9 +150,10 @@ Component({
             var that = this;
             if(e){
                 that.setData({
-                    bottom: e.detail.height
-                })
+                bottom: e.detail.height
+            })
             }
+
         },
         // 失去聚焦
         blur: function(e) {

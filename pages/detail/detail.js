@@ -18,14 +18,6 @@ Page({
     focus: false,
     userInfo: {},
     content: '',
-
-    replyJson:{
-
-    },
-
-
-
-
     placeholder: '爱发言的人运气都不会太差',
     reply_username: '',
     pid: 0,
@@ -337,7 +329,7 @@ Page({
         });
         context.draw();
         // 将生成好的图片保存到本地，需要延迟一会，绘制期间耗时
-
+        setTimeout(function () {
           wx.canvasToTempFilePath({
             canvasId: 'mycanvas',
             success: function (res) {
@@ -352,7 +344,7 @@ Page({
             fail: function (res) {
             }
           }, this);
-
+        }, 1000);
       }
     })
   },
