@@ -6,6 +6,12 @@ page {
 button::after {
   border: none;
 }
+.Rose-left{
+  float: left;
+}
+.Rose-right{
+  float: right
+}
 .Rose-flex {
   display: flex;
 }
@@ -61,12 +67,9 @@ button::after {
   font-size: 14px;
   color: #1d8f59
 }
-
 .wxParse-wxxxcode-style{
  white-space: pre;
 }
-
-
 /*copyright*/
 .Rose-copyRight{
   padding: 40rpx;
@@ -79,5 +82,3 @@ button::after {
   font-size: 24rpx;
   color: #a8a8a8
 }
-
-

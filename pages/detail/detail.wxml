@@ -82,40 +82,32 @@
     </view>
 </view>
 
-
-<bottombar
-    getJson ="{{ replyJson }}"
-
-    items = "{{items}}"
-    commentShow="{{commentshow}}"
-    newsid ="{{id}}"
-    pid="{{pid}}"
-    reply_username="{{reply_username}}"
-    placeholder="{{placeholder}}"
-
-    bind:pullComment="commentlists"
-    bind:makePhoto="makePhoto"
-   >
- </bottombar>
-
-
-<!-- 返回顶部 -->
-<backtop back-show="{{backShow}}"></backtop>
-<!-- 版权 -->
-<template is="copyright"></template>
-
-
-
-
 <view class="">
     <view class='Rose-photo' hidden="{{modalshow}}">
-        <image wx:if="imagePath" src="{{imagePath}}" class='Rose-done' data-src="{{imagePath}}"
-    bindtap="previewImage"></image>
-        <button class='Rose-save' bindtap='baocun'>保存到本地相册</button>
+        <image wx:if="imagePath" src="{{imagePath}}" class='Rose-done' data-src="{{imagePath}}"  bindtap="previewImage"></image>
+        <button class='Rose-btn Rose-save ' bindtap='baocun'>保存到本地相册</button>
+        <button class='Rose-btn Rose-close' bindtap='quxiao'>取消</button>
     </view>
     <view hidden="{{modalshow}}" class="mask" ontap="close"></view>
     <view class="Rose-canvas">
         <canvas style="width: 600px;height: 970px;" canvas-id="mycanvas" />
     </view>
 </view>
+
+<bottombar
+    getJson ="{{ replyJson }}"
+    items = "{{items}}"
+    commentShow="{{commentshow}}"
+    newsid ="{{id}}"
+    pid="{{pid}}"
+    reply_username="{{reply_username}}"
+    placeholder="{{placeholder}}"
+    bind:pullComment="commentlists"
+    bind:makePhoto="makePhoto"
+   >
+ </bottombar>
+<!-- 返回顶部 -->
+<backtop back-show="{{backShow}}"></backtop>
+<!-- 版权 -->
+<template is="copyright"></template>
 
