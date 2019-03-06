@@ -304,22 +304,26 @@ Page({
                 var thumb = res.path;
                 Rose.setFontSize(30);
                 Rose.setTextAlign('right'); //设置字体对齐
-                Rose.setFillStyle('#000');
+                Rose.setFillStyle('#1d8f59');
                 Rose.fillText('KAPO博客', 560, 60 );
+
                 Rose.setFontSize(20);
                 Rose.setFillStyle('#666');
                 Rose.fillText('2019.03.25', 560, 120 );
                 Rose.beginPath();
+
+
                 Rose.lineWidth="2";
-                Rose.strokeStyle="#666";
+                Rose.strokeStyle="#1d8f59";
                 Rose.rect(400,20,180,60);
                 Rose.stroke();
                 Rose.beginPath();
+
                 Rose.lineWidth="2";
                 Rose.strokeStyle="#f2f2f2";
-                Rose.rect(20,680,570,250);
+                Rose.rect(20,690,570,250);
                 Rose.stroke();
-                Rose.drawImage(thumb, 20, 160, 560, 300); //绘制首图
+                Rose.drawImage(thumb, 20, 140, 560, 300); //绘制首图
                 Rose.drawImage(codes, 380, 700, 200, 230); //绘制二维码
                 Rose.setFillStyle("#333");
                 Rose.setFontSize(20); //设置字体大小
@@ -328,18 +332,30 @@ Page({
                 Rose.stroke();
                 Rose.setTextAlign('left');
                 Rose.setFontSize(40);
-                if (title.lengh <= 12) {
-                    Rose.fillText(title, 20, 520); //文章标题
+                if (title.length <= 14) {
+                    Rose.fillText(title, 20, 500); //文章标题
                 } else {
-                    Rose.fillText(title.substring(0, 12), 20, 520);
-                    Rose.fillText(title.substring(12, 26), 20, 620);
+                    Rose.fillText(title.substring(0, 14), 20, 500);
+                    Rose.fillText(title.substring(14, 26), 20, 550);
                 }
+
+
+                Rose.setFillStyle("#999");
                 Rose.setFontSize(20);
-                if (desc.lengh <= 26) {
-                    Rose.fillText(desc, 20, 490); //文章描述
+                if (title.length<=14 && desc.length >= 26){
+                    Rose.fillText(desc.substring(0, 26), 20, 560);
+                    Rose.fillText(desc.substring(26, 50) + '...', 20, 595);
+
+                }else if (title.length<=14 && desc.length <= 26) {
+                    Rose.fillText(desc, 26, 560);
+
+                    // Rose.fillText(desc, 26, 640); //文章描述
+                }else if(title.length >=14 && desc.length <= 26){
+                    Rose.fillText(desc, 26, 640); //文章描述
+
                 } else {
-                    Rose.fillText(desc.substring(0, 26), 20, 580);
-                    Rose.fillText(desc.substring(26, 50) + '...', 20, 620);
+                    Rose.fillText(desc.substring(0, 26), 20, 610);
+                    Rose.fillText(desc.substring(26, 50) + '...', 20, 645);
                 }
                 Rose.setTextAlign('left');
                 Rose.setFontSize(28);

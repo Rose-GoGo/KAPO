@@ -375,6 +375,7 @@ button::after {
  }
  .Rose-save{
   left:50%;
+  color: #1d8f59
 }
 .Rose-close{
   left: 10%;
