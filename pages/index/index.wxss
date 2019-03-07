@@ -58,7 +58,7 @@
 }
 .Rose-bottom {
   position: absolute;
-  top: 216rpx;
+  top: 240rpx;
   width: 100%;
   display: flex;
   margin: 10rpx 0 0;

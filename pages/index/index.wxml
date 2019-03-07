@@ -27,7 +27,7 @@
 <view class="Rose-lists">
   <view class="Rose-news" wx:for="{{items}}" wx:key="index" data-id="{{item.id}}" data-catid="{{item.catid}}" ontap="articleDetail" wx:if="{{ item.id != '124' && item.id !='145' }}">
     <view class="Rose-content">
-      <image class='Rose-imgitem' mode="aspectFill" lazy-load="{{true}}" src="{{item.thumb==''? '/assets/images/ncode.jpg': item.thumb}}"></image>
+      <image class='Rose-imgitem' mode="widthFix" lazy-load="{{true}}" src="{{item.thumb==''? '/assets/images/ncode.jpg': item.thumb}}"></image>
       <view class="Rose-title">{{item.title}}</view>
       <view class="Rose-bottom">
         <view class="Rose-icon"><icon class="iconfont icon-shijian2"></icon> {{comm.formatDate(item.updatetime)}}
