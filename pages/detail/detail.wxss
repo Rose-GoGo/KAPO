@@ -361,9 +361,9 @@ button::after {
   .Rose-btn{
    display:block;
    width:40%;
-   height:80rpx;
+   height:100rpx;
    padding:0;
-   line-height:80rpx;
+   line-height:100rpx;
    text-align:center;
    position:fixed;
    bottom:10%;
@@ -375,6 +375,7 @@ button::after {
  }
  .Rose-save{
   left:50%;
+  color: #1d8f59
 }
 .Rose-close{
   left: 10%;
