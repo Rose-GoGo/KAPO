@@ -15,7 +15,7 @@
   bottom: 0;
   width: 100%;
   z-index: 6;
-  background: #fff;
+  background: #fefefe;
   border-top: 2rpx solid #f2f2f2;
   transition: all 0.25s ease;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.2)

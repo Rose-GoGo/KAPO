@@ -145,21 +145,6 @@ Component({
             var myEventDetail = { page: 1 } // detail对象，提供给事件监听函数
             this.triggerEvent('pullComment', myEventDetail) //
         },
-        foucus: function(e) {
-            var that = this;
-            if(e){
-                that.setData({
-                    bottom: e.detail.height
-                })
-            }
-        },
-        // 失去聚焦
-        blur: function(e) {
-            var that = this;
-            that.setData({
-                bottom: 0
-            })
-        },
         rewardRose: function() {
             var that = this;
             that.setData({

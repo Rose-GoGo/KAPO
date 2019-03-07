@@ -12,7 +12,7 @@
 		"autoAudits": false
 	},
 	"compileType": "miniprogram",
-	"libVersion": "2.4.3",
+	"libVersion": "2.6.1",
 	"appid": "wx11bb9ed460c13af5",
 	"projectname": "firstXCX",
 	"debugOptions": {
@@ -44,7 +44,7 @@
 					"name": "文章详情",
 					"pathName": "pages/detail/detail",
 					"query": "catid=11&id=209",
-					"scene": 1012
+					"scene": 1011
 				},
 				{
 					"id": -1,

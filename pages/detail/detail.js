@@ -1,5 +1,6 @@
 // pages/detail/detail.js
 import Api from '/../../utils/api.js';
+import util from '/../../utils/util.js';
 let wxparse = require("../../wxParse/wxParse.js");
 const app = getApp();
 Page({
@@ -38,6 +39,8 @@ Page({
         wx.showLoading();
         var that = this;
         let _userInfo = wx.getStorageSync('userInfo')
+        let scene = decodeURIComponent(options.scene);
+        console.log(scene)
         if (options.scene) {
             let scene = decodeURIComponent(options.scene);
             let info_arr = [];
@@ -222,6 +225,11 @@ Page({
             urls: [current]
         })
     },
+    goHome: function() {
+        wx.switchTab({
+            url: '../index/index'
+        });
+    },
     commentlists: function(e) {
         var that = this;
         var _page;
@@ -298,34 +306,36 @@ Page({
         var that = this;
         var Rose = wx.createCanvasContext('mycanvas');
         Rose.setFillStyle("#ffffff")
-        Rose.fillRect(0, 0, 600, 970); //填充一个矩形。用 setFillStyle
+        Rose.fillRect(0, 0, 600, 1132); //填充一个矩形。用 setFillStyle
+        // var date = new Date();
         wx.getImageInfo({
             src: img, //服务器返回的图片地址
             success: function(res) {
                 var thumb = res.path;
+                var datee = new Date();
+                var cctime = util.formatTime(datee);
+                console.log(cctime)
+                var bg = "/assets/images/44.png";
+                Rose.drawImage(bg, 0, 737, 640, 395); //绘制首图
+                Rose.drawImage(thumb, 20, 140, 560, 300); //绘制首图
+                Rose.drawImage(codes, 380, 700, 200, 200); //绘制二维码
                 Rose.setFontSize(30);
                 Rose.setTextAlign('right'); //设置字体对齐
                 Rose.setFillStyle('#1d8f59');
                 Rose.fillText('KAPO博客', 560, 60 );
-
                 Rose.setFontSize(20);
                 Rose.setFillStyle('#666');
-                Rose.fillText('2019.03.25', 560, 120 );
+                Rose.fillText(cctime, 560, 120 );
                 Rose.beginPath();
-
-
                 Rose.lineWidth="2";
                 Rose.strokeStyle="#1d8f59";
                 Rose.rect(400,20,180,60);
                 Rose.stroke();
                 Rose.beginPath();
-
                 Rose.lineWidth="2";
                 Rose.strokeStyle="#f2f2f2";
-                Rose.rect(20,690,570,250);
+                Rose.rect(20,690,570,230);
                 Rose.stroke();
-                Rose.drawImage(thumb, 20, 140, 560, 300); //绘制首图
-                Rose.drawImage(codes, 380, 700, 200, 230); //绘制二维码
                 Rose.setFillStyle("#333");
                 Rose.setFontSize(20); //设置字体大小
                 Rose.setTextAlign('center'); //设置字体对齐
@@ -339,21 +349,16 @@ Page({
                     Rose.fillText(title.substring(0, 14), 20, 500);
                     Rose.fillText(title.substring(14, 26), 20, 550);
                 }
-
-
                 Rose.setFillStyle("#999");
                 Rose.setFontSize(20);
                 if (title.length<=14 && desc.length >= 26){
                     Rose.fillText(desc.substring(0, 26), 20, 560);
                     Rose.fillText(desc.substring(26, 50) + '...', 20, 595);
-
                 }else if (title.length<=14 && desc.length <= 26) {
                     Rose.fillText(desc, 26, 560);
-
                     // Rose.fillText(desc, 26, 640); //文章描述
                 }else if(title.length >=14 && desc.length <= 26){
                     Rose.fillText(desc, 26, 640); //文章描述
-
                 } else {
                     Rose.fillText(desc.substring(0, 26), 20, 610);
                     Rose.fillText(desc.substring(26, 50) + '...', 20, 645);
