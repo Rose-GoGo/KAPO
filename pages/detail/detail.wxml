@@ -93,7 +93,7 @@
     </view>
     <view hidden="{{modalshow}}" class="mask" ontap="close"></view>
     <view class="Rose-canvas">
-        <canvas style="width: 600px;height: 1132px;" canvas-id="mycanvas" />
+        <canvas style="width: 600px;height: 1060px;" canvas-id="mycanvas" />
     </view>
 </view>
 

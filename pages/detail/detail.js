@@ -306,7 +306,7 @@ Page({
         var that = this;
         var Rose = wx.createCanvasContext('mycanvas');
         Rose.setFillStyle("#ffffff")
-        Rose.fillRect(0, 0, 600, 1132); //填充一个矩形。用 setFillStyle
+        Rose.fillRect(0, 0, 600, 1060); //填充一个矩形。用 setFillStyle
         // var date = new Date();
         wx.getImageInfo({
             src: img, //服务器返回的图片地址
