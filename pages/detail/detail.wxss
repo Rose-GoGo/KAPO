@@ -303,7 +303,7 @@ button::after {
     background: #fff;
   }
   .Rose-flex {
-    padding: 14rpx 20rpx;
+    padding: 20rpx;
     display: flex;
   }
   .Rose-none{
@@ -316,13 +316,13 @@ button::after {
   .Rose-none .iconfont {
     font-size: 48rpx;
     /*color: #4bb777;*/
-    font-weight: 500;
+
     display: block;
-    color: #111;
-    margin-top: -9rpx;
+    color: #666;
+
     font-weight: 600
   }
-  .Rose-none .iconfont.icon-xihuan-fill{
+  .Rose-none .iconfont.icon-heart-fill{
     color: #4bb777
   }
   .Rose-input {

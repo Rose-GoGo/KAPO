@@ -71,12 +71,15 @@
 <!-- 发表评论 -->
 <view class="Rose-fixed">
     <view class="Rose-flex">
+         <view class="Rose-none Rose-center" bindtap="commentBox">
+            <icon class="iconfont icon-home"></icon> 首页
+        </view>
         <view class="Rose-input" bindtap="commentBox">{{placeholder}}</view>
         <view class="Rose-none Rose-center" bindtap="commentBox">
-            <icon class="iconfont icon-pinglun1"></icon>{{count}}
+            <icon class="iconfont icon-message"></icon>{{count}}
         </view>
         <view class="Rose-none Rose-center"  bindtap="wetherLike" >
-            <icon class="iconfont {{ like?'icon-xihuan-fill':'icon-xihuan'}}"></icon>
+            <icon class="iconfont {{ like?'icon-heart-fill':'icon-heart'}}"></icon>
             {{likenum}}
         </view>
     </view>

@@ -44,7 +44,7 @@
 					"name": "文章详情",
 					"pathName": "pages/detail/detail",
 					"query": "catid=11&id=209",
-					"scene": null
+					"scene": 1012
 				},
 				{
 					"id": -1,

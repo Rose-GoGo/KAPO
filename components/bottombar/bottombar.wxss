@@ -44,6 +44,12 @@
   opacity: 0.5;
   color: #eee
 }
+.Rose-close{
+  background: #DEDEDE
+}
+
+
+
 .Rose-tool {
   color: #999;
   font-size: 18rpx;

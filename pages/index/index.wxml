@@ -33,7 +33,7 @@
         <view class="Rose-icon"><icon class="iconfont icon-shijian2"></icon> {{comm.formatDate(item.updatetime)}}
         </view>
         <view class="Rose-icon"><icon class="iconfont icon-kanguo"></icon> {{item.views}}</view>
-        <view class="Rose-icon"><icon class="iconfont icon-pinglun3"></icon> {{item.cnum}}</view>
+        <view class="Rose-icon"><icon class="iconfont icon-pinglun"></icon> {{item.cnum}}</view>
       </view>
       <view class="Rose-detail">{{item.description}}</view>
     </view>
