@@ -230,45 +230,121 @@ Page({
             url: '../index/index'
         });
     },
-    commentlists: function(e) {
-        var that = this;
-        var _page;
-        if (e) {
-            _page = e.detail.page;
+    forContent: function(e) {
+        let that = this;
+        let _content = e.detail.value;
+        // 禁止输入空格
+        var regu = "^[ ]+$";
+        var re = new RegExp(regu);
+        var emptyy = re.test(_content);
+        if (emptyy) return false;
+        //end
+        that.setData({
+            content: _content
+        })
+        if (that.data.content) {
             that.setData({
-                page: _page,
-                comments: [],
-            });
+                disabled: false
+            })
         } else {
-            _page = that.data.page;
+            that.setData({
+                disabled: true
+            })
         }
-        let _params = {
-            newsid: that.data.id,
-            page: _page,
-            pagesize: 10
-        }
-        Api.commentlists(_params).then(res => {
-            if (res.data.code == 0) {
-                let _data = res.data.data;
-                let _count = res.data.count;
-                let _arr = that.data.comments.concat(_data);
-                that.setData({
-                    comments: _arr,
-                    count: _count
-                });
-                if (_data.length < 10) {
-                    that.setData({
-                        loadMore: false
-                    });
-                }
-            } else {
-                wx.showModal({
-                    showCancel: false,
-                    confirmColor: '#1d8f59',
-                    content: '评论加载失败!'
-                })
-            }
+    },
+   postComments: function () {
+      var that = this;
+      if (!that.data.content) {
+        wx.showModal({
+          showCancel: false,
+          confirmColor: '#1d8f59',
+          content: '评论不能为空!'
         });
+        return false;
+      }
+      if (!that.data.userInfo) return false;
+      wx.showLoading();
+      let _params = {
+        newsid: that.data.id, // 博客文章ID
+        pid: that.data.pid, // 父评论ID，默认为0
+        from_username: that.data.userInfo.nickName, // 评论者用户名
+        from_avatar: that.data.userInfo.avatarUrl, // 评论者头像
+        reply_username: that.data.reply_username, // 回复了谁，pid不为0时，不允许未空
+        reply_avatar: "", // 回复了谁的头像，允许为空
+        content: that.data.content
+      }
+      Api.postcomments(_params).then(res => {
+        if (!res.data.code) {
+          wx.hideLoading();
+          wx.showToast({
+            title: '评论成功',
+            icon: 'success',
+            duration: 2000
+          })
+          that.setData({
+            content: '',
+            page: 1,
+            comments: [],
+            reply_username: '',
+            pid: 0,
+            placeholder: '点击评论回复...',
+            disabled: true
+          });
+          that.commentlists();
+        }
+      });
+    },
+    commentlists: function () {
+      var that = this;
+      let _params = {
+        newsid: that.data.id,
+        page: this.data.page,
+        pagesize: 10
+      }
+      Api.commentlists(_params).then(res => {
+        if (res.data.code == 0) {
+          let _data = res.data.data;
+          let _count = res.data.count;
+          let _arr = that.data.comments.concat(_data);
+          that.setData({
+            comments: _arr,
+            count: _count
+          });
+          if (_data.length < 10) {
+            that.setData({
+              loadMore: false
+            });
+          }
+        } else {
+          wx.showModal({
+            showCancel: false,
+            confirmColor: '#1d8f59',
+            content: '评论加载失败!'
+          })
+        }
+      });
+    },
+    forRemark: function (e) {
+      var that = this;
+      let _data = e.detail.value;
+      // 禁止输入空格
+      var regu = "^[ ]+$";
+      var re = new RegExp(regu);
+      var emptyy = re.test(_data);
+      if (emptyy) return false;
+      //end
+      that.setData({
+        content: _data
+      });
+      if (that.data.content) {
+        that.setData({
+          disabled: false
+        })
+      } else {
+        that.setData({
+          disabled: true
+        })
+      }
     },
     makePhoto: function(e) { //点击生成海报
         var that = this;

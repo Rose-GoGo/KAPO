@@ -303,7 +303,7 @@ button::after {
     background: #fff;
   }
   .Rose-flex {
-    padding: 20rpx;
+    padding: 12rpx 20rpx;
     display: flex;
   }
   .Rose-none{
@@ -326,16 +326,17 @@ button::after {
     color: #4bb777
   }
   .Rose-input {
-    flex: 1;
-    margin: 0 20rpx 0 0;
-    height: 64rpx;
-    line-height: 64rpx;
-    padding: 0 20rpx;
-    background: #eef0f4;
-    border: 1rpx solid #f2f2f2;
-    font-size: 24rpx;
-    border-radius: 40rpx;
-    color: #999;
+    flex:1;
+    margin:0 20rpx 0 0;
+    height:70rpx;
+    line-height:70rpx;
+    padding:0 20rpx;
+    background:#eef0f4;
+    border:1rpx solid #f2f2f2;
+    font-size:26rpx;
+    border-radius:40rpx;
+    color:#666;
+
   }
   /* components/photo/photo.wxss */
   .Rose-photo{

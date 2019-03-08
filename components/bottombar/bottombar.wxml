@@ -21,7 +21,7 @@
                 首页
             </view>
         </view>
-        <form bindsubmit="postComments" report-submit="true">
+        <!-- <form bindsubmit="postComments" report-submit="true">
             <textarea name="content"
             class="Rose-post"
             value="{{content}}"
@@ -38,7 +38,7 @@
         <button class="Rose-btn Rose-right {{disabled? 'disabled':''}}" wx:if="{{canIUse}}" form-type="submit" open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo">发送</button>
         <button form-type="reset" class="Rose-btn Rose-left" type="default">清空</button>
         <button class="Rose-btn Rose-left Rose-close" type="default" ontap="closeBox">关闭</button>
-    </form>
+    </form> -->
 </view>
 </view>
 
