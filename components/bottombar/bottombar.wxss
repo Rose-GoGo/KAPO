@@ -67,7 +67,8 @@
   display: block;
   color: #333;
   font-size: 48rpx;
-  color:#4bb777
+  color:#4bb777;
+  font-weight: 500
 }
 .Rose-content {
   padding: 60rpx 0;
