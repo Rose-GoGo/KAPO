@@ -10,15 +10,14 @@
   text-align: center
 }
 .Rose-comments {
-  position: fixed;
-  left: 0;
-  bottom: 0;
-  width: 100%;
-  z-index: 6;
-  background: #fefefe;
-  border-top: 2rpx solid #f2f2f2;
-  transition: all 0.25s ease;
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2)
+  position:fixed;
+  left:0;
+  bottom:97rpx;
+  width:100%;
+  z-index:4;
+  background:#fefefe;
+  border-top:2rpx solid #d9d9d9;
+  transition:all 0.25s ease;
 }
 .Rose-post {
   width: auto;
@@ -47,9 +46,6 @@
 .Rose-close{
   background: #DEDEDE
 }
-
-
-
 .Rose-tool {
   color: #999;
   font-size: 18rpx;
@@ -79,4 +75,41 @@
   line-height: 40rpx;
   background:transparent;
 }
+.animated {
+  animation-duration: 0.5s;
+  animation-fill-mode: both
+}
+.animated.infinite {
+  animation-iteration-count: infinite}
 
+  @keyframes slideInUp {
+    from {
+      -webkit-transform: translate3d(0, 100%, 0);
+      transform: translate3d(0, 100%, 0);
+      visibility: visible
+    }
+    to {
+      -webkit-transform: translate3d(0, 0, 0);
+      transform: translate3d(0, 0, 0)
+    }
+  }
+  .slideInUp {
+    -webkit-animation-name: slideInUp;
+    animation-name: slideInUp
+  }
+
+  @keyframes slideOutDown {
+    from {
+      -webkit-transform: translate3d(0, 0, 0);
+      transform: translate3d(0, 0, 0)
+    }
+    to {
+      visibility: hidden;
+      -webkit-transform: translate3d(0, 100%, 0);
+      transform: translate3d(0, 100%, 0)
+    }
+  }
+  .slideOutDown {
+    -webkit-animation-name: slideOutDown;
+    animation-name: slideOutDown
+  }

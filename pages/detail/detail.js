@@ -44,7 +44,7 @@ Page({
         if (options.scene) {
             let scene = decodeURIComponent(options.scene);
             let info_arr = [];
-            info_arr = scene.split(',');
+            info_arr = scene.split('&');
             let _catid = info_arr[0];
             let _id = info_arr[1];
             that.setData({
@@ -143,10 +143,13 @@ Page({
         })
     },
     commentBox: function() {
-        this.setData({
-            commentshow: true,
+        var that = this;
+        that.setData({
+            commentshow: !that.data.commentshow,
         })
-        this.getCode();
+        if(!that.data.codeurl){
+            that.getCode();
+        }
     },
     wetherLike: function() { //点赞
         var that = this;
@@ -382,7 +385,7 @@ Page({
         var that = this;
         var Rose = wx.createCanvasContext('mycanvas');
         Rose.setFillStyle("#ffffff")
-        Rose.fillRect(0, 0, 600, 1060); //填充一个矩形。用 setFillStyle
+        Rose.fillRect(0, 0, 600, 1000); //填充一个矩形。用 setFillStyle
         // var date = new Date();
         wx.getImageInfo({
             src: img, //服务器返回的图片地址
@@ -394,7 +397,7 @@ Page({
                 var bg = "/assets/images/44.png";
                 Rose.drawImage(bg, 0, 737, 640, 395); //绘制首图
                 Rose.drawImage(thumb, 20, 140, 560, 300); //绘制首图
-                Rose.drawImage(codes, 380, 700, 200, 200); //绘制二维码
+                Rose.drawImage(codes, 360, 720, 200, 200); //绘制二维码
                 Rose.setFontSize(30);
                 Rose.setTextAlign('right'); //设置字体对齐
                 Rose.setFillStyle('#1d8f59');
@@ -420,30 +423,32 @@ Page({
                 Rose.setTextAlign('left');
                 Rose.setFontSize(40);
                 if (title.length <= 14) {
-                    Rose.fillText(title, 20, 500); //文章标题
+                    Rose.fillText(title, 40, 500); //文章标题
                 } else {
-                    Rose.fillText(title.substring(0, 14), 20, 500);
-                    Rose.fillText(title.substring(14, 26), 20, 550);
+                    Rose.fillText(title.substring(0, 14), 40, 500);
+                    Rose.fillText(title.substring(14, 26), 40, 550);
                 }
                 Rose.setFillStyle("#999");
                 Rose.setFontSize(20);
                 if (title.length<=14 && desc.length >= 26){
-                    Rose.fillText(desc.substring(0, 26), 20, 560);
-                    Rose.fillText(desc.substring(26, 50) + '...', 20, 595);
+                    Rose.fillText(desc.substring(0, 26), 40, 560);
+                    Rose.fillText(desc.substring(26, 50) + '...', 40, 595);
                 }else if (title.length<=14 && desc.length <= 26) {
                     Rose.fillText(desc, 26, 560);
-                    // Rose.fillText(desc, 26, 640); //文章描述
                 }else if(title.length >=14 && desc.length <= 26){
                     Rose.fillText(desc, 26, 640); //文章描述
                 } else {
-                    Rose.fillText(desc.substring(0, 26), 20, 610);
-                    Rose.fillText(desc.substring(26, 50) + '...', 20, 645);
+                    Rose.fillText(desc.substring(0, 26), 40, 610);
+                    Rose.fillText(desc.substring(26, 50) + '...', 40, 645);
                 }
                 Rose.setTextAlign('left');
                 Rose.setFontSize(28);
                 Rose.setFillStyle('#666');
                 Rose.fillText('Hi, 这篇文章很精彩,', 40, 770 );
                 Rose.fillText('我想转发给你！', 40, 820 );
+                Rose.setFillStyle('#999');
+                Rose.setFontSize(20);
+                Rose.fillText('长按识别阅读文章', 380, 950 );
                 wx.showToast({
                     title: '分享图片生成中...',
                     icon: 'loading',
