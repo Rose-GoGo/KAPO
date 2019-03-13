@@ -3,34 +3,41 @@
   color: #fff;
   font-size: 26rpx;
 }
+
 .Rose-swiper {
   height: 260rpx;
   padding: 40rpx 40rpx 0;
   text-align: center;
 }
+
 .Rose-top-quote {
   margin: 0 20rpx 30rpx;
   font-size: 32rpx;
   text-align: center;
 }
-.Rose-floor2{
+
+.Rose-floor2 {
   background: #fff;
 }
+
 .Rose-menu {
   padding: 40rpx 30rpx 20rpx;
   display: flex;
   flex-flow: row;
   justify-content: space-between;
 }
+
 .icon-pinglun3 {
   padding-left: 20rpx;
 }
+
 .Rose-news {
   overflow: hidden;
   margin: 20rpx;
   background: #fff;
   border-radius: 8rpx;
 }
+
 .Rose-title {
   display: -webkit-box;
   margin: 0 20rpx;
@@ -39,16 +46,19 @@
   white-space: pre-wrap;
   word-break: break-word;
 }
+
 .Rose-imgitem {
   flex: none;
   width: 100%;
   max-height: 150px;
   overflow: hidden;
 }
+
 .Rose-content {
   position: relative;
   color: #333;
 }
+
 .Rose-detail {
   padding: 20rpx;
   font-size: 28rpx;
@@ -56,6 +66,7 @@
   z-index: 3;
   line-height: 1.5;
 }
+
 .Rose-bottom {
   position: absolute;
   top: 217rpx;
@@ -67,30 +78,36 @@
   line-height: 2;
   background: rgba(0, 0, 0, 0.2);
 }
+
 .Rose-icon {
   font-size: 24rpx;
   margin-right: 24rpx;
 }
+
 .Rose-bottom .iconfont {
   margin: -22rpx 0 0;
   font-size: 24rpx;
 }
+
 .Rose-menu {
   padding: 20rpx;
   display: flex;
   flex-flow: row;
   justify-content: space-between;
 }
+
 .Rose-kinds {
   width: 90rpx;
   text-align: center;
   font-size: 24rpx;
   color: #333;
 }
+
 .Rose-kinds .iconfont {
   font-size: 46rpx;
   display: block;
 }
+
 .Rose-circle {
   border-radius: 100%;
   color: #fff;
@@ -99,6 +116,7 @@
   line-height: 90rpx;
   margin: 0 auto 8rpx;
 }
+
 .Rose-music {
   position: absolute;
   right: 20rpx;
@@ -109,24 +127,29 @@
   text-align: center;
   z-index: 2;
 }
+
 .Rose-play {
   position: relative;
   line-height: 72rpx;
 }
+
 .Rose-rotate {
   animation: rotate 1s linear infinite;
 }
+
 .icon-CD {
   font-size: 48rpx;
   margin-top: 10rpx;
   color: #fefefe;
 }
+
 @keyframes rotate {
   0% {
     -webkit-transform: rotate(0deg);
     transform: rotate(0deg);
     transform-origin: 0, 0;
   }
+
   100% {
     -webkit-transform: rotate(360deg);
     transform: rotate(360deg);

@@ -30,10 +30,13 @@
       <image class='Rose-imgitem' mode="aspectFill" lazy-load="{{true}}" src="{{item.thumb==''? '/assets/images/ncode.jpg': item.thumb}}"></image>
       <view class="Rose-title">{{item.title}}</view>
       <view class="Rose-bottom">
-        <view class="Rose-icon"><icon class="iconfont icon-shijian2"></icon> {{comm.formatDate(item.updatetime)}}
+        <view class="Rose-icon">
+          <icon class="iconfont icon-shijian2"></icon> {{comm.formatDate(item.updatetime)}}
         </view>
-        <view class="Rose-icon"><icon class="iconfont icon-kanguo"></icon> {{item.views}}</view>
-        <view class="Rose-icon"><icon class="iconfont icon-pinglun"></icon> {{item.cnum}}</view>
+        <view class="Rose-icon">
+          <icon class="iconfont icon-kanguo"></icon> {{item.views}}</view>
+        <view class="Rose-icon">
+          <icon class="iconfont icon-pinglun"></icon> {{item.cnum}}</view>
       </view>
       <view class="Rose-detail">{{item.description}}</view>
     </view>

@@ -1,8 +1,9 @@
 /* components/photo/photo.wxss */
-.Rose-photo{
+
+.Rose-photo {
   width: 100%;
   height: 100%;
-  background: rgba(0,0,0,0.7);
+  background: rgba(0, 0, 0, 0.7);
   position: fixed;
   top: 0;
   left: 0;
@@ -10,7 +11,8 @@
   bottom: 0;
   z-index: 10;
 }
-.Rose-done{
+
+.Rose-done {
   width: 80%;
   height: 80%;
   position: fixed;
@@ -19,7 +21,8 @@
   margin-left: -40%;
   z-index: 10;
 }
-.Rose-save{
+
+.Rose-save {
   display: block;
   width: 80%;
   height: 80rpx;
@@ -34,9 +37,11 @@
   font-size: 32rpx;
   border-radius: 44rpx;
 }
-.Rose-canvas{
-/*  width: 0;
+
+.Rose-canvas {
+  /*  width: 0;
   height:0;
   overflow: hidden*/
-  width: 600px;height: 970px;
+  width: 600px;
+  height: 970px;
 }
