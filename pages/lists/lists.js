@@ -78,7 +78,7 @@ Page({
   },
   showOne: function (e) {
     let catid = e.currentTarget.dataset.catid;
-    if(catid == this.data.catid) return false;
+    if (catid == this.data.catid) return false;
     this.setData({
       catid: catid,
       items: [],

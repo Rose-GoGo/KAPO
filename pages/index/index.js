@@ -28,11 +28,11 @@ Page({
       name: '健身',
       id: 1
     }
-    // {
-    //   icon: 'icon-xiangji',
-    //   name: '摄影',
-    //   id: 5
-    // }
+      // {
+      //   icon: 'icon-xiangji',
+      //   name: '摄影',
+      //   id: 5
+      // }
     ]
   },
   /**

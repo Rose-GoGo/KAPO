@@ -14,7 +14,8 @@
     <view class="Rose-aign">
       <view class="Rose-name">{{item.title}}</view>
       <view class="Rose-time">
-        <view class="Rose-left"><icon class='iconfont icon-shijian2'></icon> {{comm.formatTime(item.updatetime)}}</view>
+        <view class="Rose-left">
+          <icon class='iconfont icon-shijian2'></icon> {{comm.formatTime(item.updatetime)}}</view>
         <view class="Rose-comment">
           <icon class="iconfont icon-kanguo"></icon> {{item.views}}
           <icon class="iconfont icon-pinglun"></icon> {{item.cnum}}
