@@ -142,6 +142,11 @@ Page({
       }
     })
   },
+  commentNow: function () {
+    this.setData({
+      focus: true
+    })
+  },
   commentBox: function () {
     var that = this;
     that.setData({

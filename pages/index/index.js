@@ -81,7 +81,7 @@ Page({
     let that = this;
     page = page + 1;
     if (that.data.loadMore) {
-      that.getLists();
+      // that.getLists();
     }
 
   },

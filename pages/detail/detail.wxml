@@ -76,9 +76,9 @@
       {{likenum}}
     </view>
     <input class="Rose-input" value="{{content}}" bindinput="forRemark" focus="{{focus}}" maxlength="-1" placeholder="{{placeholder}}" bindconfirm="postComments" bindsubmit="postComments" />
-    <view class="Rose-none Rose-center" bindtap="goHome">
-      <icon class="iconfont icon-home"></icon>
-      首页
+    <view class="Rose-none Rose-center" bindtap="commentNow">
+      <icon class="iconfont icon-message"></icon>
+      {{count}}
     </view>
     <view class="Rose-none Rose-center" bindtap="commentBox">
       <icon class="iconfont icon-plus-circle"></icon>

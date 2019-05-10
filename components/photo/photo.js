@@ -82,26 +82,6 @@ Component({
         context.fillText(desc.substring(0, 26), 40, 470);
         context.fillText(desc.substring(26, 50) + '...', 40, 510);
       }
-      // context.draw();
-      // console.log(context)
-      //将生成好的图片保存到本地，需要延迟一会，绘制期间耗时
-      // setTimeout(function () {
-      //   wx.canvasToTempFilePath({
-      //     canvasId: 'mycanvas',
-      //     success: function (res) {
-      //       console.log(res)
-      //       var tempFilePath = res.tempFilePath;
-      //       that.setData({
-      //         imagePath: tempFilePath,
-      //         canvasHidden: true
-      //       });
-      //       wx.hideToast()
-      //     },
-      //     fail: function (res) {
-      //       console.log(res);
-      //     }
-      //   }, this);
-      // }, 1000);
       //绘制图片
       context.draw(false, wx.canvasToTempFilePath({
         canvasId: 'mycanvas',
