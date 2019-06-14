@@ -1,7 +1,5 @@
 {
   "navigationBarTitleText": "Rose Zhao",
-  "enablePullDownRefresh": false,  
-  "usingComponents": {
-    "copyright": "../../components/copyright/copyright"
-  }  
+  "enablePullDownRefresh": false
+
 }

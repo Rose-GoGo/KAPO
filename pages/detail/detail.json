@@ -4,6 +4,8 @@
   "usingComponents": {
     "loading": "../../components/loading/loading",
     "backtop": "../../components/backtop/backtop",
-    "bottombar": "../../components/bottombar/bottombar"
+    "bottombar": "../../components/bottombar/bottombar",
+    "copyright": "../../components/copyright/copyright"
   }
+  
 }

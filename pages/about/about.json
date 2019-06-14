@@ -2,6 +2,6 @@
   "navigationBarTitleText": "我",
   "enablePullDownRefresh": false,
   "usingComponents": {
-    
+      "copyright": "../../components/copyright/copyright"
   }
 }

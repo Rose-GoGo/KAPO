@@ -11,7 +11,7 @@ Component({
      * 组件的初始数据
      */
     data: {
-      yearss: '2019'
+      yearss: ''
     },
     ready: function(){
       this.getYear();
