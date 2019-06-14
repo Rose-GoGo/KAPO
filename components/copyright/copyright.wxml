@@ -3,7 +3,7 @@
 <template name="copyright">
     <view class="Rose-copyRight">
       <view class="kapo-name">KAPO博客</view>
-      Copyright © 2014-2018 KAPO. All Rights Reserved.
+      Copyright © 2014-{{yearss}} KAPO. All Rights Reserved.
   </view>
 </template>
 <!-- /版权 -->

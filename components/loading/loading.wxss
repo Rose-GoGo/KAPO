@@ -9,7 +9,7 @@
 }
 
 .icon-jiazai {
-  height: 64rpx;
+  height: 72rpx;
   font-size: 28rpx;
   animation: rotate 1s linear infinite;
 }

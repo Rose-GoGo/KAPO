@@ -62,4 +62,6 @@
 </view> -->
 
 <!-- 版权 -->
-<template is="copyright"></template>
+<!-- <template is="copyright"></template> -->
+<copyright></copyright>
+
