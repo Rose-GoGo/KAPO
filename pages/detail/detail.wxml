@@ -75,7 +75,10 @@
       <icon class="iconfont {{ like?'icon-heart-fill':'icon-heart'}}"></icon>
       {{likenum}}
     </view>
-    <input class="Rose-input" value="{{content}}" bindinput="forRemark" focus="{{focus}}" maxlength="-1" placeholder="{{placeholder}}" bindconfirm="postComments" bindsubmit="postComments" />
+    <form class="Rose-input" report-submit='true' bindsubmit='getFormID'>
+      <!-- <form bindsubmit="submitInfo" report-submit='true' > -->
+      <input class="Rose-input" value="{{content}}" bindinput="forRemark" focus="{{focus}}" maxlength="-1" placeholder="{{placeholder}}" bindconfirm="postComments" bindsubmit="postComments" />
+    </form>
     <view class="Rose-none Rose-center" bindtap="commentNow">
       <icon class="iconfont icon-message"></icon>
       {{count}}
@@ -101,5 +104,4 @@
 <!-- 返回顶部 -->
 <backtop back-show="{{backShow}}"></backtop>
 <!-- 版权 -->
-<!-- <template is="copyright"></template> -->
 <copyright></copyright>

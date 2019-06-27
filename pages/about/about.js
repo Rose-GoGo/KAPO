@@ -43,17 +43,18 @@ Page({
       imageUrl: '/assets/images/share.jpg'
     }
   },
-  goEveryDay: function (e) {
+  goEveryDay(e) {
     let catid = e.currentTarget.dataset.catid;
     wx.navigateTo({
       url: '../more/more?catid=' + catid
     })
   },
   //事件处理函数
-  showOne: function (e) {
+  showOne(e) {
     let catid = e.currentTarget.dataset.catid;
     wx.navigateTo({
       url: '../lists/lists?catid=' + catid
     })
-  },
+  }
+
 })

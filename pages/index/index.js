@@ -67,7 +67,6 @@ Page({
     page = 1;
     that.setData({
       items: [],
-      // page: 1,
       loadMore: true
     });
     if (that.data.loadMore) {
@@ -81,9 +80,7 @@ Page({
     let that = this;
     page = page + 1;
     if (that.data.loadMore) {
-      // that.getLists();
     }
-
   },
   /**
    * 用户点击右上角分享
@@ -94,14 +91,14 @@ Page({
       imageUrl: '/assets/images/share.jpg'
     }
   },
-  articleDetail: function (e) {
+  articleDetail(e) {
     let id = e.currentTarget.dataset.id;
     let catid = e.currentTarget.dataset.catid
     wx.navigateTo({
       url: '../detail/detail?catid=' + catid + '&id=' + id
     });
   },
-  getLists: function (e) {
+  getLists(e) {
     let that = this;
     let params = {
       page: page,
@@ -122,7 +119,7 @@ Page({
       }
     });
   },
-  top10: function () {
+  top10() {
     Api.hits().then(res => { //文章列表
       if (!res.data.code) {
         let _data = res.data.data;
@@ -132,7 +129,7 @@ Page({
       }
     });
   },
-  getNotice: function () {
+  getNotice() {
     var that = this;
     let _params = {
       catid: 21, //项目id
@@ -150,18 +147,15 @@ Page({
       }
     });
   },
-  onPageScroll: function (e) {
+  onPageScroll(e) {
     var _backShow = false;
     if (e.scrollTop > 100) {
       _backShow = true;
     } else {
       _backShow = true;
     }
-    // this.setData({
-    //   backShow: _backShow
-    // });
   },
-  controlMusic: function () {
+  controlMusic() {
     if (this.data.isPlay) {
       app.AppMusic.pause();
       this.setData({
@@ -174,7 +168,7 @@ Page({
       });
     }
   },
-  goEveryDay: function (e) {
+  goEveryDay(e) {
     let catid = e.currentTarget.dataset.catid;
     wx.navigateTo({
       url: '../more/more?catid=' + catid

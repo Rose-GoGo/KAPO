@@ -7,7 +7,7 @@ Page({
   /**
    * 页面的初始数据
    */
-  data: {
+   data: {
     items: {},
     dkcontent: '',
     id: '',
@@ -34,13 +34,11 @@ Page({
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function (options) {
-    console.log(options)
+   onLoad: function (options) {
     wx.showLoading();
     var that = this;
     let _userInfo = wx.getStorageSync('userInfo')
     let scene = decodeURIComponent(options.scene);
-    console.log(scene)
     if (options.scene) {
       let scene = decodeURIComponent(options.scene);
       let info_arr = [];
@@ -61,16 +59,15 @@ Page({
     }
     if (wx.getStorageSync('userInfo')) { } else {
       wx.getSetting({
-        success: function (res) {
+        success:res=>{
           if (res.authSetting['scope.userInfo']) {
             // 已经授权，可以直接调用 getUserInfo 获取头像昵称
             wx.getUserInfo({
-              success: function (res) {
+              success:res=>{
                 let _userInfo = res.userInfo;
                 app.globalData.userInfo = _userInfo;
                 wx.setStorageSync('userInfo', _userInfo)
-              },
-              fail: function () { }
+              }
             })
           }
         }
@@ -83,27 +80,27 @@ Page({
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
-  onReady: function () { },
+   onReady: function () { },
   /**
    * 生命周期函数--监听页面显示
    */
-  onShow: function () { },
+   onShow: function () { },
   /**
    * 生命周期函数--监听页面隐藏
    */
-  onHide: function () { },
+   onHide: function () { },
   /**
    * 生命周期函数--监听页面卸载
    */
-  onUnload: function () { },
+   onUnload: function () { },
   /**
    * 页面相关事件处理函数--监听用户下拉动作
    */
-  onPullDownRefresh: function () { },
+   onPullDownRefresh: function () { },
   /**
    * 页面上拉触底事件的处理函数
    */
-  onReachBottom: function () {
+   onReachBottom: function () {
     var that = this;
     let page = that.data.page + 1;
     that.setData({
@@ -116,13 +113,14 @@ Page({
   /**
    * 用户点击右上角分享
    */
-  onShareAppMessage: function () {
+   onShareAppMessage: function () {
     return {
       title: this.data.items.title,
+      path: "/detail/detail",
       imageUrl: '/assets/images/share.jpg'
     }
   },
-  getData: function () {
+  getData() {
     var that = this;
     let _params = {
       catid: that.data.catid,
@@ -142,12 +140,12 @@ Page({
       }
     })
   },
-  commentNow: function () {
+  commentNow() {
     this.setData({
       focus: true
     })
   },
-  commentBox: function () {
+  commentBox() {
     var that = this;
     that.setData({
       commentshow: !that.data.commentshow,
@@ -156,7 +154,7 @@ Page({
       that.getCode();
     }
   },
-  wetherLike: function () { //点赞
+  wetherLike() { //点赞
     var that = this;
     let params = {
       id: that.data.id,
@@ -192,7 +190,7 @@ Page({
       })
     }
   },
-  backContent: function (e) { //回复的评论
+  backContent(e) { //回复的评论
     let _from = e.currentTarget.dataset.from;
     let _id = e.currentTarget.dataset.pid;
     this.setData({
@@ -203,7 +201,7 @@ Page({
       commentshow: true
     })
   },
-  top10: function () { //推荐阅读
+  top10() { //推荐阅读
     var that = this;
     let params = {
       pagesize: 5,
@@ -219,26 +217,26 @@ Page({
       }
     })
   },
-  articleDetail: function (e) {
+  articleDetail(e) {
     let id = e.currentTarget.dataset.id;
     let catid = e.currentTarget.dataset.catid
     wx.navigateTo({
       url: '../detail/detail?catid=' + catid + '&id=' + id
     });
   },
-  previewImage: function (e) {
+  previewImage(e) {
     var current = e.target.dataset.src;
     wx.previewImage({
       current: current,
       urls: [current]
     })
   },
-  goHome: function () {
+  goHome() {
     wx.switchTab({
       url: '../index/index'
     });
   },
-  forContent: function (e) {
+  forContent(e) {
     let that = this;
     let _content = e.detail.value;
     // 禁止输入空格
@@ -260,7 +258,7 @@ Page({
       })
     }
   },
-  postComments: function () {
+  postComments() {
     var that = this;
     if (!that.data.content) {
       wx.showModal({
@@ -302,7 +300,7 @@ Page({
       }
     });
   },
-  commentlists: function () {
+  commentlists() {
     var that = this;
     let _params = {
       newsid: that.data.id,
@@ -332,7 +330,7 @@ Page({
       }
     });
   },
-  forRemark: function (e) {
+  forRemark(e) {
     var that = this;
     let _data = e.detail.value;
     // 禁止输入空格
@@ -354,7 +352,7 @@ Page({
       })
     }
   },
-  makePhoto: function (e) { //点击生成海报
+  makePhoto(e) { //点击生成海报
     var that = this;
     if (this.data.imagePath) {
       that.setData({
@@ -386,19 +384,17 @@ Page({
   /*
   海报
   */
-  createNewImg: function (codes, img, title, desc) {
+  createNewImg(codes, img, title, desc) {
     var that = this;
     var Rose = wx.createCanvasContext('mycanvas');
     Rose.setFillStyle("#ffffff")
     Rose.fillRect(0, 0, 600, 1000); //填充一个矩形。用 setFillStyle
-    // var date = new Date();
     wx.getImageInfo({
       src: img, //服务器返回的图片地址
       success: function (res) {
         var thumb = res.path;
         var datee = new Date();
         var cctime = util.formatTime(datee);
-        console.log(cctime)
         var bg = "/assets/images/44.png";
         Rose.drawImage(bg, 0, 737, 640, 395); //绘制首图
         Rose.drawImage(thumb, 20, 140, 560, 300); //绘制首图
@@ -480,7 +476,7 @@ Page({
     })
   },
   //点击保存到相册
-  baocun: function () {
+  baocun() {
     var that = this
     wx.saveImageToPhotosAlbum({
       filePath: that.data.imagePath,
@@ -503,14 +499,14 @@ Page({
       }
     })
   },
-  quxiao: function () {
+  quxiao() {
     var that = this;
     that.setData({
       modalshow: true
     })
   },
   //点击生成
-  getCode: function () { //生成二维码
+  getCode() { //生成二维码
     var that = this;
     let _params = {
       catid: that.data.catid,
@@ -525,4 +521,14 @@ Page({
       }
     });
   },
+  getFormID(e) {
+    submitInfo: function(e){
+        console.log("formId",e.detail.formId);
+    }
+
+    console.log(e.detail.formId)
+    this.setData({
+      formId: e.detail.formId
+    })
+  }
 })

@@ -98,7 +98,7 @@ Page({
       imageUrl: '/assets/images/share.jpg'
     }
   },
-  forTitle: function (e) { //打卡数据验证
+  forTitle() { //打卡数据验证
     var that = this;
     let _data = e.detail.value;
     that.setData({
@@ -114,7 +114,7 @@ Page({
       });
     }
   },
-  forRemark: function (e) { //打卡数据验证
+  forRemark() { //打卡数据验证
     var that = this;
     let _data = e.detail.value;
     that.setData({
@@ -130,7 +130,7 @@ Page({
       });
     }
   },
-  earMonth: function (n) { //获取年月
+  earMonth(n) { //获取年月
     var ym, year, month;
     var that = this;
     year = that.data.year;
@@ -161,7 +161,7 @@ Page({
     });
      that.getLine();
   },
-  getLine: function () { //拉取数据并且处理
+  getLine() { //拉取数据并且处理
     var that = this;
     var year = that.data.year;
     var month = that.data.month;
@@ -206,7 +206,7 @@ Page({
       }
     });
   },
-  bindGetUserInfo: function (res) {
+  bindGetUserInfo(res) {
     var that = this;
     var userInfo = {};
     if (res) {
@@ -229,7 +229,7 @@ Page({
       });
     }
   },
-  editItem: function (e) {
+  editItem(e) {
     let showEdit = this.data.showEdit;
     let showid = e.currentTarget.dataset.forid;
     this.setData({
@@ -237,7 +237,7 @@ Page({
       showid: showid
     });
   },
-  editOne: function (e) {
+  editOne(e) {
     var that = this;
     let id = e.currentTarget.dataset.id;
     let title = e.currentTarget.dataset.title;
@@ -255,7 +255,7 @@ Page({
       duration: 300
     })
   },
-  resetPage: function () { //默认的展示状态
+  resetPage() { //默认的展示状态
     var that = this;
     let month = new Date().getMonth() + 1;
     let year = new Date().getFullYear();
@@ -273,7 +273,7 @@ Page({
     });
     that.getLine();
   },
-  deleteOne: function (e) { //删除本条
+  deleteOne(e) { //删除本条
     var that = this;
     let id = e.currentTarget.dataset.id;
     let _params = {
@@ -319,7 +319,7 @@ Page({
       urls: arr, //所有要预览的图片
     });
   },
-  uploadImg: function () {
+  uploadImg() {
     var that = this;
     var aids = [];
     var images = that.data.images;
@@ -359,7 +359,7 @@ Page({
       }
     });
   },
-  chooseImg: function () { //选取图片
+  chooseImg() { //选取图片
     var that = this;
     if (that.data.images.length < 3) { // 限制最多只能留下3张照片
       wx.chooseImage({
@@ -376,7 +376,7 @@ Page({
       });
     }
   },
-  formSubmit: function () {
+  formSubmit() {
     wx.showLoading();
     var that = this,
       aids = [];
@@ -430,7 +430,7 @@ Page({
     //   });
     // }
   },
-  hideData: function (e) { //隐藏该月的数组
+  hideData(e) { //隐藏该月的数组
     var that = this;
     let _num = e.currentTarget.dataset.num;
     let _year = e.currentTarget.dataset.year;

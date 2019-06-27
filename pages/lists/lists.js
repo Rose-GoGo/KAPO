@@ -98,7 +98,7 @@ Page({
     //   });
     // }
   },
-  getLists: function (e) {
+  getLists() {
     var that = this;
     var cat = that.data.catid;
     let params = {
