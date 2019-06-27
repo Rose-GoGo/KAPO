@@ -1,5 +1,4 @@
 /* components/share/share.wxss */
-
 .Rose-mask {
   position: fixed;
   left: 0;
@@ -13,7 +12,6 @@
   background-color: rgba(0, 0, 0, 0.4);
   z-index: 9;
 }
-
 .Rose-content {
   display: flex;
   flex-direction: column;
@@ -24,13 +22,11 @@
   text-align: center;
   font-size: 30rpx;
 }
-
 .Rose-main {
   flex: 1;
   height: 100%;
   overflow-y: hidden;
 }
-
 .Rose-btns {
   display: flex;
   flex-direction: row;
@@ -39,7 +35,6 @@
   border-top: 2rpx solid #e6e5e7;
   overflow: hidden;
 }
-
 .Rose-cancel, .Rose-confirm {
   position: relative;
   flex: 1;
@@ -50,21 +45,14 @@
   color: #999;
   z-index: 1;
 }
-
 button.Rose-confirm {
   color: #1d8f59;
 }
-
-button:after {
-  border: none;
-}
-
 button {
   border-radius: 0;
   padding: 0;
   background-color: transparent;
 }
-
 button.Rose-cancel {
   border-right: 2rpx solid #e6e5e7;
 }

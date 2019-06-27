@@ -2,17 +2,14 @@ image {
   display: block;
   width: 100%;
 }
-
 .Rose-box {
   background: #fff;
 }
-
 .Rose-imgitem {
   height: 330rpx;
   display: block;
   width: 100%;
 }
-
 .Rose-description {
   padding: 20rpx;
   margin: 20rpx 0;
@@ -21,12 +18,10 @@ image {
   border: 2rpx solid #ddd;
   border-left: 16rpx solid #dddfe4;
 }
-
 .Rose-content {
   overflow: hidden;
   word-break: break-word;
 }
-
 .Rose-detail {
   font-size: 32rpx;
   line-height: 1.8;
@@ -34,29 +29,24 @@ image {
   color: #4f4f4f;
   background: #fff;
 }
-
 .Rose-title {
   color: #000;
   font-size: 48rpx;
   line-height: 1.4;
 }
-
 .Rose-addtime {
   display: flex;
   margin: 0 0 40rpx;
   color: #999;
   font-size: 24rpx;
 }
-
 .Rose-addtime .iconfont {
   font-size: 24rpx;
   margin-right: 6rpx;
 }
-
 .Rose-keywords {
   margin-right: 20rpx;
 }
-
 .wxParse-pre {
   padding: 0 20rpx 20rpx;
   margin: 20rpx 0;
@@ -66,26 +56,22 @@ image {
   color: #abb2bf;
   -webkit-overflow-scrolling: touch;
 }
-
 .Rose-small {
   padding: 0 10rpx;
   font-size: 30rpx;
   color: #999;
 }
-
 .wxParse-p {
   padding: 10rpx 0;
   font-size: 32rpx;
   word-break: break-word;
 }
-
 .Rose-lines, .wxParse-h3 {
   font-size: 36rpx;
   position: relative;
   padding: 10rpx 20rpx;
   color: #333;
 }
-
 .Rose-lines:before, .wxParse-h3:before {
   position: absolute;
   top: 16rpx;
@@ -95,21 +81,17 @@ image {
   content: '';
   background: #4bb777;
 }
-
 .wxParse-h3 {
   margin: 40rpx 0 0;
   font-weight: 400;
 }
-
 .wxParse-h3:before {
   top: 24rpx;
 }
-
 .wxParse-li {
   position: relative;
   padding-left: 40rpx;
 }
-
 .wxParse-li:before {
   position: absolute;
   left: 10rpx;
@@ -120,31 +102,25 @@ image {
   content: '';
   border-radius: 100%;
 }
-
 /*.wxParse-div {
   word-break: break-all;
 }
 */
-
 .wxParse-h5 {
   padding: 5rpx 0;
   font-weight: 600;
 }
-
 /*top10推荐*/
-
 .Rose-top {
   background: #fff;
   padding: 20rpx 0;
 }
-
 .Rose-topli {
   position: relative;
   padding: 20rpx 20rpx 20rpx 40rpx;
   font-size: 28rpx;
   color: #999;
 }
-
 .Rose-topli:before {
   position: absolute;
   left: 20rpx;
@@ -155,31 +131,25 @@ image {
   content: '';
   border-radius: 100%;
 }
-
 .Rose-read {
   margin: 40rpx 0 0;
   color: #999;
   font-size: 30rpx;
 }
-
 .Rose-Right {
   float: right;
   font-size: 32rpx;
   color: #999;
 }
-
 .Rose-Right .iconfont {
   margin-top: -8rpx;
   vertical-align: middle;
   font-size: 34rpx;
 }
-
 /*改版评论*/
-
 .icon-like-fill {
   color: #4bb777;
 }
-
 /*.Rose-fixed {
   position: fixed;
   left: 0;
@@ -225,29 +195,23 @@ button::after {
   text-align: center;
   box-shadow: none;
   }*/
-
 /*最新*/
-
 .Rose-comments {
   background: #fff;
   padding: 20rpx 0 0;
 }
-
 .Rose-lists {
   padding: 20rpx;
 }
-
 .Rose-resource {
   display: flex;
 }
-
 .Rose-image {
   flex: none;
-  width: 70rpx;
-  height: 70rpx;
+  width: 80rpx;
+  height: 80rpx;
   border-radius: 4rpx;
 }
-
 .Rose-user {
   flex: 1;
   padding: 0 0 20rpx;
@@ -256,36 +220,29 @@ button::after {
   line-height: 1;
   border-bottom: 1rpx solid #f2f2f2;
 }
-
 .Rose-items {
   padding: 30rpx 0 0;
 }
-
 .Rose-items:last-child .Rose-user {
   border-bottom: none;
 }
-
 .Rose-form {
   margin: 0 0 0 20rpx;
 }
-
 .Rose-names {
   font-size: 28rpx;
   color: #666;
 }
-
 .Rose-times {
   padding: 16rpx 0;
   color: #999;
   font-size: 20rpx;
 }
-
 .Rose-comment-content {
   color: #666;
   font-size: 32rpx;
   line-height: 44rpx;
 }
-
 .Rose-back {
   margin: 20rpx 0 0 20rpx;
   color: #999;
@@ -294,28 +251,23 @@ button::after {
   line-height: 1.6;
   background: #f5f5f5;
 }
-
 .Rose-back-item {
   line-height: 1.4;
   word-break: break-all;
   padding: 5rpx 0;
 }
-
 .Rose-tt {
   color: #333;
 }
-
 .Rose-empty {
   padding: 60rpx 0 80rpx;
   text-align: center;
   font-size: 14px;
   color: #999;
 }
-
 .Rose-center {
   text-align: center;
 }
-
 .Rose-end {
   padding: 30rpx 0;
   text-align: center;
@@ -323,28 +275,24 @@ button::after {
   border-top: 1rpx solid #f2f2f2;
   color: #999;
 }
-
 .Rose-word {
   line-height: 1;
   padding: 30rpx 0;
   font-size: 28rpx;
   color: #999;
 }
-
 .iconfont.icon-kafei {
   display: block;
   font-size: 90rpx;
   color: #eee;
   margin-bottom: 10rpx;
 }
-
 .Rose-link {
   margin: 20rpx 0 0;
   padding: 5rpx;
   background: #f5f5f5;
   color: #999;
 }
-
 .Rose-fixed {
   position: fixed;
   left: 0;
@@ -354,37 +302,32 @@ button::after {
   z-index: 5;
   background: #fff;
 }
-
 .Rose-flex {
   padding: 12rpx 20rpx;
   display: flex;
 }
-
 .Rose-none {
   width: 80rpx;
   flex: none;
   font-size: 18rpx;
   color: #999;
-  line-height: 1;
+  line-height: 1.2;
 }
-
 .Rose-none .iconfont {
-  font-size: 48rpx;
-  /*color: #4bb777;*/
   display: block;
-  color: #666;
+  margin: 4rpx 0 0;
+  font-size: 48rpx;
+  color: #4bb777;
   font-weight: 600;
 }
-
 .Rose-none .iconfont.icon-heart-fill {
   color: #4bb777;
 }
-
 .Rose-input {
   flex: 1;
   margin: 0 20rpx 0 0;
-  height: 70rpx;
-  line-height: 70rpx;
+  height: 80rpx;
+  line-height: 80rpx;
   padding: 0 20rpx;
   background: #eef0f4;
   border: 1rpx solid #f2f2f2;
@@ -392,9 +335,7 @@ button::after {
   border-radius: 40rpx;
   color: #666;
 }
-
 /* components/photo/photo.wxss */
-
 .Rose-photo {
   width: 100%;
   height: 100%;
@@ -406,7 +347,6 @@ button::after {
   bottom: 0;
   z-index: 10;
 }
-
 .Rose-done {
   width: 80%;
   height: 80%;
@@ -416,7 +356,6 @@ button::after {
   margin-left: -40%;
   z-index: 10;
 }
-
 .Rose-btn {
   display: block;
   width: 40%;
@@ -432,16 +371,13 @@ button::after {
   border: 1rpx solid #f2f2f2;
   z-index: 11;
 }
-
 .Rose-save {
   left: 50%;
   color: #1d8f59;
 }
-
 .Rose-close {
   left: 10%;
 }
-
 .Rose-canvas {
   width: 0;
   height: 0;

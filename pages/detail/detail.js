@@ -59,11 +59,11 @@ Page({
     }
     if (wx.getStorageSync('userInfo')) { } else {
       wx.getSetting({
-        success:res=>{
+        success: function (res) {
           if (res.authSetting['scope.userInfo']) {
             // 已经授权，可以直接调用 getUserInfo 获取头像昵称
             wx.getUserInfo({
-              success:res=>{
+              success: function (res) {
                 let _userInfo = res.userInfo;
                 app.globalData.userInfo = _userInfo;
                 wx.setStorageSync('userInfo', _userInfo)
@@ -372,7 +372,7 @@ Page({
     const datas = that.data.items;
     const titles = datas.title; //標題
     const desc = datas.description; //介绍
-    const imgs = datas.thumb; //图片
+    const imgs = datas.thumb ? datas.thumb : 'https://www.zhmzjl.com/statics/images/blog/ncode.jpg'; //图片
     wx.getImageInfo({
       src: that.data.codeurl, //服务器返回的图片地址
       success: res => {
@@ -384,7 +384,7 @@ Page({
   /*
   海报
   */
-  createNewImg(codes, img, title, desc) {
+  createNewImg: function (codes, img, title, desc) {
     var that = this;
     var Rose = wx.createCanvasContext('mycanvas');
     Rose.setFillStyle("#ffffff")
@@ -522,9 +522,6 @@ Page({
     });
   },
   getFormID(e) {
-    console.log("formId",e.detail.formId);
-
-
     this.setData({
       formId: e.detail.formId
     })
