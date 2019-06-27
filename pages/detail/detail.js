@@ -198,7 +198,7 @@ Page({
       focus: true,
       reply_username: _from,
       pid: _id,
-      commentshow: true
+      commentshow: false
     })
   },
   top10() { //推荐阅读

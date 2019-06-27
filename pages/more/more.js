@@ -48,9 +48,7 @@ Page({
                   isRose: true
                 })
               }
-              that.setData({
-                username: userInfo.nickName,
-              })
+             const username = userInfo.nickName;
             },
             fail: function (res) { }
           });
@@ -86,7 +84,6 @@ Page({
     var that = this;
     if (that.data.loadMore) {
       that.earMonth(); //上个月的时间
-      // that.getLine();
     }
   },
   /**
@@ -187,14 +184,12 @@ Page({
         big[dataIndex] = {
           [year]: _monthData
         }
-
         that.setData({
           bigData: big
         });
         let _count = Object.keys(_data[month]).length;
         if (_count < 3 || that.data.bigData.length == 0) { //月初没有数据或者数据较少的时候加载上个月的数据
           that.earMonth(); //上个月的时间
-          // that.getLine();
           return false;
         }
         if (_data[month].length == 0) {
@@ -223,10 +218,7 @@ Page({
       that.setData({
         isRose: true
       });
-      that.setData({
-        username: userInfo.nickName,
-        // sex: userInfo.gender
-      });
+      const username = userInfo.nickName;
     }
   },
   editItem(e) {
@@ -298,7 +290,6 @@ Page({
             }
           });
         } else if (res.cancel) {
-
         }
       }
     })
@@ -391,7 +382,7 @@ Page({
         catid: that.data.catid,
         title: that.data.title,
         remark: that.data.remark,
-        username: that.data.username,
+        username: username,
         aids: aidStr //图片
       }
       if (that.data.id) { //如果有id， 修改
