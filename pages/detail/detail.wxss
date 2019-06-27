@@ -309,13 +309,13 @@ button::after {
 .Rose-none {
   width: 80rpx;
   flex: none;
-  font-size: 18rpx;
+  font-size: 20rpx;
   color: #999;
-  line-height: 1.2;
+  line-height: 40rpx;
 }
 .Rose-none .iconfont {
   display: block;
-  margin: 4rpx 0 0;
+
   font-size: 48rpx;
   color: #4bb777;
   font-weight: 600;

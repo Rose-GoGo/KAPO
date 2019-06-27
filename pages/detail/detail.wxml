@@ -80,12 +80,10 @@
       <input class="Rose-input" value="{{content}}" bindinput="forRemark" focus="{{focus}}" maxlength="-1" placeholder="{{placeholder}}" bindconfirm="postComments" bindsubmit="postComments" />
     </form>
     <view class="Rose-none Rose-center" bindtap="commentNow">
-      <icon class="iconfont icon-message"></icon>
-      {{count}}
+      <icon class="iconfont icon-message"></icon>{{count}}
     </view>
     <view class="Rose-none Rose-center" bindtap="commentBox">
-      <icon class="iconfont icon-plus-circle"></icon>
-      更多
+      <icon class="iconfont icon-plus-circle"></icon>更多
     </view>
   </view>
 </view>
