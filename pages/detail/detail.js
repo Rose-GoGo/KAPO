@@ -522,11 +522,9 @@ Page({
     });
   },
   getFormID(e) {
-    submitInfo: function(e){
-        console.log("formId",e.detail.formId);
-    }
+    console.log("formId",e.detail.formId);
 
-    console.log(e.detail.formId)
+
     this.setData({
       formId: e.detail.formId
     })
