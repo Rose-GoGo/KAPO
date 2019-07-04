@@ -1,5 +1,6 @@
 // pages/more/more.js
 import Api from '/../../utils/api.js';
+var username = '';
 Page({
   /**
    * 页面的初始数据
@@ -48,9 +49,8 @@ Page({
                   isRose: true
                 })
               }
-             const username = userInfo.nickName;
-            },
-            fail: function (res) { }
+             username = userInfo.nickName;
+            },            
           });
         }
       }
@@ -95,7 +95,7 @@ Page({
       imageUrl: '/assets/images/share.jpg'
     }
   },
-  forTitle() { //打卡数据验证
+  forTitle(e) { //打卡数据验证
     var that = this;
     let _data = e.detail.value;
     that.setData({
@@ -111,7 +111,7 @@ Page({
       });
     }
   },
-  forRemark() { //打卡数据验证
+  forRemark(e) { //打卡数据验证
     var that = this;
     let _data = e.detail.value;
     that.setData({
@@ -218,7 +218,7 @@ Page({
       that.setData({
         isRose: true
       });
-      const username = userInfo.nickName;
+      username = userInfo.nickName;
     }
   },
   editItem(e) {
@@ -373,7 +373,7 @@ Page({
       aids = [];
     that.setData({
       disabled: true //想偷懒都不行，这里需要点击按钮后，按钮就设置成disabled, 避免重负提交
-    });
+    });    
     var promise = that.uploadImg(); //进行图片的上传
     promise.then(res => {
       aids = that.data.aids;
