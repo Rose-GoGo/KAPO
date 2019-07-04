@@ -1,12 +1,13 @@
 // pages/lists/lists.js
 import Api from '/../../utils/api.js';
 const app = getApp();
+var page = 1;
 Page({
   /**
    * 页面的初始数据
    */
   data: {
-    page: 1,
+    // page: 1,
     items: [],
     loadMore: true,
     catid: '11',
@@ -27,7 +28,6 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
   },
   /**
    * 生命周期函数--监听页面隐藏
@@ -42,9 +42,10 @@ Page({
    */
   onPullDownRefresh: function () {
     this.setData({
-      page: 1,
+      // page: 1,
       items: []
     });
+    page = 1;
     this.getLists();
   },
   /**
@@ -52,11 +53,12 @@ Page({
    */
   onReachBottom: function () {
     var that = this;
-    let page = that.data.page + 1;
+    // let page = that.data.page + 1;
+    page = page + 1;
     if (that.data.loadMore) {
-      that.setData({
-        page: page
-      })
+      // that.setData({
+      //   page: page
+      // })
       that.getLists();
     }
   },
@@ -79,10 +81,11 @@ Page({
   showOne: function (e) {
     let catid = e.currentTarget.dataset.catid;
     if (catid == this.data.catid) return false;
+    page =  1;
     this.setData({
       catid: catid,
       items: [],
-      page: 1,
+      // page: 1,
       loadMore: true
     });
     this.getLists();
@@ -103,7 +106,8 @@ Page({
     var cat = that.data.catid;
     let params = {
       pagesize: 10,
-      page: that.data.page,
+      // page: that.data.page,
+      page: page,
       catid: cat
     }
     Api.lists(params).then(res => { //文章列表
