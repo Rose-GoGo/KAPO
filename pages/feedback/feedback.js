@@ -1,13 +1,14 @@
 // pages/more/more.js
 import Api from '/../../utils/api.js';
 const app = getApp();
+var page = 1;
 Page({
   /**
    * 页面的初始数据
    */
    data: {
     show: false, //不显示分享
-    page: 1,
+    // page: 1,
     content: '',
     disabled: true,
     comments: [],
@@ -69,9 +70,10 @@ Page({
    */
    onPullDownRefresh: function () {
     var that = this;
+    page =  1;
     that.setData({
       comments: [],
-      page: 1
+      // page: 1
     });
     that.commentlists();
   },
@@ -80,10 +82,11 @@ Page({
    */
    onReachBottom: function () {
     var that = this;
-    let page = that.data.page + 1;
-    that.setData({
-      page: page
-    });
+    // let page = that.data.page + 1;
+    page = page + 1;
+    // that.setData({
+    //   page: page
+    // });
     if (that.data.loadMore) {
       that.commentlists();
     }
@@ -190,9 +193,10 @@ Page({
           icon: 'success',
           duration: 2000
         })
+        page = 1;
         that.setData({
           content: '',
-          page: 1,
+          // page: 1,
           comments: [],
           reply_username: '',
           pid: 0,
@@ -207,7 +211,8 @@ Page({
     var that = this;
     let _params = {
       type: "punch",
-      page: this.data.page,
+      page: page,
+      // page: this.data.page,
       pagesize: 10
     }
     Api.commentlists(_params).then(res => {
