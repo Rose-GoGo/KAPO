@@ -50,7 +50,8 @@ Page({
                 })
               }
              username = userInfo.nickName;
-            },            
+            },
+            fail: function (res) { }
           });
         }
       }
@@ -373,7 +374,7 @@ Page({
       aids = [];
     that.setData({
       disabled: true //想偷懒都不行，这里需要点击按钮后，按钮就设置成disabled, 避免重负提交
-    });    
+    });
     var promise = that.uploadImg(); //进行图片的上传
     promise.then(res => {
       aids = that.data.aids;
