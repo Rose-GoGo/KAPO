@@ -258,7 +258,7 @@ Page({
       })
     }
   },
-  postComments() {
+  postComments(e) {
     var that = this;
     if (!that.data.content) {
       wx.showModal({
@@ -299,6 +299,39 @@ Page({
         that.commentlists();
       }
     });
+
+
+   //添加模板信息
+   var openid = wx.getStorageSync('loginSessionkey');
+
+
+    var postdata =  {
+      openid: openid,
+      form_id: e.detail.formId,
+      data: {
+        "keyword1": { "value": that.data.items.title, "color": "#333" },
+        "keyword2": { "value": that.data.userInfo.nickName, "color": "#999" },
+        "keyword3": { "value": that.data.content, "color": "#666" },
+        "keyword4": { "value": new Date(), "color": "#999" },
+      }
+    }
+
+
+
+    wx.request({
+      url: 'http://119.29.161.36:3000/template',
+      data: postdata,
+      method: 'POST',
+      success: function (res) {
+          console.log(res);
+      },
+
+    })
+
+
+
+
+
   },
   commentlists() {
     var that = this;
@@ -521,9 +554,49 @@ Page({
       }
     });
   },
-  getFormID(e) {
-    this.setData({
-      formId: e.detail.formId
-    })
-  }
+  // postComments(e) {
+  //   var that = this;
+  //   var _datas = that.items;
+  //   var username ='';
+  //   wx.getUserInfo({
+  //     success: function (res) {
+  //       var userInfo = res.userInfo;
+  //       if (userInfo.nickName == '赵') {
+  //         that.setData({
+  //           isRose: true
+  //         })
+  //       }
+  //       username = userInfo.nickName;
+  //     },
+  //     fail: function (res) { }
+  //   });
+    // var openid = wx.getStorageSync('loginSessionkey');
+    // let _jsonData = {
+    //   touser: openid,
+    //   template_id: 'j-3edb01UbYzkecJlaokoq9HeK_dUVSpQutNA7VWO4I',
+    //   form_id: e.detail.formId,
+    //   page: "pages/detail/detail",
+    //   data: {
+    //     "keyword1": { "value": _datas.title, "color": "#333" },
+    //     "keyword2": { "value": username, "color": "#999" },
+    //     "keyword3": { "value": that.data.content, "color": "#666" },
+    //     "keyword4": { "value": new Date(), "color": "#999" },
+    //   }
+    // }
+    // wx.request({
+    //   url: url,
+    //   data: _jsonData,
+    //   method: 'POST',
+    //   success: function (res) {
+    //      wx.hideLoading();
+    //       console.log(res);
+    //   },
+    //   fail: function (err) {
+    //     console.log('request fail ', err);
+    //   },
+    //   complete: function (res) {
+    //     console.log("request completed!");
+    //   }
+    // })
+  // }
 })

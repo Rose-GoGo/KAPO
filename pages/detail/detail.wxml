@@ -75,7 +75,7 @@
       <icon class="iconfont {{ like?'icon-heart-fill':'icon-heart'}}"></icon>
       {{likenum}}
     </view>
-    <form class="Rose-input" report-submit='true' bindsubmit='getFormID'>
+    <form class="Rose-input" report-submit='true' bindsubmit='postComments'>
       <input class="Rose-input" value="{{content}}" bindinput="forRemark" focus="{{focus}}" maxlength="-1" placeholder="{{placeholder}}" bindconfirm="postComments" bindsubmit="postComments" />
     </form>
     <view class="Rose-none Rose-center" bindtap="commentNow">

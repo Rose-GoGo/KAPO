@@ -1,8 +1,15 @@
 //app.js
+var common = require('utils/login.js');
+
 App({
   onLoad: function (options) {
+
+
   },
-  onShow: function (option) { },
+  onShow: function (option) {
+     common.login()
+
+  },
   onPageNotFound: function (res) { },
   onLaunch: function () {
     this.AppMusic = wx.createInnerAudioContext();
