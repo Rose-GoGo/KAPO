@@ -76,7 +76,8 @@
       {{likenum}}
     </view>
     <form class="Rose-input" report-submit='true' bindsubmit='postComments'>
-      <input class="Rose-input" value="{{content}}" bindinput="forRemark" focus="{{focus}}" maxlength="-1" placeholder="{{placeholder}}" bindconfirm="postComments" bindsubmit="postComments" />
+      <input class="Rose-input" value="{{content}}" bindinput="forRemark" focus="{{focus}}" maxlength="-1" placeholder="{{placeholder}}" bindconfirm="postComments" bindsubmit="postComments" formType="submit" />
+      <!-- <button form-type="submit" type="default" size="mini">提交</button> -->
     </form>
     <view class="Rose-none Rose-center" bindtap="commentNow">
       <icon class="iconfont icon-message"></icon>{{count}}

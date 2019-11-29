@@ -13,7 +13,9 @@ const login = n => {
           },
           success: (res) => {
             var _data = res.data.data.openid;
+            var _keykey = res.data.data.tokes;
             wx.setStorageSync('loginSessionkey', _data);
+             wx.setStorageSync('loginkey', _keykey);
           }
         })
       }
