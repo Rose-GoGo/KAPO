@@ -134,15 +134,25 @@ Page({
     year = that.data.year;
     month = that.data.month;
     ym = year + '-' + month;
+
+    console.log(new Date(ym).getMonth())
+
     if (new Date(ym).getMonth() == 0) {
       year = year - 1;
       month = 12;
+
       let big = that.data.bigData;
-      let index = this.data.dataIndex + 1
+      let index = this.data.dataIndex + 1;
+
+      console.log(big)
+
       let datas = {
         [year]: {}
       }
-      big.push(datas)
+
+      big.push(datas);
+      console.log(big)
+
       that.setData({
         dataIndex: index,
         bigData: big
@@ -151,6 +161,7 @@ Page({
       year = year;
       month = month - 1;
     }
+    
     year = '' + year;
     month = month >= 10 ? '' + month : '0' + month
     that.setData({
@@ -166,6 +177,8 @@ Page({
     var dataIndex = that.data.dataIndex;
     var big = that.data.bigData;
     var thisMonthData = {};
+
+
     let _params = {
       year: year,
       month: month,
@@ -178,7 +191,8 @@ Page({
         thisMonthData['monthNum'] = month;
         thisMonthData['monthShow'] = true;
         var _monthData = [];
-        if (that.data.month != '12') { //换年了
+        
+        if (that.data.month != '01' ) { //换年了
           var _monthData = that.data.monthData;
         }
         _monthData.push(thisMonthData);
@@ -430,6 +444,9 @@ Page({
     let _month = e.currentTarget.dataset.month;
     let _bigData = that.data.bigData;
     _bigData[_num][_year][_index]['monthShow'] = !_bigData[_num][_year][_index]['monthShow'];
+
+    console.log(_bigData)
+
     that.setData({
       bigData: _bigData
     })

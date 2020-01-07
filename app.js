@@ -7,7 +7,7 @@ App({
 
   },
   onShow: function (option) {
-     common.login()
+    //  common.login()
 
   },
   onPageNotFound: function (res) { },

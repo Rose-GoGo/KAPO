@@ -18,13 +18,13 @@
             <icon class="fr iconfont icon-xiangyou"></icon>
         </navigator>
     </view>
-    <view class="Rose-Line">
+    <!-- <view class="Rose-Line">
         <button open-type="contact" class="Rose-btn">
             <icon class="iconfont icon-info-circle"></icon>
             联系我
             <icon class="fr iconfont icon-xiangyou"></icon>
         </button>
-    </view>
+    </view> -->
 </view>
 <view class="Rose-floor">
     <view class="Rose-Line">
