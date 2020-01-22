@@ -55,7 +55,7 @@
 
 .Rose-title:after {
   position: absolute;
-  bottom: -16rpx;
+  bottom: -20rpx;
   left: 50%;
   width: 0;
   height: 4rpx;
