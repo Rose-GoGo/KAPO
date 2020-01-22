@@ -15,12 +15,16 @@
 </view>
 <view class="Rose-floor2">
   <view class="Rose-menu">
-    <view class="Rose-kinds" wx:for="{{every}}" wx:for-item="i" wx:key="index" ontap="goEveryDay" data-catid="{{i.id}}">
-      <view class="Rose-circle Rose-{{'color'+ i.id}}">
-        <icon class="iconfont {{i.icon}}"></icon>
-      </view>
-      {{i.name}}
+    <view class="Rose-kinds" wx:for="{{every}}" wx:for-item="i" wx:key="index" >
+      <navigator url="../more/more?catid={{ i.id }}" hover-class="none">
+
+        <view class="Rose-circle Rose-{{'color'+ i.id}}">
+          <icon class="iconfont {{i.icon}}"></icon>
+        </view>
+        {{i.name}}
+      </navigator>
     </view>
+
   </view>
 </view>
 <!-- 菜单 -->
@@ -28,7 +32,7 @@
   <view class="Rose-news" wx:for="{{items}}" wx:key="index" data-id="{{item.id}}" data-catid="{{item.catid}}" ontap="articleDetail" wx:if="{{ item.id != '124' && item.id !='145' }}">
     <view class="Rose-content">
       <view class='Rose-imgitem'>
-        <image class='Rose-imgitem' mode="widthFit" lazy-load="{{true}}" src="{{item.thumb==''? '/assets/images/ncode.jpg': item.thumb}}"></image>
+        <image class='Rose-imgitem' mode="aspectFill" lazy-load="{{true}}" src="{{item.thumb==''? '/assets/images/ncode.jpg': item.thumb}}"></image>
       </view>
       <view class="Rose-title">{{item.title}}</view>
       <view class="Rose-bottom">

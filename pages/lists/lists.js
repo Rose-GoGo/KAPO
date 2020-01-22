@@ -67,7 +67,7 @@ Page({
    */
   onShareAppMessage: function () {
     return {
-      title: '锲而舍之,朽木不折;锲而不舍,金石可镂',
+      title: `锲而舍之,朽木不折;锲而不舍,金石可镂`,
       imageUrl: '/assets/images/share.jpg'
     }
   },
@@ -75,7 +75,7 @@ Page({
     let id = e.currentTarget.dataset.id;
     let catid = e.currentTarget.dataset.catid
     wx.navigateTo({
-      url: '../detail/detail?catid=' + catid + '&id=' + id
+      url: `../detail/detail?catid=${catid}&id=${id}`
     })
   },
   showOne: function (e) {
@@ -85,35 +85,23 @@ Page({
     this.setData({
       catid: catid,
       items: [],
-      // page: 1,
       loadMore: true
     });
     this.getLists();
   },
-  onPageScroll: function (e) {
-    // if (e.scrollTop > 100) {
-    //   this.setData({
-    //     backShow: true
-    //   });
-    // } else {
-    //   this.setData({
-    //     backShow: false
-    //   });
-    // }
-  },
+
   getLists() {
     var that = this;
     var cat = that.data.catid;
     let params = {
       pagesize: 10,
-      // page: that.data.page,
       page: page,
       catid: cat
     }
     Api.lists(params).then(res => { //文章列表
       if (!res.data.code) {
         let _data = res.data.data;
-        let _items = that.data.items.concat(_data);
+        let _items = [...that.data.items, ..._data];
         that.setData({
           items: _items
         });

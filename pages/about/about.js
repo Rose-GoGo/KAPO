@@ -2,15 +2,7 @@
 //获取应用实例
 const app = getApp()
 Page({
-  data: {
-    kinds: app.globalData.kinds,
-    every: [
-      { icon: 'icon-yinyue', name: '生活', id: 4 },
-      { icon: 'icon-yingyu', name: '外语', id: 3 },
-      { icon: 'icon-book', name: '读书', id: 2 },
-      { icon: 'icon-jianshen', name: '健身', id: 1 }
-    ]
-  },
+  data: {},
   onLoad: function () {
   },
   onReady: function () { },
@@ -42,19 +34,5 @@ Page({
       title: '锲而舍之,朽木不折;锲而不舍,金石可镂',
       imageUrl: '/assets/images/share.jpg'
     }
-  },
-  goEveryDay(e) {
-    let catid = e.currentTarget.dataset.catid;
-    wx.navigateTo({
-      url: '../more/more?catid=' + catid
-    })
-  },
-  //事件处理函数
-  showOne(e) {
-    let catid = e.currentTarget.dataset.catid;
-    wx.navigateTo({
-      url: '../lists/lists?catid=' + catid
-    })
   }
-
 })

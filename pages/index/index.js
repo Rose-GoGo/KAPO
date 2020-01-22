@@ -108,7 +108,7 @@ Page({
     Api.all(params).then(res => { //文章列表
       if (!res.data.code) {
         let _data = res.data.data;
-        let _items = that.data.items.concat(_data);
+        let _items = [...that.data.items, ..._data];
         if (_data.length < 8) {
           that.setData({
             loadMore: false
@@ -168,11 +168,5 @@ Page({
         isPlay: true
       });
     }
-  },
-  goEveryDay(e) {
-    let catid = e.currentTarget.dataset.catid;
-    wx.navigateTo({
-      url: '../more/more?catid=' + catid
-    })
-  },
+  }
 })

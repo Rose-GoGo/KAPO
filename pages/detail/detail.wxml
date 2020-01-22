@@ -17,8 +17,9 @@
   <view class="Rose-description" wx:if="{{catid!='19'}}">{{items.description}}</view>
   <view class="Rose-content">
     <template is="wxParse" data="{{wxParseData:dkcontent.nodes}}" />
+    <!-- <rich-text nodes="{{ items.content }}"></rich-text> -->  
   </view>
-  <view class="Rose-center" wx:if="{{ catid !='19' && id !='124' && id !='145' }}">— End —</view>
+  <view class="Rose-finish" wx:if="{{ catid !='19' && id !='124' && id !='145' }}">— End —</view>
   <view class="Rose-read" wx:if="{{ catid !='19' && id !='124' && id !='145' }}">
     阅读 {{items.views}}
     <view class="Rose-Right" bindtap="wetherLike" data-likenum="{{items.thumbs_up}}">
@@ -61,7 +62,7 @@
   </view>
   <view class="Rose-empty" wx:if="{{count==0}}">
     <icon class="iconfont icon-kafei"></icon>
-    评论还是空的，快来说两句吧~
+    评论还是空的，留言鼓励一下吧~
   </view>
   <view class="Rose-end" wx:if="{{comments.length!=0 && !loadMore}}">
     <text class="Rose-word">没有更多评论了~</text>

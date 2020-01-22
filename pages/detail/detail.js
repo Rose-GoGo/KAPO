@@ -261,7 +261,7 @@ Page({
   postComments(e) {
     var that = this;
     var form_id = e.detail.formId;
-    console.log(form_id)
+
     if (!that.data.content) {
       wx.showModal({
         showCancel: false,
@@ -302,29 +302,29 @@ Page({
       }
     });
     //添加模板信息
-    var openid = wx.getStorageSync('loginSessionkey');
-    var loginkey = wx.getStorageSync('loginkey');
+    // var openid = wx.getStorageSync('loginSessionkey');
+    // var loginkey = wx.getStorageSync('loginkey');
 
-    var postdata = {
-      access_token: loginkey,
-      touser: openid,
-      form_id: form_id,
-      data: {
-        "keyword1": { "value": that.data.items.title, "color": "#333" },
-        "keyword2": { "value": that.data.userInfo.nickName, "color": "#999" },
-        "keyword3": { "value": that.data.content, "color": "#666" },
-        "keyword4": { "value": new Date(), "color": "#999" },
-      }
-    };
+    // var postdata = {
+    //   access_token: loginkey,
+    //   touser: openid,
+    //   form_id: form_id,
+    //   data: {
+    //     "keyword1": { "value": that.data.items.title, "color": "#333" },
+    //     "keyword2": { "value": that.data.userInfo.nickName, "color": "#999" },
+    //     "keyword3": { "value": that.data.content, "color": "#666" },
+    //     "keyword4": { "value": new Date(), "color": "#999" },
+    //   }
+    // };
 
-    wx.request({
-      url: 'http://119.29.161.36:3000/template',
-      data: postdata,
-      method: 'POST',
-      success: function (res) {
-        console.log(res);
-      },
-    })
+    // wx.request({
+    //   url: 'http://119.29.161.36:3000/template',
+    //   data: postdata,
+    //   method: 'POST',
+    //   success: function (res) {
+    //     console.log(res);
+    //   },
+    // })
   },
   commentlists() {
     var that = this;

@@ -16,7 +16,7 @@ Page({
     canIUse: wx.canIUse('button.open-type.getUserInfo'),
     isRose: false,
     focus: false,
-    placeholder: '点击评论回复...',
+    placeholder: `点击评论回复...`,
     pid: 0,
     userInfo: {},
     reply_username: '',
@@ -32,16 +32,16 @@ Page({
     });
     if (wx.getStorageSync('userInfo')) { } else {
       wx.getSetting({
-        success: function (res) {
-          if (res.authSetting['scope.userInfo']) {
+        success: ress=>{
+          if (ress.authSetting['scope.userInfo']) {
             // 已经授权，可以直接调用 getUserInfo 获取头像昵称
             wx.getUserInfo({
-              success: function (res) {
+              success: res=>{
                 let _userInfo = res.userInfo;
                 app.globalData.userInfo = _userInfo;
                 wx.setStorageSync('userInfo', _userInfo)
               },
-              fail: function () { }
+              fail: res=>{ }
             })
           }
         }
@@ -73,7 +73,6 @@ Page({
     page =  1;
     that.setData({
       comments: [],
-      // page: 1
     });
     that.commentlists();
   },
@@ -82,11 +81,7 @@ Page({
    */
    onReachBottom: function () {
     var that = this;
-    // let page = that.data.page + 1;
     page = page + 1;
-    // that.setData({
-    //   page: page
-    // });
     if (that.data.loadMore) {
       that.commentlists();
     }
@@ -100,7 +95,7 @@ Page({
       imageUrl: '/assets/images/share.jpg'
     }
   },
-  forRemark: function (e) {
+  forRemark(e) {
     var that = this;
     let _data = e.detail.value;
     // 禁止输入空格
@@ -122,23 +117,23 @@ Page({
       })
     }
   },
-  rewardRose: function () {
+  rewardRose() {
     var that = this;
     that.setData({
       show: true
     })
   },
-  backContent: function (e) { //回复的评论
+  backContent(e) { //回复的评论
     let _from = e.currentTarget.dataset.from;
     let _id = e.currentTarget.dataset.pid;
     this.setData({
-      placeholder: '回复 ' + _from,
+      placeholder: `回复 ${_from}`,
       focus: true,
       reply_username: _from,
       pid: _id
     });
   },
-  bindGetUserInfo: function (e) {
+  bindGetUserInfo(e) {
     var that = this;
     var userInfo = {};
     if (e.detail.userInfo) {
@@ -164,7 +159,7 @@ Page({
     })
     that.postComments()
   },
-  postComments: function () {
+  postComments() {
     var that = this;
     if (!that.data.content) {
       wx.showModal({
@@ -196,7 +191,6 @@ Page({
         page = 1;
         that.setData({
           content: '',
-          // page: 1,
           comments: [],
           reply_username: '',
           pid: 0,
@@ -207,12 +201,11 @@ Page({
       }
     });
   },
-  commentlists: function () {
+  commentlists() {
     var that = this;
     let _params = {
       type: "punch",
       page: page,
-      // page: this.data.page,
       pagesize: 10
     }
     Api.commentlists(_params).then(res => {
@@ -238,30 +231,16 @@ Page({
       }
     });
   },
-  modalCancel: function () {
+  modalCancel() {
     this.setData({
       show: false
     })
-  },
-  onPageScroll: function (e) {
-
-    // if (e.scrollTop > 100) {
-    //   this.setData({
-    //     backShow: true
-    //   });
-    // } else {
-    //   this.setData({
-    //     backShow: false
-    //   });
-    // }
   },
   goHome: function(){
     wx.switchTab({
       url: '../index/index'
     });
   },
-
-
   testSubmit:function(e){
     console.log(e.detail.formId)
   }
