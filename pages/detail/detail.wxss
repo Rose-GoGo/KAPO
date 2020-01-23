@@ -315,7 +315,7 @@ button::after {
 .Rose-finish {
   padding: 30rpx 0;
   text-align: center;
-  color: #999
+  color: #999;
 }
 
 .Rose-end {
@@ -383,14 +383,14 @@ button::after {
 
 .Rose-input {
   flex: 1;
-  margin: 0 20rpx 0 0;
+  margin: 0 0 0 10rpx;
   height: 80rpx;
   line-height: 80rpx;
   padding: 0 20rpx;
   background: #eef0f4;
   border: 1rpx solid #f2f2f2;
   font-size: 26rpx;
-  border-radius: 40rpx;
+  border-radius: 4rpx;
   color: #666;
 }
 
@@ -447,4 +447,24 @@ button::after {
   width: 0;
   height: 0;
   overflow: hidden;
+}
+
+.Rose-flexform {
+  flex: 1;
+  margin: 0 20rpx 0 0;
+  height: 80rpx;
+  line-height: 80rpx;
+}
+
+.Rose-post {
+  flex: none;
+  height: 83rpx;
+  background: #4bb777;
+  line-height: 83rpx;
+  color: #fff;
+  font-size: 26rpx;
+  border-radius: 4rpx;
+
+  text-align: center;
+  box-shadow: none;
 }

@@ -17,7 +17,7 @@
   <view class="Rose-description" wx:if="{{catid!='19'}}">{{items.description}}</view>
   <view class="Rose-content">
     <template is="wxParse" data="{{wxParseData:dkcontent.nodes}}" />
-    <!-- <rich-text nodes="{{ items.content }}"></rich-text> -->  
+    <!-- <rich-text nodes="{{ items.content }}"></rich-text> -->
   </view>
   <view class="Rose-finish" wx:if="{{ catid !='19' && id !='124' && id !='145' }}">— End —</view>
   <view class="Rose-read" wx:if="{{ catid !='19' && id !='124' && id !='145' }}">
@@ -76,16 +76,18 @@
       <icon class="iconfont {{ like?'icon-heart-fill':'icon-heart'}}"></icon>
       {{likenum}}
     </view>
-    <form class="Rose-input" report-submit='true' bindsubmit='postComments'>
-      <input class="Rose-input" value="{{content}}" bindinput="forRemark" focus="{{focus}}" maxlength="-1" placeholder="{{placeholder}}" bindconfirm="postComments" bindsubmit="postComments" formType="submit" />
-      <!-- <button form-type="submit" type="default" size="mini">提交</button> -->
-    </form>
-    <view class="Rose-none Rose-center" bindtap="commentNow">
-      <icon class="iconfont icon-message"></icon>{{count}}
-    </view>
     <view class="Rose-none Rose-center" bindtap="commentBox">
       <icon class="iconfont icon-plus-circle"></icon>更多
     </view>
+    <form class="Rose-flexform" report-submit='true' bindsubmit='postComments'>
+      <input class="Rose-input" value="{{content}}" bindinput="forRemark" focus="{{focus}}" bindconfirm="postComments" maxlength="-1" placeholder="{{placeholder}}"  />
+
+    </form>
+    <view class="Rose-none Rose-center" bindtap="commentNow">
+      <!-- <icon class="iconfont icon-message"></icon>{{count}} -->
+      <button class="Rose-none Rose-post" wx:if="{{canIUse}}" open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo">提交</button>
+    </view>
+
   </view>
 </view>
 <view class="">

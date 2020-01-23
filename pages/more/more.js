@@ -89,7 +89,7 @@ Page({
    */
   onShareAppMessage: function() {
     return {
-      title: `'锲而舍之,朽木不折;锲而不舍,金石可镂`,
+      title: `锲而舍之,朽木不折;锲而不舍,金石可镂`,
       imageUrl: '/assets/images/share.jpg'
     }
   },

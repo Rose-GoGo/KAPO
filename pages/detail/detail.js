@@ -34,7 +34,7 @@ Page({
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function (options) {
+  onLoad: function(options) {
     wx.showLoading();
     var that = this;
     let _userInfo = wx.getStorageSync('userInfo')
@@ -57,13 +57,13 @@ Page({
         catid: options.catid
       });
     }
-    if (wx.getStorageSync('userInfo')) { } else {
+    if (wx.getStorageSync('userInfo')) {} else {
       wx.getSetting({
-        success: function (res) {
+        success: function(res) {
           if (res.authSetting['scope.userInfo']) {
             // 已经授权，可以直接调用 getUserInfo 获取头像昵称
             wx.getUserInfo({
-              success: function (res) {
+              success: function(res) {
                 let _userInfo = res.userInfo;
                 app.globalData.userInfo = _userInfo;
                 wx.setStorageSync('userInfo', _userInfo)
@@ -80,27 +80,27 @@ Page({
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
-  onReady: function () { },
+  onReady: function() {},
   /**
    * 生命周期函数--监听页面显示
    */
-  onShow: function () { },
+  onShow: function() {},
   /**
    * 生命周期函数--监听页面隐藏
    */
-  onHide: function () { },
+  onHide: function() {},
   /**
    * 生命周期函数--监听页面卸载
    */
-  onUnload: function () { },
+  onUnload: function() {},
   /**
    * 页面相关事件处理函数--监听用户下拉动作
    */
-  onPullDownRefresh: function () { },
+  onPullDownRefresh: function() {},
   /**
    * 页面上拉触底事件的处理函数
    */
-  onReachBottom: function () {
+  onReachBottom: function() {
     var that = this;
     let page = that.data.page + 1;
     that.setData({
@@ -113,7 +113,7 @@ Page({
   /**
    * 用户点击右上角分享
    */
-  onShareAppMessage: function () {
+  onShareAppMessage: function() {
     return {
       title: this.data.items.title,
       path: "/detail/detail",
@@ -258,10 +258,34 @@ Page({
       })
     }
   },
-  postComments(e) {
+  bindGetUserInfo(e) {
     var that = this;
-    var form_id = e.detail.formId;
-
+    var userInfo = {};
+    if (e.detail.userInfo) {
+      userInfo = e.detail.userInfo;
+    } else {
+      wx.getUserInfo({
+        success: function (res) {
+          userInfo = res.userInfo;
+        },
+        fail: function (res) {
+          wx.showModal({
+            showCancel: false,
+            confirmColor: '#1d8f59',
+            confirmColor: '#1d8f59',
+            content: '授权通过后才能评论哟，请重新授权！'
+          })
+        }
+      })
+    }
+    if (JSON.stringify(userInfo) == '{}') return false;
+    that.setData({
+      userInfo: userInfo
+    })
+    that.postComments()
+  },
+  postComments() {
+    var that = this;
     if (!that.data.content) {
       wx.showModal({
         showCancel: false,
@@ -301,30 +325,6 @@ Page({
         that.commentlists();
       }
     });
-    //添加模板信息
-    // var openid = wx.getStorageSync('loginSessionkey');
-    // var loginkey = wx.getStorageSync('loginkey');
-
-    // var postdata = {
-    //   access_token: loginkey,
-    //   touser: openid,
-    //   form_id: form_id,
-    //   data: {
-    //     "keyword1": { "value": that.data.items.title, "color": "#333" },
-    //     "keyword2": { "value": that.data.userInfo.nickName, "color": "#999" },
-    //     "keyword3": { "value": that.data.content, "color": "#666" },
-    //     "keyword4": { "value": new Date(), "color": "#999" },
-    //   }
-    // };
-
-    // wx.request({
-    //   url: 'http://119.29.161.36:3000/template',
-    //   data: postdata,
-    //   method: 'POST',
-    //   success: function (res) {
-    //     console.log(res);
-    //   },
-    // })
   },
   commentlists() {
     var that = this;
@@ -410,14 +410,14 @@ Page({
   /*
   海报
   */
-  createNewImg: function (codes, img, title, desc) {
+  createNewImg: function(codes, img, title, desc) {
     var that = this;
     var Rose = wx.createCanvasContext('mycanvas');
     Rose.setFillStyle("#ffffff")
     Rose.fillRect(0, 0, 600, 1000); //填充一个矩形。用 setFillStyle
     wx.getImageInfo({
       src: img, //服务器返回的图片地址
-      success: function (res) {
+      success: function(res) {
         var thumb = res.path;
         var datee = new Date();
         var cctime = util.formatTime(datee);
@@ -483,10 +483,10 @@ Page({
         });
         Rose.draw();
         // 将生成好的图片保存到本地，需要延迟一会，绘制期间耗时
-        setTimeout(function () {
+        setTimeout(function() {
           wx.canvasToTempFilePath({
             canvasId: 'mycanvas',
-            success: function (res) {
+            success: function(res) {
               var tempFilePath = res.tempFilePath;
               that.setData({
                 imagePath: tempFilePath,
@@ -495,7 +495,7 @@ Page({
               });
               wx.hideToast()
             },
-            fail: function (res) { }
+            fail: function(res) {}
           }, this);
         }, 1000);
       }
@@ -512,7 +512,7 @@ Page({
           showCancel: false,
           confirmText: '好的',
           confirmColor: '#333',
-          success: function (res) {
+          success: function(res) {
             if (res.confirm) {
               /* 该隐藏的隐藏 */
               that.setData({
@@ -520,7 +520,7 @@ Page({
               })
             }
           },
-          fail: function (res) { }
+          fail: function(res) {}
         })
       }
     })
@@ -550,9 +550,9 @@ Page({
   // postComments(e) {
   //   var that = this;
   //   var _datas = that.items;
-  //   var username ='';
+  //   var username = '';
   //   wx.getUserInfo({
-  //     success: function (res) {
+  //     success: function(res) {
   //       var userInfo = res.userInfo;
   //       if (userInfo.nickName == '赵') {
   //         that.setData({
@@ -561,35 +561,47 @@ Page({
   //       }
   //       username = userInfo.nickName;
   //     },
-  //     fail: function (res) { }
+  //     fail: function(res) {}
   //   });
-  // var openid = wx.getStorageSync('loginSessionkey');
-  // let _jsonData = {
-  //   touser: openid,
-  //   template_id: 'j-3edb01UbYzkecJlaokoq9HeK_dUVSpQutNA7VWO4I',
-  //   form_id: e.detail.formId,
-  //   page: "pages/detail/detail",
-  //   data: {
-  //     "keyword1": { "value": _datas.title, "color": "#333" },
-  //     "keyword2": { "value": username, "color": "#999" },
-  //     "keyword3": { "value": that.data.content, "color": "#666" },
-  //     "keyword4": { "value": new Date(), "color": "#999" },
+  //   var openid = wx.getStorageSync('loginSessionkey');
+  //   let _jsonData = {
+  //     touser: openid,
+  //     template_id: 'j-3edb01UbYzkecJlaokoq9HeK_dUVSpQutNA7VWO4I',
+  //     form_id: e.detail.formId,
+  //     page: "pages/detail/detail",
+  //     data: {
+  //       "keyword1": {
+  //         "value": _datas.title,
+  //         "color": "#333"
+  //       },
+  //       "keyword2": {
+  //         "value": username,
+  //         "color": "#999"
+  //       },
+  //       "keyword3": {
+  //         "value": that.data.content,
+  //         "color": "#666"
+  //       },
+  //       "keyword4": {
+  //         "value": new Date(),
+  //         "color": "#999"
+  //       },
+  //     }
   //   }
-  // }
-  // wx.request({
-  //   url: url,
-  //   data: _jsonData,
-  //   method: 'POST',
-  //   success: function (res) {
-  //      wx.hideLoading();
+  //   wx.request({
+  //     url: url,
+  //     data: _jsonData,
+  //     method: 'POST',
+  //     success: function(res) {
+  //       wx.hideLoading();
   //       console.log(res);
-  //   },
-  //   fail: function (err) {
-  //     console.log('request fail ', err);
-  //   },
-  //   complete: function (res) {
-  //     console.log("request completed!");
-  //   }
-  // })
+  //     },
+  //     fail: function(err) {
+  //       console.log('request fail ', err);
+  //     },
+  //     complete: function(res) {
+  //       console.log("request completed!");
+  //     }
+  //   })
   // }
 })

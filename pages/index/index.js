@@ -96,7 +96,7 @@ Page({
     let id = e.currentTarget.dataset.id;
     let catid = e.currentTarget.dataset.catid
     wx.navigateTo({
-      url: '../detail/detail?catid=' + catid + '&id=' + id
+      url: `../detail/detail?catid=${catid}&id=${id}`
     });
   },
   getLists(e) {

@@ -212,7 +212,7 @@ Page({
       if (res.data.code == 0) {
         let _data = res.data.data;
         let _count = res.data.count;
-        let _arr = that.data.comments.concat(_data);
+        let _arr = [...that.data.comments,..._data];
         that.setData({
           comments: _arr,
           count: _count

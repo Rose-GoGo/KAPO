@@ -53,60 +53,13 @@
 			"current": -1,
 			"list": []
 		},
+		"gamePlugin": {
+			"current": -1,
+			"list": []
+		},
 		"miniprogram": {
-			"current": 0,
-			"list": [
-				{
-					"id": 0,
-					"name": "文章详情",
-					"pathName": "pages/detail/detail",
-					"query": "catid=11&id=209",
-					"scene": 1011
-				},
-				{
-					"id": -1,
-					"name": "我",
-					"pathName": "pages/about/about",
-					"query": ""
-				},
-				{
-					"id": -1,
-					"name": "项目",
-					"pathName": "pages/project/project",
-					"query": ""
-				},
-				{
-					"id": 3,
-					"name": "打卡",
-					"pathName": "pages/more/more",
-					"query": "catid=4"
-				},
-				{
-					"id": -1,
-					"name": "意见反馈",
-					"pathName": "pages/feedback/feedback",
-					"query": ""
-				},
-				{
-					"id": 6,
-					"name": "文章列表",
-					"pathName": "pages/lists/lists",
-					"query": "catid=11&page=1"
-				},
-				{
-					"id": -1,
-					"name": "关于我",
-					"pathName": "pages/me/me",
-					"query": ""
-				},
-				{
-					"id": -1,
-					"name": "添加文章",
-					"pathName": "pages/add/add",
-					"query": "",
-					"scene": null
-				}
-			]
+			"current": -1,
+			"list": []
 		}
 	}
 }

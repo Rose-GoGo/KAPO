@@ -7,8 +7,7 @@
     "pages/more/more",
     "pages/feedback/feedback",
     "pages/lists/lists",
-    "pages/me/me",
-    "pages/add/add"
+    "pages/me/me"
   ],
   "window": {
     "backgroundTextStyle": "light",

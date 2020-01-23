@@ -53,12 +53,8 @@ Page({
    */
   onReachBottom: function () {
     var that = this;
-    // let page = that.data.page + 1;
     page = page + 1;
-    if (that.data.loadMore) {
-      // that.setData({
-      //   page: page
-      // })
+    if (that.data.loadMore) {  
       that.getLists();
     }
   },
