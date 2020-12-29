@@ -93,8 +93,7 @@ Page({
     }
   },
   articleDetail(e) {
-    let id = e.currentTarget.dataset.id;
-    let catid = e.currentTarget.dataset.catid
+    let {id, catid} = e.currentTarget.dataset;
     wx.navigateTo({
       url: `../detail/detail?catid=${catid}&id=${id}`
     });
