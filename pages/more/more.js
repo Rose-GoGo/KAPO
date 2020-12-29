@@ -158,11 +158,13 @@ Page({
     that.getLine();
   },
   getLine() { //拉取数据并且处理
-    var that = this;
+    var that = this; 
     let year = that.data.year;
     let month = that.data.month;
     var big = that.data.bigData;
     var dataIndex = that.data.dataIndex;
+
+
     var thisMonthData = {};
     var ym = `${year}-${month}`;
     if (Date.parse(new Date(ym)) < 1530403200000) {
@@ -180,6 +182,7 @@ Page({
       if (!res.data.code) {
         var _data = res.data.data;
         thisMonthData = _data;
+        
         thisMonthData['monthNum'] = month;
         thisMonthData['monthShow'] = true;
         var _monthData = that.data.monthData;
@@ -237,9 +240,8 @@ Page({
   },
   editOne(e) {
     var that = this;
-    let id = e.currentTarget.dataset.id;
-    let title = e.currentTarget.dataset.title;
-    let remark = e.currentTarget.dataset.remark;
+    let tt = e.currentTarget.dataset;  
+    let {id, title, remark} = tt;
     that.setData({
       title: title,
       remark: remark,
@@ -291,7 +293,7 @@ Page({
               wx.showModal({
                 showCancel: false,
                 confirmColor: '#1d8f59',
-                content: '该功能已经暂停，暂不支持删除数据!',
+                content: `该功能已经暂停，暂不支持删除数据!`,
               })
             }
           });
@@ -417,10 +419,12 @@ Page({
   },
   hideData(e) { //隐藏该月的数组
     var that = this;
+    let dDate = e.currentTarget.dataset;    
     let _num = e.currentTarget.dataset.num;
     let _year = e.currentTarget.dataset.year;
     let _index = e.currentTarget.dataset.index;
     let _month = e.currentTarget.dataset.month;
+
     let _bigData = that.data.bigData;
     _bigData[_num][_year][_index]['monthShow'] = !_bigData[_num][_year][_index]['monthShow'];
     that.setData({

@@ -41,7 +41,7 @@ Page({
     let scene = decodeURIComponent(options.scene);
     if (options.scene) {
       let scene = decodeURIComponent(options.scene);
-      let info_arr = [];
+      let info_arr = [];      
       info_arr = scene.split('&');
       let _catid = info_arr[0];
       let _id = info_arr[1];
@@ -218,8 +218,7 @@ Page({
     })
   },
   articleDetail(e) {
-    let id = e.currentTarget.dataset.id;
-    let catid = e.currentTarget.dataset.catid
+    let {id, catid} = e.currentTarget.dataset;
     wx.navigateTo({
       url: '../detail/detail?catid=' + catid + '&id=' + id
     });
@@ -330,7 +329,7 @@ Page({
     var that = this;
     let _params = {
       newsid: that.data.id,
-      page: this.data.page,
+      page: that.data.page,
       pagesize: 10
     }
     Api.commentlists(_params).then(res => {
@@ -546,62 +545,5 @@ Page({
         })
       }
     });
-  },
-  // postComments(e) {
-  //   var that = this;
-  //   var _datas = that.items;
-  //   var username = '';
-  //   wx.getUserInfo({
-  //     success: function(res) {
-  //       var userInfo = res.userInfo;
-  //       if (userInfo.nickName == '赵') {
-  //         that.setData({
-  //           isRose: true
-  //         })
-  //       }
-  //       username = userInfo.nickName;
-  //     },
-  //     fail: function(res) {}
-  //   });
-  //   var openid = wx.getStorageSync('loginSessionkey');
-  //   let _jsonData = {
-  //     touser: openid,
-  //     template_id: 'j-3edb01UbYzkecJlaokoq9HeK_dUVSpQutNA7VWO4I',
-  //     form_id: e.detail.formId,
-  //     page: "pages/detail/detail",
-  //     data: {
-  //       "keyword1": {
-  //         "value": _datas.title,
-  //         "color": "#333"
-  //       },
-  //       "keyword2": {
-  //         "value": username,
-  //         "color": "#999"
-  //       },
-  //       "keyword3": {
-  //         "value": that.data.content,
-  //         "color": "#666"
-  //       },
-  //       "keyword4": {
-  //         "value": new Date(),
-  //         "color": "#999"
-  //       },
-  //     }
-  //   }
-  //   wx.request({
-  //     url: url,
-  //     data: _jsonData,
-  //     method: 'POST',
-  //     success: function(res) {
-  //       wx.hideLoading();
-  //       console.log(res);
-  //     },
-  //     fail: function(err) {
-  //       console.log('request fail ', err);
-  //     },
-  //     complete: function(res) {
-  //       console.log("request completed!");
-  //     }
-  //   })
-  // }
+  }
 })
